@@ -9,7 +9,13 @@
     </datamarts>
   </datawarehouse>
   <conformedHierarchies />
-  <areas />
+  <areas>
+    <area name="Datamart" id="d026e8af-e59b-47fa-9d33-ffc6430c8f94">
+      <factSchemas>
+        <factschema id="27182768-560d-46fa-be67-0aa7840eb28c" />
+      </factSchemas>
+    </area>
+  </areas>
   <customProperties>
     <attributes />
     <measures />
