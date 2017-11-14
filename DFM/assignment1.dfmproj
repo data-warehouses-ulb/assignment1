@@ -4,6 +4,7 @@
       <datamart name="Datamart" id="79f03fdb-e3f6-4f02-bdd0-61eb57955014">
         <factschemas>
           <factschema id="27182768-560d-46fa-be67-0aa7840eb28c" />
+          <factschema id="0f62aaf5-362b-4378-883a-cd24a024ed19" />
         </factschemas>
       </datamart>
     </datamarts>
