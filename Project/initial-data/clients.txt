@@ -1,0 +1,49 @@
+1,ABN,Medium
+2,Agilent Technologies,Medium
+3,AGL,Medium
+4,Allianz Life,Large
+5,Avis Group,Small
+6,AVIVA,Small
+7,Bahrain National Insurance,Small
+8,Boots UK Ltd,Small
+9,British Airways,Small
+10,BT Wholesale,Small
+11,Chrysler,Small
+12,Cisco,Medium
+13,Commerzbank,Medium
+14,CTM,Large
+15,Deutsche Borse Group,Large
+16,Dwr Cymru Welsh Water,Small
+17,Eaton,Medium
+18,Electronic Arts,Large
+19,EMD,Large
+20,Ferrari Scuderia,Large
+21,Harmony Gold,Medium
+22,Hays,Medium
+23,HP,Large
+24,Hutchinson 3G,Medium
+25,Hyundai,Small
+26,Infineon,Small
+27,ING Group,Large
+28,Microsoft,Medium
+29,Mizuho,Medium
+30,Motorola,Medium
+31,National Insurance Company,Small
+32,National Grid,Large
+33,Nature Education,Medium
+34,NPG,Medium
+35,Numonyx,Small
+36,NXP Semi conductors,Small
+37,Philips Semiconductors,Medium
+38,PPG,Small
+39,Qualcomm,Medium
+40,Radian Score,Medium
+41,Roche Pharmaceuticals,Large
+42,Sanyo Logistics Corporation,Large
+43,Sony,Medium
+44,Tata Power,Medium
+45,Thames Water,Medium
+46,United Biscuits,Small
+47,United Utilities,Medium
+48,Woolworths,Large
+49,3 Australia,Large
