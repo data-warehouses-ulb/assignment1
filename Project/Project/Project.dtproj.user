@@ -4,6 +4,7 @@
     <Configuration>
       <Name>Development</Name>
       <Options>
+        <StartObjectID>initial.dtsx</StartObjectID>
         <UserIDs />
         <UserPasswords />
         <OfflineMode>false</OfflineMode>

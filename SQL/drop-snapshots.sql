@@ -1,4 +1,7 @@
-use [Solution]
+-- Use it in case if the loop was interrupted without finishing (the tables were not cleared)
+
+
+use [temp]
 
 drop TABLE [newTitle];
 drop TABLE [newdepartments];

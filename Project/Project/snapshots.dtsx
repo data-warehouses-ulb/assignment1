@@ -11,8 +11,8 @@
   DTS:LocaleID="2060"
   DTS:ObjectName="snapshots"
   DTS:PackageType="5"
-  DTS:VersionBuild="58"
-  DTS:VersionGUID="{55E270AE-907E-41D5-B09F-89B61D8EBCBA}">
+  DTS:VersionBuild="69"
+  DTS:VersionGUID="{802A5796-FFAB-4909-9BC9-80578A28E4C0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -186,16 +186,6 @@
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[CS-MSSQL.Solution]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{2626DB8F-022C-48B7-83BB-BC107E266961}"
-      DTS:ObjectName="CS-MSSQL.Solution">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=IPHONE;Initial Catalog=Solution;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-assisgnment2-{2626DB8F-022C-48B7-83BB-BC107E266961}CS-MSSQL.Solution;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -376,13 +366,13 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[IPHONE]"
+      DTS:refId="Package.ConnectionManagers[server.temp]"
       DTS:CreationName="OLEDB"
       DTS:DTSID="{E44BD960-AB80-4E91-8A4D-0D890BAF89AE}"
-      DTS:ObjectName="IPHONE">
+      DTS:ObjectName="server.temp">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=IPHONE;Initial Catalog=Solution;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=server;Initial Catalog=temp;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -570,7 +560,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{2626DB8F-022C-48B7-83BB-BC107E266961}"
+              SQLTask:Connection="{E44BD960-AB80-4E91-8A4D-0D890BAF89AE}"
               SQLTask:SqlStatementSource="CREATE TABLE [newdepartments] (&#xA;    [dept_no] varchar(4),&#xA;    [dept_name] varchar(100)&#xA;);&#xA;&#xA;CREATE TABLE [newCity] (&#xA;    [city_id] int,&#xA;    [city] varchar(100),&#xA;    [state_id] int&#xA;);&#xA;&#xA;CREATE TABLE [newState] (&#xA;    [state_id] int,&#xA;    [state] varchar(100),&#xA;    [country_id] int&#xA;);&#xA;&#xA;CREATE TABLE [newCountry] (&#xA;    [country] varchar(100),&#xA;    [country_id] int&#xA;);&#xA;&#xA;CREATE TABLE newTitle(&#xA;&#x9;[id] [int] NOT NULL,&#xA;&#x9;[title] [varchar](50) NULL&#xA;);&#xA;&#xA;CREATE TABLE [new_client_emp] (&#xA;    [emp_no] int,&#xA;    [client] int&#xA;);&#xA;&#xA;CREATE TABLE [new_emp] (&#xA;    [emp_no] int,&#xA;    [birth_date] datetime,&#xA;    [first_name] varchar(100),&#xA;    [last_name] varchar(100),&#xA;    [gender] varchar(10),&#xA;    [hire_date] datetime,&#xA;    [salary] int,&#xA;    [title_no] int,&#xA;    [dept_no] varchar(4),&#xA;    [current_city] int,&#xA;    [base_city] int,&#xA;    [marital_status] varchar(10),&#xA;    [no_of_children] int&#xA;);&#xA;&#xA;CREATE TABLE [snapshotdates] (&#xA;    [from_date] datetime,&#xA;    [to_date] datetime&#xA;);&#xA;&#xA;CREATE TABLE [new_clients] (&#xA;    [client_id] int,&#xA;    [client] varchar(100),&#xA;    [category] varchar(10)&#xA;);"
               SQLTask:CodePage="1252" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
@@ -589,8 +579,8 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{2626DB8F-022C-48B7-83BB-BC107E266961}"
-              SQLTask:SqlStatementSource="drop TABLE [newTitle];&#xA;drop TABLE [newdepartments];&#xA;drop TABLE [new_client_emp];&#xA;drop TABLE [new_emp];&#xA;drop TABLE [snapshotdates];&#xA;drop TABLE [newCity];&#xA;drop TABLE [newState];&#xA;drop TABLE [newCountry];&#xA;drop TABLE [new_clients];"
+              SQLTask:Connection="{E44BD960-AB80-4E91-8A4D-0D890BAF89AE}"
+              SQLTask:SqlStatementSource="use [temp]&#xA;&#xA;drop TABLE [newTitle];&#xA;drop TABLE [newdepartments];&#xA;drop TABLE [new_client_emp];&#xA;drop TABLE [new_emp];&#xA;drop TABLE [snapshotdates];&#xA;drop TABLE [newCity];&#xA;drop TABLE [newState];&#xA;drop TABLE [newCountry];&#xA;drop TABLE [new_clients];"
               SQLTask:CodePage="1252" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -3112,8 +3102,8 @@
                   <connections>
                     <connection
                       refId="Package\For Loop Container\Load snapshot nr @myvar\newcity.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[IPHONE]"
-                      connectionManagerRefId="Package.ConnectionManagers[IPHONE]"
+                      connectionManagerID="Package.ConnectionManagers[server.temp]"
+                      connectionManagerRefId="Package.ConnectionManagers[server.temp]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -3249,8 +3239,8 @@
                   <connections>
                     <connection
                       refId="Package\For Loop Container\Load snapshot nr @myvar\newCountry.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[IPHONE]"
-                      connectionManagerRefId="Package.ConnectionManagers[IPHONE]"
+                      connectionManagerID="Package.ConnectionManagers[server.temp]"
+                      connectionManagerRefId="Package.ConnectionManagers[server.temp]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -3281,7 +3271,7 @@
                         isUsed="True">
                         <externalMetadataColumn
                           refId="Package\For Loop Container\Load snapshot nr @myvar\newCountry.Inputs[OLE DB Destination Input].ExternalColumns[country]"
-                          codePage="1251"
+                          codePage="1252"
                           dataType="str"
                           length="100"
                           name="country" />
@@ -3376,8 +3366,8 @@
                   <connections>
                     <connection
                       refId="Package\For Loop Container\Load snapshot nr @myvar\newdepartments.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[IPHONE]"
-                      connectionManagerRefId="Package.ConnectionManagers[IPHONE]"
+                      connectionManagerID="Package.ConnectionManagers[server.temp]"
+                      connectionManagerRefId="Package.ConnectionManagers[server.temp]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -3507,8 +3497,8 @@
                   <connections>
                     <connection
                       refId="Package\For Loop Container\Load snapshot nr @myvar\newState.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[IPHONE]"
-                      connectionManagerRefId="Package.ConnectionManagers[IPHONE]"
+                      connectionManagerID="Package.ConnectionManagers[server.temp]"
+                      connectionManagerRefId="Package.ConnectionManagers[server.temp]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -3644,8 +3634,8 @@
                   <connections>
                     <connection
                       refId="Package\For Loop Container\Load snapshot nr @myvar\newTitle.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[IPHONE]"
-                      connectionManagerRefId="Package.ConnectionManagers[IPHONE]"
+                      connectionManagerID="Package.ConnectionManagers[server.temp]"
+                      connectionManagerRefId="Package.ConnectionManagers[server.temp]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -3772,8 +3762,8 @@
                   <connections>
                     <connection
                       refId="Package\For Loop Container\Load snapshot nr @myvar\new_clients.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[IPHONE]"
-                      connectionManagerRefId="Package.ConnectionManagers[IPHONE]"
+                      connectionManagerID="Package.ConnectionManagers[server.temp]"
+                      connectionManagerRefId="Package.ConnectionManagers[server.temp]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -3914,8 +3904,8 @@
                   <connections>
                     <connection
                       refId="Package\For Loop Container\Load snapshot nr @myvar\new_client_emp.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[IPHONE]"
-                      connectionManagerRefId="Package.ConnectionManagers[IPHONE]"
+                      connectionManagerID="Package.ConnectionManagers[server.temp]"
+                      connectionManagerRefId="Package.ConnectionManagers[server.temp]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -4037,8 +4027,8 @@
                   <connections>
                     <connection
                       refId="Package\For Loop Container\Load snapshot nr @myvar\OLE DB Destination.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[IPHONE]"
-                      connectionManagerRefId="Package.ConnectionManagers[IPHONE]"
+                      connectionManagerID="Package.ConnectionManagers[server.temp]"
+                      connectionManagerRefId="Package.ConnectionManagers[server.temp]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -4406,8 +4396,8 @@
                   <connections>
                     <connection
                       refId="Package\For Loop Container\Load snapshot nr @myvar\snapshotdates.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[IPHONE]"
-                      connectionManagerRefId="Package.ConnectionManagers[IPHONE]"
+                      connectionManagerID="Package.ConnectionManagers[server.temp]"
+                      connectionManagerRefId="Package.ConnectionManagers[server.temp]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -5669,70 +5659,70 @@
               </components>
               <paths>
                 <path
-                  refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Data Conversion Output4]"
+                  refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Data Conversion Output]"
                   endId="Package\For Loop Container\Load snapshot nr @myvar\Union All 4.Inputs[Union All Input 1]"
                   name="Data Conversion Output"
                   startId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 1.Outputs[Data Conversion Output]" />
                 <path
-                  refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Data Conversion Output8]"
+                  refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Data Conversion Output1]"
                   endId="Package\For Loop Container\Load snapshot nr @myvar\Union All 8.Inputs[Union All Input 1]"
                   name="Data Conversion Output"
                   startId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion.Outputs[Data Conversion Output]" />
                 <path
-                  refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Data Conversion Output7]"
+                  refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Data Conversion Output2]"
                   endId="Package\For Loop Container\Load snapshot nr @myvar\Union All 7.Inputs[Union All Input 1]"
                   name="Data Conversion Output"
                   startId="Package\For Loop Container\Load snapshot nr @myvar\departments_data.Outputs[Data Conversion Output]" />
                 <path
-                  refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Data Conversion Output6]"
+                  refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Data Conversion Output3]"
                   endId="Package\For Loop Container\Load snapshot nr @myvar\Union All 6.Inputs[Union All Input 1]"
                   name="Data Conversion Output"
                   startId="Package\For Loop Container\Load snapshot nr @myvar\clients_data.Outputs[Data Conversion Output]" />
                 <path
-                  refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Data Conversion Output5]"
+                  refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Data Conversion Output4]"
                   endId="Package\For Loop Container\Load snapshot nr @myvar\Union All 5.Inputs[Union All Input 1]"
                   name="Data Conversion Output"
                   startId="Package\For Loop Container\Load snapshot nr @myvar\client_emp_data.Outputs[Data Conversion Output]" />
                 <path
-                  refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Data Conversion Output3]"
+                  refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Data Conversion Output5]"
                   endId="Package\For Loop Container\Load snapshot nr @myvar\Union All 3.Inputs[Union All Input 1]"
                   name="Data Conversion Output"
                   startId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 3.Outputs[Data Conversion Output]" />
                 <path
-                  refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Data Conversion Output2]"
+                  refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Data Conversion Output6]"
                   endId="Package\For Loop Container\Load snapshot nr @myvar\Union All 2.Inputs[Union All Input 1]"
                   name="Data Conversion Output"
                   startId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 2.Outputs[Data Conversion Output]" />
                 <path
-                  refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Data Conversion Output1]"
+                  refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Data Conversion Output7]"
                   endId="Package\For Loop Container\Load snapshot nr @myvar\Union All 1.Inputs[Union All Input 1]"
                   name="Data Conversion Output"
                   startId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 4.Outputs[Data Conversion Output]" />
                 <path
-                  refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Data Conversion Output]"
+                  refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Data Conversion Output8]"
                   endId="Package\For Loop Container\Load snapshot nr @myvar\Union All.Inputs[Union All Input 1]"
                   name="Data Conversion Output"
                   startId="Package\For Loop Container\Load snapshot nr @myvar\emp_data.Outputs[Data Conversion Output]" />
                 <path
-                  refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\departments_data.Inputs[Data Conversion Input]"
+                  refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output8]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 4.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\departments.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\title.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output7]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 3.Inputs[Data Conversion Input]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\clients_data.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\state.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\clients.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output6]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 2.Inputs[Data Conversion Input]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\client_emp_data.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\country.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\client_emp.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output5]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 1.Inputs[Data Conversion Input]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\emp_data.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\city.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\emp.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output4]"
                   endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion.Inputs[Data Conversion Input]"
@@ -5740,61 +5730,61 @@
                   startId="Package\For Loop Container\Load snapshot nr @myvar\snapshotdate.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output3]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\emp_data.Inputs[Data Conversion Input]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 1.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\emp.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\city.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output2]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\client_emp_data.Inputs[Data Conversion Input]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 2.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\client_emp.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\country.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output1]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\clients_data.Inputs[Data Conversion Input]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 3.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\clients.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\state.Outputs[Flat File Source Output]" />
                 <path
-                  refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output8]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 4.Inputs[Data Conversion Input]"
+                  refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\departments_data.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\title.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\departments.Outputs[Flat File Source Output]" />
                 <path
-                  refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Union All Output 16]"
+                  refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Union All Output 1]"
                   endId="Package\For Loop Container\Load snapshot nr @myvar\newState.Inputs[OLE DB Destination Input]"
                   name="Union All Output 1"
                   startId="Package\For Loop Container\Load snapshot nr @myvar\Union All 3.Outputs[Union All Output 1]" />
                 <path
-                  refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Union All Output 15]"
+                  refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Union All Output 11]"
                   endId="Package\For Loop Container\Load snapshot nr @myvar\newCountry.Inputs[OLE DB Destination Input]"
                   name="Union All Output 1"
                   startId="Package\For Loop Container\Load snapshot nr @myvar\Union All 2.Outputs[Union All Output 1]" />
                 <path
-                  refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Union All Output 14]"
+                  refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Union All Output 12]"
                   endId="Package\For Loop Container\Load snapshot nr @myvar\newcity.Inputs[OLE DB Destination Input]"
                   name="Union All Output 1"
                   startId="Package\For Loop Container\Load snapshot nr @myvar\Union All 4.Outputs[Union All Output 1]" />
                 <path
-                  refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Union All Output 1]"
+                  refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Union All Output 13]"
                   endId="Package\For Loop Container\Load snapshot nr @myvar\new_client_emp.Inputs[OLE DB Destination Input]"
                   name="Union All Output 1"
                   startId="Package\For Loop Container\Load snapshot nr @myvar\Union All 5.Outputs[Union All Output 1]" />
                 <path
-                  refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Union All Output 12]"
+                  refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Union All Output 14]"
                   endId="Package\For Loop Container\Load snapshot nr @myvar\newdepartments.Inputs[OLE DB Destination Input]"
                   name="Union All Output 1"
                   startId="Package\For Loop Container\Load snapshot nr @myvar\Union All 7.Outputs[Union All Output 1]" />
                 <path
-                  refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Union All Output 11]"
+                  refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Union All Output 15]"
                   endId="Package\For Loop Container\Load snapshot nr @myvar\new_clients.Inputs[OLE DB Destination Input]"
                   name="Union All Output 1"
                   startId="Package\For Loop Container\Load snapshot nr @myvar\Union All 6.Outputs[Union All Output 1]" />
                 <path
-                  refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Union All Output 17]"
+                  refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Union All Output 16]"
                   endId="Package\For Loop Container\Load snapshot nr @myvar\newTitle.Inputs[OLE DB Destination Input]"
                   name="Union All Output 1"
                   startId="Package\For Loop Container\Load snapshot nr @myvar\Union All 1.Outputs[Union All Output 1]" />
                 <path
-                  refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Union All Output 13]"
+                  refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Union All Output 17]"
                   endId="Package\For Loop Container\Load snapshot nr @myvar\snapshotdates.Inputs[OLE DB Destination Input]"
                   name="Union All Output 1"
                   startId="Package\For Loop Container\Load snapshot nr @myvar\Union All 8.Outputs[Union All Output 1]" />
@@ -5817,11 +5807,11 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Set variable @snapDate"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{2626DB8F-022C-48B7-83BB-BC107E266961}"
+              SQLTask:Connection="{E44BD960-AB80-4E91-8A4D-0D890BAF89AE}"
               SQLTask:SqlStatementSource="select to_date from snapshotdates;"
               SQLTask:CodePage="1252"
               SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
@@ -5842,7 +5832,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="SIMPLIFY - ENABLE FOR REDUCED DATA"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -5952,7 +5942,7 @@
         <NodeLayout
           Size="136,44"
           Id="Package\For Loop Container\Delete snapshot tables"
-          TopLeft="370.528301886792,428.962264150943" />
+          TopLeft="371.528301886792,427.962264150943" />
         <ContainerLayout
           HeaderHeight="43.924528301886795"
           IsExpanded="True"
@@ -5963,7 +5953,7 @@
         <NodeLayout
           Size="137,69"
           Id="Package\For Loop Container\Load snapshot nr @myvar"
-          TopLeft="295.77358490566,101.641509433962" />
+          TopLeft="288.77358490566,99.641509433962" />
         <NodeLayout
           Size="136,44"
           Id="Package\For Loop Container\Set variable @snapDate"
@@ -5974,22 +5964,18 @@
           TopLeft="295.283018867925,199.11320754717" />
         <EdgeLayout
           Id="Package\For Loop Container.PrecedenceConstraints[Constraint]"
-          TopLeft="364.377358490566,60.3584905660377">
+          TopLeft="360.882075471698,60.4339622641509">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-0.264150943396203,41.2830188679246"
+              EndConnector="0,39.2075471698111"
               Start="0,0"
-              End="-0.264150943396203,33.7830188679246">
+              End="0,31.7075471698111">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.6415094339623" />
-                  <mssgle:LineSegment
-                    End="-0.264150943396203,20.6415094339623" />
-                  <mssgle:LineSegment
-                    End="-0.264150943396203,33.7830188679246" />
+                    End="0,31.7075471698111" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6000,48 +5986,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container.PrecedenceConstraints[Constraint 1]"
-          TopLeft="343.358490566038,170.547169811321">
+          TopLeft="335.77358490566,168.641509433962">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="19.811320754717,28.5660377358491"
+              EndConnector="27.509433962265,30.471698113208"
               Start="0,0"
-              End="19.811320754717,21.0660377358491">
+              End="27.509433962265,22.971698113208">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.3962264150944" />
+                    End="0,8.39973862615389" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.39973862615389"
+                    Point2="0,12.3997386261539"
+                    Point3="4,12.3997386261539" />
                   <mssgle:LineSegment
-                    End="19.811320754717,21.3962264150944" />
+                    End="23.509433962265,12.3997386261539" />
+                  <mssgle:CubicBezierSegment
+                    Point1="23.509433962265,12.3997386261539"
+                    Point2="27.509433962265,12.3997386261539"
+                    Point3="27.509433962265,16.3997386261539" />
                   <mssgle:LineSegment
-                    End="19.811320754717,21.0660377358491" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\For Loop Container.PrecedenceConstraints[Constraint 3]"
-          TopLeft="384.867924528302,170.547169811321">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="159.660377358491,26.7924528301887"
-              Start="0,0"
-              End="159.660377358491,19.2924528301887">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,13.0188679245283" />
-                  <mssgle:LineSegment
-                    End="159.660377358491,13.0188679245283" />
-                  <mssgle:LineSegment
-                    End="159.660377358491,19.2924528301887" />
+                    End="27.509433962265,22.971698113208" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6064,6 +6032,40 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,21.5943396226415" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Loop Container.PrecedenceConstraints[Constraint 3]"
+          TopLeft="378.77358490566,168.641509433962">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="165.867924528302,28.698113207547"
+              Start="0,0"
+              End="165.867924528302,21.198113207547">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,7.67802009311436" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,7.67802009311436"
+                    Point2="0,11.6780200931144"
+                    Point3="4,11.6780200931144" />
+                  <mssgle:LineSegment
+                    End="161.867924528302,11.6780200931144" />
+                  <mssgle:CubicBezierSegment
+                    Point1="161.867924528302,11.6780200931144"
+                    Point2="165.867924528302,11.6780200931144"
+                    Point3="165.867924528302,15.6780200931144" />
+                  <mssgle:LineSegment
+                    End="165.867924528302,21.198113207547" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6108,18 +6110,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container.PrecedenceConstraints[Constraint 5]"
-          TopLeft="438.759433962264,381.207547169811">
+          TopLeft="439.259433962264,381.207547169811">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,47.7547169811321"
+              EndConnector="0,46.7547169811319"
               Start="0,0"
-              End="0,40.2547169811321">
+              End="0,39.2547169811319">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.2547169811321" />
+                    End="0,39.2547169811319" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6145,14 +6147,14 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,34.1719077568134"
+              EndConnector="0,34.1719077568139"
               Start="0,0"
-              End="0,26.6719077568134">
+              End="0,26.6719077568139">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.6719077568134" />
+                    End="0,26.6719077568139" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6171,158 +6173,448 @@
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="136,44"
-          Id="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 3"
-          TopLeft="530.632075471698,474.141509433962" />
-        <NodeLayout
-          Size="136,44"
-          Id="Package\For Loop Container\Load snapshot nr @myvar\newTitle"
-          TopLeft="730.594339622642,645.5" />
-        <NodeLayout
-          Size="136,44"
-          Id="Package\For Loop Container\Load snapshot nr @myvar\Union All 1"
-          TopLeft="731.349056603774,567.877358490566" />
-        <NodeLayout
-          Size="136,44"
-          Id="Package\For Loop Container\Load snapshot nr @myvar\Union All"
-          TopLeft="18.4811320754717,202.216981132075" />
-        <NodeLayout
-          Size="136,44"
-          Id="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion"
-          TopLeft="710.367924528302,107.311320754717" />
-        <NodeLayout
-          Size="152,44"
-          Id="Package\For Loop Container\Load snapshot nr @myvar\departments"
-          TopLeft="510.556603773585,11.5" />
-        <NodeLayout
-          Size="136,44"
-          Id="Package\For Loop Container\Load snapshot nr @myvar\state"
-          TopLeft="531.650943396226,390.292452830189" />
-        <NodeLayout
-          Size="136,44"
-          Id="Package\For Loop Container\Load snapshot nr @myvar\Union All 5"
-          TopLeft="180.254716981132,201.27358490566" />
-        <NodeLayout
-          Size="136,44"
-          Id="Package\For Loop Container\Load snapshot nr @myvar\country"
-          TopLeft="279.047169811321,384.443396226415" />
-        <NodeLayout
-          Size="136,44"
-          Id="Package\For Loop Container\Load snapshot nr @myvar\emp_data"
-          TopLeft="18.4811320754717,107.349056603774" />
-        <NodeLayout
-          Size="136,44"
-          Id="Package\For Loop Container\Load snapshot nr @myvar\newState"
-          TopLeft="528.896226415094,646.518867924528" />
-        <NodeLayout
-          Size="158,42"
-          Id="Package\For Loop Container\Load snapshot nr @myvar\newdepartments"
-          TopLeft="500.745283018868,286.066037735849" />
-        <NodeLayout
-          Size="136,44"
-          Id="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 2"
-          TopLeft="279.047169811321,476.254716981132" />
-        <NodeLayout
-          Size="136,44"
-          Id="Package\For Loop Container\Load snapshot nr @myvar\clients"
-          TopLeft="346.783018867925,15.5" />
-        <NodeLayout
-          Size="136,44"
-          Id="Package\For Loop Container\Load snapshot nr @myvar\client_emp_data"
-          TopLeft="180.254716981132,109.349056603774" />
-        <NodeLayout
-          Size="136,44"
-          Id="Package\For Loop Container\Load snapshot nr @myvar\title"
-          TopLeft="731.349056603774,385.311320754717" />
-        <NodeLayout
-          Size="136,44"
-          Id="Package\For Loop Container\Load snapshot nr @myvar\snapshotdate"
-          TopLeft="710.405660377358,5.5" />
-        <NodeLayout
-          Size="136,44"
-          Id="Package\For Loop Container\Load snapshot nr @myvar\newCountry"
-          TopLeft="279.235849056604,641.537735849057" />
-        <NodeLayout
-          Size="136,44"
-          Id="Package\For Loop Container\Load snapshot nr @myvar\city"
-          TopLeft="18.4433962264151,383.575471698113" />
-        <NodeLayout
-          Size="136,44"
-          Id="Package\For Loop Container\Load snapshot nr @myvar\new_clients"
-          TopLeft="346.971698113208,284.216981132075" />
-        <NodeLayout
-          Size="136,44"
-          Id="Package\For Loop Container\Load snapshot nr @myvar\clients_data"
-          TopLeft="346.933962264151,107.349056603774" />
-        <NodeLayout
-          Size="136,44"
-          Id="Package\For Loop Container\Load snapshot nr @myvar\snapshotdates"
-          TopLeft="710.405660377358,296.066037735849" />
-        <NodeLayout
-          Size="136,44"
-          Id="Package\For Loop Container\Load snapshot nr @myvar\client_emp"
-          TopLeft="180.028301886792,16.5188679245283" />
+          Id="Package\For Loop Container\Load snapshot nr @myvar\Union All 6"
+          TopLeft="346.971698113208,205.27358490566" />
         <NodeLayout
           Size="136,44"
           Id="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 4"
           TopLeft="731.349056603774,472.141509433962" />
         <NodeLayout
           Size="136,44"
-          Id="Package\For Loop Container\Load snapshot nr @myvar\Union All 3"
-          TopLeft="530.669811320755,566.669811320755" />
+          Id="Package\For Loop Container\Load snapshot nr @myvar\client_emp_data"
+          TopLeft="180.254716981132,109.349056603774" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\For Loop Container\Load snapshot nr @myvar\Union All"
+          TopLeft="18.4811320754717,202.216981132075" />
+        <NodeLayout
+          Size="115,42"
+          Id="Package\For Loop Container\Load snapshot nr @myvar\newcity"
+          TopLeft="18.6698113207547,632.556603773585" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\For Loop Container\Load snapshot nr @myvar\newTitle"
+          TopLeft="730.594339622642,645.5" />
         <NodeLayout
           Size="136,44"
           Id="Package\For Loop Container\Load snapshot nr @myvar\Union All 7"
           TopLeft="518.669811320755,202.254716981132" />
         <NodeLayout
           Size="136,44"
-          Id="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 1"
-          TopLeft="18.4433962264151,470.405660377358" />
-        <NodeLayout
-          Size="136,44"
-          Id="Package\For Loop Container\Load snapshot nr @myvar\Union All 8"
-          TopLeft="710.405660377358,209.27358490566" />
-        <NodeLayout
-          Size="136,44"
-          Id="Package\For Loop Container\Load snapshot nr @myvar\departments_data"
-          TopLeft="518.669811320755,105.349056603774" />
-        <NodeLayout
-          Size="115,42"
-          Id="Package\For Loop Container\Load snapshot nr @myvar\newcity"
-          TopLeft="18.6698113207547,632.556603773585" />
-        <NodeLayout
-          Size="156,42"
-          Id="Package\For Loop Container\Load snapshot nr @myvar\new_client_emp"
-          TopLeft="180.216981132075,292.330188679245" />
+          Id="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 3"
+          TopLeft="530.632075471698,474.141509433962" />
         <NodeLayout
           Size="136,44"
           Id="Package\For Loop Container\Load snapshot nr @myvar\Union All 4"
           TopLeft="18.4811320754717,551.72641509434" />
         <NodeLayout
           Size="136,44"
-          Id="Package\For Loop Container\Load snapshot nr @myvar\Union All 2"
-          TopLeft="279.047169811321,557.688679245283" />
+          Id="Package\For Loop Container\Load snapshot nr @myvar\client_emp"
+          TopLeft="180.028301886792,16.5188679245283" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\For Loop Container\Load snapshot nr @myvar\title"
+          TopLeft="731.349056603774,385.311320754717" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 2"
+          TopLeft="279.047169811321,476.254716981132" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\For Loop Container\Load snapshot nr @myvar\Union All 3"
+          TopLeft="530.669811320755,566.669811320755" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\For Loop Container\Load snapshot nr @myvar\newState"
+          TopLeft="528.896226415094,646.518867924528" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\For Loop Container\Load snapshot nr @myvar\OLE DB Destination"
+          TopLeft="8,294" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\For Loop Container\Load snapshot nr @myvar\clients_data"
+          TopLeft="346.933962264151,107.349056603774" />
         <NodeLayout
           Size="99,44"
           Id="Package\For Loop Container\Load snapshot nr @myvar\emp"
           TopLeft="37.2358490566038,14.2924528301887" />
         <NodeLayout
           Size="136,44"
-          Id="Package\For Loop Container\Load snapshot nr @myvar\Union All 6"
-          TopLeft="346.971698113208,205.27358490566" />
+          Id="Package\For Loop Container\Load snapshot nr @myvar\Union All 2"
+          TopLeft="279.047169811321,557.688679245283" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\For Loop Container\Load snapshot nr @myvar\state"
+          TopLeft="531.650943396226,390.292452830189" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 1"
+          TopLeft="18.4433962264151,470.405660377358" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\For Loop Container\Load snapshot nr @myvar\Union All 1"
+          TopLeft="731.349056603774,567.877358490566" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\For Loop Container\Load snapshot nr @myvar\departments_data"
+          TopLeft="518.669811320755,105.349056603774" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\For Loop Container\Load snapshot nr @myvar\newdepartments"
+          TopLeft="500.745283018868,286.066037735849" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\For Loop Container\Load snapshot nr @myvar\new_client_emp"
+          TopLeft="180.216981132075,292.330188679245" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\For Loop Container\Load snapshot nr @myvar\clients"
+          TopLeft="346.783018867925,15.5" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion"
+          TopLeft="710.367924528302,107.311320754717" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\For Loop Container\Load snapshot nr @myvar\Union All 8"
+          TopLeft="710.405660377358,209.27358490566" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\For Loop Container\Load snapshot nr @myvar\snapshotdates"
+          TopLeft="710.405660377358,296.066037735849" />
+        <NodeLayout
+          Size="126,42"
+          Id="Package\For Loop Container\Load snapshot nr @myvar\emp_data"
+          TopLeft="18.4811320754717,107.349056603774" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\For Loop Container\Load snapshot nr @myvar\Union All 5"
+          TopLeft="180.254716981132,201.27358490566" />
+        <NodeLayout
+          Size="152,44"
+          Id="Package\For Loop Container\Load snapshot nr @myvar\departments"
+          TopLeft="510.556603773585,11.5" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\For Loop Container\Load snapshot nr @myvar\new_clients"
+          TopLeft="346.971698113208,284.216981132075" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\For Loop Container\Load snapshot nr @myvar\newCountry"
+          TopLeft="279.235849056604,641.537735849057" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\For Loop Container\Load snapshot nr @myvar\country"
+          TopLeft="279.047169811321,384.443396226415" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\For Loop Container\Load snapshot nr @myvar\city"
+          TopLeft="18.4433962264151,383.575471698113" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\For Loop Container\Load snapshot nr @myvar\snapshotdate"
+          TopLeft="710.405660377358,5.5" />
+        <EdgeLayout
+          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Union All Output 18]"
+          TopLeft="89.9905660377358,246.216981132075">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.7830188679245"
+              Start="0,0"
+              End="0,40.2830188679245">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.2830188679245" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Union All Output 17]"
+          TopLeft="778.292452830189,253.198113207547">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.8679245283019"
+              Start="0,0"
+              End="0,35.3679245283019">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.3679245283019" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Union All Output 16]"
+          TopLeft="799.235849056604,611.801886792453">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-0.754716981132106,33.6981132075471"
+              Start="0,0"
+              End="-0.754716981132106,26.1981132075471">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.8301886792452" />
+                  <mssgle:LineSegment
+                    End="-0.754716981132106,16.8301886792452" />
+                  <mssgle:LineSegment
+                    End="-0.754716981132106,26.1981132075471" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Union All Output 15]"
+          TopLeft="414.858490566038,249.198113207547">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.0188679245283"
+              Start="0,0"
+              End="0,27.5188679245283">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5188679245283" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Union All Output 14]"
+          TopLeft="583.207547169811,246.254716981132">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.8113207547169"
+              Start="0,0"
+              End="0,32.3113207547169">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.3113207547169" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Union All Output 13]"
+          TopLeft="248.254716981132,245.27358490566">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9.96226415094341,47.0566037735849"
+              Start="0,0"
+              End="9.96226415094341,39.5566037735849">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5283018867925" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.5283018867925"
+                    Point2="0,23.5283018867925"
+                    Point3="4,23.5283018867925" />
+                  <mssgle:LineSegment
+                    End="5.96226415094341,23.5283018867925" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5.96226415094341,23.5283018867925"
+                    Point2="9.96226415094341,23.5283018867925"
+                    Point3="9.96226415094341,27.5283018867925" />
+                  <mssgle:LineSegment
+                    End="9.96226415094341,39.5566037735849" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Union All Output 12]"
+          TopLeft="86.4811320754717,595.72641509434">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-10.311320754717,36.8301886792452"
+              Start="0,0"
+              End="-10.311320754717,29.3301886792452">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.4150943396226" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.4150943396226"
+                    Point2="0,18.4150943396226"
+                    Point3="-4,18.4150943396226" />
+                  <mssgle:LineSegment
+                    End="-6.31132075471697,18.4150943396226" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-6.31132075471697,18.4150943396226"
+                    Point2="-10.311320754717,18.4150943396226"
+                    Point3="-10.311320754717,22.4150943396226" />
+                  <mssgle:LineSegment
+                    End="-10.311320754717,29.3301886792452" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Union All Output 11]"
+          TopLeft="346.933962264151,601.61320754717">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0.188679245283026,39.9245283018868"
+              Start="0,0"
+              End="0.188679245283026,32.4245283018868">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.9622641509434" />
+                  <mssgle:LineSegment
+                    End="0.188679245283026,19.9622641509434" />
+                  <mssgle:LineSegment
+                    End="0.188679245283026,32.4245283018868" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Union All Output 1]"
+          TopLeft="598.556603773585,610.594339622642">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-1.77358490566041,35.9245283018868"
+              Start="0,0"
+              End="-1.77358490566041,28.4245283018868">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.9622641509434" />
+                  <mssgle:LineSegment
+                    End="-1.77358490566041,17.9622641509434" />
+                  <mssgle:LineSegment
+                    End="-1.77358490566041,28.4245283018868" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output8]"
+          TopLeft="799.235849056604,429.235849056604">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.9056603773585"
+              Start="0,0"
+              End="0,35.4056603773585">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.4056603773585" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output7]"
+          TopLeft="414.669811320755,59.4245283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0.15094339622641,47.9245283018868"
+              Start="0,0"
+              End="0.15094339622641,40.4245283018868">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.9622641509434" />
+                  <mssgle:LineSegment
+                    End="0.15094339622641,23.9622641509434" />
+                  <mssgle:LineSegment
+                    End="0.15094339622641,40.4245283018868" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output6]"
-          TopLeft="346.933962264151,428.367924528302">
+          TopLeft="247.915094339623,60.4433962264151">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,47.8867924528302"
+              EndConnector="0.226415094339615,48.9056603773585"
               Start="0,0"
-              End="0,40.3867924528302">
+              End="0.226415094339615,41.4056603773585">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.3867924528302" />
+                    End="0,24.4528301886793" />
+                  <mssgle:LineSegment
+                    End="0.226415094339615,24.4528301886793" />
+                  <mssgle:LineSegment
+                    End="0.226415094339615,41.4056603773585" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6332,45 +6624,19 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Data Conversion Output3]"
-          TopLeft="598.518867924528,518.066037735849">
+          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output5]"
+          TopLeft="84.1084905660377,58.2924528301887">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0.0377358490566166,48.6037735849057"
+              EndConnector="0,49.0566037735853"
               Start="0,0"
-              End="0.0377358490566166,41.1037735849057">
+              End="0,41.5566037735853">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.3018867924529" />
-                  <mssgle:LineSegment
-                    End="0.0377358490566166,24.3018867924529" />
-                  <mssgle:LineSegment
-                    End="0.0377358490566166,41.1037735849057" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Data Conversion Output]"
-          TopLeft="86.3679245283019,151.27358490566">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,50.9433962264151"
-              Start="0,0"
-              End="0,43.4433962264151">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.4433962264151" />
+                    End="0,41.5566037735853" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6406,199 +6672,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Union All Output 16]"
-          TopLeft="598.556603773585,610.594339622642">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-1.77358490566041,35.9245283018868"
-              Start="0,0"
-              End="-1.77358490566041,28.4245283018868">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.9622641509434" />
-                  <mssgle:LineSegment
-                    End="-1.77358490566041,17.9622641509434" />
-                  <mssgle:LineSegment
-                    End="-1.77358490566041,28.4245283018868" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Union All Output 12]"
-          TopLeft="583.207547169811,246.254716981132">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39.8113207547169"
-              Start="0,0"
-              End="0,32.3113207547169">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.3113207547169" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Data Conversion Output1]"
-          TopLeft="799.235849056604,516.066037735849">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,51.811320754717"
-              Start="0,0"
-              End="0,44.311320754717">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,44.311320754717" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output3]"
-          TopLeft="86.6320754716981,58.2169811320755">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-0.264150943396224,49.1320754716981"
-              Start="0,0"
-              End="-0.264150943396224,41.6320754716981">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.5660377358491" />
-                  <mssgle:LineSegment
-                    End="-0.264150943396224,24.5660377358491" />
-                  <mssgle:LineSegment
-                    End="-0.264150943396224,41.6320754716981" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output8]"
-          TopLeft="799.235849056604,429.235849056604">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,42.9056603773585"
-              Start="0,0"
-              End="0,35.4056603773585">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.4056603773585" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output2]"
-          TopLeft="247.915094339623,60.4433962264151">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0.226415094339615,48.9056603773585"
-              Start="0,0"
-              End="0.226415094339615,41.4056603773585">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.4528301886793" />
-                  <mssgle:LineSegment
-                    End="0.226415094339615,24.4528301886793" />
-                  <mssgle:LineSegment
-                    End="0.226415094339615,41.4056603773585" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Union All Output 11]"
-          TopLeft="414.858490566038,249.198113207547">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,35.0188679245283"
-              Start="0,0"
-              End="0,27.5188679245283">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.5188679245283" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Union All Output 15]"
-          TopLeft="346.933962264151,601.61320754717">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0.188679245283026,39.9245283018868"
-              Start="0,0"
-              End="0.188679245283026,32.4245283018868">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.9622641509434" />
-                  <mssgle:LineSegment
-                    End="0.188679245283026,19.9622641509434" />
-                  <mssgle:LineSegment
-                    End="0.188679245283026,32.4245283018868" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output5]"
           TopLeft="86.3301886792453,427.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6620,49 +6694,19 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Data Conversion Output4]"
-          TopLeft="86.3301886792453,514.330188679245">
+          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output2]"
+          TopLeft="346.933962264151,428.367924528302">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0.0377358490566095,37.3962264150944"
+              EndConnector="0,47.8867924528302"
               Start="0,0"
-              End="0.0377358490566095,29.8962264150944">
+              End="0,40.3867924528302">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.6792452830189" />
-                  <mssgle:LineSegment
-                    End="0.0377358490566095,18.6792452830189" />
-                  <mssgle:LineSegment
-                    End="0.0377358490566095,29.8962264150944" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Data Conversion Output8]"
-          TopLeft="778.254716981132,151.235849056604">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0.0377358490566166,58.0377358490566"
-              Start="0,0"
-              End="0.0377358490566166,50.5377358490566">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.0188679245283" />
-                  <mssgle:LineSegment
-                    End="0.0377358490566166,29.0188679245283" />
-                  <mssgle:LineSegment
-                    End="0.0377358490566166,50.5377358490566" />
+                    End="0,40.3867924528302" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6673,100 +6717,6 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output1]"
-          TopLeft="414.669811320755,59.4245283018868">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0.15094339622641,47.9245283018868"
-              Start="0,0"
-              End="0.15094339622641,40.4245283018868">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.9622641509434" />
-                  <mssgle:LineSegment
-                    End="0.15094339622641,23.9622641509434" />
-                  <mssgle:LineSegment
-                    End="0.15094339622641,40.4245283018868" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Union All Output 14]"
-          TopLeft="86.4811320754717,595.72641509434">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-10.311320754717,36.8301886792452"
-              Start="0,0"
-              End="-10.311320754717,29.3301886792452">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14.4150943396226" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.4150943396226"
-                    Point2="0,18.4150943396226"
-                    Point3="-4,18.4150943396226" />
-                  <mssgle:LineSegment
-                    End="-6.31132075471697,18.4150943396226" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-6.31132075471697,18.4150943396226"
-                    Point2="-10.311320754717,18.4150943396226"
-                    Point3="-10.311320754717,22.4150943396226" />
-                  <mssgle:LineSegment
-                    End="-10.311320754717,29.3301886792452" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Union All Output 1]"
-          TopLeft="248.254716981132,245.27358490566">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="9.96226415094341,47.0566037735849"
-              Start="0,0"
-              End="9.96226415094341,39.5566037735849">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.5283018867925" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.5283018867925"
-                    Point2="0,23.5283018867925"
-                    Point3="4,23.5283018867925" />
-                  <mssgle:LineSegment
-                    End="5.96226415094341,23.5283018867925" />
-                  <mssgle:CubicBezierSegment
-                    Point1="5.96226415094341,23.5283018867925"
-                    Point2="9.96226415094341,23.5283018867925"
-                    Point3="9.96226415094341,27.5283018867925" />
-                  <mssgle:LineSegment
-                    End="9.96226415094341,39.5566037735849" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output7]"
           TopLeft="599.537735849057,434.216981132075">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6783,98 +6733,6 @@
                     End="-1.01886792452831,19.9622641509434" />
                   <mssgle:LineSegment
                     End="-1.01886792452831,32.4245283018868" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Data Conversion Output7]"
-          TopLeft="586.556603773585,149.27358490566">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,52.9811320754717"
-              Start="0,0"
-              End="0,45.4811320754717">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,45.4811320754717" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Data Conversion Output5]"
-          TopLeft="248.141509433962,153.27358490566">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,48"
-              Start="0,0"
-              End="0,40.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,40.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Data Conversion Output2]"
-          TopLeft="346.933962264151,520.179245283019">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,37.5094339622642"
-              Start="0,0"
-              End="0,30.0094339622642">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.0094339622642" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Union All Output 17]"
-          TopLeft="799.235849056604,611.801886792453">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-0.754716981132106,33.6981132075471"
-              Start="0,0"
-              End="-0.754716981132106,26.1981132075471">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.8301886792452" />
-                  <mssgle:LineSegment
-                    End="-0.754716981132106,16.8301886792452" />
-                  <mssgle:LineSegment
-                    End="-0.754716981132106,26.1981132075471" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6910,19 +6768,41 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Union All Output 13]"
-          TopLeft="778.292452830189,253.198113207547">
+          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Data Conversion Output8]"
+          TopLeft="83.9811320754717,149.349056603774">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42.8679245283019"
+              EndConnector="0,52.867924528301"
               Start="0,0"
-              End="0,35.3679245283019">
+              End="0,45.367924528301">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.3679245283019" />
+                    End="0,45.367924528301" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Data Conversion Output7]"
+          TopLeft="799.235849056604,516.066037735849">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51.811320754717"
+              Start="0,0"
+              End="0,44.311320754717">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.311320754717" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6933,6 +6813,76 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Data Conversion Output6]"
+          TopLeft="346.933962264151,520.179245283019">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.5094339622642"
+              Start="0,0"
+              End="0,30.0094339622642">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.0094339622642" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Data Conversion Output5]"
+          TopLeft="598.518867924528,518.066037735849">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0.0377358490566166,48.6037735849057"
+              Start="0,0"
+              End="0.0377358490566166,41.1037735849057">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.3018867924529" />
+                  <mssgle:LineSegment
+                    End="0.0377358490566166,24.3018867924529" />
+                  <mssgle:LineSegment
+                    End="0.0377358490566166,41.1037735849057" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Data Conversion Output4]"
+          TopLeft="248.141509433962,153.27358490566">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="0,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Data Conversion Output3]"
           TopLeft="414.820754716981,151.27358490566">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6957,24 +6907,72 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="171,42"
-          Id="Package\For Loop Container\Load snapshot nr @myvar\OLE DB Destination"
-          TopLeft="8,294" />
         <EdgeLayout
-          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Union All Output 18]"
-          TopLeft="89.9905660377358,246.216981132075">
+          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Data Conversion Output2]"
+          TopLeft="586.556603773585,149.27358490566">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,47.7830188679245"
+              EndConnector="0,52.9811320754717"
               Start="0,0"
-              End="0,40.2830188679245">
+              End="0,45.4811320754717">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.2830188679245" />
+                    End="0,45.4811320754717" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Data Conversion Output1]"
+          TopLeft="778.254716981132,151.235849056604">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0.0377358490566166,58.0377358490566"
+              Start="0,0"
+              End="0.0377358490566166,50.5377358490566">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.0188679245283" />
+                  <mssgle:LineSegment
+                    End="0.0377358490566166,29.0188679245283" />
+                  <mssgle:LineSegment
+                    End="0.0377358490566166,50.5377358490566" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Data Conversion Output]"
+          TopLeft="86.3301886792453,514.330188679245">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0.0377358490566095,37.3962264150944"
+              Start="0,0"
+              End="0.0377358490566095,29.8962264150944">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.6792452830189" />
+                  <mssgle:LineSegment
+                    End="0.0377358490566095,18.6792452830189" />
+                  <mssgle:LineSegment
+                    End="0.0377358490566095,29.8962264150944" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6986,6 +6984,19 @@
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\For Loop Container\Load snapshot nr @myvar\newcity">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\For Loop Container\Load snapshot nr @myvar\newTitle">
     <Properties>
@@ -7013,59 +7024,20 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\For Loop Container\Load snapshot nr @myvar\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\For Loop Container\Load snapshot nr @myvar\newdepartments">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\For Loop Container\Load snapshot nr @myvar\newCountry">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\For Loop Container\Load snapshot nr @myvar\new_clients">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\For Loop Container\Load snapshot nr @myvar\snapshotdates">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\For Loop Container\Load snapshot nr @myvar\newcity">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7091,7 +7063,33 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\For Loop Container\Load snapshot nr @myvar\OLE DB Destination">
+    design-time-name="Package\For Loop Container\Load snapshot nr @myvar\snapshotdates">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\For Loop Container\Load snapshot nr @myvar\new_clients">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\For Loop Container\Load snapshot nr @myvar\newCountry">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
