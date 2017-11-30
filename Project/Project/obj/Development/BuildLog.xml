@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>Project</Name>
-    <LastWriteTime>2017-11-29T23:56:25.8823345Z</LastWriteTime>
+    <LastWriteTime>2017-11-30T03:06:50.483977Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -13,7 +13,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>initial.dtsx</Name>
-      <LastWriteTime>2017-11-30T00:00:54.8512856Z</LastWriteTime>
+      <LastWriteTime>2017-11-30T03:19:44.2329113Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

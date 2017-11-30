@@ -14,3 +14,4 @@ use [warehouse]
 go
 
 drop table [dimCity]
+drop table [dimClients]
