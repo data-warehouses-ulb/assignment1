@@ -13,6 +13,8 @@ drop table [country]
 use [warehouse]
 go
 
+
+drop table [factSalary]
 drop table [dimEmployee]
 drop table [dimCity]
 drop table [dimClients]
