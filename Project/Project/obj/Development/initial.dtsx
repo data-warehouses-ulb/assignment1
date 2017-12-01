@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="initial"
   DTS:PackageType="5"
-  DTS:VersionBuild="87"
-  DTS:VersionGUID="{3F8B5859-D0E1-4DD5-9C96-43EC5BB370C0}">
+  DTS:VersionBuild="92"
+  DTS:VersionGUID="{00A96B62-0430-4AE6-BE71-B2985EB6BEBC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1372,6 +1372,14 @@ where [refTable].[country_id] = ?</property>
                       cachedName="category"
                       externalMetadataColumnId="Package\Convert city and clients\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[category]"
                       lineageId="Package\Convert city and clients\Load clients.Outputs[OLE DB Source Output].Columns[category]" />
+                    <inputColumn
+                      refId="Package\Convert city and clients\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[client]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="client"
+                      externalMetadataColumnId="Package\Convert city and clients\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[client]"
+                      lineageId="Package\Convert city and clients\Load clients.Outputs[OLE DB Source Output].Columns[client]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1395,6 +1403,12 @@ where [refTable].[country_id] = ?</property>
                       refId="Package\Convert city and clients\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[current]"
                       dataType="bool"
                       name="current" />
+                    <externalMetadataColumn
+                      refId="Package\Convert city and clients\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[client]"
+                      codePage="1251"
+                      dataType="str"
+                      length="100"
+                      name="client" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2574,15 +2588,15 @@ where [refTable].[id] = ?</property>
           version="1">
           <components>
             <component
-              refId="Package\Convert factSalary and bridgeEmployee\Derived Column"
+              refId="Package\Convert factSalary and bridgeEmployee\Derived factDate"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="Derived Column"
+              name="Derived factDate"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Convert factSalary and bridgeEmployee\Derived Column.Inputs[Derived Column Input]"
+                  refId="Package\Convert factSalary and bridgeEmployee\Derived factDate.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
                   <externalMetadataColumns />
@@ -2590,18 +2604,18 @@ where [refTable].[id] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Convert factSalary and bridgeEmployee\Derived Column.Outputs[Derived Column Output]"
+                  refId="Package\Convert factSalary and bridgeEmployee\Derived factDate.Outputs[Derived Column Output]"
                   description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   name="Derived Column Output"
-                  synchronousInputId="Package\Convert factSalary and bridgeEmployee\Derived Column.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Convert factSalary and bridgeEmployee\Derived factDate.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\Derived Column.Outputs[Derived Column Output].Columns[date]"
+                      refId="Package\Convert factSalary and bridgeEmployee\Derived factDate.Outputs[Derived Column Output].Columns[date]"
                       dataType="dbDate"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Convert factSalary and bridgeEmployee\Derived Column.Outputs[Derived Column Output].Columns[date]"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Derived factDate.Outputs[Derived Column Output].Columns[date]"
                       name="date"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -2622,23 +2636,23 @@ where [refTable].[id] = ?</property>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Convert factSalary and bridgeEmployee\Derived Column.Outputs[Derived Column Error Output]"
+                  refId="Package\Convert factSalary and bridgeEmployee\Derived factDate.Outputs[Derived Column Error Output]"
                   description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Derived Column Error Output"
-                  synchronousInputId="Package\Convert factSalary and bridgeEmployee\Derived Column.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Convert factSalary and bridgeEmployee\Derived factDate.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      refId="Package\Convert factSalary and bridgeEmployee\Derived factDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Convert factSalary and bridgeEmployee\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Derived factDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      refId="Package\Convert factSalary and bridgeEmployee\Derived factDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Convert factSalary and bridgeEmployee\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Derived factDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -2647,11 +2661,487 @@ where [refTable].[id] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Convert factSalary and bridgeEmployee\Lookup"
+              refId="Package\Convert factSalary and bridgeEmployee\Load client_emp"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Load client_emp"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[client_emp]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Convert factSalary and bridgeEmployee\Load client_emp.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[server.initial]"
+                  connectionManagerRefId="Package.ConnectionManagers[server.initial]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Convert factSalary and bridgeEmployee\Load client_emp.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load client_emp.Outputs[OLE DB Source Output].Columns[emp_no]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Convert factSalary and bridgeEmployee\Load client_emp.Outputs[OLE DB Source Output].ExternalColumns[emp_no]"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Load client_emp.Outputs[OLE DB Source Output].Columns[emp_no]"
+                      name="emp_no"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load client_emp.Outputs[OLE DB Source Output].Columns[client]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Convert factSalary and bridgeEmployee\Load client_emp.Outputs[OLE DB Source Output].ExternalColumns[client]"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Load client_emp.Outputs[OLE DB Source Output].Columns[client]"
+                      name="client"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load client_emp.Outputs[OLE DB Source Output].ExternalColumns[emp_no]"
+                      dataType="i4"
+                      name="emp_no" />
+                    <externalMetadataColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load client_emp.Outputs[OLE DB Source Output].ExternalColumns[client]"
+                      dataType="i4"
+                      name="client" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Convert factSalary and bridgeEmployee\Load client_emp.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load client_emp.Outputs[OLE DB Source Error Output].Columns[emp_no]"
+                      dataType="i4"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Load client_emp.Outputs[OLE DB Source Error Output].Columns[emp_no]"
+                      name="emp_no" />
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load client_emp.Outputs[OLE DB Source Error Output].Columns[client]"
+                      dataType="i4"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Load client_emp.Outputs[OLE DB Source Error Output].Columns[client]"
+                      name="client" />
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load client_emp.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Load client_emp.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load client_emp.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Load client_emp.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Convert factSalary and bridgeEmployee\Load employee"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Load employee"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[employee]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Convert factSalary and bridgeEmployee\Load employee.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[server.initial]"
+                  connectionManagerRefId="Package.ConnectionManagers[server.initial]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].Columns[emp_no]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[emp_no]"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].Columns[emp_no]"
+                      name="emp_no"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].Columns[birth_date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[birth_date]"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].Columns[birth_date]"
+                      name="birth_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].Columns[first_name]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[first_name]"
+                      length="100"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].Columns[first_name]"
+                      name="first_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].Columns[last_name]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[last_name]"
+                      length="100"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].Columns[last_name]"
+                      name="last_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].Columns[gender]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[gender]"
+                      length="10"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].Columns[gender]"
+                      name="gender"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].Columns[hire_date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[hire_date]"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].Columns[hire_date]"
+                      name="hire_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].Columns[salary]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[salary]"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].Columns[salary]"
+                      name="salary"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].Columns[title_no]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[title_no]"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].Columns[title_no]"
+                      name="title_no"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].Columns[dept_no]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[dept_no]"
+                      length="4"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].Columns[dept_no]"
+                      name="dept_no"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].Columns[current_city]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[current_city]"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].Columns[current_city]"
+                      name="current_city"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].Columns[base_city]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[base_city]"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].Columns[base_city]"
+                      name="base_city"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].Columns[marital_status]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[marital_status]"
+                      length="10"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].Columns[marital_status]"
+                      name="marital_status"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].Columns[no_of_children]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[no_of_children]"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].Columns[no_of_children]"
+                      name="no_of_children"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[emp_no]"
+                      dataType="i4"
+                      name="emp_no" />
+                    <externalMetadataColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[birth_date]"
+                      dataType="dbDate"
+                      name="birth_date" />
+                    <externalMetadataColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[first_name]"
+                      codePage="1251"
+                      dataType="str"
+                      length="100"
+                      name="first_name" />
+                    <externalMetadataColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[last_name]"
+                      codePage="1251"
+                      dataType="str"
+                      length="100"
+                      name="last_name" />
+                    <externalMetadataColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[gender]"
+                      codePage="1251"
+                      dataType="str"
+                      length="10"
+                      name="gender" />
+                    <externalMetadataColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[hire_date]"
+                      dataType="dbDate"
+                      name="hire_date" />
+                    <externalMetadataColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[salary]"
+                      dataType="i4"
+                      name="salary" />
+                    <externalMetadataColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[title_no]"
+                      dataType="i4"
+                      name="title_no" />
+                    <externalMetadataColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[dept_no]"
+                      codePage="1251"
+                      dataType="str"
+                      length="4"
+                      name="dept_no" />
+                    <externalMetadataColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[current_city]"
+                      dataType="i4"
+                      name="current_city" />
+                    <externalMetadataColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[base_city]"
+                      dataType="i4"
+                      name="base_city" />
+                    <externalMetadataColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[marital_status]"
+                      codePage="1251"
+                      dataType="str"
+                      length="10"
+                      name="marital_status" />
+                    <externalMetadataColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[no_of_children]"
+                      dataType="i4"
+                      name="no_of_children" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[emp_no]"
+                      dataType="i4"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[emp_no]"
+                      name="emp_no" />
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[birth_date]"
+                      dataType="dbDate"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[birth_date]"
+                      name="birth_date" />
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[first_name]"
+                      codePage="1251"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[first_name]"
+                      name="first_name" />
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[last_name]"
+                      codePage="1251"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[last_name]"
+                      name="last_name" />
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[gender]"
+                      codePage="1251"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[gender]"
+                      name="gender" />
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[hire_date]"
+                      dataType="dbDate"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[hire_date]"
+                      name="hire_date" />
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[salary]"
+                      dataType="i4"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[salary]"
+                      name="salary" />
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[title_no]"
+                      dataType="i4"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[title_no]"
+                      name="title_no" />
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[dept_no]"
+                      codePage="1251"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[dept_no]"
+                      name="dept_no" />
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[current_city]"
+                      dataType="i4"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[current_city]"
+                      name="current_city" />
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[base_city]"
+                      dataType="i4"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[base_city]"
+                      name="base_city" />
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[marital_status]"
+                      codePage="1251"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[marital_status]"
+                      name="marital_status" />
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[no_of_children]"
+                      dataType="i4"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[no_of_children]"
+                      name="no_of_children" />
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Convert factSalary and bridgeEmployee\Lookup initial-client_emp by warehouse-employee"
               componentClassID="Microsoft.Lookup"
               contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
               description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-              name="Lookup"
+              name="Lookup initial-client_emp by warehouse-employee"
               usesDispositions="true"
               version="6">
               <properties>
@@ -2703,7 +3193,7 @@ where [refTable].[emp_no] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[emp_no]};</property>
+                  name="ParameterMap">#{Package\Convert factSalary and bridgeEmployee\Load client_emp.Outputs[OLE DB Source Output].Columns[emp_no]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2715,7 +3205,7 @@ where [refTable].[emp_no] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Convert factSalary and bridgeEmployee\Lookup.Connections[OleDbConnection]"
+                  refId="Package\Convert factSalary and bridgeEmployee\Lookup initial-client_emp by warehouse-employee.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[server.warehouse]"
                   connectionManagerRefId="Package.ConnectionManagers[server.warehouse]"
                   description="Connection manager used to access lookup data."
@@ -2723,14 +3213,14 @@ where [refTable].[emp_no] = ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\Convert factSalary and bridgeEmployee\Lookup.Inputs[Lookup Input]"
+                  refId="Package\Convert factSalary and bridgeEmployee\Lookup initial-client_emp by warehouse-employee.Inputs[Lookup Input]"
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\Lookup.Inputs[Lookup Input].Columns[emp_no]"
+                      refId="Package\Convert factSalary and bridgeEmployee\Lookup initial-client_emp by warehouse-employee.Inputs[Lookup Input].Columns[emp_no]"
                       cachedDataType="i4"
                       cachedName="emp_no"
-                      lineageId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[emp_no]">
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Load client_emp.Outputs[OLE DB Source Output].Columns[emp_no]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -2748,18 +3238,18 @@ where [refTable].[emp_no] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Convert factSalary and bridgeEmployee\Lookup.Outputs[Lookup Match Output]"
+                  refId="Package\Convert factSalary and bridgeEmployee\Lookup initial-client_emp by warehouse-employee.Outputs[Lookup Match Output]"
                   errorOrTruncationOperation="Lookup"
                   errorRowDisposition="FailComponent"
                   exclusionGroup="1"
                   name="Lookup Match Output"
-                  synchronousInputId="Package\Convert factSalary and bridgeEmployee\Lookup.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Convert factSalary and bridgeEmployee\Lookup initial-client_emp by warehouse-employee.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\Lookup.Outputs[Lookup Match Output].Columns[EID]"
+                      refId="Package\Convert factSalary and bridgeEmployee\Lookup initial-client_emp by warehouse-employee.Outputs[Lookup Match Output].Columns[EID]"
                       dataType="i4"
                       errorOrTruncationOperation="Copy Column"
-                      lineageId="Package\Convert factSalary and bridgeEmployee\Lookup.Outputs[Lookup Match Output].Columns[EID]"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Lookup initial-client_emp by warehouse-employee.Outputs[Lookup Match Output].Columns[EID]"
                       name="EID"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -2773,30 +3263,188 @@ where [refTable].[emp_no] = ?</property>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Convert factSalary and bridgeEmployee\Lookup.Outputs[Lookup No Match Output]"
+                  refId="Package\Convert factSalary and bridgeEmployee\Lookup initial-client_emp by warehouse-employee.Outputs[Lookup No Match Output]"
                   description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                   exclusionGroup="1"
                   name="Lookup No Match Output"
-                  synchronousInputId="Package\Convert factSalary and bridgeEmployee\Lookup.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Convert factSalary and bridgeEmployee\Lookup initial-client_emp by warehouse-employee.Inputs[Lookup Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Convert factSalary and bridgeEmployee\Lookup.Outputs[Lookup Error Output]"
+                  refId="Package\Convert factSalary and bridgeEmployee\Lookup initial-client_emp by warehouse-employee.Outputs[Lookup Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Lookup Error Output"
-                  synchronousInputId="Package\Convert factSalary and bridgeEmployee\Lookup.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Convert factSalary and bridgeEmployee\Lookup initial-client_emp by warehouse-employee.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      refId="Package\Convert factSalary and bridgeEmployee\Lookup initial-client_emp by warehouse-employee.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Convert factSalary and bridgeEmployee\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Lookup initial-client_emp by warehouse-employee.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      refId="Package\Convert factSalary and bridgeEmployee\Lookup initial-client_emp by warehouse-employee.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Convert factSalary and bridgeEmployee\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Lookup initial-client_emp by warehouse-employee.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Convert factSalary and bridgeEmployee\Lookup initial-employee by warehouse-employee"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup initial-employee by warehouse-employee"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[dimEmployee]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[dimEmployee]) [refTable]
+where [refTable].[emp_no] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="EID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="emp_no" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="birth_date" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="first_name" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1251"/&gt;&lt;referenceColumn name="last_name" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1251"/&gt;&lt;referenceColumn name="gender" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1251"/&gt;&lt;referenceColumn name="hire_date" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="title_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="title" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1251"/&gt;&lt;referenceColumn name="current_city_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="base_city_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="dept_id" dataType="DT_STR" length="4" precision="0" scale="0" codePage="1251"/&gt;&lt;referenceColumn name="dept_name" dataType="DT_STR" length="40" precision="0" scale="0" codePage="1251"/&gt;&lt;referenceColumn name="start" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="end" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].Columns[emp_no]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Convert factSalary and bridgeEmployee\Lookup initial-employee by warehouse-employee.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[server.warehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[server.warehouse]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Convert factSalary and bridgeEmployee\Lookup initial-employee by warehouse-employee.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Lookup initial-employee by warehouse-employee.Inputs[Lookup Input].Columns[emp_no]"
+                      cachedDataType="i4"
+                      cachedName="emp_no"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].Columns[emp_no]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">emp_no</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Convert factSalary and bridgeEmployee\Lookup initial-employee by warehouse-employee.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Convert factSalary and bridgeEmployee\Lookup initial-employee by warehouse-employee.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Lookup initial-employee by warehouse-employee.Outputs[Lookup Match Output].Columns[EID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Lookup initial-employee by warehouse-employee.Outputs[Lookup Match Output].Columns[EID]"
+                      name="EID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">EID</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Convert factSalary and bridgeEmployee\Lookup initial-employee by warehouse-employee.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Convert factSalary and bridgeEmployee\Lookup initial-employee by warehouse-employee.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Convert factSalary and bridgeEmployee\Lookup initial-employee by warehouse-employee.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Convert factSalary and bridgeEmployee\Lookup initial-employee by warehouse-employee.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Lookup initial-employee by warehouse-employee.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Lookup initial-employee by warehouse-employee.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Lookup initial-employee by warehouse-employee.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Lookup initial-employee by warehouse-employee.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -2881,19 +3529,19 @@ where [refTable].[emp_no] = ?</property>
                       cachedDataType="i4"
                       cachedName="salary"
                       externalMetadataColumnId="Package\Convert factSalary and bridgeEmployee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[salary]"
-                      lineageId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[salary]" />
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].Columns[salary]" />
                     <inputColumn
                       refId="Package\Convert factSalary and bridgeEmployee\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EID]"
                       cachedDataType="i4"
                       cachedName="EID"
                       externalMetadataColumnId="Package\Convert factSalary and bridgeEmployee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EID]"
-                      lineageId="Package\Convert factSalary and bridgeEmployee\Lookup.Outputs[Lookup Match Output].Columns[EID]" />
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Lookup initial-employee by warehouse-employee.Outputs[Lookup Match Output].Columns[EID]" />
                     <inputColumn
                       refId="Package\Convert factSalary and bridgeEmployee\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[date]"
                       cachedDataType="dbDate"
                       cachedName="date"
                       externalMetadataColumnId="Package\Convert factSalary and bridgeEmployee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[factDate]"
-                      lineageId="Package\Convert factSalary and bridgeEmployee\Derived Column.Outputs[Derived Column Output].Columns[date]" />
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Derived factDate.Outputs[Derived Column Output].Columns[date]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2938,13 +3586,13 @@ where [refTable].[emp_no] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source"
-              componentClassID="Microsoft.OLEDBSource"
-              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
-              description="OLE DB Source"
-              name="OLE DB Source"
+              refId="Package\Convert factSalary and bridgeEmployee\OLE DB Destination 1"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination 1"
               usesDispositions="true"
-              version="7">
+              version="4">
               <properties>
                 <property
                   dataType="System.Int32"
@@ -2953,7 +3601,7 @@ where [refTable].[emp_no] = ?</property>
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[employee]</property>
+                  name="OpenRowset">[dbo].[bridgeEmployee]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -2963,10 +3611,6 @@ where [refTable].[emp_no] = ?</property>
                   description="The SQL command to be executed."
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.String"
-                  description="The variable that contains the SQL command to be executed."
-                  name="SqlCommandVariable"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2979,309 +3623,84 @@ where [refTable].[emp_no] = ?</property>
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
                 <property
                   dataType="System.String"
-                  description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping"></property>
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[server.initial]"
-                  connectionManagerRefId="Package.ConnectionManagers[server.initial]"
+                  refId="Package\Convert factSalary and bridgeEmployee\OLE DB Destination 1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[server.warehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[server.warehouse]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
-              <outputs>
-                <output
-                  refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output]"
-                  name="OLE DB Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[emp_no]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[emp_no]"
-                      lineageId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[emp_no]"
-                      name="emp_no"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[birth_date]"
-                      dataType="dbDate"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[birth_date]"
-                      lineageId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[birth_date]"
-                      name="birth_date"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[first_name]"
-                      codePage="1251"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[first_name]"
-                      length="100"
-                      lineageId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[first_name]"
-                      name="first_name"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[last_name]"
-                      codePage="1251"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[last_name]"
-                      length="100"
-                      lineageId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[last_name]"
-                      name="last_name"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[gender]"
-                      codePage="1251"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[gender]"
-                      length="10"
-                      lineageId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[gender]"
-                      name="gender"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[hire_date]"
-                      dataType="dbDate"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[hire_date]"
-                      lineageId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[hire_date]"
-                      name="hire_date"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[salary]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[salary]"
-                      lineageId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[salary]"
-                      name="salary"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[title_no]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[title_no]"
-                      lineageId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[title_no]"
-                      name="title_no"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[dept_no]"
-                      codePage="1251"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[dept_no]"
-                      length="4"
-                      lineageId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[dept_no]"
-                      name="dept_no"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[current_city]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[current_city]"
-                      lineageId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[current_city]"
-                      name="current_city"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[base_city]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[base_city]"
-                      lineageId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[base_city]"
-                      name="base_city"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[marital_status]"
-                      codePage="1251"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[marital_status]"
-                      length="10"
-                      lineageId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[marital_status]"
-                      name="marital_status"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[no_of_children]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[no_of_children]"
-                      lineageId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].Columns[no_of_children]"
-                      name="no_of_children"
-                      truncationRowDisposition="FailComponent" />
-                  </outputColumns>
+              <inputs>
+                <input
+                  refId="Package\Convert factSalary and bridgeEmployee\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[EID]"
+                      cachedDataType="i4"
+                      cachedName="EID"
+                      externalMetadataColumnId="Package\Convert factSalary and bridgeEmployee\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[EID]"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Lookup initial-client_emp by warehouse-employee.Outputs[Lookup Match Output].Columns[EID]" />
+                    <inputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[client]"
+                      cachedDataType="i4"
+                      cachedName="client"
+                      externalMetadataColumnId="Package\Convert factSalary and bridgeEmployee\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[CID]"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Load client_emp.Outputs[OLE DB Source Output].Columns[client]" />
+                  </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[emp_no]"
+                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[CID]"
                       dataType="i4"
-                      name="emp_no" />
+                      name="CID" />
                     <externalMetadataColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[birth_date]"
-                      dataType="dbDate"
-                      name="birth_date" />
-                    <externalMetadataColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[first_name]"
-                      codePage="1251"
-                      dataType="str"
-                      length="100"
-                      name="first_name" />
-                    <externalMetadataColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[last_name]"
-                      codePage="1251"
-                      dataType="str"
-                      length="100"
-                      name="last_name" />
-                    <externalMetadataColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[gender]"
-                      codePage="1251"
-                      dataType="str"
-                      length="10"
-                      name="gender" />
-                    <externalMetadataColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[hire_date]"
-                      dataType="dbDate"
-                      name="hire_date" />
-                    <externalMetadataColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[salary]"
+                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[EID]"
                       dataType="i4"
-                      name="salary" />
-                    <externalMetadataColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[title_no]"
-                      dataType="i4"
-                      name="title_no" />
-                    <externalMetadataColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[dept_no]"
-                      codePage="1251"
-                      dataType="str"
-                      length="4"
-                      name="dept_no" />
-                    <externalMetadataColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[current_city]"
-                      dataType="i4"
-                      name="current_city" />
-                    <externalMetadataColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[base_city]"
-                      dataType="i4"
-                      name="base_city" />
-                    <externalMetadataColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[marital_status]"
-                      codePage="1251"
-                      dataType="str"
-                      length="10"
-                      name="marital_status" />
-                    <externalMetadataColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[no_of_children]"
-                      dataType="i4"
-                      name="no_of_children" />
+                      name="EID" />
                   </externalMetadataColumns>
-                </output>
+                </input>
+              </inputs>
+              <outputs>
                 <output
-                  refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Convert factSalary and bridgeEmployee\OLE DB Destination 1.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
                   isErrorOut="true"
-                  name="OLE DB Source Error Output">
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Convert factSalary and bridgeEmployee\OLE DB Destination 1.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[emp_no]"
+                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[emp_no]"
-                      name="emp_no" />
-                    <outputColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[birth_date]"
-                      dataType="dbDate"
-                      lineageId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[birth_date]"
-                      name="birth_date" />
-                    <outputColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[first_name]"
-                      codePage="1251"
-                      dataType="str"
-                      length="100"
-                      lineageId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[first_name]"
-                      name="first_name" />
-                    <outputColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[last_name]"
-                      codePage="1251"
-                      dataType="str"
-                      length="100"
-                      lineageId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[last_name]"
-                      name="last_name" />
-                    <outputColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[gender]"
-                      codePage="1251"
-                      dataType="str"
-                      length="10"
-                      lineageId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[gender]"
-                      name="gender" />
-                    <outputColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[hire_date]"
-                      dataType="dbDate"
-                      lineageId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[hire_date]"
-                      name="hire_date" />
-                    <outputColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[salary]"
-                      dataType="i4"
-                      lineageId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[salary]"
-                      name="salary" />
-                    <outputColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[title_no]"
-                      dataType="i4"
-                      lineageId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[title_no]"
-                      name="title_no" />
-                    <outputColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[dept_no]"
-                      codePage="1251"
-                      dataType="str"
-                      length="4"
-                      lineageId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[dept_no]"
-                      name="dept_no" />
-                    <outputColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[current_city]"
-                      dataType="i4"
-                      lineageId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[current_city]"
-                      name="current_city" />
-                    <outputColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[base_city]"
-                      dataType="i4"
-                      lineageId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[base_city]"
-                      name="base_city" />
-                    <outputColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[marital_status]"
-                      codePage="1251"
-                      dataType="str"
-                      length="10"
-                      lineageId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[marital_status]"
-                      name="marital_status" />
-                    <outputColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[no_of_children]"
-                      dataType="i4"
-                      lineageId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[no_of_children]"
-                      name="no_of_children" />
-                    <outputColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -3293,19 +3712,29 @@ where [refTable].[emp_no] = ?</property>
           <paths>
             <path
               refId="Package\Convert factSalary and bridgeEmployee.Paths[Derived Column Output]"
-              endId="Package\Convert factSalary and bridgeEmployee\Lookup.Inputs[Lookup Input]"
+              endId="Package\Convert factSalary and bridgeEmployee\Lookup initial-employee by warehouse-employee.Inputs[Lookup Input]"
               name="Derived Column Output"
-              startId="Package\Convert factSalary and bridgeEmployee\Derived Column.Outputs[Derived Column Output]" />
+              startId="Package\Convert factSalary and bridgeEmployee\Derived factDate.Outputs[Derived Column Output]" />
             <path
               refId="Package\Convert factSalary and bridgeEmployee.Paths[Lookup Match Output]"
               endId="Package\Convert factSalary and bridgeEmployee\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="Lookup Match Output"
-              startId="Package\Convert factSalary and bridgeEmployee\Lookup.Outputs[Lookup Match Output]" />
+              startId="Package\Convert factSalary and bridgeEmployee\Lookup initial-employee by warehouse-employee.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Convert factSalary and bridgeEmployee.Paths[Lookup Match Output1]"
+              endId="Package\Convert factSalary and bridgeEmployee\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+              name="Lookup Match Output"
+              startId="Package\Convert factSalary and bridgeEmployee\Lookup initial-client_emp by warehouse-employee.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Convert factSalary and bridgeEmployee.Paths[OLE DB Source Output]"
-              endId="Package\Convert factSalary and bridgeEmployee\Derived Column.Inputs[Derived Column Input]"
+              endId="Package\Convert factSalary and bridgeEmployee\Derived factDate.Inputs[Derived Column Input]"
               name="OLE DB Source Output"
-              startId="Package\Convert factSalary and bridgeEmployee\OLE DB Source.Outputs[OLE DB Source Output]" />
+              startId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Convert factSalary and bridgeEmployee.Paths[OLE DB Source Output1]"
+              endId="Package\Convert factSalary and bridgeEmployee\Lookup initial-client_emp by warehouse-employee.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Convert factSalary and bridgeEmployee\Load client_emp.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -8705,79 +9134,33 @@ where [refTable].[emp_no] = ?</property>
     design-time-name="Package\Convert factSalary and bridgeEmployee">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="150,42"
-          Id="Package\Convert factSalary and bridgeEmployee\OLE DB Source"
-          TopLeft="124,85" />
+          Id="Package\Convert factSalary and bridgeEmployee\Load employee"
+          TopLeft="341,39" />
         <NodeLayout
-          Size="154,42"
-          Id="Package\Convert factSalary and bridgeEmployee\Derived Column"
-          TopLeft="147,177" />
-        <EdgeLayout
-          Id="Package\Convert factSalary and bridgeEmployee.Paths[OLE DB Source Output]"
-          TopLeft="199,127">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="25,50"
-              Start="0,0"
-              End="25,42.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21"
-                    Point2="0,25"
-                    Point3="4,25" />
-                  <mssgle:LineSegment
-                    End="21,25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="21,25"
-                    Point2="25,25"
-                    Point3="25,29" />
-                  <mssgle:LineSegment
-                    End="25,42.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="158,42"
+          Id="Package\Convert factSalary and bridgeEmployee\Derived factDate"
+          TopLeft="108,280" />
         <NodeLayout
-          Size="113,42"
-          Id="Package\Convert factSalary and bridgeEmployee\Lookup"
-          TopLeft="177,273" />
+          Size="308,42"
+          Id="Package\Convert factSalary and bridgeEmployee\Lookup initial-employee by warehouse-employee"
+          TopLeft="33,377" />
         <EdgeLayout
           Id="Package\Convert factSalary and bridgeEmployee.Paths[Derived Column Output]"
-          TopLeft="224,219">
+          TopLeft="187,322">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="9.5,54"
+              EndConnector="0,55"
               Start="0,0"
-              End="9.5,46.5">
+              End="0,47.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23"
-                    Point2="0,27"
-                    Point3="4,27" />
-                  <mssgle:LineSegment
-                    End="5.5,27" />
-                  <mssgle:CubicBezierSegment
-                    Point1="5.5,27"
-                    Point2="9.5,27"
-                    Point3="9.5,31" />
-                  <mssgle:LineSegment
-                    End="9.5,46.5" />
+                    End="0,47.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8789,40 +9172,156 @@ where [refTable].[emp_no] = ?</property>
         <NodeLayout
           Size="171,42"
           Id="Package\Convert factSalary and bridgeEmployee\OLE DB Destination"
-          TopLeft="180,391" />
+          TopLeft="91,490" />
         <EdgeLayout
           Id="Package\Convert factSalary and bridgeEmployee.Paths[Lookup Match Output]"
-          TopLeft="233.5,315">
+          TopLeft="187,419">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="32,76"
+              EndConnector="-10.5,71"
               Start="0,0"
-              End="32,68.5">
+              End="-10.5,63.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34" />
+                    End="0,31.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,34"
-                    Point2="0,38"
-                    Point3="4,38" />
+                    Point1="0,31.5"
+                    Point2="0,35.5"
+                    Point3="-4,35.5" />
                   <mssgle:LineSegment
-                    End="28,38" />
+                    End="-6.5,35.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="28,38"
-                    Point2="32,38"
-                    Point3="32,42" />
+                    Point1="-6.5,35.5"
+                    Point2="-10.5,35.5"
+                    Point3="-10.5,39.5" />
                   <mssgle:LineSegment
-                    End="32,68.5" />
+                    End="-10.5,63.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-32.19138671875,43,96.3827734375,11.609375"
+              BoundingBox="-53.44138671875,40.5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Convert factSalary and bridgeEmployee\Load client_emp"
+          TopLeft="526,110" />
+        <EdgeLayout
+          Id="Package\Convert factSalary and bridgeEmployee.Paths[OLE DB Source Output]"
+          TopLeft="416,81">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-229,199"
+              Start="0,0"
+              End="-229,191.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,95.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,95.5"
+                    Point2="0,99.5"
+                    Point3="-4,99.5" />
+                  <mssgle:LineSegment
+                    End="-225,99.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-225,99.5"
+                    Point2="-229,99.5"
+                    Point3="-229,103.5" />
+                  <mssgle:LineSegment
+                    End="-229,191.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="314,42"
+          Id="Package\Convert factSalary and bridgeEmployee\Lookup initial-client_emp by warehouse-employee"
+          TopLeft="508,229" />
+        <EdgeLayout
+          Id="Package\Convert factSalary and bridgeEmployee.Paths[OLE DB Source Output1]"
+          TopLeft="604,152">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="61,77"
+              Start="0,0"
+              End="61,69.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.5"
+                    Point2="0,38.5"
+                    Point3="4,38.5" />
+                  <mssgle:LineSegment
+                    End="57,38.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="57,38.5"
+                    Point2="61,38.5"
+                    Point3="61,42.5" />
+                  <mssgle:LineSegment
+                    End="61,69.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Convert factSalary and bridgeEmployee\OLE DB Destination 1"
+          TopLeft="515,366" />
+        <EdgeLayout
+          Id="Package\Convert factSalary and bridgeEmployee.Paths[Lookup Match Output1]"
+          TopLeft="665,271">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-60,95"
+              Start="0,0"
+              End="-60,87.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43.5"
+                    Point2="0,47.5"
+                    Point3="-4,47.5" />
+                  <mssgle:LineSegment
+                    End="-56,47.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-56,47.5"
+                    Point2="-60,47.5"
+                    Point3="-60,51.5" />
+                  <mssgle:LineSegment
+                    End="-60,87.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-78.19138671875,52.5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -8830,7 +9329,7 @@ where [refTable].[emp_no] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Convert factSalary and bridgeEmployee\OLE DB Source">
+    design-time-name="Package\Convert factSalary and bridgeEmployee\Load employee">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -8843,7 +9342,7 @@ where [refTable].[emp_no] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Convert factSalary and bridgeEmployee\Lookup">
+    design-time-name="Package\Convert factSalary and bridgeEmployee\Lookup initial-employee by warehouse-employee">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -8867,6 +9366,55 @@ where [refTable].[emp_no] = ?</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Convert factSalary and bridgeEmployee\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Convert factSalary and bridgeEmployee\Load client_emp">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Convert factSalary and bridgeEmployee\Lookup initial-client_emp by warehouse-employee">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[dimEmployee]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Convert factSalary and bridgeEmployee\OLE DB Destination 1">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

@@ -14,6 +14,7 @@ use [warehouse]
 go
 
 
+drop table [bridgeEmployee]
 drop table [factSalary]
 drop table [dimEmployee]
 drop table [dimCity]
