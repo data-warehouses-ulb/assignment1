@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="initial"
   DTS:PackageType="5"
-  DTS:VersionBuild="47"
-  DTS:VersionGUID="{8B3C95CB-E8D1-4564-AE44-7E3B8B2FF87E}">
+  DTS:VersionBuild="83"
+  DTS:VersionGUID="{580BC9B0-3A0A-4372-AF6A-3F152F29FB5C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1460,6 +1460,1116 @@ where [refTable].[country_id] = ?</property>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Convert employee"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{BB796929-BC78-4878-B892-20A0D5DF5313}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Convert employee"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Convert employee\Derive start and end"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derive start and end"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Convert employee\Derive start and end.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Convert employee\Derive start and end.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Convert employee\Derive start and end.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Convert employee\Derive start and end.Outputs[Derived Column Output].Columns[start]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Convert employee\Derive start and end.Outputs[Derived Column Output].Columns[start]"
+                      name="start"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBDATE)"1991-01-01"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBDATE)"1991-01-01"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Convert employee\Derive start and end.Outputs[Derived Column Output].Columns[end]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Convert employee\Derive start and end.Outputs[Derived Column Output].Columns[end]"
+                      name="end"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">NULL(DT_DBDATE)</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">NULL(DT_DBDATE)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Convert employee\Derive start and end.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Convert employee\Derive start and end.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Convert employee\Derive start and end.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Convert employee\Derive start and end.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Convert employee\Derive start and end.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Convert employee\Derive start and end.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Convert employee\Load employee"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Load employee"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[employee]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Convert employee\Load employee.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[server.initial]"
+                  connectionManagerRefId="Package.ConnectionManagers[server.initial]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[emp_no]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[emp_no]"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[emp_no]"
+                      name="emp_no"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[birth_date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[birth_date]"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[birth_date]"
+                      name="birth_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[first_name]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[first_name]"
+                      length="100"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[first_name]"
+                      name="first_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[last_name]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[last_name]"
+                      length="100"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[last_name]"
+                      name="last_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[gender]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[gender]"
+                      length="10"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[gender]"
+                      name="gender"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[hire_date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[hire_date]"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[hire_date]"
+                      name="hire_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[salary]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[salary]"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[salary]"
+                      name="salary"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[title_no]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[title_no]"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[title_no]"
+                      name="title_no"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[dept_no]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[dept_no]"
+                      length="4"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[dept_no]"
+                      name="dept_no"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[current_city]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[current_city]"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[current_city]"
+                      name="current_city"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[base_city]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[base_city]"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[base_city]"
+                      name="base_city"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[marital_status]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[marital_status]"
+                      length="10"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[marital_status]"
+                      name="marital_status"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[no_of_children]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[no_of_children]"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[no_of_children]"
+                      name="no_of_children"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[emp_no]"
+                      dataType="i4"
+                      name="emp_no" />
+                    <externalMetadataColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[birth_date]"
+                      dataType="dbDate"
+                      name="birth_date" />
+                    <externalMetadataColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[first_name]"
+                      codePage="1251"
+                      dataType="str"
+                      length="100"
+                      name="first_name" />
+                    <externalMetadataColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[last_name]"
+                      codePage="1251"
+                      dataType="str"
+                      length="100"
+                      name="last_name" />
+                    <externalMetadataColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[gender]"
+                      codePage="1251"
+                      dataType="str"
+                      length="10"
+                      name="gender" />
+                    <externalMetadataColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[hire_date]"
+                      dataType="dbDate"
+                      name="hire_date" />
+                    <externalMetadataColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[salary]"
+                      dataType="i4"
+                      name="salary" />
+                    <externalMetadataColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[title_no]"
+                      dataType="i4"
+                      name="title_no" />
+                    <externalMetadataColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[dept_no]"
+                      codePage="1251"
+                      dataType="str"
+                      length="4"
+                      name="dept_no" />
+                    <externalMetadataColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[current_city]"
+                      dataType="i4"
+                      name="current_city" />
+                    <externalMetadataColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[base_city]"
+                      dataType="i4"
+                      name="base_city" />
+                    <externalMetadataColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[marital_status]"
+                      codePage="1251"
+                      dataType="str"
+                      length="10"
+                      name="marital_status" />
+                    <externalMetadataColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[no_of_children]"
+                      dataType="i4"
+                      name="no_of_children" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Error Output].Columns[emp_no]"
+                      dataType="i4"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Error Output].Columns[emp_no]"
+                      name="emp_no" />
+                    <outputColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Error Output].Columns[birth_date]"
+                      dataType="dbDate"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Error Output].Columns[birth_date]"
+                      name="birth_date" />
+                    <outputColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Error Output].Columns[first_name]"
+                      codePage="1251"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Error Output].Columns[first_name]"
+                      name="first_name" />
+                    <outputColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Error Output].Columns[last_name]"
+                      codePage="1251"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Error Output].Columns[last_name]"
+                      name="last_name" />
+                    <outputColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Error Output].Columns[gender]"
+                      codePage="1251"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Error Output].Columns[gender]"
+                      name="gender" />
+                    <outputColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Error Output].Columns[hire_date]"
+                      dataType="dbDate"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Error Output].Columns[hire_date]"
+                      name="hire_date" />
+                    <outputColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Error Output].Columns[salary]"
+                      dataType="i4"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Error Output].Columns[salary]"
+                      name="salary" />
+                    <outputColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Error Output].Columns[title_no]"
+                      dataType="i4"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Error Output].Columns[title_no]"
+                      name="title_no" />
+                    <outputColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Error Output].Columns[dept_no]"
+                      codePage="1251"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Error Output].Columns[dept_no]"
+                      name="dept_no" />
+                    <outputColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Error Output].Columns[current_city]"
+                      dataType="i4"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Error Output].Columns[current_city]"
+                      name="current_city" />
+                    <outputColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Error Output].Columns[base_city]"
+                      dataType="i4"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Error Output].Columns[base_city]"
+                      name="base_city" />
+                    <outputColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Error Output].Columns[marital_status]"
+                      codePage="1251"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Error Output].Columns[marital_status]"
+                      name="marital_status" />
+                    <outputColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Error Output].Columns[no_of_children]"
+                      dataType="i4"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Error Output].Columns[no_of_children]"
+                      name="no_of_children" />
+                    <outputColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Convert employee\Lookup employee by department"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup employee by department"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[departments]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[departments]) [refTable]
+where [refTable].[dept_no] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="dept_no" dataType="DT_STR" length="4" precision="0" scale="0" codePage="1251"/&gt;&lt;referenceColumn name="dept_name" dataType="DT_STR" length="40" precision="0" scale="0" codePage="1251"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[dept_no]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Convert employee\Lookup employee by department.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[server.initial]"
+                  connectionManagerRefId="Package.ConnectionManagers[server.initial]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Convert employee\Lookup employee by department.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Convert employee\Lookup employee by department.Inputs[Lookup Input].Columns[dept_no]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="dept_no"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[dept_no]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">dept_no</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Convert employee\Lookup employee by department.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Convert employee\Lookup employee by department.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Convert employee\Lookup employee by department.Outputs[Lookup Match Output].Columns[dept_name]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="40"
+                      lineageId="Package\Convert employee\Lookup employee by department.Outputs[Lookup Match Output].Columns[dept_name]"
+                      name="dept_name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">dept_name</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Convert employee\Lookup employee by department.Outputs[Lookup Match Output].Columns[dept_id]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="4"
+                      lineageId="Package\Convert employee\Lookup employee by department.Outputs[Lookup Match Output].Columns[dept_id]"
+                      name="dept_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">dept_no</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Convert employee\Lookup employee by department.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Convert employee\Lookup employee by department.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Convert employee\Lookup employee by department.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Convert employee\Lookup employee by department.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Convert employee\Lookup employee by department.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Convert employee\Lookup employee by department.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Convert employee\Lookup employee by department.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Convert employee\Lookup employee by department.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Convert employee\Lookup employee by title"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup employee by title"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[title]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[title]) [refTable]
+where [refTable].[id] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="title" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1251"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[title_no]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Convert employee\Lookup employee by title.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[server.initial]"
+                  connectionManagerRefId="Package.ConnectionManagers[server.initial]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Convert employee\Lookup employee by title.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Convert employee\Lookup employee by title.Inputs[Lookup Input].Columns[title_no]"
+                      cachedDataType="i4"
+                      cachedName="title_no"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[title_no]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">id</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Convert employee\Lookup employee by title.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Convert employee\Lookup employee by title.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Convert employee\Lookup employee by title.Outputs[Lookup Match Output].Columns[title]"
+                      codePage="1251"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="50"
+                      lineageId="Package\Convert employee\Lookup employee by title.Outputs[Lookup Match Output].Columns[title]"
+                      name="title"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">title</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Convert employee\Lookup employee by title.Outputs[Lookup Match Output].Columns[title_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Convert employee\Lookup employee by title.Outputs[Lookup Match Output].Columns[title_id]"
+                      name="title_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">id</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Convert employee\Lookup employee by title.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Convert employee\Lookup employee by title.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Convert employee\Lookup employee by title.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Convert employee\Lookup employee by title.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Convert employee\Lookup employee by title.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Convert employee\Lookup employee by title.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Convert employee\Lookup employee by title.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Convert employee\Lookup employee by title.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Convert employee\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[dimEmployee]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Convert employee\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[server.warehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[server.warehouse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[emp_no]"
+                      cachedDataType="i4"
+                      cachedName="emp_no"
+                      externalMetadataColumnId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[emp_no]"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[emp_no]" />
+                    <inputColumn
+                      refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[birth_date]"
+                      cachedDataType="dbDate"
+                      cachedName="birth_date"
+                      externalMetadataColumnId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[birth_date]"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[birth_date]" />
+                    <inputColumn
+                      refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[first_name]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="first_name"
+                      externalMetadataColumnId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[first_name]"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[first_name]" />
+                    <inputColumn
+                      refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[last_name]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="last_name"
+                      externalMetadataColumnId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[last_name]"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[last_name]" />
+                    <inputColumn
+                      refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[gender]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="gender"
+                      externalMetadataColumnId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[gender]"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[gender]" />
+                    <inputColumn
+                      refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[title]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="title"
+                      externalMetadataColumnId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[title]"
+                      lineageId="Package\Convert employee\Lookup employee by title.Outputs[Lookup Match Output].Columns[title]" />
+                    <inputColumn
+                      refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[hire_date]"
+                      cachedDataType="dbDate"
+                      cachedName="hire_date"
+                      externalMetadataColumnId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[hire_date]"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[hire_date]" />
+                    <inputColumn
+                      refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[title_id]"
+                      cachedDataType="i4"
+                      cachedName="title_id"
+                      externalMetadataColumnId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[title_id]"
+                      lineageId="Package\Convert employee\Lookup employee by title.Outputs[Lookup Match Output].Columns[title_id]" />
+                    <inputColumn
+                      refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[current_city]"
+                      cachedDataType="i4"
+                      cachedName="current_city"
+                      externalMetadataColumnId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[current_city_id]"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[current_city]" />
+                    <inputColumn
+                      refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[base_city]"
+                      cachedDataType="i4"
+                      cachedName="base_city"
+                      externalMetadataColumnId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[base_city_id]"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[base_city]" />
+                    <inputColumn
+                      refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[dept_name]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="dept_name"
+                      externalMetadataColumnId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[dept_name]"
+                      lineageId="Package\Convert employee\Lookup employee by department.Outputs[Lookup Match Output].Columns[dept_name]" />
+                    <inputColumn
+                      refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[start]"
+                      cachedDataType="dbDate"
+                      cachedName="start"
+                      externalMetadataColumnId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[start]"
+                      lineageId="Package\Convert employee\Derive start and end.Outputs[Derived Column Output].Columns[start]" />
+                    <inputColumn
+                      refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[end]"
+                      cachedDataType="dbDate"
+                      cachedName="end"
+                      externalMetadataColumnId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[end]"
+                      lineageId="Package\Convert employee\Derive start and end.Outputs[Derived Column Output].Columns[end]" />
+                    <inputColumn
+                      refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[dept_id]"
+                      cachedCodepage="1251"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="dept_id"
+                      externalMetadataColumnId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[dept_id]"
+                      lineageId="Package\Convert employee\Lookup employee by department.Outputs[Lookup Match Output].Columns[dept_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EID]"
+                      dataType="i4"
+                      name="EID" />
+                    <externalMetadataColumn
+                      refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[emp_no]"
+                      dataType="i4"
+                      name="emp_no" />
+                    <externalMetadataColumn
+                      refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[birth_date]"
+                      dataType="dbDate"
+                      name="birth_date" />
+                    <externalMetadataColumn
+                      refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[first_name]"
+                      codePage="1251"
+                      dataType="str"
+                      length="100"
+                      name="first_name" />
+                    <externalMetadataColumn
+                      refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[last_name]"
+                      codePage="1251"
+                      dataType="str"
+                      length="100"
+                      name="last_name" />
+                    <externalMetadataColumn
+                      refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[gender]"
+                      codePage="1251"
+                      dataType="str"
+                      length="10"
+                      name="gender" />
+                    <externalMetadataColumn
+                      refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[hire_date]"
+                      dataType="dbDate"
+                      name="hire_date" />
+                    <externalMetadataColumn
+                      refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[title_id]"
+                      dataType="i4"
+                      name="title_id" />
+                    <externalMetadataColumn
+                      refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[title]"
+                      codePage="1251"
+                      dataType="str"
+                      length="50"
+                      name="title" />
+                    <externalMetadataColumn
+                      refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[current_city_id]"
+                      dataType="i4"
+                      name="current_city_id" />
+                    <externalMetadataColumn
+                      refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[base_city_id]"
+                      dataType="i4"
+                      name="base_city_id" />
+                    <externalMetadataColumn
+                      refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[dept_id]"
+                      codePage="1251"
+                      dataType="str"
+                      length="4"
+                      name="dept_id" />
+                    <externalMetadataColumn
+                      refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[dept_name]"
+                      codePage="1251"
+                      dataType="str"
+                      length="40"
+                      name="dept_name" />
+                    <externalMetadataColumn
+                      refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[start]"
+                      dataType="dbDate"
+                      name="start" />
+                    <externalMetadataColumn
+                      refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[end]"
+                      dataType="dbDate"
+                      name="end" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Convert employee\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Convert employee\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Convert employee\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Convert employee\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Convert employee\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Convert employee.Paths[Derived Column Output]"
+              endId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Convert employee\Derive start and end.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Convert employee.Paths[Lookup Match Output]"
+              endId="Package\Convert employee\Lookup employee by department.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Convert employee\Lookup employee by title.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Convert employee.Paths[Lookup Match Output1]"
+              endId="Package\Convert employee\Derive start and end.Inputs[Derived Column Input]"
+              name="Lookup Match Output"
+              startId="Package\Convert employee\Lookup employee by department.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Convert employee.Paths[OLE DB Source Output]"
+              endId="Package\Convert employee\Lookup employee by title.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Load city"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
@@ -2180,7 +3290,7 @@ where [refTable].[country_id] = ?</property>
                 <property
                   dataType="System.Boolean"
                   description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
+                  name="AlwaysUseDefaultCodePage">true</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
@@ -5453,6 +6563,14 @@ where [refTable].[country_id] = ?</property>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
       DTS:To="Package\Convert city and clients" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{CD7265B8-B0C3-4C11-BB6C-393B7E25CBB7}"
+      DTS:From="Package\Convert city and clients"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Convert employee" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -5612,6 +6730,44 @@ where [refTable].[country_id] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Convert employee"
+          TopLeft="431,375" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="540.666666666667,307">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-27.6666666666666,68"
+              Start="0,0"
+              End="-27.6666666666666,60.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5424973767052" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.5424973767052"
+                    Point2="0,27.5424973767052"
+                    Point3="-4,27.5424973767052" />
+                  <mssgle:LineSegment
+                    End="-23.6666666666666,27.5424973767052" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-23.6666666666666,27.5424973767052"
+                    Point2="-27.6666666666666,27.5424973767052"
+                    Point3="-27.6666666666666,31.5424973767052" />
+                  <mssgle:LineSegment
+                    End="-27.6666666666666,60.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -5625,6 +6781,14 @@ where [refTable].[country_id] = ?</property>
           Id="Package\Convert city and clients\Lookup city by state"
           TopLeft="91.8181818181818,150.909090909091" />
         <NodeLayout
+          Size="135,42"
+          Id="Package\Convert city and clients\Load clients"
+          TopLeft="452,68" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Convert city and clients\OLE DB Destination 1"
+          TopLeft="424,159" />
+        <NodeLayout
           Size="213,42"
           Id="Package\Convert city and clients\Lookup city-state by country"
           TopLeft="98.1818181818182,245.454545454545" />
@@ -5636,6 +6800,28 @@ where [refTable].[country_id] = ?</property>
           Size="171,42"
           Id="Package\Convert city and clients\OLE DB Destination"
           TopLeft="88.1818181818182,336.363636363636" />
+        <EdgeLayout
+          Id="Package\Convert city and clients.Paths[OLE DB Source Output1]"
+          TopLeft="516.75,110">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49"
+              Start="0,0"
+              End="0,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Convert city and clients.Paths[OLE DB Source Output]"
           TopLeft="165.681818181818,91.1363636363635">
@@ -5742,36 +6928,13 @@ where [refTable].[country_id] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="135,42"
-          Id="Package\Convert city and clients\Load clients"
-          TopLeft="452,68" />
-        <NodeLayout
-          Size="180,42"
-          Id="Package\Convert city and clients\OLE DB Destination 1"
-          TopLeft="424,159" />
-        <EdgeLayout
-          Id="Package\Convert city and clients.Paths[OLE DB Source Output1]"
-          TopLeft="516.75,110">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,49"
-              Start="0,0"
-              End="0,41.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <AnnotationLayout
+          Text="No SCD operators here, because it's initial"
+          ParentId="Package\Convert city and clients"
+          FontInfo="{assembly:Null}"
+          Size="251,40"
+          Id="0b3e2a95-f955-458d-b59b-0e9688e7ddd2"
+          TopLeft="707,47" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -5795,6 +6958,32 @@ where [refTable].[country_id] = ?</property>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Convert city and clients\Load clients">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Convert city and clients\OLE DB Destination 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -6485,8 +7674,176 @@ where [refTable].[country_id] = ?</property>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <TaskHost
+    design-time-name="Package\Convert employee">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Convert employee\Load employee"
+          TopLeft="204,49" />
+        <NodeLayout
+          Size="197,42"
+          Id="Package\Convert employee\Lookup employee by title"
+          TopLeft="225,141" />
+        <EdgeLayout
+          Id="Package\Convert employee.Paths[OLE DB Source Output]"
+          TopLeft="279,91">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="44.5,50"
+              Start="0,0"
+              End="44.5,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21"
+                    Point2="0,25"
+                    Point3="4,25" />
+                  <mssgle:LineSegment
+                    End="40.5,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="40.5,25"
+                    Point2="44.5,25"
+                    Point3="44.5,29" />
+                  <mssgle:LineSegment
+                    End="44.5,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="234,42"
+          Id="Package\Convert employee\Lookup employee by department"
+          TopLeft="220,225" />
+        <EdgeLayout
+          Id="Package\Convert employee.Paths[Lookup Match Output]"
+          TopLeft="323.5,183">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="13.5,42"
+              Start="0,0"
+              End="13.5,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17"
+                    Point2="0,21"
+                    Point3="4,21" />
+                  <mssgle:LineSegment
+                    End="9.5,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="9.5,21"
+                    Point2="13.5,21"
+                    Point3="13.5,25" />
+                  <mssgle:LineSegment
+                    End="13.5,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-41.44138671875,26,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Convert employee\OLE DB Destination"
+          TopLeft="269,412" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Convert employee\Derive start and end"
+          TopLeft="279,317" />
+        <EdgeLayout
+          Id="Package\Convert employee.Paths[Lookup Match Output1]"
+          TopLeft="337,267">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="29.5,50"
+              Start="0,0"
+              End="29.5,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21"
+                    Point2="0,25"
+                    Point3="4,25" />
+                  <mssgle:LineSegment
+                    End="25.5,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="25.5,25"
+                    Point2="29.5,25"
+                    Point3="29.5,29" />
+                  <mssgle:LineSegment
+                    End="29.5,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-33.44138671875,30,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Convert employee.Paths[Derived Column Output]"
+          TopLeft="366.5,359">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-12,53"
+              Start="0,0"
+              End="-12,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.5"
+                    Point2="0,26.5"
+                    Point3="-4,26.5" />
+                  <mssgle:LineSegment
+                    End="-8,26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-8,26.5"
+                    Point2="-12,26.5"
+                    Point3="-12,30.5" />
+                  <mssgle:LineSegment
+                    End="-12,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Convert city and clients\Load clients">
+    design-time-name="Package\Convert employee\Load employee">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6499,7 +7856,53 @@ where [refTable].[country_id] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Convert city and clients\OLE DB Destination 1">
+    design-time-name="Package\Convert employee\Lookup employee by title">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[title]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Convert employee\Lookup employee by department">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[departments]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Convert employee\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

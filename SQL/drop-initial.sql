@@ -13,5 +13,6 @@ drop table [country]
 use [warehouse]
 go
 
+drop table [dimEmployee]
 drop table [dimCity]
 drop table [dimClients]
