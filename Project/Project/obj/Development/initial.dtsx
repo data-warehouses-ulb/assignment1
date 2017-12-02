@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="initial"
   DTS:PackageType="5"
-  DTS:VersionBuild="95"
-  DTS:VersionGUID="{6E934A7B-8A97-4530-AEF2-5971F83E56AF}">
+  DTS:VersionBuild="101"
+  DTS:VersionGUID="{311D7328-6EC2-4726-987B-6F277E7693F0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -476,180 +476,6 @@
           version="1">
           <components>
             <component
-              refId="Package\Convert city and clients\ef"
-              componentClassID="Microsoft.Lookup"
-              contactInfo="Recherche;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;6"
-              description="Joint des colonnes supplémentaires au flux de données en recherchant des valeurs dans une table. Par exemple, joignez la colonne 'id employé' à la table des employés afin d'obtenir la 'date d'embauche' et le 'nom de l'employé'. Nous recommandons cette transformation lorsque la table de recherche peut être stockée en mémoire."
-              name="ef"
-              usesDispositions="true"
-              version="6">
-              <properties>
-                <property
-                  dataType="System.String"
-                  description="Spécifie l'instruction SQL qui génère la table de correspondance."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[state]</property>
-                <property
-                  dataType="System.String"
-                  description="Spécifie une instruction SQL qui utilise des paramètres pour générer la table de correspondance."
-                  expressionType="Notify"
-                  name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[state]) [refTable]
-where [refTable].[state_id] = ?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Spécifie le type de connexion utilisé pour accéder au dataset de référence."
-                  name="ConnectionType"
-                  typeConverter="LookupConnectionType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Spécifie le type de cache de la table de correspondance."
-                  name="CacheType"
-                  typeConverter="CacheType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Spécifie comment la transformation de recherche gère les lignes sans entrées correspondantes dans le jeu de données de référence."
-                  name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Spécifie le pourcentage du cache alloué aux lignes sans entrées correspondantes dans le dataset de référence."
-                  name="NoMatchCachePercentage">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 32 bits."
-                  name="MaxMemoryUsage">25</property>
-                <property
-                  dataType="System.Int64"
-                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 64 bits."
-                  name="MaxMemoryUsage64">25</property>
-                <property
-                  dataType="System.String"
-                  description="Indique si les métadonnées sont à référencer en format XML."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="state_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="state" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="country_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
-                <property
-                  containsID="true"
-                  dataType="System.String"
-                  description="Spécifie la liste d'identificateurs de lignage se mappant aux paramètres utilisés dans la propriété SQLCommand par l'instruction SQL. Les entrées dans la liste sont séparées par des points-virgules."
-                  name="ParameterMap">#{Package\Convert city and clients\Load city.Outputs[OLE DB Source Output].Columns[state_id]};</property>
-                <property
-                  dataType="System.Int32"
-                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Détermine si les clés dupliquées dans les données de référence doivent être traitées en tant qu'erreurs lorsque le mode Cache complet est utilisé."
-                  name="TreatDuplicateKeysAsError">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Convert city and clients\ef.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[server.initial]"
-                  connectionManagerRefId="Package.ConnectionManagers[server.initial]"
-                  description="Gestionnaire de connexions utilisé pour accéder aux données de correspondance."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Convert city and clients\ef.Inputs[Entrée de recherche]"
-                  name="Entrée de recherche">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Convert city and clients\ef.Inputs[Entrée de recherche].Columns[state_id]"
-                      cachedDataType="i4"
-                      cachedName="state_id"
-                      lineageId="Package\Convert city and clients\Load city.Outputs[OLE DB Source Output].Columns[state_id]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
-                          name="JoinToReferenceColumn">state_id</property>
-                        <property
-                          dataType="System.Null"
-                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Convert city and clients\ef.Outputs[Sortie de recherche avec correspondance]"
-                  errorOrTruncationOperation="Recherche"
-                  errorRowDisposition="FailComponent"
-                  exclusionGroup="1"
-                  name="Sortie de recherche avec correspondance"
-                  synchronousInputId="Package\Convert city and clients\ef.Inputs[Entrée de recherche]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Convert city and clients\ef.Outputs[Sortie de recherche avec correspondance].Columns[state]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Copie de colonnes"
-                      length="100"
-                      lineageId="Package\Convert city and clients\ef.Outputs[Sortie de recherche avec correspondance].Columns[state]"
-                      name="state"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
-                          name="CopyFromReferenceColumn">state</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Convert city and clients\ef.Outputs[Sortie de recherche avec correspondance].Columns[country_id]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Copie de colonnes"
-                      lineageId="Package\Convert city and clients\ef.Outputs[Sortie de recherche avec correspondance].Columns[country_id]"
-                      name="country_id"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
-                          name="CopyFromReferenceColumn">country_id</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Convert city and clients\ef.Outputs[Sortie de recherche sans correspondance]"
-                  description="Sortie de recherche gérant les lignes sans entrées correspondantes dans le dataset de référence. Utilisez cette sortie lorsque la propriété NoMatchBehavior a la valeur « Envoyez les lignes sans entrées correspondantes dans la sortie sans correspondance »."
-                  exclusionGroup="1"
-                  name="Sortie de recherche sans correspondance"
-                  synchronousInputId="Package\Convert city and clients\ef.Inputs[Entrée de recherche]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Convert city and clients\ef.Outputs[Sortie d'erreur de recherche]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Sortie d'erreur de recherche"
-                  synchronousInputId="Package\Convert city and clients\ef.Inputs[Entrée de recherche]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Convert city and clients\ef.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Convert city and clients\ef.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Convert city and clients\ef.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Convert city and clients\ef.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\Convert city and clients\Load city"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
@@ -952,6 +778,340 @@ where [refTable].[state_id] = ?</property>
               </outputs>
             </component>
             <component
+              refId="Package\Convert city and clients\Lookup city by state"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Recherche;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;6"
+              description="Joint des colonnes supplémentaires au flux de données en recherchant des valeurs dans une table. Par exemple, joignez la colonne 'id employé' à la table des employés afin d'obtenir la 'date d'embauche' et le 'nom de l'employé'. Nous recommandons cette transformation lorsque la table de recherche peut être stockée en mémoire."
+              name="Lookup city by state"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Spécifie l'instruction SQL qui génère la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[state]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie une instruction SQL qui utilise des paramètres pour générer la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[state]) [refTable]
+where [refTable].[state_id] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de connexion utilisé pour accéder au dataset de référence."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de cache de la table de correspondance."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie comment la transformation de recherche gère les lignes sans entrées correspondantes dans le jeu de données de référence."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le pourcentage du cache alloué aux lignes sans entrées correspondantes dans le dataset de référence."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indique si les métadonnées sont à référencer en format XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="state_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="state" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="country_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Spécifie la liste d'identificateurs de lignage se mappant aux paramètres utilisés dans la propriété SQLCommand par l'instruction SQL. Les entrées dans la liste sont séparées par des points-virgules."
+                  name="ParameterMap">#{Package\Convert city and clients\Load city.Outputs[OLE DB Source Output].Columns[state_id]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Détermine si les clés dupliquées dans les données de référence doivent être traitées en tant qu'erreurs lorsque le mode Cache complet est utilisé."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Convert city and clients\Lookup city by state.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[server.initial]"
+                  connectionManagerRefId="Package.ConnectionManagers[server.initial]"
+                  description="Gestionnaire de connexions utilisé pour accéder aux données de correspondance."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Convert city and clients\Lookup city by state.Inputs[Entrée de recherche]"
+                  name="Entrée de recherche">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Convert city and clients\Lookup city by state.Inputs[Entrée de recherche].Columns[state_id]"
+                      cachedDataType="i4"
+                      cachedName="state_id"
+                      lineageId="Package\Convert city and clients\Load city.Outputs[OLE DB Source Output].Columns[state_id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
+                          name="JoinToReferenceColumn">state_id</property>
+                        <property
+                          dataType="System.Null"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Convert city and clients\Lookup city by state.Outputs[Sortie de recherche avec correspondance]"
+                  errorOrTruncationOperation="Recherche"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Sortie de recherche avec correspondance"
+                  synchronousInputId="Package\Convert city and clients\Lookup city by state.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Convert city and clients\Lookup city by state.Outputs[Sortie de recherche avec correspondance].Columns[state]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copie de colonnes"
+                      length="100"
+                      lineageId="Package\Convert city and clients\Lookup city by state.Outputs[Sortie de recherche avec correspondance].Columns[state]"
+                      name="state"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn">state</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Convert city and clients\Lookup city by state.Outputs[Sortie de recherche avec correspondance].Columns[country_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copie de colonnes"
+                      lineageId="Package\Convert city and clients\Lookup city by state.Outputs[Sortie de recherche avec correspondance].Columns[country_id]"
+                      name="country_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn">country_id</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Convert city and clients\Lookup city by state.Outputs[Sortie de recherche sans correspondance]"
+                  description="Sortie de recherche gérant les lignes sans entrées correspondantes dans le dataset de référence. Utilisez cette sortie lorsque la propriété NoMatchBehavior a la valeur « Envoyez les lignes sans entrées correspondantes dans la sortie sans correspondance »."
+                  exclusionGroup="1"
+                  name="Sortie de recherche sans correspondance"
+                  synchronousInputId="Package\Convert city and clients\Lookup city by state.Inputs[Entrée de recherche]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Convert city and clients\Lookup city by state.Outputs[Sortie d'erreur de recherche]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de recherche"
+                  synchronousInputId="Package\Convert city and clients\Lookup city by state.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Convert city and clients\Lookup city by state.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Convert city and clients\Lookup city by state.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Convert city and clients\Lookup city by state.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Convert city and clients\Lookup city by state.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Convert city and clients\Lookup city-state by country"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Recherche;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;6"
+              description="Joint des colonnes supplémentaires au flux de données en recherchant des valeurs dans une table. Par exemple, joignez la colonne 'id employé' à la table des employés afin d'obtenir la 'date d'embauche' et le 'nom de l'employé'. Nous recommandons cette transformation lorsque la table de recherche peut être stockée en mémoire."
+              name="Lookup city-state by country"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Spécifie l'instruction SQL qui génère la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[country]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie une instruction SQL qui utilise des paramètres pour générer la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[country]) [refTable]
+where [refTable].[country_id] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de connexion utilisé pour accéder au dataset de référence."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de cache de la table de correspondance."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie comment la transformation de recherche gère les lignes sans entrées correspondantes dans le jeu de données de référence."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le pourcentage du cache alloué aux lignes sans entrées correspondantes dans le dataset de référence."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indique si les métadonnées sont à référencer en format XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="country_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="country_name" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Spécifie la liste d'identificateurs de lignage se mappant aux paramètres utilisés dans la propriété SQLCommand par l'instruction SQL. Les entrées dans la liste sont séparées par des points-virgules."
+                  name="ParameterMap">#{Package\Convert city and clients\Lookup city by state.Outputs[Sortie de recherche avec correspondance].Columns[country_id]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Détermine si les clés dupliquées dans les données de référence doivent être traitées en tant qu'erreurs lorsque le mode Cache complet est utilisé."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Convert city and clients\Lookup city-state by country.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[server.initial]"
+                  connectionManagerRefId="Package.ConnectionManagers[server.initial]"
+                  description="Gestionnaire de connexions utilisé pour accéder aux données de correspondance."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Convert city and clients\Lookup city-state by country.Inputs[Entrée de recherche]"
+                  name="Entrée de recherche">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Convert city and clients\Lookup city-state by country.Inputs[Entrée de recherche].Columns[country_id]"
+                      cachedDataType="i4"
+                      cachedName="country_id"
+                      lineageId="Package\Convert city and clients\Lookup city by state.Outputs[Sortie de recherche avec correspondance].Columns[country_id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">country_id</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Convert city and clients\Lookup city-state by country.Outputs[Sortie de recherche avec correspondance]"
+                  errorOrTruncationOperation="Recherche"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Sortie de recherche avec correspondance"
+                  synchronousInputId="Package\Convert city and clients\Lookup city-state by country.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Convert city and clients\Lookup city-state by country.Outputs[Sortie de recherche avec correspondance].Columns[country_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="100"
+                      lineageId="Package\Convert city and clients\Lookup city-state by country.Outputs[Sortie de recherche avec correspondance].Columns[country_name]"
+                      name="country_name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">country_name</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Convert city and clients\Lookup city-state by country.Outputs[Sortie de recherche sans correspondance]"
+                  description="Sortie de recherche gérant les lignes sans entrées correspondantes dans le dataset de référence. Utilisez cette sortie lorsque la propriété NoMatchBehavior a la valeur « Envoyez les lignes sans entrées correspondantes dans la sortie sans correspondance »."
+                  exclusionGroup="1"
+                  name="Sortie de recherche sans correspondance"
+                  synchronousInputId="Package\Convert city and clients\Lookup city-state by country.Inputs[Entrée de recherche]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Convert city and clients\Lookup city-state by country.Outputs[Sortie d'erreur de recherche]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de recherche"
+                  synchronousInputId="Package\Convert city and clients\Lookup city-state by country.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Convert city and clients\Lookup city-state by country.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Convert city and clients\Lookup city-state by country.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Convert city and clients\Lookup city-state by country.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Convert city and clients\Lookup city-state by country.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Convert city and clients\OLE DB Destination"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -1050,13 +1210,13 @@ where [refTable].[state_id] = ?</property>
                       cachedLength="100"
                       cachedName="state"
                       externalMetadataColumnId="Package\Convert city and clients\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[state]"
-                      lineageId="Package\Convert city and clients\ef.Outputs[Sortie de recherche avec correspondance].Columns[state]" />
+                      lineageId="Package\Convert city and clients\Lookup city by state.Outputs[Sortie de recherche avec correspondance].Columns[state]" />
                     <inputColumn
                       refId="Package\Convert city and clients\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[country_id]"
                       cachedDataType="i4"
                       cachedName="country_id"
                       externalMetadataColumnId="Package\Convert city and clients\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[country_id]"
-                      lineageId="Package\Convert city and clients\ef.Outputs[Sortie de recherche avec correspondance].Columns[country_id]" />
+                      lineageId="Package\Convert city and clients\Lookup city by state.Outputs[Sortie de recherche avec correspondance].Columns[country_id]" />
                     <inputColumn
                       refId="Package\Convert city and clients\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[country_name]"
                       cachedCodepage="1252"
@@ -1064,7 +1224,7 @@ where [refTable].[state_id] = ?</property>
                       cachedLength="100"
                       cachedName="country_name"
                       externalMetadataColumnId="Package\Convert city and clients\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[country_name]"
-                      lineageId="Package\Convert city and clients\Recherche 1.Outputs[Sortie de recherche avec correspondance].Columns[country_name]" />
+                      lineageId="Package\Convert city and clients\Lookup city-state by country.Outputs[Sortie de recherche avec correspondance].Columns[country_name]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1277,166 +1437,6 @@ where [refTable].[state_id] = ?</property>
                 </output>
               </outputs>
             </component>
-            <component
-              refId="Package\Convert city and clients\Recherche 1"
-              componentClassID="Microsoft.Lookup"
-              contactInfo="Recherche;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;6"
-              description="Joint des colonnes supplémentaires au flux de données en recherchant des valeurs dans une table. Par exemple, joignez la colonne 'id employé' à la table des employés afin d'obtenir la 'date d'embauche' et le 'nom de l'employé'. Nous recommandons cette transformation lorsque la table de recherche peut être stockée en mémoire."
-              name="Recherche 1"
-              usesDispositions="true"
-              version="6">
-              <properties>
-                <property
-                  dataType="System.String"
-                  description="Spécifie l'instruction SQL qui génère la table de correspondance."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[country]</property>
-                <property
-                  dataType="System.String"
-                  description="Spécifie une instruction SQL qui utilise des paramètres pour générer la table de correspondance."
-                  expressionType="Notify"
-                  name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[country]) [refTable]
-where [refTable].[country_id] = ?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Spécifie le type de connexion utilisé pour accéder au dataset de référence."
-                  name="ConnectionType"
-                  typeConverter="LookupConnectionType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Spécifie le type de cache de la table de correspondance."
-                  name="CacheType"
-                  typeConverter="CacheType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Spécifie comment la transformation de recherche gère les lignes sans entrées correspondantes dans le jeu de données de référence."
-                  name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Spécifie le pourcentage du cache alloué aux lignes sans entrées correspondantes dans le dataset de référence."
-                  name="NoMatchCachePercentage">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 32 bits."
-                  name="MaxMemoryUsage">25</property>
-                <property
-                  dataType="System.Int64"
-                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 64 bits."
-                  name="MaxMemoryUsage64">25</property>
-                <property
-                  dataType="System.String"
-                  description="Indique si les métadonnées sont à référencer en format XML."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="country_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="country_name" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
-                <property
-                  containsID="true"
-                  dataType="System.String"
-                  description="Spécifie la liste d'identificateurs de lignage se mappant aux paramètres utilisés dans la propriété SQLCommand par l'instruction SQL. Les entrées dans la liste sont séparées par des points-virgules."
-                  name="ParameterMap">#{Package\Convert city and clients\ef.Outputs[Sortie de recherche avec correspondance].Columns[country_id]};</property>
-                <property
-                  dataType="System.Int32"
-                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Détermine si les clés dupliquées dans les données de référence doivent être traitées en tant qu'erreurs lorsque le mode Cache complet est utilisé."
-                  name="TreatDuplicateKeysAsError">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Convert city and clients\Recherche 1.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[server.initial]"
-                  connectionManagerRefId="Package.ConnectionManagers[server.initial]"
-                  description="Gestionnaire de connexions utilisé pour accéder aux données de correspondance."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Convert city and clients\Recherche 1.Inputs[Entrée de recherche]"
-                  name="Entrée de recherche">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Convert city and clients\Recherche 1.Inputs[Entrée de recherche].Columns[country_id]"
-                      cachedDataType="i4"
-                      cachedName="country_id"
-                      lineageId="Package\Convert city and clients\ef.Outputs[Sortie de recherche avec correspondance].Columns[country_id]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">country_id</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Convert city and clients\Recherche 1.Outputs[Sortie de recherche avec correspondance]"
-                  errorOrTruncationOperation="Recherche"
-                  errorRowDisposition="FailComponent"
-                  exclusionGroup="1"
-                  name="Sortie de recherche avec correspondance"
-                  synchronousInputId="Package\Convert city and clients\Recherche 1.Inputs[Entrée de recherche]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Convert city and clients\Recherche 1.Outputs[Sortie de recherche avec correspondance].Columns[country_name]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Copy Column"
-                      length="100"
-                      lineageId="Package\Convert city and clients\Recherche 1.Outputs[Sortie de recherche avec correspondance].Columns[country_name]"
-                      name="country_name"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">country_name</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Convert city and clients\Recherche 1.Outputs[Sortie de recherche sans correspondance]"
-                  description="Sortie de recherche gérant les lignes sans entrées correspondantes dans le dataset de référence. Utilisez cette sortie lorsque la propriété NoMatchBehavior a la valeur « Envoyez les lignes sans entrées correspondantes dans la sortie sans correspondance »."
-                  exclusionGroup="1"
-                  name="Sortie de recherche sans correspondance"
-                  synchronousInputId="Package\Convert city and clients\Recherche 1.Inputs[Entrée de recherche]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Convert city and clients\Recherche 1.Outputs[Sortie d'erreur de recherche]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Sortie d'erreur de recherche"
-                  synchronousInputId="Package\Convert city and clients\Recherche 1.Inputs[Entrée de recherche]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Convert city and clients\Recherche 1.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Convert city and clients\Recherche 1.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Convert city and clients\Recherche 1.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Convert city and clients\Recherche 1.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
           </components>
           <paths>
             <path
@@ -1446,19 +1446,19 @@ where [refTable].[country_id] = ?</property>
               startId="Package\Convert city and clients\Load clients.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Convert city and clients.Paths[OLE DB Source Output1]"
-              endId="Package\Convert city and clients\ef.Inputs[Entrée de recherche]"
+              endId="Package\Convert city and clients\Lookup city by state.Inputs[Entrée de recherche]"
               name="OLE DB Source Output"
               startId="Package\Convert city and clients\Load city.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Convert city and clients.Paths[Sortie de recherche avec correspondance]"
-              endId="Package\Convert city and clients\Recherche 1.Inputs[Entrée de recherche]"
+              endId="Package\Convert city and clients\Lookup city-state by country.Inputs[Entrée de recherche]"
               name="Sortie de recherche avec correspondance"
-              startId="Package\Convert city and clients\ef.Outputs[Sortie de recherche avec correspondance]" />
+              startId="Package\Convert city and clients\Lookup city by state.Outputs[Sortie de recherche avec correspondance]" />
             <path
               refId="Package\Convert city and clients.Paths[Sortie de recherche avec correspondance1]"
               endId="Package\Convert city and clients\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="Sortie de recherche avec correspondance"
-              startId="Package\Convert city and clients\Recherche 1.Outputs[Sortie de recherche avec correspondance]" />
+              startId="Package\Convert city and clients\Lookup city-state by country.Outputs[Sortie de recherche avec correspondance]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -1502,7 +1502,7 @@ where [refTable].[country_id] = ?</property>
                   <outputColumns>
                     <outputColumn
                       refId="Package\Convert employee\Derive start and end.Outputs[Derived Column Output].Columns[start]"
-                      dataType="dbDate"
+                      dataType="dbTime"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       lineageId="Package\Convert employee\Derive start and end.Outputs[Derived Column Output].Columns[start]"
@@ -1513,18 +1513,18 @@ where [refTable].[country_id] = ?</property>
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">(DT_DBDATE)"1991-01-01"</property>
+                          name="Expression">(DT_DBTIME)"1991-01-01"</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">(DT_DBDATE)"1991-01-01"</property>
+                          name="FriendlyExpression">(DT_DBTIME)"1991-01-01"</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
                       refId="Package\Convert employee\Derive start and end.Outputs[Derived Column Output].Columns[end]"
-                      dataType="dbDate"
+                      dataType="dbTime"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       lineageId="Package\Convert employee\Derive start and end.Outputs[Derived Column Output].Columns[end]"
@@ -1535,13 +1535,13 @@ where [refTable].[country_id] = ?</property>
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">NULL(DT_DBDATE)</property>
+                          name="Expression">NULL(DT_DBTIME)</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">NULL(DT_DBDATE)</property>
+                          name="FriendlyExpression">NULL(DT_DBTIME)</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -1643,13 +1643,13 @@ where [refTable].[country_id] = ?</property>
                       name="emp_no"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[birth_date]"
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[birth_date_string]"
                       dataType="dbDate"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[birth_date]"
-                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[birth_date]"
-                      name="birth_date"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[birth_date_string]"
+                      name="birth_date_string"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[first_name]"
@@ -1685,13 +1685,13 @@ where [refTable].[country_id] = ?</property>
                       name="gender"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[hire_date]"
+                      refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[hire_date_string]"
                       dataType="dbDate"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[hire_date]"
-                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[hire_date]"
-                      name="hire_date"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[hire_date_string]"
+                      name="hire_date_string"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[salary]"
@@ -1925,6 +1925,674 @@ where [refTable].[country_id] = ?</property>
               </outputs>
             </component>
             <component
+              refId="Package\Convert employee\Lookup employee by department"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Recherche;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;6"
+              description="Joint des colonnes supplémentaires au flux de données en recherchant des valeurs dans une table. Par exemple, joignez la colonne 'id employé' à la table des employés afin d'obtenir la 'date d'embauche' et le 'nom de l'employé'. Nous recommandons cette transformation lorsque la table de recherche peut être stockée en mémoire."
+              name="Lookup employee by department"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Spécifie l'instruction SQL qui génère la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[departments]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie une instruction SQL qui utilise des paramètres pour générer la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[departments]) [refTable]
+where [refTable].[dept_no] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de connexion utilisé pour accéder au dataset de référence."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de cache de la table de correspondance."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie comment la transformation de recherche gère les lignes sans entrées correspondantes dans le jeu de données de référence."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le pourcentage du cache alloué aux lignes sans entrées correspondantes dans le dataset de référence."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indique si les métadonnées sont à référencer en format XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="dept_no" dataType="DT_STR" length="4" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="dept_name" dataType="DT_STR" length="40" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Spécifie la liste d'identificateurs de lignage se mappant aux paramètres utilisés dans la propriété SQLCommand par l'instruction SQL. Les entrées dans la liste sont séparées par des points-virgules."
+                  name="ParameterMap">#{Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[dept_no]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Détermine si les clés dupliquées dans les données de référence doivent être traitées en tant qu'erreurs lorsque le mode Cache complet est utilisé."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Convert employee\Lookup employee by department.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[server.initial]"
+                  connectionManagerRefId="Package.ConnectionManagers[server.initial]"
+                  description="Gestionnaire de connexions utilisé pour accéder aux données de correspondance."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Convert employee\Lookup employee by department.Inputs[Entrée de recherche]"
+                  name="Entrée de recherche">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Convert employee\Lookup employee by department.Inputs[Entrée de recherche].Columns[dept_no]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="dept_no"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[dept_no]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
+                          name="JoinToReferenceColumn">dept_no</property>
+                        <property
+                          dataType="System.Null"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Convert employee\Lookup employee by department.Outputs[Sortie de recherche avec correspondance]"
+                  errorOrTruncationOperation="Recherche"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Sortie de recherche avec correspondance"
+                  synchronousInputId="Package\Convert employee\Lookup employee by department.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Convert employee\Lookup employee by department.Outputs[Sortie de recherche avec correspondance].Columns[dept_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copie de colonnes"
+                      length="4"
+                      lineageId="Package\Convert employee\Lookup employee by department.Outputs[Sortie de recherche avec correspondance].Columns[dept_id]"
+                      name="dept_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn">dept_no</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Convert employee\Lookup employee by department.Outputs[Sortie de recherche avec correspondance].Columns[dept_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copie de colonnes"
+                      length="40"
+                      lineageId="Package\Convert employee\Lookup employee by department.Outputs[Sortie de recherche avec correspondance].Columns[dept_name]"
+                      name="dept_name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn">dept_name</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Convert employee\Lookup employee by department.Outputs[Sortie de recherche sans correspondance]"
+                  description="Sortie de recherche gérant les lignes sans entrées correspondantes dans le dataset de référence. Utilisez cette sortie lorsque la propriété NoMatchBehavior a la valeur « Envoyez les lignes sans entrées correspondantes dans la sortie sans correspondance »."
+                  exclusionGroup="1"
+                  name="Sortie de recherche sans correspondance"
+                  synchronousInputId="Package\Convert employee\Lookup employee by department.Inputs[Entrée de recherche]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Convert employee\Lookup employee by department.Outputs[Sortie d'erreur de recherche]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de recherche"
+                  synchronousInputId="Package\Convert employee\Lookup employee by department.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Convert employee\Lookup employee by department.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Convert employee\Lookup employee by department.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Convert employee\Lookup employee by department.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Convert employee\Lookup employee by department.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Convert employee\Lookup employee by title"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Recherche;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;6"
+              description="Joint des colonnes supplémentaires au flux de données en recherchant des valeurs dans une table. Par exemple, joignez la colonne 'id employé' à la table des employés afin d'obtenir la 'date d'embauche' et le 'nom de l'employé'. Nous recommandons cette transformation lorsque la table de recherche peut être stockée en mémoire."
+              name="Lookup employee by title"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Spécifie l'instruction SQL qui génère la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[title]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie une instruction SQL qui utilise des paramètres pour générer la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[title]) [refTable]
+where [refTable].[id] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de connexion utilisé pour accéder au dataset de référence."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de cache de la table de correspondance."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie comment la transformation de recherche gère les lignes sans entrées correspondantes dans le jeu de données de référence."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le pourcentage du cache alloué aux lignes sans entrées correspondantes dans le dataset de référence."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indique si les métadonnées sont à référencer en format XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="title" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Spécifie la liste d'identificateurs de lignage se mappant aux paramètres utilisés dans la propriété SQLCommand par l'instruction SQL. Les entrées dans la liste sont séparées par des points-virgules."
+                  name="ParameterMap">#{Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[title_no]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Détermine si les clés dupliquées dans les données de référence doivent être traitées en tant qu'erreurs lorsque le mode Cache complet est utilisé."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Convert employee\Lookup employee by title.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[server.initial]"
+                  connectionManagerRefId="Package.ConnectionManagers[server.initial]"
+                  description="Gestionnaire de connexions utilisé pour accéder aux données de correspondance."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Convert employee\Lookup employee by title.Inputs[Entrée de recherche]"
+                  name="Entrée de recherche">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Convert employee\Lookup employee by title.Inputs[Entrée de recherche].Columns[title_no]"
+                      cachedDataType="i4"
+                      cachedName="title_no"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[title_no]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
+                          name="JoinToReferenceColumn">id</property>
+                        <property
+                          dataType="System.Null"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Convert employee\Lookup employee by title.Outputs[Sortie de recherche avec correspondance]"
+                  errorOrTruncationOperation="Recherche"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Sortie de recherche avec correspondance"
+                  synchronousInputId="Package\Convert employee\Lookup employee by title.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Convert employee\Lookup employee by title.Outputs[Sortie de recherche avec correspondance].Columns[title]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copie de colonnes"
+                      length="50"
+                      lineageId="Package\Convert employee\Lookup employee by title.Outputs[Sortie de recherche avec correspondance].Columns[title]"
+                      name="title"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn">title</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Convert employee\Lookup employee by title.Outputs[Sortie de recherche avec correspondance].Columns[title_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copie de colonnes"
+                      lineageId="Package\Convert employee\Lookup employee by title.Outputs[Sortie de recherche avec correspondance].Columns[title_id]"
+                      name="title_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn">id</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Convert employee\Lookup employee by title.Outputs[Sortie de recherche sans correspondance]"
+                  description="Sortie de recherche gérant les lignes sans entrées correspondantes dans le dataset de référence. Utilisez cette sortie lorsque la propriété NoMatchBehavior a la valeur « Envoyez les lignes sans entrées correspondantes dans la sortie sans correspondance »."
+                  exclusionGroup="1"
+                  name="Sortie de recherche sans correspondance"
+                  synchronousInputId="Package\Convert employee\Lookup employee by title.Inputs[Entrée de recherche]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Convert employee\Lookup employee by title.Outputs[Sortie d'erreur de recherche]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de recherche"
+                  synchronousInputId="Package\Convert employee\Lookup employee by title.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Convert employee\Lookup employee by title.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Convert employee\Lookup employee by title.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Convert employee\Lookup employee by title.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Convert employee\Lookup employee by title.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Convert employee\Lookup employee-birth_date by dimDate"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup employee-birth_date by dimDate"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[dimDate]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[dimDate]) [refTable]
+where [refTable].[Date] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="DateId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Date" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="day" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="month" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="year" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[birth_date_string]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Convert employee\Lookup employee-birth_date by dimDate.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[server.warehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[server.warehouse]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Convert employee\Lookup employee-birth_date by dimDate.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Convert employee\Lookup employee-birth_date by dimDate.Inputs[Lookup Input].Columns[birth_date_string]"
+                      cachedDataType="dbDate"
+                      cachedName="birth_date_string"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[birth_date_string]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Date</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Convert employee\Lookup employee-birth_date by dimDate.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Convert employee\Lookup employee-birth_date by dimDate.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Convert employee\Lookup employee-birth_date by dimDate.Outputs[Lookup Match Output].Columns[birth_date]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Convert employee\Lookup employee-birth_date by dimDate.Outputs[Lookup Match Output].Columns[birth_date]"
+                      name="birth_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">DateId</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Convert employee\Lookup employee-birth_date by dimDate.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Convert employee\Lookup employee-birth_date by dimDate.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Convert employee\Lookup employee-birth_date by dimDate.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Convert employee\Lookup employee-birth_date by dimDate.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Convert employee\Lookup employee-birth_date by dimDate.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Convert employee\Lookup employee-birth_date by dimDate.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Convert employee\Lookup employee-birth_date by dimDate.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Convert employee\Lookup employee-birth_date by dimDate.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Convert employee\Lookup employee-hire_date by dimDate"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup employee-hire_date by dimDate"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[dimDate]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[dimDate]) [refTable]
+where [refTable].[Date] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="DateId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Date" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="day" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="month" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="year" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[hire_date_string]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Convert employee\Lookup employee-hire_date by dimDate.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[server.warehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[server.warehouse]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Convert employee\Lookup employee-hire_date by dimDate.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Convert employee\Lookup employee-hire_date by dimDate.Inputs[Lookup Input].Columns[hire_date_string]"
+                      cachedDataType="dbDate"
+                      cachedName="hire_date_string"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[hire_date_string]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Date</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Convert employee\Lookup employee-hire_date by dimDate.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Convert employee\Lookup employee-hire_date by dimDate.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Convert employee\Lookup employee-hire_date by dimDate.Outputs[Lookup Match Output].Columns[hire_date]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Convert employee\Lookup employee-hire_date by dimDate.Outputs[Lookup Match Output].Columns[hire_date]"
+                      name="hire_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">DateId</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Convert employee\Lookup employee-hire_date by dimDate.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Convert employee\Lookup employee-hire_date by dimDate.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Convert employee\Lookup employee-hire_date by dimDate.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Convert employee\Lookup employee-hire_date by dimDate.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Convert employee\Lookup employee-hire_date by dimDate.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Convert employee\Lookup employee-hire_date by dimDate.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Convert employee\Lookup employee-hire_date by dimDate.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Convert employee\Lookup employee-hire_date by dimDate.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Convert employee\OLE DB Destination"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -2003,12 +2671,6 @@ where [refTable].[country_id] = ?</property>
                       externalMetadataColumnId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[emp_no]"
                       lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[emp_no]" />
                     <inputColumn
-                      refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[birth_date]"
-                      cachedDataType="dbDate"
-                      cachedName="birth_date"
-                      externalMetadataColumnId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[birth_date]"
-                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[birth_date]" />
-                    <inputColumn
                       refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[first_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -2039,19 +2701,13 @@ where [refTable].[country_id] = ?</property>
                       cachedLength="50"
                       cachedName="title"
                       externalMetadataColumnId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[title]"
-                      lineageId="Package\Convert employee\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[title]" />
-                    <inputColumn
-                      refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[hire_date]"
-                      cachedDataType="dbDate"
-                      cachedName="hire_date"
-                      externalMetadataColumnId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[hire_date]"
-                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[hire_date]" />
+                      lineageId="Package\Convert employee\Lookup employee by title.Outputs[Sortie de recherche avec correspondance].Columns[title]" />
                     <inputColumn
                       refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[title_id]"
                       cachedDataType="i4"
                       cachedName="title_id"
                       externalMetadataColumnId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[title_id]"
-                      lineageId="Package\Convert employee\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[title_id]" />
+                      lineageId="Package\Convert employee\Lookup employee by title.Outputs[Sortie de recherche avec correspondance].Columns[title_id]" />
                     <inputColumn
                       refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[current_city]"
                       cachedDataType="i4"
@@ -2071,16 +2727,16 @@ where [refTable].[country_id] = ?</property>
                       cachedLength="40"
                       cachedName="dept_name"
                       externalMetadataColumnId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[dept_name]"
-                      lineageId="Package\Convert employee\Recherche 1.Outputs[Sortie de recherche avec correspondance].Columns[dept_name]" />
+                      lineageId="Package\Convert employee\Lookup employee by department.Outputs[Sortie de recherche avec correspondance].Columns[dept_name]" />
                     <inputColumn
                       refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[start]"
-                      cachedDataType="dbDate"
+                      cachedDataType="dbTime"
                       cachedName="start"
                       externalMetadataColumnId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[start]"
                       lineageId="Package\Convert employee\Derive start and end.Outputs[Derived Column Output].Columns[start]" />
                     <inputColumn
                       refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[end]"
-                      cachedDataType="dbDate"
+                      cachedDataType="dbTime"
                       cachedName="end"
                       externalMetadataColumnId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[end]"
                       lineageId="Package\Convert employee\Derive start and end.Outputs[Derived Column Output].Columns[end]" />
@@ -2091,7 +2747,19 @@ where [refTable].[country_id] = ?</property>
                       cachedLength="4"
                       cachedName="dept_id"
                       externalMetadataColumnId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[dept_id]"
-                      lineageId="Package\Convert employee\Recherche 1.Outputs[Sortie de recherche avec correspondance].Columns[dept_id]" />
+                      lineageId="Package\Convert employee\Lookup employee by department.Outputs[Sortie de recherche avec correspondance].Columns[dept_id]" />
+                    <inputColumn
+                      refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[birth_date]"
+                      cachedDataType="i4"
+                      cachedName="birth_date"
+                      externalMetadataColumnId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[birth_date]"
+                      lineageId="Package\Convert employee\Lookup employee-birth_date by dimDate.Outputs[Lookup Match Output].Columns[birth_date]" />
+                    <inputColumn
+                      refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[hire_date]"
+                      cachedDataType="i4"
+                      cachedName="hire_date"
+                      externalMetadataColumnId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[hire_date]"
+                      lineageId="Package\Convert employee\Lookup employee-hire_date by dimDate.Outputs[Lookup Match Output].Columns[hire_date]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2105,7 +2773,7 @@ where [refTable].[country_id] = ?</property>
                       name="emp_no" />
                     <externalMetadataColumn
                       refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[birth_date]"
-                      dataType="dbDate"
+                      dataType="i4"
                       name="birth_date" />
                     <externalMetadataColumn
                       refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[first_name]"
@@ -2127,7 +2795,7 @@ where [refTable].[country_id] = ?</property>
                       name="gender" />
                     <externalMetadataColumn
                       refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[hire_date]"
-                      dataType="dbDate"
+                      dataType="i4"
                       name="hire_date" />
                     <externalMetadataColumn
                       refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[title_id]"
@@ -2195,380 +2863,38 @@ where [refTable].[country_id] = ?</property>
                 </output>
               </outputs>
             </component>
-            <component
-              refId="Package\Convert employee\Recherche"
-              componentClassID="Microsoft.Lookup"
-              contactInfo="Recherche;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;6"
-              description="Joint des colonnes supplémentaires au flux de données en recherchant des valeurs dans une table. Par exemple, joignez la colonne 'id employé' à la table des employés afin d'obtenir la 'date d'embauche' et le 'nom de l'employé'. Nous recommandons cette transformation lorsque la table de recherche peut être stockée en mémoire."
-              name="Recherche"
-              usesDispositions="true"
-              version="6">
-              <properties>
-                <property
-                  dataType="System.String"
-                  description="Spécifie l'instruction SQL qui génère la table de correspondance."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[title]</property>
-                <property
-                  dataType="System.String"
-                  description="Spécifie une instruction SQL qui utilise des paramètres pour générer la table de correspondance."
-                  expressionType="Notify"
-                  name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[title]) [refTable]
-where [refTable].[id] = ?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Spécifie le type de connexion utilisé pour accéder au dataset de référence."
-                  name="ConnectionType"
-                  typeConverter="LookupConnectionType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Spécifie le type de cache de la table de correspondance."
-                  name="CacheType"
-                  typeConverter="CacheType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Spécifie comment la transformation de recherche gère les lignes sans entrées correspondantes dans le jeu de données de référence."
-                  name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Spécifie le pourcentage du cache alloué aux lignes sans entrées correspondantes dans le dataset de référence."
-                  name="NoMatchCachePercentage">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 32 bits."
-                  name="MaxMemoryUsage">25</property>
-                <property
-                  dataType="System.Int64"
-                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 64 bits."
-                  name="MaxMemoryUsage64">25</property>
-                <property
-                  dataType="System.String"
-                  description="Indique si les métadonnées sont à référencer en format XML."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="title" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
-                <property
-                  containsID="true"
-                  dataType="System.String"
-                  description="Spécifie la liste d'identificateurs de lignage se mappant aux paramètres utilisés dans la propriété SQLCommand par l'instruction SQL. Les entrées dans la liste sont séparées par des points-virgules."
-                  name="ParameterMap">#{Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[title_no]};</property>
-                <property
-                  dataType="System.Int32"
-                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Détermine si les clés dupliquées dans les données de référence doivent être traitées en tant qu'erreurs lorsque le mode Cache complet est utilisé."
-                  name="TreatDuplicateKeysAsError">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Convert employee\Recherche.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[server.initial]"
-                  connectionManagerRefId="Package.ConnectionManagers[server.initial]"
-                  description="Gestionnaire de connexions utilisé pour accéder aux données de correspondance."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Convert employee\Recherche.Inputs[Entrée de recherche]"
-                  name="Entrée de recherche">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Convert employee\Recherche.Inputs[Entrée de recherche].Columns[title_no]"
-                      cachedDataType="i4"
-                      cachedName="title_no"
-                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[title_no]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
-                          name="JoinToReferenceColumn">id</property>
-                        <property
-                          dataType="System.Null"
-                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Convert employee\Recherche.Outputs[Sortie de recherche avec correspondance]"
-                  errorOrTruncationOperation="Recherche"
-                  errorRowDisposition="FailComponent"
-                  exclusionGroup="1"
-                  name="Sortie de recherche avec correspondance"
-                  synchronousInputId="Package\Convert employee\Recherche.Inputs[Entrée de recherche]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Convert employee\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[title]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Copie de colonnes"
-                      length="50"
-                      lineageId="Package\Convert employee\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[title]"
-                      name="title"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
-                          name="CopyFromReferenceColumn">title</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Convert employee\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[title_id]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Copie de colonnes"
-                      lineageId="Package\Convert employee\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[title_id]"
-                      name="title_id"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
-                          name="CopyFromReferenceColumn">id</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Convert employee\Recherche.Outputs[Sortie de recherche sans correspondance]"
-                  description="Sortie de recherche gérant les lignes sans entrées correspondantes dans le dataset de référence. Utilisez cette sortie lorsque la propriété NoMatchBehavior a la valeur « Envoyez les lignes sans entrées correspondantes dans la sortie sans correspondance »."
-                  exclusionGroup="1"
-                  name="Sortie de recherche sans correspondance"
-                  synchronousInputId="Package\Convert employee\Recherche.Inputs[Entrée de recherche]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Convert employee\Recherche.Outputs[Sortie d'erreur de recherche]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Sortie d'erreur de recherche"
-                  synchronousInputId="Package\Convert employee\Recherche.Inputs[Entrée de recherche]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Convert employee\Recherche.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Convert employee\Recherche.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Convert employee\Recherche.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Convert employee\Recherche.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Convert employee\Recherche 1"
-              componentClassID="Microsoft.Lookup"
-              contactInfo="Recherche;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;6"
-              description="Joint des colonnes supplémentaires au flux de données en recherchant des valeurs dans une table. Par exemple, joignez la colonne 'id employé' à la table des employés afin d'obtenir la 'date d'embauche' et le 'nom de l'employé'. Nous recommandons cette transformation lorsque la table de recherche peut être stockée en mémoire."
-              name="Recherche 1"
-              usesDispositions="true"
-              version="6">
-              <properties>
-                <property
-                  dataType="System.String"
-                  description="Spécifie l'instruction SQL qui génère la table de correspondance."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[departments]</property>
-                <property
-                  dataType="System.String"
-                  description="Spécifie une instruction SQL qui utilise des paramètres pour générer la table de correspondance."
-                  expressionType="Notify"
-                  name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[departments]) [refTable]
-where [refTable].[dept_no] = ?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Spécifie le type de connexion utilisé pour accéder au dataset de référence."
-                  name="ConnectionType"
-                  typeConverter="LookupConnectionType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Spécifie le type de cache de la table de correspondance."
-                  name="CacheType"
-                  typeConverter="CacheType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Spécifie comment la transformation de recherche gère les lignes sans entrées correspondantes dans le jeu de données de référence."
-                  name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Spécifie le pourcentage du cache alloué aux lignes sans entrées correspondantes dans le dataset de référence."
-                  name="NoMatchCachePercentage">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 32 bits."
-                  name="MaxMemoryUsage">25</property>
-                <property
-                  dataType="System.Int64"
-                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 64 bits."
-                  name="MaxMemoryUsage64">25</property>
-                <property
-                  dataType="System.String"
-                  description="Indique si les métadonnées sont à référencer en format XML."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="dept_no" dataType="DT_STR" length="4" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="dept_name" dataType="DT_STR" length="40" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
-                <property
-                  containsID="true"
-                  dataType="System.String"
-                  description="Spécifie la liste d'identificateurs de lignage se mappant aux paramètres utilisés dans la propriété SQLCommand par l'instruction SQL. Les entrées dans la liste sont séparées par des points-virgules."
-                  name="ParameterMap">#{Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[dept_no]};</property>
-                <property
-                  dataType="System.Int32"
-                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Détermine si les clés dupliquées dans les données de référence doivent être traitées en tant qu'erreurs lorsque le mode Cache complet est utilisé."
-                  name="TreatDuplicateKeysAsError">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Convert employee\Recherche 1.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[server.initial]"
-                  connectionManagerRefId="Package.ConnectionManagers[server.initial]"
-                  description="Gestionnaire de connexions utilisé pour accéder aux données de correspondance."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Convert employee\Recherche 1.Inputs[Entrée de recherche]"
-                  name="Entrée de recherche">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Convert employee\Recherche 1.Inputs[Entrée de recherche].Columns[dept_no]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="4"
-                      cachedName="dept_no"
-                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[dept_no]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
-                          name="JoinToReferenceColumn">dept_no</property>
-                        <property
-                          dataType="System.Null"
-                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Convert employee\Recherche 1.Outputs[Sortie de recherche avec correspondance]"
-                  errorOrTruncationOperation="Recherche"
-                  errorRowDisposition="FailComponent"
-                  exclusionGroup="1"
-                  name="Sortie de recherche avec correspondance"
-                  synchronousInputId="Package\Convert employee\Recherche 1.Inputs[Entrée de recherche]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Convert employee\Recherche 1.Outputs[Sortie de recherche avec correspondance].Columns[dept_id]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Copie de colonnes"
-                      length="4"
-                      lineageId="Package\Convert employee\Recherche 1.Outputs[Sortie de recherche avec correspondance].Columns[dept_id]"
-                      name="dept_id"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
-                          name="CopyFromReferenceColumn">dept_no</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Convert employee\Recherche 1.Outputs[Sortie de recherche avec correspondance].Columns[dept_name]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Copie de colonnes"
-                      length="40"
-                      lineageId="Package\Convert employee\Recherche 1.Outputs[Sortie de recherche avec correspondance].Columns[dept_name]"
-                      name="dept_name"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
-                          name="CopyFromReferenceColumn">dept_name</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Convert employee\Recherche 1.Outputs[Sortie de recherche sans correspondance]"
-                  description="Sortie de recherche gérant les lignes sans entrées correspondantes dans le dataset de référence. Utilisez cette sortie lorsque la propriété NoMatchBehavior a la valeur « Envoyez les lignes sans entrées correspondantes dans la sortie sans correspondance »."
-                  exclusionGroup="1"
-                  name="Sortie de recherche sans correspondance"
-                  synchronousInputId="Package\Convert employee\Recherche 1.Inputs[Entrée de recherche]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Convert employee\Recherche 1.Outputs[Sortie d'erreur de recherche]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Sortie d'erreur de recherche"
-                  synchronousInputId="Package\Convert employee\Recherche 1.Inputs[Entrée de recherche]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Convert employee\Recherche 1.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Convert employee\Recherche 1.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Convert employee\Recherche 1.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Convert employee\Recherche 1.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
           </components>
           <paths>
             <path
               refId="Package\Convert employee.Paths[Derived Column Output]"
-              endId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              endId="Package\Convert employee\Lookup employee-birth_date by dimDate.Inputs[Lookup Input]"
               name="Derived Column Output"
               startId="Package\Convert employee\Derive start and end.Outputs[Derived Column Output]" />
             <path
+              refId="Package\Convert employee.Paths[Lookup Match Output]"
+              endId="Package\Convert employee\Lookup employee-hire_date by dimDate.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Convert employee\Lookup employee-birth_date by dimDate.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Convert employee.Paths[Lookup Match Output1]"
+              endId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Lookup Match Output"
+              startId="Package\Convert employee\Lookup employee-hire_date by dimDate.Outputs[Lookup Match Output]" />
+            <path
               refId="Package\Convert employee.Paths[OLE DB Source Output]"
-              endId="Package\Convert employee\Recherche.Inputs[Entrée de recherche]"
+              endId="Package\Convert employee\Lookup employee by title.Inputs[Entrée de recherche]"
               name="OLE DB Source Output"
               startId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Convert employee.Paths[Sortie de recherche avec correspondance]"
-              endId="Package\Convert employee\Recherche 1.Inputs[Entrée de recherche]"
+              endId="Package\Convert employee\Lookup employee by department.Inputs[Entrée de recherche]"
               name="Sortie de recherche avec correspondance"
-              startId="Package\Convert employee\Recherche.Outputs[Sortie de recherche avec correspondance]" />
+              startId="Package\Convert employee\Lookup employee by title.Outputs[Sortie de recherche avec correspondance]" />
             <path
               refId="Package\Convert employee.Paths[Sortie de recherche avec correspondance1]"
               endId="Package\Convert employee\Derive start and end.Inputs[Derived Column Input]"
               name="Sortie de recherche avec correspondance"
-              startId="Package\Convert employee\Recherche 1.Outputs[Sortie de recherche avec correspondance]" />
+              startId="Package\Convert employee\Lookup employee by department.Outputs[Sortie de recherche avec correspondance]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -2612,7 +2938,7 @@ where [refTable].[dept_no] = ?</property>
                   <outputColumns>
                     <outputColumn
                       refId="Package\Convert factSalary and bridgeEmployee\Derived factDate.Outputs[Derived Column Output].Columns[date]"
-                      dataType="dbDate"
+                      dataType="i4"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       lineageId="Package\Convert factSalary and bridgeEmployee\Derived factDate.Outputs[Derived Column Output].Columns[date]"
@@ -2623,13 +2949,13 @@ where [refTable].[dept_no] = ?</property>
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">(DT_DBDATE)"1991-01-01"</property>
+                          name="Expression">(DT_I4)33238</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">(DT_DBDATE)"1991-01-01"</property>
+                          name="FriendlyExpression">(DT_I4)33238</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -3538,7 +3864,7 @@ where [refTable].[emp_no] = ?</property>
                       lineageId="Package\Convert factSalary and bridgeEmployee\Lookup initial-employee by warehouse-employee.Outputs[Lookup Match Output].Columns[EID]" />
                     <inputColumn
                       refId="Package\Convert factSalary and bridgeEmployee\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[date]"
-                      cachedDataType="dbDate"
+                      cachedDataType="i4"
                       cachedName="date"
                       externalMetadataColumnId="Package\Convert factSalary and bridgeEmployee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[factDate]"
                       lineageId="Package\Convert factSalary and bridgeEmployee\Derived factDate.Outputs[Derived Column Output].Columns[date]" />
@@ -8005,17 +8331,9 @@ where [refTable].[emp_no] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="121,42"
-          Id="Package\Convert city and clients\Load city"
-          TopLeft="105.181818181818,49.1363636363635" />
-        <NodeLayout
-          Size="137,42"
-          Id="Package\Convert city and clients\Recherche 1"
-          TopLeft="165,254" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Convert city and clients\OLE DB Destination"
-          TopLeft="122.181818181818,377.363636363636" />
+          Size="174,42"
+          Id="Package\Convert city and clients\Lookup city by state"
+          TopLeft="136,142" />
         <NodeLayout
           Size="135,42"
           Id="Package\Convert city and clients\Load clients"
@@ -8025,54 +8343,62 @@ where [refTable].[emp_no] = ?</property>
           Id="Package\Convert city and clients\OLE DB Destination 1"
           TopLeft="424,159" />
         <NodeLayout
-          Size="88,42"
-          Id="Package\Convert city and clients\ef"
-          TopLeft="136,142" />
+          Size="198,50"
+          Id="Package\Convert city and clients\Lookup city-state by country"
+          TopLeft="165,254" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Convert city and clients\Load city"
+          TopLeft="105.181818181818,49.1363636363635" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Convert city and clients\OLE DB Destination"
+          TopLeft="122.181818181818,377.363636363636" />
         <EdgeLayout
           Id="Package\Convert city and clients.Paths[Sortie de recherche avec correspondance1]"
-          TopLeft="233.5,296">
+          TopLeft="264,304">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-25.8181818181818,81.363636363636"
+              EndConnector="-56.318181818182,73.363636363636"
               Start="0,0"
-              End="-25.8181818181818,73.863636363636">
+              End="-56.318181818182,65.863636363636">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36.681818181818" />
+                    End="0,32.681818181818" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,36.681818181818"
-                    Point2="0,40.681818181818"
-                    Point3="-4,40.681818181818" />
+                    Point1="0,32.681818181818"
+                    Point2="0,36.681818181818"
+                    Point3="-4,36.681818181818" />
                   <mssgle:LineSegment
-                    End="-21.8181818181818,40.681818181818" />
+                    End="-52.318181818182,36.681818181818" />
                   <mssgle:CubicBezierSegment
-                    Point1="-21.8181818181818,40.681818181818"
-                    Point2="-25.8181818181818,40.681818181818"
-                    Point3="-25.8181818181818,44.681818181818" />
+                    Point1="-52.318181818182,36.681818181818"
+                    Point2="-56.318181818182,36.681818181818"
+                    Point3="-56.318181818182,40.681818181818" />
                   <mssgle:LineSegment
-                    End="-25.8181818181818,73.863636363636" />
+                    End="-56.318181818182,65.863636363636" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-104.586102627841,45.681818181818,183.3540234375,11.609375"
+              BoundingBox="-119.836102627841,41.681818181818,183.3540234375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Convert city and clients.Paths[Sortie de recherche avec correspondance]"
-          TopLeft="180,184">
+          TopLeft="176.5,184">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="53.5,70"
+              EndConnector="87.5,70"
               Start="0,0"
-              End="53.5,62.5">
+              End="87.5,62.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -8083,20 +8409,20 @@ where [refTable].[emp_no] = ?</property>
                     Point2="0,35"
                     Point3="4,35" />
                   <mssgle:LineSegment
-                    End="49.5,35" />
+                    End="83.5,35" />
                   <mssgle:CubicBezierSegment
-                    Point1="49.5,35"
-                    Point2="53.5,35"
-                    Point3="53.5,39" />
+                    Point1="83.5,35"
+                    Point2="87.5,35"
+                    Point3="87.5,39" />
                   <mssgle:LineSegment
-                    End="53.5,62.5" />
+                    End="87.5,62.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-64.92701171875,40,183.3540234375,11.609375"
+              BoundingBox="-47.92701171875,40,183.3540234375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -8106,9 +8432,9 @@ where [refTable].[emp_no] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="14.318181818182,50.8636363636365"
+              EndConnector="10.818181818182,50.8636363636365"
               Start="0,0"
-              End="14.318181818182,43.3636363636365">
+              End="10.818181818182,43.3636363636365">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -8119,19 +8445,21 @@ where [refTable].[emp_no] = ?</property>
                     Point2="0,25.4318181818183"
                     Point3="4,25.4318181818183" />
                   <mssgle:LineSegment
-                    End="10.318181818182,25.4318181818183" />
+                    End="6.81818181818198,25.4318181818183" />
                   <mssgle:CubicBezierSegment
-                    Point1="10.318181818182,25.4318181818183"
-                    Point2="14.318181818182,25.4318181818183"
-                    Point3="14.318181818182,29.4318181818183" />
+                    Point1="6.81818181818198,25.4318181818183"
+                    Point2="10.818181818182,25.4318181818183"
+                    Point3="10.818181818182,29.4318181818183" />
                   <mssgle:LineSegment
-                    End="14.318181818182,43.3636363636365" />
+                    End="10.818181818182,43.3636363636365" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8153,34 +8481,23 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="No SCD operators here, because it's initial"
           ParentId="Package\Convert city and clients"
           FontInfo="{assembly:Null}"
-          Size="251,40"
+          Size="251,NaN"
           Id="0b3e2a95-f955-458d-b59b-0e9688e7ddd2"
           TopLeft="707,47" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Convert city and clients\Load city">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Convert city and clients\Recherche 1">
+    design-time-name="Package\Convert city and clients\Lookup city by state">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -8190,7 +8507,7 @@ where [refTable].[emp_no] = ?</property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[country]</Value>
+          type="q3:string">[dbo].[state]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -8199,19 +8516,6 @@ where [refTable].[emp_no] = ?</property>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Convert city and clients\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -8242,7 +8546,7 @@ where [refTable].[emp_no] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Convert city and clients\ef">
+    design-time-name="Package\Convert city and clients\Lookup city-state by country">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -8252,7 +8556,7 @@ where [refTable].[emp_no] = ?</property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[state]</Value>
+          type="q3:string">[dbo].[country]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -8261,6 +8565,32 @@ where [refTable].[emp_no] = ?</property>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Convert city and clients\Load city">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Convert city and clients\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -8274,60 +8604,102 @@ where [refTable].[emp_no] = ?</property>
           Id="Package\Convert employee\Load employee"
           TopLeft="204,49" />
         <NodeLayout
+          Size="232,46"
+          Id="Package\Convert employee\Lookup employee by title"
+          TopLeft="245.5,122.5" />
+        <NodeLayout
           Size="171,42"
           Id="Package\Convert employee\OLE DB Destination"
-          TopLeft="327,398" />
+          TopLeft="308,640" />
         <NodeLayout
           Size="175,42"
           Id="Package\Convert employee\Derive start and end"
-          TopLeft="284,306" />
+          TopLeft="300,297" />
+        <NodeLayout
+          Size="263,42"
+          Id="Package\Convert employee\Lookup employee by department"
+          TopLeft="283,220" />
         <EdgeLayout
-          Id="Package\Convert employee.Paths[Derived Column Output]"
-          TopLeft="371.5,348">
+          Id="Package\Convert employee.Paths[Sortie de recherche avec correspondance1]"
+          TopLeft="414.5,262">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="41,50"
+              EndConnector="-27,35"
               Start="0,0"
-              End="41,42.5">
+              End="-27,27.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21" />
+                    End="0,13.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,21"
-                    Point2="0,25"
-                    Point3="4,25" />
+                    Point1="0,13.5"
+                    Point2="0,17.5"
+                    Point3="-4,17.5" />
                   <mssgle:LineSegment
-                    End="37,25" />
+                    End="-23,17.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="37,25"
-                    Point2="41,25"
-                    Point3="41,29" />
+                    Point1="-23,17.5"
+                    Point2="-27,17.5"
+                    Point3="-27,21.5" />
                   <mssgle:LineSegment
-                    End="41,42.5" />
+                    End="-27,27.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-105.17701171875,22.5,183.3540234375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="128,42"
-          Id="Package\Convert employee\Recherche"
-          TopLeft="245.5,122.5" />
+        <EdgeLayout
+          Id="Package\Convert employee.Paths[Sortie de recherche avec correspondance]"
+          TopLeft="361.5,168.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="53,51.5"
+              Start="0,0"
+              End="53,44">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.75"
+                    Point2="0,25.75"
+                    Point3="4,25.75" />
+                  <mssgle:LineSegment
+                    End="49,25.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="49,25.75"
+                    Point2="53,25.75"
+                    Point3="53,29.75" />
+                  <mssgle:LineSegment
+                    End="53,44" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-65.17701171875,30.75,183.3540234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Convert employee.Paths[OLE DB Source Output]"
           TopLeft="279,91">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="30.5,31.5"
+              EndConnector="82.5,31.5"
               Start="0,0"
-              End="30.5,24">
+              End="82.5,24">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -8338,13 +8710,13 @@ where [refTable].[emp_no] = ?</property>
                     Point2="0,15.75"
                     Point3="4,15.75" />
                   <mssgle:LineSegment
-                    End="26.5,15.75" />
+                    End="78.5,15.75" />
                   <mssgle:CubicBezierSegment
-                    Point1="26.5,15.75"
-                    Point2="30.5,15.75"
-                    Point3="30.5,19.75" />
+                    Point1="78.5,15.75"
+                    Point2="82.5,15.75"
+                    Point3="82.5,19.75" />
                   <mssgle:LineSegment
-                    End="30.5,24" />
+                    End="82.5,24" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8354,78 +8726,104 @@ where [refTable].[emp_no] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="137,42"
-          Id="Package\Convert employee\Recherche 1"
-          TopLeft="283,220" />
+          Size="271,42"
+          Id="Package\Convert employee\Lookup employee-birth_date by dimDate"
+          TopLeft="335,382" />
         <EdgeLayout
-          Id="Package\Convert employee.Paths[Sortie de recherche avec correspondance]"
-          TopLeft="309.5,164.5">
+          Id="Package\Convert employee.Paths[Derived Column Output]"
+          TopLeft="387.5,339">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="42,55.5"
+              EndConnector="83,43"
               Start="0,0"
-              End="42,48">
+              End="83,35.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.75" />
+                    End="0,17.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,23.75"
-                    Point2="0,27.75"
-                    Point3="4,27.75" />
+                    Point1="0,17.5"
+                    Point2="0,21.5"
+                    Point3="4,21.5" />
                   <mssgle:LineSegment
-                    End="38,27.75" />
+                    End="79,21.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="38,27.75"
-                    Point2="42,27.75"
-                    Point3="42,31.75" />
+                    Point1="79,21.5"
+                    Point2="83,21.5"
+                    Point3="83,25.5" />
                   <mssgle:LineSegment
-                    End="42,48" />
+                    End="83,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="257,42"
+          Id="Package\Convert employee\Lookup employee-hire_date by dimDate"
+          TopLeft="269,512" />
+        <EdgeLayout
+          Id="Package\Convert employee.Paths[Lookup Match Output]"
+          TopLeft="470.5,424">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-73,88"
+              Start="0,0"
+              End="-73,80.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,40"
+                    Point2="0,44"
+                    Point3="-4,44" />
+                  <mssgle:LineSegment
+                    End="-69,44" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-69,44"
+                    Point2="-73,44"
+                    Point3="-73,48" />
+                  <mssgle:LineSegment
+                    End="-73,80.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-70.67701171875,32.75,183.3540234375,11.609375"
+              BoundingBox="-84.69138671875,49,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Convert employee.Paths[Sortie de recherche avec correspondance1]"
-          TopLeft="351.5,262">
+          Id="Package\Convert employee.Paths[Lookup Match Output1]"
+          TopLeft="395.5,554">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="20,44"
+              EndConnector="0,86"
               Start="0,0"
-              End="20,36.5">
+              End="0,78.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18"
-                    Point2="0,22"
-                    Point3="4,22" />
-                  <mssgle:LineSegment
-                    End="16,22" />
-                  <mssgle:CubicBezierSegment
-                    Point1="16,22"
-                    Point2="20,22"
-                    Point3="20,26" />
-                  <mssgle:LineSegment
-                    End="20,36.5" />
+                    End="0,78.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-81.67701171875,27,183.3540234375,11.609375"
+              BoundingBox="-48.19138671875,33.4453125,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -8433,20 +8831,30 @@ where [refTable].[emp_no] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Convert employee\OLE DB Destination">
+    design-time-name="Package\Convert employee\Lookup employee by department">
     <Properties>
       <Property>
-        <Name>DataSourceViewID</Name>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[departments]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q2:string">Table</Value>
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Convert employee\Recherche">
+    design-time-name="Package\Convert employee\Lookup employee by title">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -8469,25 +8877,15 @@ where [refTable].[emp_no] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Convert employee\Recherche 1">
+    design-time-name="Package\Convert employee\OLE DB Destination">
     <Properties>
       <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[departments]</Value>
+        <Name>DataSourceViewID</Name>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -8514,27 +8912,55 @@ where [refTable].[emp_no] = ?</property>
           Id="Package\Convert factSalary and bridgeEmployee\Load employee"
           TopLeft="341,39" />
         <NodeLayout
-          Size="158,42"
-          Id="Package\Convert factSalary and bridgeEmployee\Derived factDate"
-          TopLeft="108,280" />
+          Size="156,42"
+          Id="Package\Convert factSalary and bridgeEmployee\Load client_emp"
+          TopLeft="526,110" />
         <NodeLayout
           Size="308,42"
           Id="Package\Convert factSalary and bridgeEmployee\Lookup initial-employee by warehouse-employee"
           TopLeft="33,377" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Convert factSalary and bridgeEmployee\OLE DB Destination 1"
+          TopLeft="515,366" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Convert factSalary and bridgeEmployee\Derived factDate"
+          TopLeft="108,280" />
+        <NodeLayout
+          Size="314,42"
+          Id="Package\Convert factSalary and bridgeEmployee\Lookup initial-client_emp by warehouse-employee"
+          TopLeft="508,229" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Convert factSalary and bridgeEmployee\OLE DB Destination"
+          TopLeft="91,490" />
         <EdgeLayout
-          Id="Package\Convert factSalary and bridgeEmployee.Paths[Derived Column Output]"
-          TopLeft="187,322">
+          Id="Package\Convert factSalary and bridgeEmployee.Paths[OLE DB Source Output1]"
+          TopLeft="604,152">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,55"
+              EndConnector="61,77"
               Start="0,0"
-              End="0,47.5">
+              End="61,69.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,47.5" />
+                    End="0,34.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.5"
+                    Point2="0,38.5"
+                    Point3="4,38.5" />
+                  <mssgle:LineSegment
+                    End="57,38.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="57,38.5"
+                    Point2="61,38.5"
+                    Point3="61,42.5" />
+                  <mssgle:LineSegment
+                    End="61,69.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8543,10 +8969,76 @@ where [refTable].[emp_no] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Convert factSalary and bridgeEmployee\OLE DB Destination"
-          TopLeft="91,490" />
+        <EdgeLayout
+          Id="Package\Convert factSalary and bridgeEmployee.Paths[OLE DB Source Output]"
+          TopLeft="416,81">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-229,199"
+              Start="0,0"
+              End="-229,191.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,95.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,95.5"
+                    Point2="0,99.5"
+                    Point3="-4,99.5" />
+                  <mssgle:LineSegment
+                    End="-225,99.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-225,99.5"
+                    Point2="-229,99.5"
+                    Point3="-229,103.5" />
+                  <mssgle:LineSegment
+                    End="-229,191.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Convert factSalary and bridgeEmployee.Paths[Lookup Match Output1]"
+          TopLeft="665,271">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-60,95"
+              Start="0,0"
+              End="-60,87.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43.5"
+                    Point2="0,47.5"
+                    Point3="-4,47.5" />
+                  <mssgle:LineSegment
+                    End="-56,47.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-56,47.5"
+                    Point2="-60,47.5"
+                    Point3="-60,51.5" />
+                  <mssgle:LineSegment
+                    End="-60,87.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-78.19138671875,52.5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Convert factSalary and bridgeEmployee.Paths[Lookup Match Output]"
           TopLeft="187,419">
@@ -8583,120 +9075,26 @@ where [refTable].[emp_no] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="156,42"
-          Id="Package\Convert factSalary and bridgeEmployee\Load client_emp"
-          TopLeft="526,110" />
         <EdgeLayout
-          Id="Package\Convert factSalary and bridgeEmployee.Paths[OLE DB Source Output]"
-          TopLeft="416,81">
+          Id="Package\Convert factSalary and bridgeEmployee.Paths[Derived Column Output]"
+          TopLeft="187,322">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-229,199"
+              EndConnector="0,55"
               Start="0,0"
-              End="-229,191.5">
+              End="0,47.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,95.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,95.5"
-                    Point2="0,99.5"
-                    Point3="-4,99.5" />
-                  <mssgle:LineSegment
-                    End="-225,99.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-225,99.5"
-                    Point2="-229,99.5"
-                    Point3="-229,103.5" />
-                  <mssgle:LineSegment
-                    End="-229,191.5" />
+                    End="0,47.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="314,42"
-          Id="Package\Convert factSalary and bridgeEmployee\Lookup initial-client_emp by warehouse-employee"
-          TopLeft="508,229" />
-        <EdgeLayout
-          Id="Package\Convert factSalary and bridgeEmployee.Paths[OLE DB Source Output1]"
-          TopLeft="604,152">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="61,77"
-              Start="0,0"
-              End="61,69.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,34.5"
-                    Point2="0,38.5"
-                    Point3="4,38.5" />
-                  <mssgle:LineSegment
-                    End="57,38.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="57,38.5"
-                    Point2="61,38.5"
-                    Point3="61,42.5" />
-                  <mssgle:LineSegment
-                    End="61,69.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="180,42"
-          Id="Package\Convert factSalary and bridgeEmployee\OLE DB Destination 1"
-          TopLeft="515,366" />
-        <EdgeLayout
-          Id="Package\Convert factSalary and bridgeEmployee.Paths[Lookup Match Output1]"
-          TopLeft="665,271">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-60,95"
-              Start="0,0"
-              End="-60,87.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,43.5"
-                    Point2="0,47.5"
-                    Point3="-4,47.5" />
-                  <mssgle:LineSegment
-                    End="-56,47.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-56,47.5"
-                    Point2="-60,47.5"
-                    Point3="-60,51.5" />
-                  <mssgle:LineSegment
-                    End="-60,87.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-78.19138671875,52.5,96.3827734375,11.609375"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8804,7 +9202,7 @@ where [refTable].[emp_no] = ?</property>
     design-time-name="Package\Load city">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="180,42"
           Id="Package\Load city\OLE DB Destination 2"
@@ -8848,7 +9246,9 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8882,7 +9282,9 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8892,7 +9294,7 @@ where [refTable].[emp_no] = ?</property>
     design-time-name="Package\Load client_emp">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171,42"
           Id="Package\Load client_emp\OLE DB Destination"
@@ -8924,7 +9326,9 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8946,7 +9350,9 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8969,7 +9375,7 @@ where [refTable].[emp_no] = ?</property>
     design-time-name="Package\Load country, department, title, clients">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="165,42"
           Id="Package\Load country, department, title, clients\Data Conversion 3"
@@ -9037,7 +9443,9 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9059,7 +9467,9 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9093,7 +9503,9 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9127,7 +9539,9 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9149,7 +9563,9 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9183,7 +9599,9 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9217,7 +9635,9 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9239,7 +9659,9 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9301,7 +9723,7 @@ where [refTable].[emp_no] = ?</property>
     design-time-name="Package\Load employee">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="124,42"
           Id="Package\Load employee\employee"
@@ -9333,7 +9755,9 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9355,7 +9779,9 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9378,7 +9804,7 @@ where [refTable].[emp_no] = ?</property>
     design-time-name="Package\Load state">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="180,42"
           Id="Package\Load state\OLE DB Destination 1"
@@ -9410,7 +9836,9 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9432,11 +9860,59 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Convert employee\Lookup employee-birth_date by dimDate">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[dimDate]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Convert employee\Lookup employee-hire_date by dimDate">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[dimDate]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
