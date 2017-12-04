@@ -4,7 +4,7 @@ go
 
 CREATE TABLE [newdepartments] (
     [dept_no] varchar(4),
-    [dept_name] varchar(100)
+    [dept_name] varchar(40)
 );
 
 CREATE TABLE [newCity] (

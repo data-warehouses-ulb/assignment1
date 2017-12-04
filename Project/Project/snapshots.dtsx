@@ -7,12 +7,12 @@
   DTS:CreatorName="PADI\rkumar"
   DTS:DTSID="{E8E29EC6-E26B-46D9-830D-2843F0B96047}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="14.0.0800.98"
+  DTS:LastModifiedProductVersion="14.0.0800.90"
   DTS:LocaleID="2060"
   DTS:ObjectName="snapshots"
   DTS:PackageType="5"
-  DTS:VersionBuild="113"
-  DTS:VersionGUID="{F9ADD1DD-BA1E-46D7-A400-085E27D2AEBE}">
+  DTS:VersionBuild="137"
+  DTS:VersionGUID="{9A793711-16D1-4548-B3C4-F0DAFC025560}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -40,7 +40,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 0"
-              DTS:DTSID="{2C674A5A-CBC7-47EF-AF27-4DF645657C85}"
+              DTS:DTSID="{1C306389-58AF-4952-BEE0-94783572A151}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -49,7 +49,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 1"
-              DTS:DTSID="{A8464B5B-99B9-42A7-85D3-9D55053A9292}"
+              DTS:DTSID="{E397275C-D118-4B55-9BF8-45923AEEFB58}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -58,7 +58,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 2"
-              DTS:DTSID="{AE6EE0B5-EECD-4734-B0DC-E05F1643F313}"
+              DTS:DTSID="{95C6E406-64D3-44DD-A439-6A96F6E55315}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -88,7 +88,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 0"
-              DTS:DTSID="{53299BC5-CDA5-4B8E-A346-7E0884AF0569}"
+              DTS:DTSID="{9ECCA71A-B3E3-4D33-A102-AB8B36919D27}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -97,7 +97,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 1"
-              DTS:DTSID="{BDDC6A9E-CE74-4F08-BB3A-07E5A692A019}"
+              DTS:DTSID="{EDA834B3-384C-44E8-B3CF-E1A680CBAD3B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -106,7 +106,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 2"
-              DTS:DTSID="{D0B6DA8D-9B75-45FA-B817-10EC54B05B60}"
+              DTS:DTSID="{DF0A9562-7C35-4194-8CC3-874D08459AA1}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -135,7 +135,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 0"
-              DTS:DTSID="{8F3C3E04-0551-4E3C-8196-517FEDEDFF6F}"
+              DTS:DTSID="{58DD1B25-227E-4401-B84B-25B10E0769A9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -143,7 +143,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 1"
-              DTS:DTSID="{0A6D1F3F-69E6-48BD-A824-049C0AB242B4}"
+              DTS:DTSID="{D54BD5A7-B397-4CF5-8445-AC7E6A015ECB}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -173,7 +173,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 0"
-              DTS:DTSID="{D2CB0924-2440-4127-B99D-E6BBFD50343A}"
+              DTS:DTSID="{AEF1CAB9-BD16-4F2B-B364-E281E228EF5E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -182,7 +182,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 1"
-              DTS:DTSID="{31718B8E-7642-445D-98F0-92FE4E29CC1C}"
+              DTS:DTSID="{1BA946C5-2F93-48DE-AA25-49FFF56ABDCA}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -199,7 +199,7 @@
         <DTS:ConnectionManager
           DTS:Format="Delimited"
           DTS:LocaleID="2060"
-          DTS:HeaderRowDelimiter="_x000A_"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
@@ -212,7 +212,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 0"
-              DTS:DTSID="{DAD939AB-6532-49FE-876E-7A808374C1B0}"
+              DTS:DTSID="{0DBDD33D-142D-41B9-AB36-5C29CB2730BC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -221,7 +221,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 1"
-              DTS:DTSID="{43488471-3F89-40D5-8C52-2C627D332155}"
+              DTS:DTSID="{DE8EF254-864B-439A-B1F4-C30FE67BD615}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -238,7 +238,7 @@
         <DTS:ConnectionManager
           DTS:Format="Delimited"
           DTS:LocaleID="2060"
-          DTS:HeaderRowDelimiter="_x000A_"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
@@ -251,7 +251,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 0"
-              DTS:DTSID="{0EC1D94B-40E9-4FE1-A0B1-3F7888A30815}"
+              DTS:DTSID="{2FB6D0CA-E4FD-48A4-BF3C-F133DB631B50}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -260,7 +260,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 1"
-              DTS:DTSID="{98496845-6AA2-4890-B3E1-3F7671B2DDD0}"
+              DTS:DTSID="{CCF862AB-C1C5-432B-B0B1-C8D52D52181D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -269,7 +269,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 2"
-              DTS:DTSID="{A1373597-C617-42E6-B8BA-85D5AEBC59D2}"
+              DTS:DTSID="{A019774B-F1C2-4CC9-B29D-D849C1283397}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -278,7 +278,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 3"
-              DTS:DTSID="{87CB6961-847D-4B91-86CE-FE4C02CFE52C}"
+              DTS:DTSID="{FBEE0663-F9B0-47EA-BE3E-B2C90BDE27A2}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -287,7 +287,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 4"
-              DTS:DTSID="{E5F23966-C619-4EE8-B726-3CC94BF7B726}"
+              DTS:DTSID="{404218A5-00A1-43BF-8CD2-8BFA47A077CE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -296,7 +296,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 5"
-              DTS:DTSID="{B14BAAB3-F49C-478C-8478-48712CB3B03C}"
+              DTS:DTSID="{F24FFD45-854E-4127-BF8D-362773EE1CA5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -305,7 +305,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 6"
-              DTS:DTSID="{C1F5BFCC-2DC2-4CAF-8886-3D0CB29530D1}"
+              DTS:DTSID="{97C32C51-B3BD-4BDA-A668-C2F2DA67D47A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -314,7 +314,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 7"
-              DTS:DTSID="{44D3EBD8-59CD-4204-8B7B-7B16B766E034}"
+              DTS:DTSID="{50B2E54C-57BD-4D6F-861E-E2259025C184}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -323,7 +323,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 8"
-              DTS:DTSID="{4E725BD4-9FC4-48D8-BAA1-7E1619050D12}"
+              DTS:DTSID="{D71D0D7E-5BCE-40A7-8F9B-8F986A6065AB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -332,7 +332,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 9"
-              DTS:DTSID="{C91E1A86-55F1-4C30-A542-9011AFD9795F}"
+              DTS:DTSID="{62C77BC1-EFD2-497B-846D-30CFE31A0F1B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -341,7 +341,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 10"
-              DTS:DTSID="{1F4B17CB-9D9A-4302-9076-B9BAB450CA6F}"
+              DTS:DTSID="{519A9F1B-206D-409D-99FD-BD5609FBB72B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -350,7 +350,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 11"
-              DTS:DTSID="{8FC3D520-92F0-4FFF-AE43-FEFF68FD12FB}"
+              DTS:DTSID="{5B3FD531-A973-4EF6-BCD0-12D7E8A84FC0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -359,78 +359,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 12"
-              DTS:DTSID="{10103076-86D7-432D-AC08-0127D153BB71}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{D6C4B45C-FC2C-489C-BCC8-2BCF94B45581}"
-      DTS:ObjectName="Flat File Connection Manager">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="1033"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\Aldar\Downloads\city.csv">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="3"
-              DTS:TextQualified="True"
-              DTS:ObjectName="city_id"
-              DTS:DTSID="{61E3F775-F12F-4C05-84E4-21EAA0356C63}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="100"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="city"
-              DTS:DTSID="{E1D62390-01B2-4E90-B978-16C74D2821D1}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="3"
-              DTS:TextQualified="True"
-              DTS:ObjectName="state_id"
-              DTS:DTSID="{B0CA3420-4219-4B29-8650-8A32EA07DAFE}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="100"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="state"
-              DTS:DTSID="{BBE0EE51-A70B-4ACD-AD45-578662807457}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="3"
-              DTS:TextQualified="True"
-              DTS:ObjectName="country_id"
-              DTS:DTSID="{0BE53AE0-4CF3-42A3-B5A7-132A9E421C90}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="100"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="country"
-              DTS:DTSID="{DCFC957C-E461-483A-82B8-667903AD27FB}"
+              DTS:DTSID="{14BA49CE-E084-4A98-8F3F-E29F808BA07D}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -451,16 +380,6 @@
       DTS:CreationName="OLEDB"
       DTS:DTSID="{65A21896-2819-4187-AD99-95EBC88791ED}"
       DTS:ObjectName="server.warehouse">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=server;Initial Catalog=warehouse;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[server.warehouse 1]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{3FCA3E80-7B45-470C-A713-77D9A608D3F1}"
-      DTS:ObjectName="server.warehouse 1">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="Data Source=server;Initial Catalog=warehouse;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
@@ -490,7 +409,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 0"
-              DTS:DTSID="{20F4AC63-F2EB-46CD-86A6-CE2EEFF7248F}"
+              DTS:DTSID="{3332269E-6CBC-4B1D-88B7-94B5031AE94D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -499,7 +418,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 1"
-              DTS:DTSID="{1047568C-F86F-4E8A-8514-B7B56882C79D}"
+              DTS:DTSID="{638055DA-4C0B-43A5-82B1-8D5376ACA74F}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -529,7 +448,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 0"
-              DTS:DTSID="{579CACF1-D619-4956-A642-DD5A04B9CBB4}"
+              DTS:DTSID="{CF03D230-FC4E-4F80-9ED5-8EA3E0C1D445}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -538,7 +457,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 1"
-              DTS:DTSID="{AC5B427C-3EC6-4C68-BCE7-A225EC557CD0}"
+              DTS:DTSID="{DB342C93-662E-495A-98A7-59CA91A605D2}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -547,7 +466,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 2"
-              DTS:DTSID="{0F086665-E493-4314-9081-0DD5C41ABFA8}"
+              DTS:DTSID="{898D5FAE-7FAF-40F3-9121-B752CF974F77}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -577,7 +496,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 0"
-              DTS:DTSID="{1B1747F6-8254-4354-97A6-2B8AEA5D67B0}"
+              DTS:DTSID="{DE891119-6336-4843-AA1C-A3D638B9865D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -586,7 +505,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 1"
-              DTS:DTSID="{55362993-474A-42A2-9C47-90E5A9A87AB8}"
+              DTS:DTSID="{08730A69-4588-40A6-8CD8-B0AA03EEB0CD}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -652,7 +571,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{E44BD960-AB80-4E91-8A4D-0D890BAF89AE}"
-              SQLTask:SqlStatementSource="CREATE TABLE [newdepartments] (&#xA;    [dept_no] varchar(4),&#xA;    [dept_name] varchar(100)&#xA;);&#xA;&#xA;CREATE TABLE [newCity] (&#xA;    [city_id] int,&#xA;    [city] varchar(100),&#xA;    [state_id] int&#xA;);&#xA;&#xA;CREATE TABLE [newState] (&#xA;    [state_id] int,&#xA;    [state] varchar(100),&#xA;    [country_id] int&#xA;);&#xA;&#xA;CREATE TABLE [newCountry] (&#xA;    [country] varchar(100),&#xA;    [country_id] int&#xA;);&#xA;&#xA;CREATE TABLE newTitle(&#xA;&#x9;[id] [int] NOT NULL,&#xA;&#x9;[title] [varchar](50) NULL&#xA;);&#xA;&#xA;CREATE TABLE [new_client_emp] (&#xA;    [emp_no] int,&#xA;    [client] int&#xA;);&#xA;&#xA;CREATE TABLE [new_emp] (&#xA;    [emp_no] int,&#xA;    [birth_date] datetime,&#xA;    [first_name] varchar(100),&#xA;    [last_name] varchar(100),&#xA;    [gender] varchar(10),&#xA;    [hire_date] datetime,&#xA;    [salary] int,&#xA;    [title_no] int,&#xA;    [dept_no] varchar(4),&#xA;    [current_city] int,&#xA;    [base_city] int,&#xA;    [marital_status] varchar(10),&#xA;    [no_of_children] int&#xA;);&#xA;&#xA;CREATE TABLE [snapshotdates] (&#xA;    [from_date] datetime,&#xA;    [to_date] datetime&#xA;);&#xA;&#xA;CREATE TABLE [new_clients] (&#xA;    [client_id] int,&#xA;    [client] varchar(100),&#xA;    [category] varchar(10)&#xA;);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="use [temp]&#xA;go&#xA;&#xA;&#xA;CREATE TABLE [newdepartments] (&#xA;    [dept_no] varchar(4),&#xA;    [dept_name] varchar(40)&#xA;);&#xA;&#xA;CREATE TABLE [newCity] (&#xA;    [city_id] int,&#xA;    [city] varchar(100),&#xA;    [state_id] int&#xA;);&#xA;&#xA;CREATE TABLE [newState] (&#xA;    [state_id] int,&#xA;    [state] varchar(100),&#xA;    [country_id] int&#xA;);&#xA;&#xA;CREATE TABLE [newCountry] (&#xA;    [country] varchar(100),&#xA;    [country_id] int&#xA;);&#xA;&#xA;CREATE TABLE newTitle(&#xA;&#x9;[id] [int] NOT NULL,&#xA;&#x9;[title] [varchar](50) NULL&#xA;);&#xA;&#xA;CREATE TABLE [new_client_emp] (&#xA;    [emp_no] int,&#xA;    [client] int&#xA;);&#xA;&#xA;CREATE TABLE [new_emp] (&#xA;    [emp_no] int,&#xA;    [birth_date] datetime,&#xA;    [first_name] varchar(100),&#xA;    [last_name] varchar(100),&#xA;    [gender] varchar(10),&#xA;    [hire_date] datetime,&#xA;    [salary] int,&#xA;    [title_no] int,&#xA;    [dept_no] varchar(4),&#xA;    [current_city] int,&#xA;    [base_city] int,&#xA;    [marital_status] varchar(10),&#xA;    [no_of_children] int&#xA;);&#xA;&#xA;CREATE TABLE [snapshotdates] (&#xA;    [from_date] datetime,&#xA;    [to_date] datetime&#xA;);&#xA;&#xA;CREATE TABLE [new_clients] (&#xA;    [client_id] int,&#xA;    [client] varchar(100),&#xA;    [category] varchar(10)&#xA;);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -923,7 +842,7 @@
                         <property
                           dataType="System.Boolean"
                           description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
-                          name="AlwaysUseDefaultCodePage">false</property>
+                          name="AlwaysUseDefaultCodePage">true</property>
                         <property
                           dataType="System.Int32"
                           description="Spécifie le mode utilisé pour accéder à la base de données."
@@ -1013,7 +932,7 @@
                               name="city_id" />
                             <externalMetadataColumn
                               refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[Entrée de destination OLE DB].ExternalColumns[city]"
-                              codePage="1252"
+                              codePage="1251"
                               dataType="str"
                               length="100"
                               name="city" />
@@ -1023,7 +942,7 @@
                               name="state_id" />
                             <externalMetadataColumn
                               refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[Entrée de destination OLE DB].ExternalColumns[state]"
-                              codePage="1252"
+                              codePage="1251"
                               dataType="str"
                               length="100"
                               name="state" />
@@ -1033,7 +952,7 @@
                               name="country_id" />
                             <externalMetadataColumn
                               refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[Entrée de destination OLE DB].ExternalColumns[country_name]"
-                              codePage="1252"
+                              codePage="1251"
                               dataType="str"
                               length="100"
                               name="country_name" />
@@ -9926,24 +9845,24 @@ where [refTable].[id] = ?</property>
                   startId="Package\For Loop Container\Load snapshot nr @myvar\emp_data.Outputs[Data Conversion Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output8]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 4.Inputs[Data Conversion Input]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\departments_data.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\title.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\departments.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output7]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\clients_data.Inputs[Data Conversion Input]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 3.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\clients.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\state.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output6]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\client_emp_data.Inputs[Data Conversion Input]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 2.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\client_emp.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\country.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output5]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\emp_data.Inputs[Data Conversion Input]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 1.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\emp.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\city.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output4]"
                   endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion.Inputs[Data Conversion Input]"
@@ -9951,24 +9870,24 @@ where [refTable].[id] = ?</property>
                   startId="Package\For Loop Container\Load snapshot nr @myvar\snapshotdate.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output3]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 1.Inputs[Data Conversion Input]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\emp_data.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\city.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\emp.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output2]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 2.Inputs[Data Conversion Input]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\client_emp_data.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\country.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\client_emp.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output1]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 3.Inputs[Data Conversion Input]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\clients_data.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\state.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\clients.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\departments_data.Inputs[Data Conversion Input]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 4.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\departments.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\title.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Union All Output 1]"
                   endId="Package\For Loop Container\Load snapshot nr @myvar\newState.Inputs[OLE DB Destination Input]"
@@ -10028,7 +9947,7 @@ where [refTable].[id] = ?</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Set variable @snapDate"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -10046,18 +9965,17 @@ where [refTable].[id] = ?</property>
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:DelayValidation="True"
           DTS:Description="Execute SQL Task"
-          DTS:Disabled="True"
           DTS:DTSID="{B400793F-DFFE-4E1C-9E30-147E84992417}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SIMPLIFY - ENABLE FOR REDUCED DATA"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{E44BD960-AB80-4E91-8A4D-0D890BAF89AE}"
-              SQLTask:SqlStatementSource="use [temp]&#xA;&#xA;go&#xA;&#xA;delete from new_client_emp where not emp_no&lt;20000;&#xA;&#xA;delete from new_emp where not emp_no&lt;20000;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="use [temp]&#xA;&#xA;go&#xA;&#xA;delete from new_client_emp where not emp_no&lt;10100;&#xA;&#xA;delete from new_emp where not emp_no&lt;10100;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -10127,7 +10045,7 @@ where [refTable].[id] = ?</property>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{E44BD960-AB80-4E91-8A4D-0D890BAF89AE}"
-          SQLTask:SqlStatementSource="use [temp]&#xA;&#xA;go&#xA;&#xA;delete from factSalary where EID not in&#xA;(select EID from dimEmployee where emp_no&lt;20000);&#xA;&#xA;delete from bridgeEmployeeClient where EID not in&#xA;(select EID from dimEmployee where emp_no&lt;20000);&#xA;&#xA;delete from &#xA;dimEmployee where not emp_no&lt;20000;&#xA;&#xA;delete from dimClients where CID not in &#xA;(select B.CID from bridgeEmployeeClient B where B.EID in&#xA;(select E2.EID from dimEmployee E2 where emp_no&lt;20000));" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="use [temp]&#xA;&#xA;go&#xA;&#xA;delete from factSalary where EID not in&#xA;(select EID from dimEmployee where emp_no&lt;10020);&#xA;&#xA;delete from bridgeEmployeeClient where EID not in&#xA;(select EID from dimEmployee where emp_no&lt;10020);&#xA;&#xA;delete from &#xA;dimEmployee where not emp_no&lt;10020;&#xA;&#xA;delete from dimClients where CID not in &#xA;(select B.CID from bridgeEmployeeClient B where B.EID in&#xA;(select E2.EID from dimEmployee E2 where emp_no&lt;10020));" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -10221,7 +10139,7 @@ where [refTable].[id] = ?</property>
         <NodeLayout
           Size="136,54"
           Id="Package\For Loop Container\SIMPLIFY - ENABLE FOR REDUCED DATA"
-          TopLeft="295.283018867925,199.11320754717" />
+          TopLeft="297.283018867925,192.11320754717" />
         <EdgeLayout
           Id="Package\For Loop Container.PrecedenceConstraints[Constraint]"
           TopLeft="360.882075471698,60.4339622641509">
@@ -10250,26 +10168,26 @@ where [refTable].[id] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="27.509433962265,30.471698113208"
+              EndConnector="29.509433962265,23.471698113208"
               Start="0,0"
-              End="27.509433962265,22.971698113208">
+              End="29.509433962265,15.971698113208">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,8.39973862615389" />
+                    End="0,5.55125377766904" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,8.39973862615389"
-                    Point2="0,12.3997386261539"
-                    Point3="4,12.3997386261539" />
+                    Point1="0,5.55125377766904"
+                    Point2="0,9.55125377766904"
+                    Point3="4,9.55125377766904" />
                   <mssgle:LineSegment
-                    End="23.509433962265,12.3997386261539" />
+                    End="25.509433962265,9.55125377766904" />
                   <mssgle:CubicBezierSegment
-                    Point1="23.509433962265,12.3997386261539"
-                    Point2="27.509433962265,12.3997386261539"
-                    Point3="27.509433962265,16.3997386261539" />
+                    Point1="25.509433962265,9.55125377766904"
+                    Point2="29.509433962265,9.55125377766904"
+                    Point3="29.509433962265,13.551253777669" />
                   <mssgle:LineSegment
-                    End="27.509433962265,22.971698113208" />
+                    End="29.509433962265,15.971698113208" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10280,30 +10198,30 @@ where [refTable].[id] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container.PrecedenceConstraints[Constraint 2]"
-          TopLeft="363.283018867925,253.11320754717">
+          TopLeft="365.283018867925,246.11320754717">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-101.125786163522,29.094339622641"
+              EndConnector="-103.125786163522,36.094339622641"
               Start="0,0"
-              End="-101.125786163522,21.594339622641">
+              End="-103.125786163522,28.594339622641">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,13.4107106318861" />
+                    End="0,17.5996688967563" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,13.4107106318861"
-                    Point2="0,17.4107106318861"
-                    Point3="-4,17.4107106318861" />
+                    Point1="0,17.5996688967563"
+                    Point2="0,21.5996688967563"
+                    Point3="-4,21.5996688967563" />
                   <mssgle:LineSegment
-                    End="-97.1257861635224,17.4107106318861" />
+                    End="-99.1257861635224,21.5996688967563" />
                   <mssgle:CubicBezierSegment
-                    Point1="-97.1257861635224,17.4107106318861"
-                    Point2="-101.125786163522,17.4107106318861"
-                    Point3="-101.125786163522,21.4107106318861" />
+                    Point1="-99.1257861635224,21.5996688967563"
+                    Point2="-103.125786163522,21.5996688967563"
+                    Point3="-103.125786163522,25.5996688967563" />
                   <mssgle:LineSegment
-                    End="-101.125786163522,21.594339622641" />
+                    End="-103.125786163522,28.594339622641" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10472,10 +10390,6 @@ where [refTable].[id] = ?</property>
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Slowly Changing Dimension"
           TopLeft="210.5,342.5" />
         <NodeLayout
-          Size="121,42"
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Load newCity"
-          TopLeft="254.5,5.5" />
-        <NodeLayout
           Size="237,51"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Lookup newCity-newState by newCountry"
           TopLeft="196.5,231.5" />
@@ -10483,6 +10397,18 @@ where [refTable].[id] = ?</property>
           Size="179,64"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Lookup newCity by newState"
           TopLeft="225.5,107.5" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination"
+          TopLeft="55.5000000000001,442.5" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Load newCity"
+          TopLeft="254.5,5.5" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Commande OLE DB"
+          TopLeft="397.5,437.5" />
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city.Paths[OLE DB Source Output]"
           TopLeft="315,47.5">
@@ -10503,6 +10429,42 @@ where [refTable].[id] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city.Paths[New Output]"
+          TopLeft="281.5,384.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-144.5,58"
+              Start="0,0"
+              End="-144.5,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.4643874643875" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.4643874643875"
+                    Point2="0,23.4643874643875"
+                    Point3="-4,23.4643874643875" />
+                  <mssgle:LineSegment
+                    End="-140.5,23.4643874643875" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-140.5,23.4643874643875"
+                    Point2="-144.5,23.4643874643875"
+                    Point3="-144.5,27.4643874643875" />
+                  <mssgle:LineSegment
+                    End="-144.5,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-99.34138671875,28.4643874643875,54.1827734375,11.43359375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10553,50 +10515,6 @@ where [refTable].[id] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination"
-          TopLeft="55.5000000000001,442.5" />
-        <EdgeLayout
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city.Paths[New Output]"
-          TopLeft="281.5,384.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-144.5,58"
-              Start="0,0"
-              End="-144.5,50.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.4643874643875" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.4643874643875"
-                    Point2="0,23.4643874643875"
-                    Point3="-4,23.4643874643875" />
-                  <mssgle:LineSegment
-                    End="-140.5,23.4643874643875" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-140.5,23.4643874643875"
-                    Point2="-144.5,23.4643874643875"
-                    Point3="-144.5,27.4643874643875" />
-                  <mssgle:LineSegment
-                    End="-144.5,50.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-99.34138671875,28.4643874643875,54.1827734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="171,42"
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Commande OLE DB"
-          TopLeft="397.5,437.5" />
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city.Paths[Changing Attribute Updates Output]"
           TopLeft="348.5,384.5">
@@ -10704,19 +10622,6 @@ where [refTable].[id] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Load newCity">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Lookup newCity-newState by newCountry">
     <Properties>
       <Property>
@@ -10762,6 +10667,32 @@ where [refTable].[id] = ?</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Load newCity">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee">
     <LayoutInfo>
@@ -10774,7 +10705,7 @@ where [refTable].[id] = ?</property>
         <NodeLayout
           Size="175,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee\OLE DB Command 1"
-          TopLeft="294,719.5" />
+          TopLeft="281,786.5" />
         <NodeLayout
           Size="281,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee\Lookup temp_new-emp by temp_new_title"
@@ -10838,9 +10769,7 @@ where [refTable].[id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10862,9 +10791,7 @@ where [refTable].[id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10898,9 +10825,7 @@ where [refTable].[id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10909,9 +10834,9 @@ where [refTable].[id] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="18.8333333333334,264"
+              EndConnector="18.8333333333333,264"
               Start="0,0"
-              End="18.8333333333334,256.5">
+              End="18.8333333333333,256.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -10922,13 +10847,13 @@ where [refTable].[id] = ?</property>
                     Point2="0,156.332789559543"
                     Point3="4,156.332789559543" />
                   <mssgle:LineSegment
-                    End="14.8333333333334,156.332789559543" />
+                    End="14.8333333333333,156.332789559543" />
                   <mssgle:CubicBezierSegment
-                    Point1="14.8333333333334,156.332789559543"
-                    Point2="18.8333333333334,156.332789559543"
-                    Point3="18.8333333333334,160.332789559543" />
+                    Point1="14.8333333333333,156.332789559543"
+                    Point2="18.8333333333333,156.332789559543"
+                    Point3="18.8333333333333,160.332789559543" />
                   <mssgle:LineSegment
-                    End="18.8333333333334,256.5" />
+                    End="18.8333333333333,256.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11041,9 +10966,9 @@ where [refTable].[id] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-87.75,60"
+              EndConnector="-87.7499999999999,60"
               Start="0,0"
-              End="-87.75,52.5">
+              End="-87.7499999999999,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -11054,13 +10979,13 @@ where [refTable].[id] = ?</property>
                     Point2="0,20.503937007874"
                     Point3="-4,20.503937007874" />
                   <mssgle:LineSegment
-                    End="-83.75,20.503937007874" />
+                    End="-83.7499999999999,20.503937007874" />
                   <mssgle:CubicBezierSegment
-                    Point1="-83.75,20.503937007874"
-                    Point2="-87.75,20.503937007874"
-                    Point3="-87.75,24.503937007874" />
+                    Point1="-83.7499999999999,20.503937007874"
+                    Point2="-87.7499999999999,20.503937007874"
+                    Point3="-87.7499999999999,24.503937007874" />
                   <mssgle:LineSegment
-                    End="-87.75,52.5" />
+                    End="-87.7499999999999,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11090,9 +11015,7 @@ where [refTable].[id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-8,18.25,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11114,9 +11037,7 @@ where [refTable].[id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11138,9 +11059,7 @@ where [refTable].[id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11149,33 +11068,33 @@ where [refTable].[id] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="98.75,60"
+              EndConnector="85.75,127"
               Start="0,0"
-              End="98.75,52.5">
+              End="85.75,119.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.503937007874" />
+                    End="0,39.4" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,16.503937007874"
-                    Point2="0,20.503937007874"
-                    Point3="4,20.503937007874" />
+                    Point1="0,39.4"
+                    Point2="0,43.4"
+                    Point3="4,43.4" />
                   <mssgle:LineSegment
-                    End="94.75,20.503937007874" />
+                    End="81.75,43.4" />
                   <mssgle:CubicBezierSegment
-                    Point1="94.75,20.503937007874"
-                    Point2="98.75,20.503937007874"
-                    Point3="98.75,24.503937007874" />
+                    Point1="81.75,43.4"
+                    Point2="85.75,43.4"
+                    Point3="85.75,47.4" />
                   <mssgle:LineSegment
-                    End="98.75,52.5" />
+                    End="85.75,119.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-29.15890625,25.503937007874,157.0678125,11.6630859375"
+              BoundingBox="-35.65890625,48.4,157.0678125,11.6630859375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -11423,7 +11342,7 @@ where [refTable].[id] = ?</property>
     design-time-name="Package\For Loop Container\Load snapshot nr @myvar">
     <LayoutInfo>
       <GraphLayout
-        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="136,44"
           Id="Package\For Loop Container\Load snapshot nr @myvar\Union All 6"
@@ -11587,9 +11506,7 @@ where [refTable].[id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11611,9 +11528,7 @@ where [refTable].[id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11639,9 +11554,7 @@ where [refTable].[id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11663,9 +11576,7 @@ where [refTable].[id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11687,9 +11598,7 @@ where [refTable].[id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11723,9 +11632,7 @@ where [refTable].[id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11759,9 +11666,7 @@ where [refTable].[id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11787,9 +11692,7 @@ where [refTable].[id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11815,14 +11718,86 @@ where [refTable].[id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output8]"
-          TopLeft="799.235849056604,429.235849056604">
+          TopLeft="586.405660377358,55.4245283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0.150943396226467,49.9245283018868"
+              Start="0,0"
+              End="0.150943396226467,42.4245283018868">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.9433962264151" />
+                  <mssgle:LineSegment
+                    End="0.150943396226467,24.9433962264151" />
+                  <mssgle:LineSegment
+                    End="0.150943396226467,42.4245283018868" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output7]"
+          TopLeft="599.537735849057,434.216981132075">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-1.01886792452831,39.9245283018868"
+              Start="0,0"
+              End="-1.01886792452831,32.4245283018868">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.9622641509434" />
+                  <mssgle:LineSegment
+                    End="-1.01886792452831,19.9622641509434" />
+                  <mssgle:LineSegment
+                    End="-1.01886792452831,32.4245283018868" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output6]"
+          TopLeft="346.933962264151,428.367924528302">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.8867924528302"
+              Start="0,0"
+              End="0,40.3867924528302">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.3867924528302" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output5]"
+          TopLeft="86.3301886792453,427.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -11839,89 +11814,7 @@ where [refTable].[id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output7]"
-          TopLeft="414.669811320755,59.4245283018868">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0.15094339622641,47.9245283018868"
-              Start="0,0"
-              End="0.15094339622641,40.4245283018868">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.9622641509434" />
-                  <mssgle:LineSegment
-                    End="0.15094339622641,23.9622641509434" />
-                  <mssgle:LineSegment
-                    End="0.15094339622641,40.4245283018868" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output6]"
-          TopLeft="247.915094339623,60.4433962264151">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0.226415094339615,48.9056603773585"
-              Start="0,0"
-              End="0.226415094339615,41.4056603773585">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.4528301886793" />
-                  <mssgle:LineSegment
-                    End="0.226415094339615,24.4528301886793" />
-                  <mssgle:LineSegment
-                    End="0.226415094339615,41.4056603773585" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output5]"
-          TopLeft="84.1084905660377,58.2924528301887">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,49.0566037735853"
-              Start="0,0"
-              End="0,41.5566037735853">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41.5566037735853" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11947,14 +11840,86 @@ where [refTable].[id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output3]"
-          TopLeft="86.3301886792453,427.5">
+          TopLeft="84.1084905660377,58.2924528301887">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.0566037735853"
+              Start="0,0"
+              End="0,41.5566037735853">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.5566037735853" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output2]"
+          TopLeft="247.915094339623,60.4433962264151">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0.226415094339615,48.9056603773585"
+              Start="0,0"
+              End="0.226415094339615,41.4056603773585">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.4528301886793" />
+                  <mssgle:LineSegment
+                    End="0.226415094339615,24.4528301886793" />
+                  <mssgle:LineSegment
+                    End="0.226415094339615,41.4056603773585" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output1]"
+          TopLeft="414.669811320755,59.4245283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0.15094339622641,47.9245283018868"
+              Start="0,0"
+              End="0.15094339622641,40.4245283018868">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.9622641509434" />
+                  <mssgle:LineSegment
+                    End="0.15094339622641,23.9622641509434" />
+                  <mssgle:LineSegment
+                    End="0.15094339622641,40.4245283018868" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output]"
+          TopLeft="799.235849056604,429.235849056604">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -11971,89 +11936,7 @@ where [refTable].[id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output2]"
-          TopLeft="346.933962264151,428.367924528302">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,47.8867924528302"
-              Start="0,0"
-              End="0,40.3867924528302">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,40.3867924528302" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output1]"
-          TopLeft="599.537735849057,434.216981132075">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-1.01886792452831,39.9245283018868"
-              Start="0,0"
-              End="-1.01886792452831,32.4245283018868">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.9622641509434" />
-                  <mssgle:LineSegment
-                    End="-1.01886792452831,19.9622641509434" />
-                  <mssgle:LineSegment
-                    End="-1.01886792452831,32.4245283018868" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output]"
-          TopLeft="586.405660377358,55.4245283018868">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0.150943396226467,49.9245283018868"
-              Start="0,0"
-              End="0.150943396226467,42.4245283018868">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.9433962264151" />
-                  <mssgle:LineSegment
-                    End="0.150943396226467,24.9433962264151" />
-                  <mssgle:LineSegment
-                    End="0.150943396226467,42.4245283018868" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12075,9 +11958,7 @@ where [refTable].[id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12099,9 +11980,7 @@ where [refTable].[id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12123,9 +12002,7 @@ where [refTable].[id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12151,9 +12028,7 @@ where [refTable].[id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12175,9 +12050,7 @@ where [refTable].[id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12203,9 +12076,7 @@ where [refTable].[id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12227,9 +12098,7 @@ where [refTable].[id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12255,9 +12124,7 @@ where [refTable].[id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12283,9 +12150,7 @@ where [refTable].[id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
