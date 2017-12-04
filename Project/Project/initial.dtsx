@@ -7,12 +7,12 @@
   DTS:CreatorName="IPHONE\Aldar"
   DTS:DTSID="{77602D5A-C88B-4E73-BD51-FBC0A994FD66}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="14.0.0800.90"
+  DTS:LastModifiedProductVersion="14.0.0800.98"
   DTS:LocaleID="1033"
   DTS:ObjectName="initial"
   DTS:PackageType="5"
-  DTS:VersionBuild="105"
-  DTS:VersionGUID="{9A645BE3-BB72-4ADD-912A-17C4127A4689}">
+  DTS:VersionBuild="107"
+  DTS:VersionGUID="{D4279525-E932-4ED2-989D-8B7E88565A54}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -94,6 +94,345 @@
               DTS:TextQualified="True"
               DTS:ObjectName="Column 2"
               DTS:DTSID="{3385D1E2-2236-4BB4-9702-720856E876D5}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 10]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{EB12984D-6F3E-4C4E-9768-35D2379417DD}"
+      DTS:ObjectName="Flat File Connection Manager 10">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2060"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\DW\initial-data\departments.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 0"
+              DTS:DTSID="{0B75DF43-CEEE-4446-8A81-301B22DD5798}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 1"
+              DTS:DTSID="{C8677066-5807-47EA-BAE3-4016202777A5}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 11]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{D4EC5D62-44AE-4941-80CE-88D75649DF80}"
+      DTS:ObjectName="Flat File Connection Manager 11">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2060"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\DW\initial-data\title.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 0"
+              DTS:DTSID="{9A659246-BD31-4B95-8355-E2C831C8A45A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 1"
+              DTS:DTSID="{F859646E-B519-4A49-B51A-581FF3262332}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 12]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{E6F08671-DEFD-4B60-8649-941F8675644E}"
+      DTS:ObjectName="Flat File Connection Manager 12">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2060"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\DW\initial-data\state.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 0"
+              DTS:DTSID="{76B54B40-82DF-48E5-B45E-4A0CEF629C7F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 1"
+              DTS:DTSID="{0B604C00-5A2D-4B76-A3B7-6AAF67CD5031}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 2"
+              DTS:DTSID="{19F4C222-8D50-4897-8CFB-4AF1A4635592}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 13]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{8C13CE18-A31D-4493-95BC-66B3488520C6}"
+      DTS:ObjectName="Flat File Connection Manager 13">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2060"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\DW\initial-data\city.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 0"
+              DTS:DTSID="{6F5E3E89-77E7-4EBD-9FA4-EF066FEF334C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 1"
+              DTS:DTSID="{3C824077-55A5-4324-A126-CE029380BEED}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 2"
+              DTS:DTSID="{FCF48517-2541-4600-855C-88339E9CA700}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 14]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{B0E900D0-58A6-421F-8B89-1BFB84232DEB}"
+      DTS:ObjectName="Flat File Connection Manager 14">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2060"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\DW\initial-data\employee.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 0"
+              DTS:DTSID="{DB73BAA9-9957-4969-99E4-729B5C8E5CE7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 1"
+              DTS:DTSID="{F864DABC-2D19-49F0-9A28-E035F4A3D81F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 2"
+              DTS:DTSID="{98020871-EEA7-4A2D-8071-BC5547244021}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 3"
+              DTS:DTSID="{E522527F-32D1-4D6D-BEB2-63C8C9CE9C56}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 4"
+              DTS:DTSID="{5B901185-538F-419F-959B-B3E1F2AA5B79}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 5"
+              DTS:DTSID="{BCD86C21-0252-4269-A0D2-A8A236E57373}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 6"
+              DTS:DTSID="{F35B48F8-342B-439D-AE01-0749086C70EF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 7"
+              DTS:DTSID="{A423F82D-E507-4A14-AB58-20556AB24F1C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 8"
+              DTS:DTSID="{11602D43-ED05-4D42-B629-39B63F37A473}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 9"
+              DTS:DTSID="{CA253821-A8F5-4A60-8F50-1153567109E7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 10"
+              DTS:DTSID="{3A178F11-450B-4C02-B821-37C43CA83C24}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 11"
+              DTS:DTSID="{B4CFEEF5-DCEC-45BC-8E39-19FB134865DA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 12"
+              DTS:DTSID="{622C75B6-664A-477C-AFB2-08ECB3262D4F}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 15]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{8777CDE3-FEEC-4B6F-A57B-591F06DAB630}"
+      DTS:ObjectName="Flat File Connection Manager 15">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2060"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\DW\initial-data\client_emp.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 0"
+              DTS:DTSID="{C1EE17E8-3799-4F7C-9713-5B477BDC46F3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 1"
+              DTS:DTSID="{9C907060-EFD1-4E87-A787-1B2DB369F920}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -439,6 +778,89 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 8]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{1BB6FCEB-00FE-4BBF-985F-7574931DAB92}"
+      DTS:ObjectName="Flat File Connection Manager 8">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2060"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\DW\initial-data\country.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 0"
+              DTS:DTSID="{D4806778-E6FB-4B83-8851-1008EE13EDBF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 1"
+              DTS:DTSID="{6B98DB5E-38FB-4508-AC16-279FE848CD77}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 9]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{6FE50724-A9AE-4F6B-85B1-645D66CED865}"
+      DTS:ObjectName="Flat File Connection Manager 9">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2060"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\DW\initial-data\clients.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 0"
+              DTS:DTSID="{7FFB63A5-BAA7-4608-B29A-BF79680B2C53}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 1"
+              DTS:DTSID="{17FCF0CC-BC99-4DDF-B9A1-6B6D178A7EDB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 2"
+              DTS:DTSID="{D961E6A8-2F89-4A92-9EE2-A86D1E40C26E}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[server.initial]"
       DTS:CreationName="OLEDB"
       DTS:DTSID="{0FB70CB1-DB06-49B8-8BB7-D44D40FA575C}"
@@ -695,7 +1117,7 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Convert city and clients\Load clients.Outputs[OLE DB Source Output].Columns[client]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -706,7 +1128,7 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Convert city and clients\Load clients.Outputs[OLE DB Source Output].Columns[category]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -724,13 +1146,13 @@
                       name="client_id" />
                     <externalMetadataColumn
                       refId="Package\Convert city and clients\Load clients.Outputs[OLE DB Source Output].ExternalColumns[client]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="100"
                       name="client" />
                     <externalMetadataColumn
                       refId="Package\Convert city and clients\Load clients.Outputs[OLE DB Source Output].ExternalColumns[category]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="10"
                       name="category" />
@@ -748,14 +1170,14 @@
                       name="client_id" />
                     <outputColumn
                       refId="Package\Convert city and clients\Load clients.Outputs[OLE DB Source Error Output].Columns[client]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="100"
                       lineageId="Package\Convert city and clients\Load clients.Outputs[OLE DB Source Error Output].Columns[client]"
                       name="client" />
                     <outputColumn
                       refId="Package\Convert city and clients\Load clients.Outputs[OLE DB Source Error Output].Columns[category]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="10"
                       lineageId="Package\Convert city and clients\Load clients.Outputs[OLE DB Source Error Output].Columns[category]"
@@ -1366,7 +1788,7 @@ where [refTable].[country_id] = ?</property>
                       lineageId="Package\Convert city and clients\Load clients.Outputs[OLE DB Source Output].Columns[client_id]" />
                     <inputColumn
                       refId="Package\Convert city and clients\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[category]"
-                      cachedCodepage="1251"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="10"
                       cachedName="category"
@@ -1374,7 +1796,7 @@ where [refTable].[country_id] = ?</property>
                       lineageId="Package\Convert city and clients\Load clients.Outputs[OLE DB Source Output].Columns[category]" />
                     <inputColumn
                       refId="Package\Convert city and clients\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[client]"
-                      cachedCodepage="1251"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="100"
                       cachedName="client"
@@ -3215,7 +3637,7 @@ where [refTable].[Date] = ?</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].Columns[first_name]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -3226,7 +3648,7 @@ where [refTable].[Date] = ?</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].Columns[last_name]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -3237,7 +3659,7 @@ where [refTable].[Date] = ?</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].Columns[gender]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -3275,7 +3697,7 @@ where [refTable].[Date] = ?</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].Columns[dept_no]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -3304,7 +3726,7 @@ where [refTable].[Date] = ?</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].Columns[marital_status]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -3335,19 +3757,19 @@ where [refTable].[Date] = ?</property>
                       name="birth_date" />
                     <externalMetadataColumn
                       refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[first_name]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="100"
                       name="first_name" />
                     <externalMetadataColumn
                       refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[last_name]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="100"
                       name="last_name" />
                     <externalMetadataColumn
                       refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[gender]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="10"
                       name="gender" />
@@ -3365,7 +3787,7 @@ where [refTable].[Date] = ?</property>
                       name="title_no" />
                     <externalMetadataColumn
                       refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[dept_no]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="4"
                       name="dept_no" />
@@ -3379,7 +3801,7 @@ where [refTable].[Date] = ?</property>
                       name="base_city" />
                     <externalMetadataColumn
                       refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[marital_status]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="10"
                       name="marital_status" />
@@ -3406,21 +3828,21 @@ where [refTable].[Date] = ?</property>
                       name="birth_date" />
                     <outputColumn
                       refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[first_name]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="100"
                       lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[first_name]"
                       name="first_name" />
                     <outputColumn
                       refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[last_name]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="100"
                       lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[last_name]"
                       name="last_name" />
                     <outputColumn
                       refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[gender]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="10"
                       lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[gender]"
@@ -3442,7 +3864,7 @@ where [refTable].[Date] = ?</property>
                       name="title_no" />
                     <outputColumn
                       refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[dept_no]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="4"
                       lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[dept_no]"
@@ -3459,7 +3881,7 @@ where [refTable].[Date] = ?</property>
                       name="base_city" />
                     <outputColumn
                       refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[marital_status]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="10"
                       lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[marital_status]"
@@ -4144,7 +4566,7 @@ where [refTable].[emp_no] = ?</property>
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
-              localeId="1033"
+              localeId="2060"
               name="city"
               usesDispositions="true"
               version="1">
@@ -4161,8 +4583,8 @@ where [refTable].[emp_no] = ?</property>
               <connections>
                 <connection
                   refId="Package\Load city\city.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 5]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 5]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 13]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 13]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -4593,7 +5015,7 @@ where [refTable].[emp_no] = ?</property>
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
-              localeId="1033"
+              localeId="2060"
               name="client_emp"
               usesDispositions="true"
               version="1">
@@ -4610,8 +5032,8 @@ where [refTable].[emp_no] = ?</property>
               <connections>
                 <connection
                   refId="Package\Load client_emp\client_emp.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 7]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 7]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 15]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 15]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -4971,7 +5393,7 @@ where [refTable].[emp_no] = ?</property>
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
-              localeId="1033"
+              localeId="2060"
               name="clients"
               usesDispositions="true"
               version="1">
@@ -4988,8 +5410,8 @@ where [refTable].[emp_no] = ?</property>
               <connections>
                 <connection
                   refId="Package\Load country, department, title, clients\clients.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 9]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 9]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -5120,7 +5542,7 @@ where [refTable].[emp_no] = ?</property>
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
-              localeId="1033"
+              localeId="2060"
               name="country"
               usesDispositions="true"
               version="1">
@@ -5137,8 +5559,8 @@ where [refTable].[emp_no] = ?</property>
               <connections>
                 <connection
                   refId="Package\Load country, department, title, clients\country.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 8]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 8]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -5696,7 +6118,7 @@ where [refTable].[emp_no] = ?</property>
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
-              localeId="1033"
+              localeId="2060"
               name="department"
               usesDispositions="true"
               version="1">
@@ -5713,8 +6135,8 @@ where [refTable].[emp_no] = ?</property>
               <connections>
                 <connection
                   refId="Package\Load country, department, title, clients\department.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 2]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 2]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 10]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 10]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -6343,7 +6765,7 @@ where [refTable].[emp_no] = ?</property>
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
-              localeId="1033"
+              localeId="2060"
               name="title"
               usesDispositions="true"
               version="1">
@@ -6360,8 +6782,8 @@ where [refTable].[emp_no] = ?</property>
               <connections>
                 <connection
                   refId="Package\Load country, department, title, clients\title.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 3]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 3]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 11]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 11]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -6935,7 +7357,7 @@ where [refTable].[emp_no] = ?</property>
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
-              localeId="1033"
+              localeId="2060"
               name="employee"
               usesDispositions="true"
               version="1">
@@ -6952,8 +7374,8 @@ where [refTable].[emp_no] = ?</property>
               <connections>
                 <connection
                   refId="Package\Load employee\employee.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 6]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 6]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 14]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 14]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -7917,7 +8339,7 @@ where [refTable].[emp_no] = ?</property>
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
-              localeId="1033"
+              localeId="2060"
               name="state"
               usesDispositions="true"
               version="1">
@@ -7934,8 +8356,8 @@ where [refTable].[emp_no] = ?</property>
               <connections>
                 <connection
                   refId="Package\Load state\state.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 4]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 4]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 12]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 12]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -9172,9 +9594,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9208,9 +9628,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9304,9 +9722,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9414,7 +9830,7 @@ where [refTable].[emp_no] = ?</property>
     design-time-name="Package\Load city">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="180,42"
           Id="Package\Load city\OLE DB Destination 2"
@@ -9458,9 +9874,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9494,9 +9908,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9506,7 +9918,7 @@ where [refTable].[emp_no] = ?</property>
     design-time-name="Package\Load client_emp">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="171,42"
           Id="Package\Load client_emp\OLE DB Destination"
@@ -9538,9 +9950,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9562,9 +9972,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9587,7 +9995,7 @@ where [refTable].[emp_no] = ?</property>
     design-time-name="Package\Load country, department, title, clients">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="165,42"
           Id="Package\Load country, department, title, clients\Data Conversion 3"
@@ -9655,9 +10063,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9679,9 +10085,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9715,9 +10119,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9751,9 +10153,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9775,9 +10175,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9811,9 +10209,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9847,9 +10243,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9871,9 +10265,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9935,7 +10327,7 @@ where [refTable].[emp_no] = ?</property>
     design-time-name="Package\Load employee">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="124,42"
           Id="Package\Load employee\employee"
@@ -9967,9 +10359,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9991,9 +10381,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10016,7 +10404,7 @@ where [refTable].[emp_no] = ?</property>
     design-time-name="Package\Load state">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="180,42"
           Id="Package\Load state\OLE DB Destination 1"
@@ -10048,9 +10436,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10072,9 +10458,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

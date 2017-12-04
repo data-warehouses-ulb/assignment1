@@ -7,12 +7,12 @@
   DTS:CreatorName="PADI\rkumar"
   DTS:DTSID="{E8E29EC6-E26B-46D9-830D-2843F0B96047}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="14.0.0800.90"
+  DTS:LastModifiedProductVersion="14.0.0800.98"
   DTS:LocaleID="2060"
   DTS:ObjectName="snapshots"
   DTS:PackageType="5"
-  DTS:VersionBuild="109"
-  DTS:VersionGUID="{B0D2D2C1-C16A-46C5-B2E4-71C4381B8F67}">
+  DTS:VersionBuild="113"
+  DTS:VersionGUID="{F9ADD1DD-BA1E-46D7-A400-085E27D2AEBE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -31,7 +31,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="D:\assignment1\Project\snapshots\snapshot1\city.csv">
+          DTS:ConnectionString="C:\DW\snapshots\snapshot1\city.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -79,7 +79,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="D:\assignment1\Project\snapshots\snapshot1\clients.csv">
+          DTS:ConnectionString="C:\DW\snapshots\snapshot1\clients.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -127,7 +127,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="D:\assignment1\Project\snapshots\snapshot1\client_emp.csv">
+          DTS:ConnectionString="C:\DW\snapshots\snapshot1\client_emp.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -164,7 +164,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="D:\assignment1\Project\snapshots\snapshot1\country.csv">
+          DTS:ConnectionString="C:\DW\snapshots\snapshot1\country.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -203,7 +203,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="D:\assignment1\Project\snapshots\snapshot1\departments.csv">
+          DTS:ConnectionString="C:\DW\snapshots\snapshot1\departments.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -242,7 +242,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="D:\assignment1\Project\snapshots\snapshot1\employee.csv">
+          DTS:ConnectionString="C:\DW\snapshots\snapshot1\employee.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -481,7 +481,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="D:\assignment1\Project\snapshots\snapshot1\snapshot.csv">
+          DTS:ConnectionString="C:\DW\snapshots\snapshot1\snapshot.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -520,7 +520,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="D:\assignment1\Project\snapshots\snapshot1\state.csv">
+          DTS:ConnectionString="C:\DW\snapshots\snapshot1\state.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -568,7 +568,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="D:\assignment1\Project\snapshots\snapshot1\title.csv">
+          DTS:ConnectionString="C:\DW\snapshots\snapshot1\title.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -610,7 +610,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="path">
       <DTS:VariableValue
-        DTS:DataType="8">D:\assignment1\Project\snapshots</DTS:VariableValue>
+        DTS:DataType="8">C:\DW\snapshots</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -620,7 +620,7 @@
       DTS:CreationName="STOCK:FORLOOP"
       DTS:Description="For Loop Container"
       DTS:DTSID="{595571A4-02B7-4E36-A293-7CA4E17DE22A}"
-      DTS:EvalExpression="@myvar &lt;= 15"
+      DTS:EvalExpression="@myvar &lt;= 1"
       DTS:ExecutableType="STOCK:FORLOOP"
       DTS:InitExpression="@myvar = 1"
       DTS:LocaleID="-1"
@@ -652,8 +652,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{E44BD960-AB80-4E91-8A4D-0D890BAF89AE}"
-              SQLTask:SqlStatementSource="CREATE TABLE [newdepartments] (&#xA;    [dept_no] varchar(4),&#xA;    [dept_name] varchar(100)&#xA;);&#xA;&#xA;CREATE TABLE [newCity] (&#xA;    [city_id] int,&#xA;    [city] varchar(100),&#xA;    [state_id] int&#xA;);&#xA;&#xA;CREATE TABLE [newState] (&#xA;    [state_id] int,&#xA;    [state] varchar(100),&#xA;    [country_id] int&#xA;);&#xA;&#xA;CREATE TABLE [newCountry] (&#xA;    [country] varchar(100),&#xA;    [country_id] int&#xA;);&#xA;&#xA;CREATE TABLE newTitle(&#xA;&#x9;[id] [int] NOT NULL,&#xA;&#x9;[title] [varchar](50) NULL&#xA;);&#xA;&#xA;CREATE TABLE [new_client_emp] (&#xA;    [emp_no] int,&#xA;    [client] int&#xA;);&#xA;&#xA;CREATE TABLE [new_emp] (&#xA;    [emp_no] int,&#xA;    [birth_date] datetime,&#xA;    [first_name] varchar(100),&#xA;    [last_name] varchar(100),&#xA;    [gender] varchar(10),&#xA;    [hire_date] datetime,&#xA;    [salary] int,&#xA;    [title_no] int,&#xA;    [dept_no] varchar(4),&#xA;    [current_city] int,&#xA;    [base_city] int,&#xA;    [marital_status] varchar(10),&#xA;    [no_of_children] int&#xA;);&#xA;&#xA;CREATE TABLE [snapshotdates] (&#xA;    [from_date] datetime,&#xA;    [to_date] datetime&#xA;);&#xA;&#xA;CREATE TABLE [new_clients] (&#xA;    [client_id] int,&#xA;    [client] varchar(100),&#xA;    [category] varchar(10)&#xA;);"
-              SQLTask:CodePage="1252" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="CREATE TABLE [newdepartments] (&#xA;    [dept_no] varchar(4),&#xA;    [dept_name] varchar(100)&#xA;);&#xA;&#xA;CREATE TABLE [newCity] (&#xA;    [city_id] int,&#xA;    [city] varchar(100),&#xA;    [state_id] int&#xA;);&#xA;&#xA;CREATE TABLE [newState] (&#xA;    [state_id] int,&#xA;    [state] varchar(100),&#xA;    [country_id] int&#xA;);&#xA;&#xA;CREATE TABLE [newCountry] (&#xA;    [country] varchar(100),&#xA;    [country_id] int&#xA;);&#xA;&#xA;CREATE TABLE newTitle(&#xA;&#x9;[id] [int] NOT NULL,&#xA;&#x9;[title] [varchar](50) NULL&#xA;);&#xA;&#xA;CREATE TABLE [new_client_emp] (&#xA;    [emp_no] int,&#xA;    [client] int&#xA;);&#xA;&#xA;CREATE TABLE [new_emp] (&#xA;    [emp_no] int,&#xA;    [birth_date] datetime,&#xA;    [first_name] varchar(100),&#xA;    [last_name] varchar(100),&#xA;    [gender] varchar(10),&#xA;    [hire_date] datetime,&#xA;    [salary] int,&#xA;    [title_no] int,&#xA;    [dept_no] varchar(4),&#xA;    [current_city] int,&#xA;    [base_city] int,&#xA;    [marital_status] varchar(10),&#xA;    [no_of_children] int&#xA;);&#xA;&#xA;CREATE TABLE [snapshotdates] (&#xA;    [from_date] datetime,&#xA;    [to_date] datetime&#xA;);&#xA;&#xA;CREATE TABLE [new_clients] (&#xA;    [client_id] int,&#xA;    [client] varchar(100),&#xA;    [category] varchar(10)&#xA;);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -671,8 +670,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{E44BD960-AB80-4E91-8A4D-0D890BAF89AE}"
-              SQLTask:SqlStatementSource="use [temp]&#xA;&#xA;drop TABLE [newTitle];&#xA;drop TABLE [newdepartments];&#xA;drop TABLE [new_client_emp];&#xA;drop TABLE [new_emp];&#xA;drop TABLE [snapshotdates];&#xA;drop TABLE [newCity];&#xA;drop TABLE [newState];&#xA;drop TABLE [newCountry];&#xA;drop TABLE [new_clients];"
-              SQLTask:CodePage="1252" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="use [temp]&#xA;&#xA;drop TABLE [newTitle];&#xA;drop TABLE [newdepartments];&#xA;drop TABLE [new_client_emp];&#xA;drop TABLE [new_emp];&#xA;drop TABLE [snapshotdates];&#xA;drop TABLE [newCity];&#xA;drop TABLE [newState];&#xA;drop TABLE [newCountry];&#xA;drop TABLE [new_clients];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -701,59 +699,251 @@
                   version="1">
                   <components>
                     <component
+                      refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Commande OLE DB"
+                      componentClassID="Microsoft.OLEDBCommand"
+                      contactInfo="Commande OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;2"
+                      description="Exécute une instruction SQL pour chaque ligne d'un flux de données. Par exemple, appelez une procédure stockée 'nouvelle configuration d'employé' pour chaque ligne de la table 'nouveaux employés'. Remarque : l'exécution d'une instruction SQL pour chaque ligne d'un flux de données volumineux peut prendre beaucoup de temps."
+                      name="Commande OLE DB"
+                      usesDispositions="true"
+                      version="2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                          name="CommandTimeout">0</property>
+                        <property
+                          dataType="System.String"
+                          description="Commande SQL à exécuter."
+                          expressionType="Notify"
+                          name="SqlCommand"
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[dimCity] SET [city] = ?,[country_id] = ?,[country_name] = ?,[state] = ?,[state_id] = ? WHERE [city_id] = ?</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                          name="DefaultCodePage">1252</property>
+                      </properties>
+                      <connections>
+                        <connection
+                          refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Commande OLE DB.Connections[OleDbConnection]"
+                          connectionManagerID="Package.ConnectionManagers[server.warehouse]"
+                          connectionManagerRefId="Package.ConnectionManagers[server.warehouse]"
+                          description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                          name="OleDbConnection" />
+                      </connections>
+                      <inputs>
+                        <input
+                          refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Commande OLE DB.Inputs[Entrée de commande OLE DB]"
+                          errorOrTruncationOperation="Exécution de commande"
+                          errorRowDisposition="FailComponent"
+                          hasSideEffects="true"
+                          name="Entrée de commande OLE DB">
+                          <inputColumns>
+                            <inputColumn
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[city]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="100"
+                              cachedName="city"
+                              externalMetadataColumnId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_0]"
+                              lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Load newCity.Outputs[OLE DB Source Output].Columns[city]" />
+                            <inputColumn
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[city_id]"
+                              cachedDataType="i4"
+                              cachedName="city_id"
+                              externalMetadataColumnId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_5]"
+                              lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Load newCity.Outputs[OLE DB Source Output].Columns[city_id]" />
+                            <inputColumn
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[country_id]"
+                              cachedDataType="i4"
+                              cachedName="country_id"
+                              externalMetadataColumnId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_1]"
+                              lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Lookup newCity by newState.Outputs[Lookup Match Output].Columns[country_id]" />
+                            <inputColumn
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[country_name]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="100"
+                              cachedName="country_name"
+                              externalMetadataColumnId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_2]"
+                              lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Lookup newCity-newState by newCountry.Outputs[Lookup Match Output].Columns[country_name]" />
+                            <inputColumn
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[state]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="100"
+                              cachedName="state"
+                              externalMetadataColumnId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_3]"
+                              lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Lookup newCity by newState.Outputs[Lookup Match Output].Columns[state]" />
+                            <inputColumn
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[state_id]"
+                              cachedDataType="i4"
+                              cachedName="state_id"
+                              externalMetadataColumnId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_4]"
+                              lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Load newCity.Outputs[OLE DB Source Output].Columns[state_id]" />
+                          </inputColumns>
+                          <externalMetadataColumns
+                            isUsed="True">
+                            <externalMetadataColumn
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_0]"
+                              codePage="1252"
+                              dataType="str"
+                              length="100"
+                              name="Param_0">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                                  name="DBParamInfoFlags">65</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_1]"
+                              dataType="i4"
+                              name="Param_1">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                                  name="DBParamInfoFlags">81</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_2]"
+                              codePage="1252"
+                              dataType="str"
+                              length="100"
+                              name="Param_2">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                                  name="DBParamInfoFlags">65</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_3]"
+                              codePage="1252"
+                              dataType="str"
+                              length="100"
+                              name="Param_3">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                                  name="DBParamInfoFlags">65</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_4]"
+                              dataType="i4"
+                              name="Param_4">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                                  name="DBParamInfoFlags">81</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_5]"
+                              dataType="i4"
+                              name="Param_5">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                                  name="DBParamInfoFlags">81</property>
+                              </properties>
+                            </externalMetadataColumn>
+                          </externalMetadataColumns>
+                        </input>
+                      </inputs>
+                      <outputs>
+                        <output
+                          refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Commande OLE DB.Outputs[Sortie de commande OLE DB]"
+                          exclusionGroup="1"
+                          name="Sortie de commande OLE DB"
+                          synchronousInputId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Commande OLE DB.Inputs[Entrée de commande OLE DB]">
+                          <externalMetadataColumns />
+                        </output>
+                        <output
+                          refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Commande OLE DB.Outputs[Sortie d'erreur de commande OLE DB]"
+                          exclusionGroup="1"
+                          isErrorOut="true"
+                          name="Sortie d'erreur de commande OLE DB"
+                          synchronousInputId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Commande OLE DB.Inputs[Entrée de commande OLE DB]">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Commande OLE DB.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorCode]"
+                              dataType="i4"
+                              lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Commande OLE DB.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorCode]"
+                              name="ErrorCode"
+                              specialFlags="1" />
+                            <outputColumn
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Commande OLE DB.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorColumn]"
+                              dataType="i4"
+                              lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Commande OLE DB.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorColumn]"
+                              name="ErrorColumn"
+                              specialFlags="2" />
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                      </outputs>
+                    </component>
+                    <component
                       refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination"
                       componentClassID="Microsoft.OLEDBDestination"
-                      contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-                      description="OLE DB Destination"
+                      contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+                      description="Destination OLE DB"
                       name="Insert Destination"
                       usesDispositions="true"
                       version="4">
                       <properties>
                         <property
                           dataType="System.Int32"
-                          description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                          description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
                           name="CommandTimeout">0</property>
                         <property
                           dataType="System.String"
-                          description="Specifies the name of the database object used to open a rowset."
+                          description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
                           name="OpenRowset">[dbo].[dimCity]</property>
                         <property
                           dataType="System.String"
-                          description="Specifies the variable that contains the name of the database object used to open a rowset."
+                          description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
                           name="OpenRowsetVariable"></property>
                         <property
                           dataType="System.String"
-                          description="The SQL command to be executed."
+                          description="Commande SQL à exécuter."
                           name="SqlCommand"
                           UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                         <property
                           dataType="System.Int32"
-                          description="Specifies the column code page to use when code page information is unavailable from the data source."
+                          description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
                           name="DefaultCodePage">1252</property>
                         <property
                           dataType="System.Boolean"
-                          description="Forces the use of the DefaultCodePage property value when describing character data."
-                          name="AlwaysUseDefaultCodePage">true</property>
+                          description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                          name="AlwaysUseDefaultCodePage">false</property>
                         <property
                           dataType="System.Int32"
-                          description="Specifies the mode used to access the database."
+                          description="Spécifie le mode utilisé pour accéder à la base de données."
                           name="AccessMode"
                           typeConverter="AccessMode">0</property>
                         <property
                           dataType="System.Boolean"
-                          description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                          description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
                           name="FastLoadKeepIdentity">false</property>
                         <property
                           dataType="System.Boolean"
-                          description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                          description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
                           name="FastLoadKeepNulls">false</property>
                         <property
                           dataType="System.String"
-                          description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                          description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
                           name="FastLoadOptions"></property>
                         <property
                           dataType="System.Int32"
-                          description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                          description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
                           name="FastLoadMaxInsertCommitSize">2147483647</property>
                       </properties>
                       <connections>
@@ -761,88 +951,88 @@
                           refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Connections[OleDbConnection]"
                           connectionManagerID="Package.ConnectionManagers[server.warehouse]"
                           connectionManagerRefId="Package.ConnectionManagers[server.warehouse]"
-                          description="The OLE DB runtime connection used to access the database."
+                          description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
                           name="OleDbConnection" />
                       </connections>
                       <inputs>
                         <input
-                          refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[OLE DB Destination Input]"
-                          errorOrTruncationOperation="Insert"
+                          refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[Entrée de destination OLE DB]"
+                          errorOrTruncationOperation="Insérer"
                           errorRowDisposition="FailComponent"
                           hasSideEffects="true"
-                          name="OLE DB Destination Input">
+                          name="Entrée de destination OLE DB">
                           <inputColumns>
                             <inputColumn
-                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[OLE DB Destination Input].Columns[city_id]"
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[Entrée de destination OLE DB].Columns[city_id]"
                               cachedDataType="i4"
                               cachedName="city_id"
-                              externalMetadataColumnId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[city_id]"
+                              externalMetadataColumnId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[Entrée de destination OLE DB].ExternalColumns[city_id]"
                               lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Load newCity.Outputs[OLE DB Source Output].Columns[city_id]" />
                             <inputColumn
-                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[OLE DB Destination Input].Columns[city]"
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[Entrée de destination OLE DB].Columns[city]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="100"
                               cachedName="city"
-                              externalMetadataColumnId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[city]"
+                              externalMetadataColumnId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[Entrée de destination OLE DB].ExternalColumns[city]"
                               lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Load newCity.Outputs[OLE DB Source Output].Columns[city]" />
                             <inputColumn
-                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[OLE DB Destination Input].Columns[state_id]"
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[Entrée de destination OLE DB].Columns[state_id]"
                               cachedDataType="i4"
                               cachedName="state_id"
-                              externalMetadataColumnId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[state_id]"
+                              externalMetadataColumnId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[Entrée de destination OLE DB].ExternalColumns[state_id]"
                               lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Load newCity.Outputs[OLE DB Source Output].Columns[state_id]" />
                             <inputColumn
-                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[OLE DB Destination Input].Columns[state]"
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[Entrée de destination OLE DB].Columns[state]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="100"
                               cachedName="state"
-                              externalMetadataColumnId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[state]"
+                              externalMetadataColumnId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[Entrée de destination OLE DB].ExternalColumns[state]"
                               lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Lookup newCity by newState.Outputs[Lookup Match Output].Columns[state]" />
                             <inputColumn
-                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[OLE DB Destination Input].Columns[country_id]"
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[Entrée de destination OLE DB].Columns[country_id]"
                               cachedDataType="i4"
                               cachedName="country_id"
-                              externalMetadataColumnId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[country_id]"
+                              externalMetadataColumnId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[Entrée de destination OLE DB].ExternalColumns[country_id]"
                               lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Lookup newCity by newState.Outputs[Lookup Match Output].Columns[country_id]" />
                             <inputColumn
-                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[OLE DB Destination Input].Columns[country_name]"
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[Entrée de destination OLE DB].Columns[country_name]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="100"
                               cachedName="country_name"
-                              externalMetadataColumnId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[country_name]"
+                              externalMetadataColumnId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[Entrée de destination OLE DB].ExternalColumns[country_name]"
                               lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Lookup newCity-newState by newCountry.Outputs[Lookup Match Output].Columns[country_name]" />
                           </inputColumns>
                           <externalMetadataColumns
                             isUsed="True">
                             <externalMetadataColumn
-                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[city_id]"
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[Entrée de destination OLE DB].ExternalColumns[city_id]"
                               dataType="i4"
                               name="city_id" />
                             <externalMetadataColumn
-                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[city]"
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[Entrée de destination OLE DB].ExternalColumns[city]"
                               codePage="1252"
                               dataType="str"
                               length="100"
                               name="city" />
                             <externalMetadataColumn
-                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[state_id]"
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[Entrée de destination OLE DB].ExternalColumns[state_id]"
                               dataType="i4"
                               name="state_id" />
                             <externalMetadataColumn
-                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[state]"
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[Entrée de destination OLE DB].ExternalColumns[state]"
                               codePage="1252"
                               dataType="str"
                               length="100"
                               name="state" />
                             <externalMetadataColumn
-                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[country_id]"
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[Entrée de destination OLE DB].ExternalColumns[country_id]"
                               dataType="i4"
                               name="country_id" />
                             <externalMetadataColumn
-                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[country_name]"
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[Entrée de destination OLE DB].ExternalColumns[country_name]"
                               codePage="1252"
                               dataType="str"
                               length="100"
@@ -852,22 +1042,22 @@
                       </inputs>
                       <outputs>
                         <output
-                          refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Outputs[OLE DB Destination Error Output]"
+                          refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Outputs[Sortie d'erreur de destination OLE DB]"
                           exclusionGroup="1"
                           isErrorOut="true"
-                          name="OLE DB Destination Error Output"
-                          synchronousInputId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[OLE DB Destination Input]">
+                          name="Sortie d'erreur de destination OLE DB"
+                          synchronousInputId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[Entrée de destination OLE DB]">
                           <outputColumns>
                             <outputColumn
-                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
                               dataType="i4"
-                              lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                              lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
                               name="ErrorCode"
                               specialFlags="1" />
                             <outputColumn
-                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
                               dataType="i4"
-                              lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                              lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
                               name="ErrorColumn"
                               specialFlags="2" />
                           </outputColumns>
@@ -1358,198 +1548,6 @@ where [refTable].[country_id] = ?</property>
                       </outputs>
                     </component>
                     <component
-                      refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\OLE DB Command"
-                      componentClassID="Microsoft.OLEDBCommand"
-                      contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
-                      description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
-                      name="OLE DB Command"
-                      usesDispositions="true"
-                      version="2">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                          name="CommandTimeout">0</property>
-                        <property
-                          dataType="System.String"
-                          description="The SQL command to be executed."
-                          expressionType="Notify"
-                          name="SqlCommand"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[dimCity] SET [city] = ?,[country_id] = ?,[country_name] = ?,[state] = ?,[state_id] = ? WHERE [city_id] = ?</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the column code page to use when code page information is unavailable from the data source."
-                          name="DefaultCodePage">1252</property>
-                      </properties>
-                      <connections>
-                        <connection
-                          refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\OLE DB Command.Connections[OleDbConnection]"
-                          connectionManagerID="Package.ConnectionManagers[server.warehouse]"
-                          connectionManagerRefId="Package.ConnectionManagers[server.warehouse]"
-                          description="The OLE DB runtime connection used to access the database."
-                          name="OleDbConnection" />
-                      </connections>
-                      <inputs>
-                        <input
-                          refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\OLE DB Command.Inputs[OLE DB Command Input]"
-                          errorOrTruncationOperation="Command Execution"
-                          errorRowDisposition="FailComponent"
-                          hasSideEffects="true"
-                          name="OLE DB Command Input">
-                          <inputColumns>
-                            <inputColumn
-                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\OLE DB Command.Inputs[OLE DB Command Input].Columns[city]"
-                              cachedCodepage="1252"
-                              cachedDataType="str"
-                              cachedLength="100"
-                              cachedName="city"
-                              externalMetadataColumnId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                              lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Load newCity.Outputs[OLE DB Source Output].Columns[city]" />
-                            <inputColumn
-                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\OLE DB Command.Inputs[OLE DB Command Input].Columns[city_id]"
-                              cachedDataType="i4"
-                              cachedName="city_id"
-                              externalMetadataColumnId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
-                              lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Load newCity.Outputs[OLE DB Source Output].Columns[city_id]" />
-                            <inputColumn
-                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\OLE DB Command.Inputs[OLE DB Command Input].Columns[country_id]"
-                              cachedDataType="i4"
-                              cachedName="country_id"
-                              externalMetadataColumnId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                              lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Lookup newCity by newState.Outputs[Lookup Match Output].Columns[country_id]" />
-                            <inputColumn
-                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\OLE DB Command.Inputs[OLE DB Command Input].Columns[country_name]"
-                              cachedCodepage="1252"
-                              cachedDataType="str"
-                              cachedLength="100"
-                              cachedName="country_name"
-                              externalMetadataColumnId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                              lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Lookup newCity-newState by newCountry.Outputs[Lookup Match Output].Columns[country_name]" />
-                            <inputColumn
-                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\OLE DB Command.Inputs[OLE DB Command Input].Columns[state]"
-                              cachedCodepage="1252"
-                              cachedDataType="str"
-                              cachedLength="100"
-                              cachedName="state"
-                              externalMetadataColumnId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                              lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Lookup newCity by newState.Outputs[Lookup Match Output].Columns[state]" />
-                            <inputColumn
-                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\OLE DB Command.Inputs[OLE DB Command Input].Columns[state_id]"
-                              cachedDataType="i4"
-                              cachedName="state_id"
-                              externalMetadataColumnId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
-                              lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Load newCity.Outputs[OLE DB Source Output].Columns[state_id]" />
-                          </inputColumns>
-                          <externalMetadataColumns
-                            isUsed="True">
-                            <externalMetadataColumn
-                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                              codePage="1252"
-                              dataType="str"
-                              length="100"
-                              name="Param_0">
-                              <properties>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                                  name="DBParamInfoFlags">65</property>
-                              </properties>
-                            </externalMetadataColumn>
-                            <externalMetadataColumn
-                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                              dataType="i4"
-                              name="Param_1">
-                              <properties>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                                  name="DBParamInfoFlags">81</property>
-                              </properties>
-                            </externalMetadataColumn>
-                            <externalMetadataColumn
-                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                              codePage="1252"
-                              dataType="str"
-                              length="100"
-                              name="Param_2">
-                              <properties>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                                  name="DBParamInfoFlags">65</property>
-                              </properties>
-                            </externalMetadataColumn>
-                            <externalMetadataColumn
-                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                              codePage="1252"
-                              dataType="str"
-                              length="100"
-                              name="Param_3">
-                              <properties>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                                  name="DBParamInfoFlags">65</property>
-                              </properties>
-                            </externalMetadataColumn>
-                            <externalMetadataColumn
-                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
-                              dataType="i4"
-                              name="Param_4">
-                              <properties>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                                  name="DBParamInfoFlags">81</property>
-                              </properties>
-                            </externalMetadataColumn>
-                            <externalMetadataColumn
-                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
-                              dataType="i4"
-                              name="Param_5">
-                              <properties>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                                  name="DBParamInfoFlags">81</property>
-                              </properties>
-                            </externalMetadataColumn>
-                          </externalMetadataColumns>
-                        </input>
-                      </inputs>
-                      <outputs>
-                        <output
-                          refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\OLE DB Command.Outputs[OLE DB Command Output]"
-                          exclusionGroup="1"
-                          name="OLE DB Command Output"
-                          synchronousInputId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\OLE DB Command.Inputs[OLE DB Command Input]">
-                          <externalMetadataColumns />
-                        </output>
-                        <output
-                          refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\OLE DB Command.Outputs[OLE DB Command Error Output]"
-                          exclusionGroup="1"
-                          isErrorOut="true"
-                          name="OLE DB Command Error Output"
-                          synchronousInputId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\OLE DB Command.Inputs[OLE DB Command Input]">
-                          <outputColumns>
-                            <outputColumn
-                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                              dataType="i4"
-                              lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                              name="ErrorCode"
-                              specialFlags="1" />
-                            <outputColumn
-                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                              dataType="i4"
-                              lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                              name="ErrorColumn"
-                              specialFlags="2" />
-                          </outputColumns>
-                          <externalMetadataColumns />
-                        </output>
-                      </outputs>
-                    </component>
-                    <component
                       refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Slowly Changing Dimension"
                       componentClassID="Microsoft.SCD"
                       contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
@@ -1784,7 +1782,7 @@ where [refTable].[country_id] = ?</property>
                   <paths>
                     <path
                       refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city.Paths[Changing Attribute Updates Output]"
-                      endId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\OLE DB Command.Inputs[OLE DB Command Input]"
+                      endId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Commande OLE DB.Inputs[Entrée de commande OLE DB]"
                       name="Changing Attribute Updates Output"
                       startId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
                     <path
@@ -1799,7 +1797,7 @@ where [refTable].[country_id] = ?</property>
                       startId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Lookup newCity-newState by newCountry.Outputs[Lookup Match Output]" />
                     <path
                       refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city.Paths[New Output]"
-                      endId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[OLE DB Destination Input]"
+                      endId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination.Inputs[Entrée de destination OLE DB]"
                       name="New Output"
                       startId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Slowly Changing Dimension.Outputs[New Output]" />
                     <path
@@ -9928,24 +9926,24 @@ where [refTable].[id] = ?</property>
                   startId="Package\For Loop Container\Load snapshot nr @myvar\emp_data.Outputs[Data Conversion Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output8]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 4.Inputs[Data Conversion Input]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\departments_data.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\title.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\departments.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output7]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\clients_data.Inputs[Data Conversion Input]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 3.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\clients.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\state.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output6]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\client_emp_data.Inputs[Data Conversion Input]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 2.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\client_emp.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\country.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output5]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\emp_data.Inputs[Data Conversion Input]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 1.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\emp.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\city.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output4]"
                   endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion.Inputs[Data Conversion Input]"
@@ -9953,24 +9951,24 @@ where [refTable].[id] = ?</property>
                   startId="Package\For Loop Container\Load snapshot nr @myvar\snapshotdate.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output3]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 1.Inputs[Data Conversion Input]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\emp_data.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\city.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\emp.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output2]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 2.Inputs[Data Conversion Input]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\client_emp_data.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\country.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\client_emp.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output1]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 3.Inputs[Data Conversion Input]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\clients_data.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\state.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\clients.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\departments_data.Inputs[Data Conversion Input]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 4.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\departments.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\title.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Union All Output 1]"
                   endId="Package\For Loop Container\Load snapshot nr @myvar\newState.Inputs[OLE DB Destination Input]"
@@ -10030,13 +10028,12 @@ where [refTable].[id] = ?</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Set variable @snapDate"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{E44BD960-AB80-4E91-8A4D-0D890BAF89AE}"
               SQLTask:SqlStatementSource="select to_date from snapshotdates;"
-              SQLTask:CodePage="1252"
               SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ResultBinding
                 SQLTask:ResultName="to_date"
@@ -10055,13 +10052,12 @@ where [refTable].[id] = ?</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="SIMPLIFY - ENABLE FOR REDUCED DATA"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{E44BD960-AB80-4E91-8A4D-0D890BAF89AE}"
-              SQLTask:SqlStatementSource="use [temp]&#xA;&#xA;go&#xA;&#xA;delete from new_client_emp where not emp_no&lt;20000;&#xA;&#xA;delete from new_emp where not emp_no&lt;20000;&#xA;"
-              SQLTask:CodePage="1252" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="use [temp]&#xA;&#xA;go&#xA;&#xA;delete from new_client_emp where not emp_no&lt;20000;&#xA;&#xA;delete from new_emp where not emp_no&lt;20000;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -10131,8 +10127,7 @@ where [refTable].[id] = ?</property>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{E44BD960-AB80-4E91-8A4D-0D890BAF89AE}"
-          SQLTask:SqlStatementSource="use [temp]&#xA;&#xA;go&#xA;&#xA;delete from factSalary where EID not in&#xA;(select EID from dimEmployee where emp_no&lt;20000);&#xA;&#xA;delete from bridgeEmployeeClient where EID not in&#xA;(select EID from dimEmployee where emp_no&lt;20000);&#xA;&#xA;delete from &#xA;dimEmployee where not emp_no&lt;20000;&#xA;&#xA;delete from dimClients where CID not in &#xA;(select B.CID from bridgeEmployeeClient B where B.EID in&#xA;(select E2.EID from dimEmployee E2 where emp_no&lt;20000));"
-          SQLTask:CodePage="1252" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="use [temp]&#xA;&#xA;go&#xA;&#xA;delete from factSalary where EID not in&#xA;(select EID from dimEmployee where emp_no&lt;20000);&#xA;&#xA;delete from bridgeEmployeeClient where EID not in&#xA;(select EID from dimEmployee where emp_no&lt;20000);&#xA;&#xA;delete from &#xA;dimEmployee where not emp_no&lt;20000;&#xA;&#xA;delete from dimClients where CID not in &#xA;(select B.CID from bridgeEmployeeClient B where B.EID in&#xA;(select E2.EID from dimEmployee E2 where emp_no&lt;20000));" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -10475,30 +10470,22 @@ where [refTable].[id] = ?</property>
         <NodeLayout
           Size="209,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Slowly Changing Dimension"
-          TopLeft="207.5,342.5" />
+          TopLeft="210.5,342.5" />
         <NodeLayout
           Size="121,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Load newCity"
-          TopLeft="251.5,5.5" />
+          TopLeft="254.5,5.5" />
         <NodeLayout
           Size="237,51"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Lookup newCity-newState by newCountry"
-          TopLeft="193.5,231.5" />
-        <NodeLayout
-          Size="166,42"
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\OLE DB Command"
-          TopLeft="358,468.5" />
+          TopLeft="196.5,231.5" />
         <NodeLayout
           Size="179,64"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Lookup newCity by newState"
-          TopLeft="222.5,107.5" />
-        <NodeLayout
-          Size="163,42"
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination"
-          TopLeft="22.5000000000001,451.5" />
+          TopLeft="225.5,107.5" />
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city.Paths[OLE DB Source Output]"
-          TopLeft="312,47.5">
+          TopLeft="315,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -10519,44 +10506,8 @@ where [refTable].[id] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city.Paths[New Output]"
-          TopLeft="278.5,384.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-174.5,67"
-              Start="0,0"
-              End="-174.5,59.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.1054131054131" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.1054131054131"
-                    Point2="0,27.1054131054131"
-                    Point3="-4,27.1054131054131" />
-                  <mssgle:LineSegment
-                    End="-170.5,27.1054131054131" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-170.5,27.1054131054131"
-                    Point2="-174.5,27.1054131054131"
-                    Point3="-174.5,31.1054131054131" />
-                  <mssgle:LineSegment
-                    End="-174.5,59.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-114.34138671875,32.1054131054131,54.1827734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city.Paths[Lookup Match Output1]"
-          TopLeft="312,282.5">
+          TopLeft="315,282.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -10580,7 +10531,7 @@ where [refTable].[id] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city.Paths[Lookup Match Output]"
-          TopLeft="312,171.5">
+          TopLeft="315,171.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -10602,39 +10553,83 @@ where [refTable].[id] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="163,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination"
+          TopLeft="55.5000000000001,442.5" />
         <EdgeLayout
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city.Paths[Changing Attribute Updates Output]"
-          TopLeft="345.5,384.5">
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city.Paths[New Output]"
+          TopLeft="281.5,384.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="95.5,84"
+              EndConnector="-144.5,58"
               Start="0,0"
-              End="95.5,76.5">
+              End="-144.5,50.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.982905982906" />
+                    End="0,19.4643874643875" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,29.982905982906"
-                    Point2="0,33.982905982906"
-                    Point3="4,33.982905982906" />
+                    Point1="0,19.4643874643875"
+                    Point2="0,23.4643874643875"
+                    Point3="-4,23.4643874643875" />
                   <mssgle:LineSegment
-                    End="91.5,33.982905982906" />
+                    End="-140.5,23.4643874643875" />
                   <mssgle:CubicBezierSegment
-                    Point1="91.5,33.982905982906"
-                    Point2="95.5,33.982905982906"
-                    Point3="95.5,37.982905982906" />
+                    Point1="-140.5,23.4643874643875"
+                    Point2="-144.5,23.4643874643875"
+                    Point3="-144.5,27.4643874643875" />
                   <mssgle:LineSegment
-                    End="95.5,76.5" />
+                    End="-144.5,50.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-30.78390625,38.982905982906,157.0678125,11.6630859375"
+              BoundingBox="-99.34138671875,28.4643874643875,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="171,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Commande OLE DB"
+          TopLeft="397.5,437.5" />
+        <EdgeLayout
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city.Paths[Changing Attribute Updates Output]"
+          TopLeft="348.5,384.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="134.5,53"
+              Start="0,0"
+              End="134.5,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.4415954415954" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.4415954415954"
+                    Point2="0,21.4415954415954"
+                    Point3="4,21.4415954415954" />
+                  <mssgle:LineSegment
+                    End="130.5,21.4415954415954" />
+                  <mssgle:CubicBezierSegment
+                    Point1="130.5,21.4415954415954"
+                    Point2="134.5,21.4415954415954"
+                    Point3="134.5,25.4415954415954" />
+                  <mssgle:LineSegment
+                    End="134.5,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-11.28390625,26.4415954415954,157.0678125,11.6630859375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -10653,37 +10648,37 @@ where [refTable].[id] = ?</property>
   &lt;TableName&gt;[dbo].[dimCity]&lt;/TableName&gt;
   &lt;InputToColumnsCollection&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Load newCity.Outputs[OLE DB Source Output].Columns[city]&lt;/IdentificationString&gt;
+      &lt;IdentificationString&gt;Load newCity.Sorties[OLE DB Source Output].Colonnes[city]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;city&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Load newCity.Outputs[OLE DB Source Output].Columns[city_id]&lt;/IdentificationString&gt;
+      &lt;IdentificationString&gt;Load newCity.Sorties[OLE DB Source Output].Colonnes[city_id]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;city_id&lt;/ColumnName&gt;
       &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
       &lt;ChangeType&gt;None&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Lookup newCity by newState.Outputs[Lookup Match Output].Columns[country_id]&lt;/IdentificationString&gt;
+      &lt;IdentificationString&gt;Lookup newCity by newState.Sorties[Lookup Match Output].Colonnes[country_id]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;country_id&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Lookup newCity-newState by newCountry.Outputs[Lookup Match Output].Columns[country_name]&lt;/IdentificationString&gt;
+      &lt;IdentificationString&gt;Lookup newCity-newState by newCountry.Sorties[Lookup Match Output].Colonnes[country_name]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;country_name&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Lookup newCity by newState.Outputs[Lookup Match Output].Columns[state]&lt;/IdentificationString&gt;
+      &lt;IdentificationString&gt;Lookup newCity by newState.Sorties[Lookup Match Output].Colonnes[state]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;state&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Load newCity.Outputs[OLE DB Source Output].Columns[state_id]&lt;/IdentificationString&gt;
+      &lt;IdentificationString&gt;Load newCity.Sorties[OLE DB Source Output].Colonnes[state_id]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;state_id&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
@@ -10691,7 +10686,7 @@ where [refTable].[id] = ?</property>
   &lt;/InputToColumnsCollection&gt;
   &lt;GeneratedComponentsIdentificationStrings&gt;
     &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Commande OLE DB&lt;/anyType&gt;
   &lt;/GeneratedComponentsIdentificationStrings&gt;
   &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
   &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
@@ -10767,48 +10762,87 @@ where [refTable].[id] = ?</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change city\Insert Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee">
     <LayoutInfo>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="137,42"
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee\Load new_emp"
-          TopLeft="164,5.5" />
+          Size="163,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee\Insert Destination"
+          TopLeft="151,1127.5" />
         <NodeLayout
-          Size="350,42"
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee\Lookup temp-new_emp by warehouse-date on birth_date"
-          TopLeft="57.5000000000001,209.5" />
+          Size="175,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee\OLE DB Command 1"
+          TopLeft="294,719.5" />
         <NodeLayout
           Size="281,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee\Lookup temp_new-emp by temp_new_title"
           TopLeft="92.0000000000001,413.5" />
         <NodeLayout
+          Size="318,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee\Lookup temp-new_emp by temp-newdeptartments"
+          TopLeft="73.5000000000001,515.5" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee\Slowly Changing Dimension"
+          TopLeft="128,617.5" />
+        <NodeLayout
           Size="248,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee\hire_date and birth_date converting"
           TopLeft="108.5,107.5" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee\OLE DB Command"
+          TopLeft="5.50000000000011,821.5" />
+        <NodeLayout
+          Size="350,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee\Lookup temp-new_emp by warehouse-date on birth_date"
+          TopLeft="57.5000000000001,209.5" />
         <NodeLayout
           Size="346,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee\Lookup temp-new_emp by warehouse-date on hire_date"
           TopLeft="59.5000000000001,311.5" />
         <NodeLayout
-          Size="318,42"
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee\Lookup temp-new_emp by temp-newdeptartments"
-          TopLeft="73.5000000000001,515.5" />
+          Size="163,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee\Derived Column 1"
+          TopLeft="151,1025.5" />
+        <NodeLayout
+          Size="137,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee\Load new_emp"
+          TopLeft="164,5.5" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee\Union All"
+          TopLeft="172,923.5" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee\Derived Column"
+          TopLeft="17.5000000000001,719.5" />
+        <EdgeLayout
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee.Paths[Union All Output 1]"
+          TopLeft="232.5,965.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee.Paths[OLE DB Source Output]"
           TopLeft="232.5,47.5">
@@ -10828,7 +10862,105 @@ where [refTable].[id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee.Paths[OLE DB Command Output]"
+          TopLeft="88.5000000000001,863.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="125.166666666667,60"
+              Start="0,0"
+              End="125.166666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5301794453507" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5301794453507"
+                    Point2="0,35.5301794453507"
+                    Point3="4,35.5301794453507" />
+                  <mssgle:LineSegment
+                    End="121.166666666667,35.5301794453507" />
+                  <mssgle:CubicBezierSegment
+                    Point1="121.166666666667,35.5301794453507"
+                    Point2="125.166666666667,35.5301794453507"
+                    Point3="125.166666666667,39.5301794453507" />
+                  <mssgle:LineSegment
+                    End="125.166666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee.Paths[New Output]"
+          TopLeft="232.5,659.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="18.8333333333334,264"
+              Start="0,0"
+              End="18.8333333333334,256.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,152.332789559543" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,152.332789559543"
+                    Point2="0,156.332789559543"
+                    Point3="4,156.332789559543" />
+                  <mssgle:LineSegment
+                    End="14.8333333333334,156.332789559543" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.8333333333334,156.332789559543"
+                    Point2="18.8333333333334,156.332789559543"
+                    Point3="18.8333333333334,160.332789559543" />
+                  <mssgle:LineSegment
+                    End="18.8333333333334,256.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-17.6747200520833,161.332789559543,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee.Paths[Lookup Match Output3]"
+          TopLeft="232.5,557.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10904,60 +11036,6 @@ where [refTable].[id] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee.Paths[Data Conversion Output]"
-          TopLeft="232.5,149.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="209,42"
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee\Slowly Changing Dimension"
-          TopLeft="128,617.5" />
-        <EdgeLayout
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee.Paths[Lookup Match Output3]"
-          TopLeft="232.5,557.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="154,42"
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee\Derived Column"
-          TopLeft="17.5000000000001,719.5" />
-        <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee.Paths[Historical Attribute Inserts Output]"
           TopLeft="182.25,659.5">
           <EdgeLayout.Curve>
@@ -10993,136 +11071,6 @@ where [refTable].[id] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="166,42"
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee\OLE DB Command"
-          TopLeft="5.50000000000011,821.5" />
-        <EdgeLayout
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee.Paths[Derived Column Output]"
-          TopLeft="91.5000000000001,761.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="121,42"
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee\Union All"
-          TopLeft="172,923.5" />
-        <EdgeLayout
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee.Paths[New Output]"
-          TopLeft="232.5,659.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="18.8333333333334,264"
-              Start="0,0"
-              End="18.8333333333334,256.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,152.332789559543" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,152.332789559543"
-                    Point2="0,156.332789559543"
-                    Point3="4,156.332789559543" />
-                  <mssgle:LineSegment
-                    End="14.8333333333334,156.332789559543" />
-                  <mssgle:CubicBezierSegment
-                    Point1="14.8333333333334,156.332789559543"
-                    Point2="18.8333333333334,156.332789559543"
-                    Point3="18.8333333333334,160.332789559543" />
-                  <mssgle:LineSegment
-                    End="18.8333333333334,256.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-17.6747200520833,161.332789559543,54.1827734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee.Paths[OLE DB Command Output]"
-          TopLeft="88.5000000000001,863.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="125.166666666667,60"
-              Start="0,0"
-              End="125.166666666667,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5301794453507" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.5301794453507"
-                    Point2="0,35.5301794453507"
-                    Point3="4,35.5301794453507" />
-                  <mssgle:LineSegment
-                    End="121.166666666667,35.5301794453507" />
-                  <mssgle:CubicBezierSegment
-                    Point1="121.166666666667,35.5301794453507"
-                    Point2="125.166666666667,35.5301794453507"
-                    Point3="125.166666666667,39.5301794453507" />
-                  <mssgle:LineSegment
-                    End="125.166666666667,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee\Derived Column 1"
-          TopLeft="151,1025.5" />
-        <EdgeLayout
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee.Paths[Union All Output 1]"
-          TopLeft="232.5,965.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee\Insert Destination"
-          TopLeft="151,1127.5" />
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee.Paths[Derived Column Output1]"
           TopLeft="232.5,1067.5">
@@ -11147,10 +11095,54 @@ where [refTable].[id] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="175,42"
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee\OLE DB Command 1"
-          TopLeft="294,719.5" />
+        <EdgeLayout
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee.Paths[Derived Column Output]"
+          TopLeft="91.5000000000001,761.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee.Paths[Data Conversion Output]"
+          TopLeft="232.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee.Paths[Changing Attribute Updates Output]"
           TopLeft="282.75,659.5">
@@ -11191,7 +11183,7 @@ where [refTable].[id] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee\Load new_emp">
+    design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee\Insert Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -11200,29 +11192,6 @@ where [refTable].[id] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee\Lookup temp-new_emp by warehouse-date on birth_date">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[dimDate]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -11238,29 +11207,6 @@ where [refTable].[id] = ?</property>
         <Name>UsedTableName</Name>
         <Value
           type="q3:string">[dbo].[newTitle]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee\Lookup temp-new_emp by warehouse-date on hire_date">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[dimDate]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -11292,6 +11238,184 @@ where [refTable].[id] = ?</property>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee\Slowly Changing Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{65A21896-2819-4187-AD99-95EBC88791ED}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[dimEmployee]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Load new_emp.Outputs[OLE DB Source Output].Columns[base_city]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;base_city_id&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Lookup temp-new_emp by warehouse-date on birth_date.Outputs[Lookup Match Output].Columns[birth_date]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;birth_date&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Load new_emp.Outputs[OLE DB Source Output].Columns[current_city]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;current_city_id&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Load new_emp.Outputs[OLE DB Source Output].Columns[dept_no]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;dept_id&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Lookup temp-new_emp by temp-newdeptartments.Outputs[Lookup Match Output].Columns[dept_name]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;dept_name&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Load new_emp.Outputs[OLE DB Source Output].Columns[emp_no]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;emp_no&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Load new_emp.Outputs[OLE DB Source Output].Columns[first_name]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;first_name&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Load new_emp.Outputs[OLE DB Source Output].Columns[gender]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;gender&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Lookup temp-new_emp by warehouse-date on hire_date.Outputs[Lookup Match Output].Columns[hire_date]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;hire_date&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Load new_emp.Outputs[OLE DB Source Output].Columns[last_name]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;last_name&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Load new_emp.Outputs[OLE DB Source Output].Columns[marital_status]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;marital_status&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Load new_emp.Outputs[OLE DB Source Output].Columns[no_of_children]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;no_of_children&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Lookup temp_new-emp by temp_new_title.Outputs[Lookup Match Output].Columns[title]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;title&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Load new_emp.Outputs[OLE DB Source Output].Columns[title_no]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;title_id&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Union All&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 1&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;true&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn&gt;start&lt;/StartDateColumn&gt;
+  &lt;EndDateColumn&gt;end&lt;/EndDateColumn&gt;
+  &lt;DateVariable&gt;System::StartTime&lt;/DateVariable&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee\Lookup temp-new_emp by warehouse-date on birth_date">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[dimDate]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee\Lookup temp-new_emp by warehouse-date on hire_date">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[dimDate]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee\Load new_emp">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -11698,22 +11822,18 @@ where [refTable].[id] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output]"
-          TopLeft="586.405660377358,55.4245283018868">
+          TopLeft="799.235849056604,429.235849056604">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0.150943396226467,49.9245283018868"
+              EndConnector="0,42.9056603773585"
               Start="0,0"
-              End="0.150943396226467,42.4245283018868">
+              End="0,35.4056603773585">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.9433962264151" />
-                  <mssgle:LineSegment
-                    End="0.150943396226467,24.9433962264151" />
-                  <mssgle:LineSegment
-                    End="0.150943396226467,42.4245283018868" />
+                    End="0,35.4056603773585" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11726,22 +11846,22 @@ where [refTable].[id] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output1]"
-          TopLeft="599.537735849057,434.216981132075">
+          TopLeft="414.669811320755,59.4245283018868">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-1.01886792452831,39.9245283018868"
+              EndConnector="0.15094339622641,47.9245283018868"
               Start="0,0"
-              End="-1.01886792452831,32.4245283018868">
+              End="0.15094339622641,40.4245283018868">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.9622641509434" />
+                    End="0,23.9622641509434" />
                   <mssgle:LineSegment
-                    End="-1.01886792452831,19.9622641509434" />
+                    End="0.15094339622641,23.9622641509434" />
                   <mssgle:LineSegment
-                    End="-1.01886792452831,32.4245283018868" />
+                    End="0.15094339622641,40.4245283018868" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11754,18 +11874,22 @@ where [refTable].[id] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output2]"
-          TopLeft="346.933962264151,428.367924528302">
+          TopLeft="247.915094339623,60.4433962264151">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,47.8867924528302"
+              EndConnector="0.226415094339615,48.9056603773585"
               Start="0,0"
-              End="0,40.3867924528302">
+              End="0.226415094339615,41.4056603773585">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.3867924528302" />
+                    End="0,24.4528301886793" />
+                  <mssgle:LineSegment
+                    End="0.226415094339615,24.4528301886793" />
+                  <mssgle:LineSegment
+                    End="0.226415094339615,41.4056603773585" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11778,18 +11902,18 @@ where [refTable].[id] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output3]"
-          TopLeft="86.3301886792453,427.5">
+          TopLeft="84.1084905660377,58.2924528301887">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42.9056603773585"
+              EndConnector="0,49.0566037735853"
               Start="0,0"
-              End="0,35.4056603773585">
+              End="0,41.5566037735853">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.4056603773585" />
+                    End="0,41.5566037735853" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11830,18 +11954,18 @@ where [refTable].[id] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output5]"
-          TopLeft="84.1084905660377,58.2924528301887">
+          TopLeft="86.3301886792453,427.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,49.0566037735853"
+              EndConnector="0,42.9056603773585"
               Start="0,0"
-              End="0,41.5566037735853">
+              End="0,35.4056603773585">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,41.5566037735853" />
+                    End="0,35.4056603773585" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11854,22 +11978,18 @@ where [refTable].[id] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output6]"
-          TopLeft="247.915094339623,60.4433962264151">
+          TopLeft="346.933962264151,428.367924528302">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0.226415094339615,48.9056603773585"
+              EndConnector="0,47.8867924528302"
               Start="0,0"
-              End="0.226415094339615,41.4056603773585">
+              End="0,40.3867924528302">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.4528301886793" />
-                  <mssgle:LineSegment
-                    End="0.226415094339615,24.4528301886793" />
-                  <mssgle:LineSegment
-                    End="0.226415094339615,41.4056603773585" />
+                    End="0,40.3867924528302" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11882,22 +12002,22 @@ where [refTable].[id] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output7]"
-          TopLeft="414.669811320755,59.4245283018868">
+          TopLeft="599.537735849057,434.216981132075">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0.15094339622641,47.9245283018868"
+              EndConnector="-1.01886792452831,39.9245283018868"
               Start="0,0"
-              End="0.15094339622641,40.4245283018868">
+              End="-1.01886792452831,32.4245283018868">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.9622641509434" />
+                    End="0,19.9622641509434" />
                   <mssgle:LineSegment
-                    End="0.15094339622641,23.9622641509434" />
+                    End="-1.01886792452831,19.9622641509434" />
                   <mssgle:LineSegment
-                    End="0.15094339622641,40.4245283018868" />
+                    End="-1.01886792452831,32.4245283018868" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11910,18 +12030,22 @@ where [refTable].[id] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output8]"
-          TopLeft="799.235849056604,429.235849056604">
+          TopLeft="586.405660377358,55.4245283018868">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42.9056603773585"
+              EndConnector="0.150943396226467,49.9245283018868"
               Start="0,0"
-              End="0,35.4056603773585">
+              End="0.150943396226467,42.4245283018868">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.4056603773585" />
+                    End="0,24.9433962264151" />
+                  <mssgle:LineSegment
+                    End="0.150943396226467,24.9433962264151" />
+                  <mssgle:LineSegment
+                    End="0.150943396226467,42.4245283018868" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12273,138 +12397,6 @@ where [refTable].[id] = ?</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\For Loop Container\Load snapshot nr @myvar\newCountry">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee\Slowly Changing Dimension">
-    <Properties>
-      <Property>
-        <Name>SCDMetadata</Name>
-        <Value
-          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionID&gt;{65A21896-2819-4187-AD99-95EBC88791ED}&lt;/ConnectionID&gt;
-  &lt;TableName&gt;[dbo].[dimEmployee]&lt;/TableName&gt;
-  &lt;InputToColumnsCollection&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Load new_emp.Outputs[OLE DB Source Output].Columns[base_city]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;base_city_id&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Lookup temp-new_emp by warehouse-date on birth_date.Outputs[Lookup Match Output].Columns[birth_date]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;birth_date&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Load new_emp.Outputs[OLE DB Source Output].Columns[current_city]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;current_city_id&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Load new_emp.Outputs[OLE DB Source Output].Columns[dept_no]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;dept_id&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Lookup temp-new_emp by temp-newdeptartments.Outputs[Lookup Match Output].Columns[dept_name]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;dept_name&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Load new_emp.Outputs[OLE DB Source Output].Columns[emp_no]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;emp_no&lt;/ColumnName&gt;
-      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
-      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Load new_emp.Outputs[OLE DB Source Output].Columns[first_name]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;first_name&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Load new_emp.Outputs[OLE DB Source Output].Columns[gender]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;gender&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Lookup temp-new_emp by warehouse-date on hire_date.Outputs[Lookup Match Output].Columns[hire_date]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;hire_date&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Load new_emp.Outputs[OLE DB Source Output].Columns[last_name]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;last_name&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Load new_emp.Outputs[OLE DB Source Output].Columns[marital_status]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;marital_status&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Load new_emp.Outputs[OLE DB Source Output].Columns[no_of_children]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;no_of_children&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Lookup temp_new-emp by temp_new_title.Outputs[Lookup Match Output].Columns[title]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;title&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Load new_emp.Outputs[OLE DB Source Output].Columns[title_no]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;title_id&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-  &lt;/InputToColumnsCollection&gt;
-  &lt;GeneratedComponentsIdentificationStrings&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Derived Column&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Union All&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 1&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 1&lt;/anyType&gt;
-  &lt;/GeneratedComponentsIdentificationStrings&gt;
-  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
-  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
-  &lt;UseStartEndDate&gt;true&lt;/UseStartEndDate&gt;
-  &lt;CurrentIndicatorColumn /&gt;
-  &lt;InferredIndicatorColumn /&gt;
-  &lt;ValueCurrent /&gt;
-  &lt;ValueExpired /&gt;
-  &lt;StartDateColumn&gt;start&lt;/StartDateColumn&gt;
-  &lt;EndDateColumn&gt;end&lt;/EndDateColumn&gt;
-  &lt;DateVariable&gt;System::StartTime&lt;/DateVariable&gt;
-  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
-&lt;/SCDWizardMetadata&gt;</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change employee\Insert Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
