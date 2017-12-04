@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="initial"
   DTS:PackageType="5"
-  DTS:VersionBuild="104"
-  DTS:VersionGUID="{25FC80F5-0DED-4CF7-B7E8-9C2305F78FC1}">
+  DTS:VersionBuild="105"
+  DTS:VersionGUID="{9A645BE3-BB72-4ADD-912A-17C4127A4689}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2760,6 +2760,20 @@ where [refTable].[Date] = ?</property>
                       cachedName="hire_date"
                       externalMetadataColumnId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[hire_date]"
                       lineageId="Package\Convert employee\Lookup employee-hire_date by dimDate.Outputs[Lookup Match Output].Columns[hire_date]" />
+                    <inputColumn
+                      refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[marital_status]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="marital_status"
+                      externalMetadataColumnId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[marital_status]"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[marital_status]" />
+                    <inputColumn
+                      refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[no_of_children]"
+                      cachedDataType="i4"
+                      cachedName="no_of_children"
+                      externalMetadataColumnId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[no_of_children]"
+                      lineageId="Package\Convert employee\Load employee.Outputs[OLE DB Source Output].Columns[no_of_children]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2835,6 +2849,16 @@ where [refTable].[Date] = ?</property>
                       refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[end]"
                       dataType="dbDate"
                       name="end" />
+                    <externalMetadataColumn
+                      refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[marital_status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="marital_status" />
+                    <externalMetadataColumn
+                      refId="Package\Convert employee\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[no_of_children]"
+                      dataType="i4"
+                      name="no_of_children" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -8153,6 +8177,14 @@ where [refTable].[emp_no] = ?</property>
           Id="Package\Convert factSalary and bridgeEmployee"
           TopLeft="368,458" />
         <NodeLayout
+          Size="110,42"
+          Id="Package\Create"
+          TopLeft="172,91" />
+        <NodeLayout
+          Size="102,42"
+          Id="Package\Drop"
+          TopLeft="187,26" />
+        <NodeLayout
           Size="121,42"
           Id="Package\Load city"
           TopLeft="67,331" />
@@ -8398,14 +8430,6 @@ where [refTable].[emp_no] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="102,42"
-          Id="Package\Drop"
-          TopLeft="187,26" />
-        <NodeLayout
-          Size="110,42"
-          Id="Package\Create"
-          TopLeft="172,91" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
           TopLeft="227,133">
@@ -8748,17 +8772,25 @@ where [refTable].[emp_no] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="171,42"
+          Id="Package\Convert employee\OLE DB Destination"
+          TopLeft="308,640" />
+        <NodeLayout
           Size="150,42"
           Id="Package\Convert employee\Load employee"
           TopLeft="204,49" />
+        <NodeLayout
+          Size="257,42"
+          Id="Package\Convert employee\Lookup employee-hire_date by dimDate"
+          TopLeft="269,512" />
         <NodeLayout
           Size="232,46"
           Id="Package\Convert employee\Lookup employee by title"
           TopLeft="245.5,122.5" />
         <NodeLayout
-          Size="171,42"
-          Id="Package\Convert employee\OLE DB Destination"
-          TopLeft="308,640" />
+          Size="271,42"
+          Id="Package\Convert employee\Lookup employee-birth_date by dimDate"
+          TopLeft="249,394" />
         <NodeLayout
           Size="175,42"
           Id="Package\Convert employee\Derive start and end"
@@ -8767,6 +8799,88 @@ where [refTable].[emp_no] = ?</property>
           Size="263,42"
           Id="Package\Convert employee\Lookup employee by department"
           TopLeft="283,220" />
+        <EdgeLayout
+          Id="Package\Convert employee.Paths[Lookup Match Output1]"
+          TopLeft="395.5,554">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,86"
+              Start="0,0"
+              End="0,78.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,78.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,33.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Convert employee.Paths[Lookup Match Output]"
+          TopLeft="384.5,436">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="13,76"
+              Start="0,0"
+              End="13,68.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34"
+                    Point2="0,38"
+                    Point3="4,38" />
+                  <mssgle:LineSegment
+                    End="9,38" />
+                  <mssgle:CubicBezierSegment
+                    Point1="9,38"
+                    Point2="13,38"
+                    Point3="13,42" />
+                  <mssgle:LineSegment
+                    End="13,68.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-41.69138671875,43,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Convert employee.Paths[Derived Column Output]"
+          TopLeft="386,339">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55"
+              Start="0,0"
+              End="0,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Convert employee.Paths[Sortie de recherche avec correspondance1]"
           TopLeft="414.5,262">
@@ -8873,101 +8987,37 @@ where [refTable].[emp_no] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="271,42"
-          Id="Package\Convert employee\Lookup employee-birth_date by dimDate"
-          TopLeft="249,394" />
-        <EdgeLayout
-          Id="Package\Convert employee.Paths[Derived Column Output]"
-          TopLeft="386,339">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,55"
-              Start="0,0"
-              End="0,47.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,47.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="257,42"
-          Id="Package\Convert employee\Lookup employee-hire_date by dimDate"
-          TopLeft="269,512" />
-        <EdgeLayout
-          Id="Package\Convert employee.Paths[Lookup Match Output]"
-          TopLeft="384.5,436">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="13,76"
-              Start="0,0"
-              End="13,68.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,34"
-                    Point2="0,38"
-                    Point3="4,38" />
-                  <mssgle:LineSegment
-                    End="9,38" />
-                  <mssgle:CubicBezierSegment
-                    Point1="9,38"
-                    Point2="13,38"
-                    Point3="13,42" />
-                  <mssgle:LineSegment
-                    End="13,68.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-41.69138671875,43,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Convert employee.Paths[Lookup Match Output1]"
-          TopLeft="395.5,554">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,86"
-              Start="0,0"
-              End="0,78.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,78.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,33.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Convert employee\Lookup employee by department">
+    design-time-name="Package\Convert employee\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Convert employee\Load employee">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Convert employee\Lookup employee-hire_date by dimDate">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -8977,7 +9027,7 @@ where [refTable].[emp_no] = ?</property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[departments]</Value>
+          type="q3:string">[dbo].[dimDate]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -9013,28 +9063,48 @@ where [refTable].[emp_no] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Convert employee\OLE DB Destination">
+    design-time-name="Package\Convert employee\Lookup employee-birth_date by dimDate">
     <Properties>
       <Property>
-        <Name>DataSourceViewID</Name>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[dimDate]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q2:string">Table</Value>
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Convert employee\Load employee">
+    design-time-name="Package\Convert employee\Lookup employee by department">
     <Properties>
       <Property>
-        <Name>DataSourceViewID</Name>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[departments]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q2:string">Table</Value>
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -9102,7 +9172,9 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9136,7 +9208,9 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9230,7 +9304,9 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10004,51 +10080,5 @@ where [refTable].[emp_no] = ?</property>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Convert employee\Lookup employee-birth_date by dimDate">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[dimDate]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Convert employee\Lookup employee-hire_date by dimDate">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[dimDate]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
