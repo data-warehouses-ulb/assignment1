@@ -11,8 +11,8 @@
   DTS:LocaleID="2060"
   DTS:ObjectName="initial"
   DTS:PackageType="5"
-  DTS:VersionBuild="120"
-  DTS:VersionGUID="{D9858D31-0758-404C-A952-108737B380F8}">
+  DTS:VersionBuild="122"
+  DTS:VersionGUID="{6A951F67-3BA5-43EA-A6AD-53BA2740C915}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2938,6 +2938,101 @@ where [refTable].[Date] = ?</property>
           version="1">
           <components>
             <component
+              refId="Package\Convert factSalary and bridgeEmployee\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Convert factSalary and bridgeEmployee\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Convert factSalary and bridgeEmployee\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Convert factSalary and bridgeEmployee\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Derived Column.Outputs[Derived Column Output].Columns[start]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Derived Column.Outputs[Derived Column Output].Columns[start]"
+                      name="start"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBDATE)"1991-01-01"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBDATE)"1991-01-01"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Derived Column.Outputs[Derived Column Output].Columns[end]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Derived Column.Outputs[Derived Column Output].Columns[end]"
+                      name="end"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">NULL(DT_DBDATE)</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">NULL(DT_DBDATE)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Convert factSalary and bridgeEmployee\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Convert factSalary and bridgeEmployee\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Convert factSalary and bridgeEmployee\Derived factDate"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -4019,6 +4114,18 @@ where [refTable].[emp_no] = ?</property>
                       cachedName="client"
                       externalMetadataColumnId="Package\Convert factSalary and bridgeEmployee\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[CID]"
                       lineageId="Package\Convert factSalary and bridgeEmployee\Load client_emp.Outputs[OLE DB Source Output].Columns[client]" />
+                    <inputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[start]"
+                      cachedDataType="dbDate"
+                      cachedName="start"
+                      externalMetadataColumnId="Package\Convert factSalary and bridgeEmployee\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[start]"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Derived Column.Outputs[Derived Column Output].Columns[start]" />
+                    <inputColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[end]"
+                      cachedDataType="dbDate"
+                      cachedName="end"
+                      externalMetadataColumnId="Package\Convert factSalary and bridgeEmployee\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[end]"
+                      lineageId="Package\Convert factSalary and bridgeEmployee\Derived Column.Outputs[Derived Column Output].Columns[end]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -4030,6 +4137,14 @@ where [refTable].[emp_no] = ?</property>
                       refId="Package\Convert factSalary and bridgeEmployee\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[EID]"
                       dataType="i4"
                       name="EID" />
+                    <externalMetadataColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[start]"
+                      dataType="dbDate"
+                      name="start" />
+                    <externalMetadataColumn
+                      refId="Package\Convert factSalary and bridgeEmployee\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[end]"
+                      dataType="dbDate"
+                      name="end" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -4066,13 +4181,18 @@ where [refTable].[emp_no] = ?</property>
               name="Derived Column Output"
               startId="Package\Convert factSalary and bridgeEmployee\Derived factDate.Outputs[Derived Column Output]" />
             <path
+              refId="Package\Convert factSalary and bridgeEmployee.Paths[Derived Column Output1]"
+              endId="Package\Convert factSalary and bridgeEmployee\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Convert factSalary and bridgeEmployee\Derived Column.Outputs[Derived Column Output]" />
+            <path
               refId="Package\Convert factSalary and bridgeEmployee.Paths[Lookup Match Output]"
               endId="Package\Convert factSalary and bridgeEmployee\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="Lookup Match Output"
               startId="Package\Convert factSalary and bridgeEmployee\Lookup initial-employee by warehouse-employee.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Convert factSalary and bridgeEmployee.Paths[Lookup Match Output1]"
-              endId="Package\Convert factSalary and bridgeEmployee\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+              endId="Package\Convert factSalary and bridgeEmployee\Derived Column.Inputs[Derived Column Input]"
               name="Lookup Match Output"
               startId="Package\Convert factSalary and bridgeEmployee\Lookup initial-client_emp by warehouse-employee.Outputs[Lookup Match Output]" />
             <path
@@ -9121,7 +9241,7 @@ where [refTable].[emp_no] = ?</property>
         <NodeLayout
           Size="180,42"
           Id="Package\Convert factSalary and bridgeEmployee\OLE DB Destination 1"
-          TopLeft="515,366" />
+          TopLeft="477,460" />
         <NodeLayout
           Size="158,42"
           Id="Package\Convert factSalary and bridgeEmployee\Derived factDate"
@@ -9165,9 +9285,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9201,45 +9319,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Convert factSalary and bridgeEmployee.Paths[Lookup Match Output1]"
-          TopLeft="665,271">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-60,95"
-              Start="0,0"
-              End="-60,87.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,43.5"
-                    Point2="0,47.5"
-                    Point3="-4,47.5" />
-                  <mssgle:LineSegment
-                    End="-56,47.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-56,47.5"
-                    Point2="-60,47.5"
-                    Point3="-60,51.5" />
-                  <mssgle:LineSegment
-                    End="-60,87.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-78.19138671875,52.5,96.3827734375,11.609375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9297,9 +9377,81 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Convert factSalary and bridgeEmployee\Derived Column"
+          TopLeft="530,361" />
+        <EdgeLayout
+          Id="Package\Convert factSalary and bridgeEmployee.Paths[Lookup Match Output1]"
+          TopLeft="665,271">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-58,90"
+              Start="0,0"
+              End="-58,82.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,41"
+                    Point2="0,45"
+                    Point3="-4,45" />
+                  <mssgle:LineSegment
+                    End="-54,45" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-54,45"
+                    Point2="-58,45"
+                    Point3="-58,49" />
+                  <mssgle:LineSegment
+                    End="-58,82.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="-77.19138671875,50,96.3827734375,11.609375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Convert factSalary and bridgeEmployee.Paths[Derived Column Output1]"
+          TopLeft="607,403">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-40,57"
+              Start="0,0"
+              End="-40,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.5"
+                    Point2="0,28.5"
+                    Point3="-4,28.5" />
+                  <mssgle:LineSegment
+                    End="-36,28.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-36,28.5"
+                    Point2="-40,28.5"
+                    Point3="-40,32.5" />
+                  <mssgle:LineSegment
+                    End="-40,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9580,7 +9732,7 @@ where [refTable].[emp_no] = ?</property>
     design-time-name="Package\Load country, department, title, clients">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="165,42"
           Id="Package\Load country, department, title, clients\Data Conversion 3"
@@ -9648,9 +9800,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9672,9 +9822,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9708,9 +9856,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9744,9 +9890,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9768,9 +9912,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9804,9 +9946,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9840,9 +9980,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9864,9 +10002,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
