@@ -39,6 +39,11 @@ create table [new_client_emp_surrogate] (
 	[CID] int
 );
 
+create table [bridge_appeared] (
+	[EID] int,
+	[CID] int
+);
+
 create table [bridge_disappeared] (
 	[RID] int
 )
