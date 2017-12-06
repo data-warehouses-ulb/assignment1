@@ -34,6 +34,15 @@ CREATE TABLE [new_client_emp] (
     [client] int
 );
 
+create table [new_client_emp_surrogate] (
+	[EID] int,
+	[CID] int
+);
+
+create table [bridge_disappeared] (
+	[RID] int
+)
+
 CREATE TABLE [new_emp] (
     [emp_no] int,
     [birth_date] datetime,

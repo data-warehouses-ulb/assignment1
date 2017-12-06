@@ -11,8 +11,8 @@
   DTS:LocaleID="2060"
   DTS:ObjectName="snapshots"
   DTS:PackageType="5"
-  DTS:VersionBuild="178"
-  DTS:VersionGUID="{9E336077-7A2F-4381-8BF2-CB345ED870BC}">
+  DTS:VersionBuild="192"
+  DTS:VersionGUID="{8009A6CC-7328-4463-AC6F-8C544A1C39D6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -579,7 +579,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{E44BD960-AB80-4E91-8A4D-0D890BAF89AE}"
-              SQLTask:SqlStatementSource="use [temp]&#xA;go&#xA;&#xA;&#xA;CREATE TABLE [newdepartments] (&#xA;    [dept_no] varchar(4),&#xA;    [dept_name] varchar(40)&#xA;);&#xA;&#xA;CREATE TABLE [newCity] (&#xA;    [city_id] int,&#xA;    [city] varchar(100),&#xA;    [state_id] int&#xA;);&#xA;&#xA;CREATE TABLE [newState] (&#xA;    [state_id] int,&#xA;    [state] varchar(100),&#xA;    [country_id] int&#xA;);&#xA;&#xA;CREATE TABLE [newCountry] (&#xA;    [country] varchar(100),&#xA;    [country_id] int&#xA;);&#xA;&#xA;CREATE TABLE newTitle(&#xA;&#x9;[id] [int] NOT NULL,&#xA;&#x9;[title] [varchar](50) NULL&#xA;);&#xA;&#xA;CREATE TABLE [new_client_emp] (&#xA;    [emp_no] int,&#xA;    [client] int&#xA;);&#xA;&#xA;CREATE TABLE [new_emp] (&#xA;    [emp_no] int,&#xA;    [birth_date] datetime,&#xA;    [first_name] varchar(100),&#xA;    [last_name] varchar(100),&#xA;    [gender] varchar(10),&#xA;    [hire_date] datetime,&#xA;    [salary] int,&#xA;    [title_no] int,&#xA;    [dept_no] varchar(4),&#xA;    [current_city] int,&#xA;    [base_city] int,&#xA;    [marital_status] varchar(10),&#xA;    [no_of_children] int&#xA;);&#xA;&#xA;CREATE TABLE [snapshotdates] (&#xA;    [from_date] datetime,&#xA;    [to_date] datetime&#xA;);&#xA;&#xA;CREATE TABLE [new_clients] (&#xA;    [client_id] int,&#xA;    [client] varchar(100),&#xA;    [category] varchar(10)&#xA;);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="use [temp]&#xA;go&#xA;&#xA;&#xA;CREATE TABLE [newdepartments] (&#xA;    [dept_no] varchar(4),&#xA;    [dept_name] varchar(40)&#xA;);&#xA;&#xA;CREATE TABLE [newCity] (&#xA;    [city_id] int,&#xA;    [city] varchar(100),&#xA;    [state_id] int&#xA;);&#xA;&#xA;CREATE TABLE [newState] (&#xA;    [state_id] int,&#xA;    [state] varchar(100),&#xA;    [country_id] int&#xA;);&#xA;&#xA;CREATE TABLE [newCountry] (&#xA;    [country] varchar(100),&#xA;    [country_id] int&#xA;);&#xA;&#xA;CREATE TABLE newTitle(&#xA;&#x9;[id] [int] NOT NULL,&#xA;&#x9;[title] [varchar](50) NULL&#xA;);&#xA;&#xA;CREATE TABLE [new_client_emp] (&#xA;    [emp_no] int,&#xA;    [client] int&#xA;);&#xA;&#xA;create table [new_client_emp_surrogate] (&#xA;&#x9;[EID] int,&#xA;&#x9;[CID] int&#xA;);&#xA;&#xA;create table [bridge_disappeared] (&#xA;&#x9;[RID] int&#xA;)&#xA;&#xA;CREATE TABLE [new_emp] (&#xA;    [emp_no] int,&#xA;    [birth_date] datetime,&#xA;    [first_name] varchar(100),&#xA;    [last_name] varchar(100),&#xA;    [gender] varchar(10),&#xA;    [hire_date] datetime,&#xA;    [salary] int,&#xA;    [title_no] int,&#xA;    [dept_no] varchar(4),&#xA;    [current_city] int,&#xA;    [base_city] int,&#xA;    [marital_status] varchar(10),&#xA;    [no_of_children] int&#xA;);&#xA;&#xA;CREATE TABLE [snapshotdates] (&#xA;    [from_date] datetime,&#xA;    [to_date] datetime&#xA;);&#xA;&#xA;CREATE TABLE [new_clients] (&#xA;    [client_id] int,&#xA;    [client] varchar(100),&#xA;    [category] varchar(10)&#xA;);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -597,7 +597,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{E44BD960-AB80-4E91-8A4D-0D890BAF89AE}"
-              SQLTask:SqlStatementSource="use [temp]&#xA;&#xA;drop TABLE [newTitle];&#xA;drop TABLE [newdepartments];&#xA;drop TABLE [new_client_emp];&#xA;drop TABLE [new_emp];&#xA;drop TABLE [snapshotdates];&#xA;drop TABLE [newCity];&#xA;drop TABLE [newState];&#xA;drop TABLE [newCountry];&#xA;drop TABLE [new_clients];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="-- Use it in case if the loop was interrupted without finishing (the tables were not cleared)&#xA;&#xA;&#xA;use [temp]&#xA;&#xA;drop TABLE [newTitle];&#xA;drop TABLE [newdepartments];&#xA;drop TABLE [new_client_emp];&#xA;drop TABLE [new_emp];&#xA;drop TABLE [snapshotdates];&#xA;drop TABLE [newCity];&#xA;drop TABLE [newState];&#xA;drop TABLE [newCountry];&#xA;drop TABLE [new_clients];&#xA;drop TABLE [new_client_emp_surrogate];&#xA;drop TABLE [bridge_disappeared];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -639,6 +639,1106 @@
           DTS:ObjectName="HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED">
           <DTS:Variables />
           <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee"
+              DTS:CreationName="STOCK:SEQUENCE"
+              DTS:Description="Sequence Container"
+              DTS:DTSID="{63CFF0AA-6C5A-4052-8D39-82FC0644281A}"
+              DTS:ExecutableType="STOCK:SEQUENCE"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Change bridgeEmployee">
+              <DTS:Variables />
+              <DTS:Executables>
+                <DTS:Executable
+                  DTS:refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task"
+                  DTS:CreationName="Microsoft.Pipeline"
+                  DTS:Description="Data Flow Task"
+                  DTS:DTSID="{86A9CF4B-5447-4DFC-87E2-A6089E34DFC1}"
+                  DTS:ExecutableType="Microsoft.Pipeline"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="Data Flow Task"
+                  DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                  <DTS:Variables />
+                  <DTS:ObjectData>
+                    <pipeline
+                      version="1">
+                      <components>
+                        <component
+                          refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Derived Column"
+                          componentClassID="Microsoft.DerivedColumn"
+                          contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                          description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                          name="Derived Column"
+                          usesDispositions="true">
+                          <inputs>
+                            <input
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                              description="Input to the Derived Column Transformation"
+                              name="Derived Column Input">
+                              <externalMetadataColumns />
+                            </input>
+                          </inputs>
+                          <outputs>
+                            <output
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Derived Column.Outputs[Derived Column Output]"
+                              description="Default Output of the Derived Column Transformation"
+                              exclusionGroup="1"
+                              name="Derived Column Output"
+                              synchronousInputId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                              <outputColumns>
+                                <outputColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[end]"
+                                  dataType="date"
+                                  errorOrTruncationOperation="Computation"
+                                  errorRowDisposition="FailComponent"
+                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[end]"
+                                  name="end"
+                                  truncationRowDisposition="FailComponent">
+                                  <properties>
+                                    <property
+                                      containsID="true"
+                                      dataType="System.String"
+                                      description="Derived Column Expression"
+                                      name="Expression">@[User::snapDate]</property>
+                                    <property
+                                      containsID="true"
+                                      dataType="System.String"
+                                      description="Derived Column Friendly Expression"
+                                      expressionType="Notify"
+                                      name="FriendlyExpression">@[User::snapDate]</property>
+                                  </properties>
+                                </outputColumn>
+                              </outputColumns>
+                              <externalMetadataColumns />
+                            </output>
+                            <output
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Derived Column.Outputs[Derived Column Error Output]"
+                              description="Error Output of the Derived Column Transformation"
+                              exclusionGroup="1"
+                              isErrorOut="true"
+                              name="Derived Column Error Output"
+                              synchronousInputId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                              <outputColumns>
+                                <outputColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                                  dataType="i4"
+                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                                  name="ErrorCode"
+                                  specialFlags="1" />
+                                <outputColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                                  dataType="i4"
+                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                                  name="ErrorColumn"
+                                  specialFlags="2" />
+                              </outputColumns>
+                              <externalMetadataColumns />
+                            </output>
+                          </outputs>
+                        </component>
+                        <component
+                          refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Load bridge_disappeared"
+                          componentClassID="Microsoft.OLEDBSource"
+                          contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                          description="OLE DB Source"
+                          name="Load bridge_disappeared"
+                          usesDispositions="true"
+                          version="7">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                              name="CommandTimeout">0</property>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the name of the database object used to open a rowset."
+                              name="OpenRowset">[dbo].[bridge_disappeared]</property>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the variable that contains the name of the database object used to open a rowset."
+                              name="OpenRowsetVariable"></property>
+                            <property
+                              dataType="System.String"
+                              description="The SQL command to be executed."
+                              name="SqlCommand"
+                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                            <property
+                              dataType="System.String"
+                              description="The variable that contains the SQL command to be executed."
+                              name="SqlCommandVariable"></property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the column code page to use when code page information is unavailable from the data source."
+                              name="DefaultCodePage">1252</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Forces the use of the DefaultCodePage property value when describing character data."
+                              name="AlwaysUseDefaultCodePage">true</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the mode used to access the database."
+                              name="AccessMode"
+                              typeConverter="AccessMode">0</property>
+                            <property
+                              dataType="System.String"
+                              description="The mappings between the parameters in the SQL command and variables."
+                              name="ParameterMapping"></property>
+                          </properties>
+                          <connections>
+                            <connection
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Load bridge_disappeared.Connections[OleDbConnection]"
+                              connectionManagerID="Package.ConnectionManagers[server.temp]"
+                              connectionManagerRefId="Package.ConnectionManagers[server.temp]"
+                              description="The OLE DB runtime connection used to access the database."
+                              name="OleDbConnection" />
+                          </connections>
+                          <outputs>
+                            <output
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Load bridge_disappeared.Outputs[OLE DB Source Output]"
+                              name="OLE DB Source Output">
+                              <outputColumns>
+                                <outputColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Load bridge_disappeared.Outputs[OLE DB Source Output].Columns[RID]"
+                                  dataType="i4"
+                                  errorOrTruncationOperation="Conversion"
+                                  errorRowDisposition="FailComponent"
+                                  externalMetadataColumnId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Load bridge_disappeared.Outputs[OLE DB Source Output].ExternalColumns[RID]"
+                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Load bridge_disappeared.Outputs[OLE DB Source Output].Columns[RID]"
+                                  name="RID"
+                                  truncationRowDisposition="FailComponent" />
+                              </outputColumns>
+                              <externalMetadataColumns
+                                isUsed="True">
+                                <externalMetadataColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Load bridge_disappeared.Outputs[OLE DB Source Output].ExternalColumns[RID]"
+                                  dataType="i4"
+                                  name="RID" />
+                              </externalMetadataColumns>
+                            </output>
+                            <output
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Load bridge_disappeared.Outputs[OLE DB Source Error Output]"
+                              isErrorOut="true"
+                              name="OLE DB Source Error Output">
+                              <outputColumns>
+                                <outputColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Load bridge_disappeared.Outputs[OLE DB Source Error Output].Columns[RID]"
+                                  dataType="i4"
+                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Load bridge_disappeared.Outputs[OLE DB Source Error Output].Columns[RID]"
+                                  name="RID" />
+                                <outputColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Load bridge_disappeared.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                                  dataType="i4"
+                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Load bridge_disappeared.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                                  name="ErrorCode"
+                                  specialFlags="1" />
+                                <outputColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Load bridge_disappeared.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                                  dataType="i4"
+                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Load bridge_disappeared.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                                  name="ErrorColumn"
+                                  specialFlags="2" />
+                              </outputColumns>
+                              <externalMetadataColumns />
+                            </output>
+                          </outputs>
+                        </component>
+                        <component
+                          refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Set end as snapDate for this RID"
+                          componentClassID="Microsoft.OLEDBCommand"
+                          contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                          description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+                          name="Set end as snapDate for this RID"
+                          usesDispositions="true"
+                          version="2">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                              name="CommandTimeout">0</property>
+                            <property
+                              dataType="System.String"
+                              description="The SQL command to be executed."
+                              expressionType="Notify"
+                              name="SqlCommand"
+                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update [warehouse].[dbo].[bridgeEmployee]
+set [end] = convert(date, ?)
+where [RID] = ?</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the column code page to use when code page information is unavailable from the data source."
+                              name="DefaultCodePage">1252</property>
+                          </properties>
+                          <connections>
+                            <connection
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Set end as snapDate for this RID.Connections[OleDbConnection]"
+                              connectionManagerID="Package.ConnectionManagers[server.warehouse]"
+                              connectionManagerRefId="Package.ConnectionManagers[server.warehouse]"
+                              description="The OLE DB runtime connection used to access the database."
+                              name="OleDbConnection" />
+                          </connections>
+                          <inputs>
+                            <input
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Set end as snapDate for this RID.Inputs[OLE DB Command Input]"
+                              errorOrTruncationOperation="Command Execution"
+                              errorRowDisposition="FailComponent"
+                              hasSideEffects="true"
+                              name="OLE DB Command Input">
+                              <inputColumns>
+                                <inputColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Set end as snapDate for this RID.Inputs[OLE DB Command Input].Columns[end]"
+                                  cachedDataType="date"
+                                  cachedName="end"
+                                  externalMetadataColumnId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Set end as snapDate for this RID.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[end]" />
+                                <inputColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Set end as snapDate for this RID.Inputs[OLE DB Command Input].Columns[RID]"
+                                  cachedDataType="i4"
+                                  cachedName="RID"
+                                  externalMetadataColumnId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Set end as snapDate for this RID.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Load bridge_disappeared.Outputs[OLE DB Source Output].Columns[RID]" />
+                              </inputColumns>
+                              <externalMetadataColumns
+                                isUsed="True">
+                                <externalMetadataColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Set end as snapDate for this RID.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                                  dataType="dbDate"
+                                  name="Param_0">
+                                  <properties>
+                                    <property
+                                      dataType="System.Int32"
+                                      description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                                      name="DBParamInfoFlags">65</property>
+                                  </properties>
+                                </externalMetadataColumn>
+                                <externalMetadataColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Set end as snapDate for this RID.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                                  dataType="i4"
+                                  name="Param_1">
+                                  <properties>
+                                    <property
+                                      dataType="System.Int32"
+                                      description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                                      name="DBParamInfoFlags">81</property>
+                                  </properties>
+                                </externalMetadataColumn>
+                              </externalMetadataColumns>
+                            </input>
+                          </inputs>
+                          <outputs>
+                            <output
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Set end as snapDate for this RID.Outputs[OLE DB Command Output]"
+                              exclusionGroup="1"
+                              name="OLE DB Command Output"
+                              synchronousInputId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Set end as snapDate for this RID.Inputs[OLE DB Command Input]">
+                              <externalMetadataColumns />
+                            </output>
+                            <output
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Set end as snapDate for this RID.Outputs[OLE DB Command Error Output]"
+                              exclusionGroup="1"
+                              isErrorOut="true"
+                              name="OLE DB Command Error Output"
+                              synchronousInputId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Set end as snapDate for this RID.Inputs[OLE DB Command Input]">
+                              <outputColumns>
+                                <outputColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Set end as snapDate for this RID.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                                  dataType="i4"
+                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Set end as snapDate for this RID.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                                  name="ErrorCode"
+                                  specialFlags="1" />
+                                <outputColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Set end as snapDate for this RID.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                                  dataType="i4"
+                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Set end as snapDate for this RID.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                                  name="ErrorColumn"
+                                  specialFlags="2" />
+                              </outputColumns>
+                              <externalMetadataColumns />
+                            </output>
+                          </outputs>
+                        </component>
+                      </components>
+                      <paths>
+                        <path
+                          refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task.Paths[Derived Column Output]"
+                          endId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Set end as snapDate for this RID.Inputs[OLE DB Command Input]"
+                          name="Derived Column Output"
+                          startId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Derived Column.Outputs[Derived Column Output]" />
+                        <path
+                          refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task.Paths[OLE DB Source Output]"
+                          endId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                          name="OLE DB Source Output"
+                          startId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Load bridge_disappeared.Outputs[OLE DB Source Output]" />
+                      </paths>
+                    </pipeline>
+                  </DTS:ObjectData>
+                </DTS:Executable>
+                <DTS:Executable
+                  DTS:refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine bridge disappeared"
+                  DTS:CreationName="Microsoft.ExecuteSQLTask"
+                  DTS:Description="Execute SQL Task"
+                  DTS:DTSID="{E5E4210F-4BB9-4246-B303-C583210653A1}"
+                  DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="Determine bridge disappeared"
+                  DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+                  DTS:ThreadHint="0">
+                  <DTS:Variables />
+                  <DTS:ObjectData>
+                    <SQLTask:SqlTaskData
+                      SQLTask:Connection="{E44BD960-AB80-4E91-8A4D-0D890BAF89AE}"
+                      SQLTask:SqlStatementSource="insert into [temp].[dbo].[bridge_disappeared]&#xA;select [RID]&#xA;from [warehouse].[dbo].[bridgeEmployee] emp&#xA;where [end] is null and not exists&#xA;(&#xA;&#x9;select *&#xA;&#x9;from [temp].[dbo].[new_client_emp_surrogate]&#xA;&#x9;where [emp].[EID] = [EID] and [emp].[CID] = [CID]&#xA;)&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+                  </DTS:ObjectData>
+                </DTS:Executable>
+                <DTS:Executable
+                  DTS:refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate"
+                  DTS:CreationName="Microsoft.Pipeline"
+                  DTS:Description="Data Flow Task"
+                  DTS:DTSID="{D5EBB348-77C2-4532-B8A6-5045BA480297}"
+                  DTS:ExecutableType="Microsoft.Pipeline"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="Determine new_client_emp_surrogate"
+                  DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                  <DTS:Variables />
+                  <DTS:ObjectData>
+                    <pipeline
+                      version="1">
+                      <components>
+                        <component
+                          refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Derived Column"
+                          componentClassID="Microsoft.DerivedColumn"
+                          contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                          description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                          name="Derived Column"
+                          usesDispositions="true">
+                          <inputs>
+                            <input
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Derived Column.Inputs[Derived Column Input]"
+                              description="Input to the Derived Column Transformation"
+                              name="Derived Column Input">
+                              <externalMetadataColumns />
+                            </input>
+                          </inputs>
+                          <outputs>
+                            <output
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Derived Column.Outputs[Derived Column Output]"
+                              description="Default Output of the Derived Column Transformation"
+                              exclusionGroup="1"
+                              name="Derived Column Output"
+                              synchronousInputId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Derived Column.Inputs[Derived Column Input]">
+                              <outputColumns>
+                                <outputColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Derived Column.Outputs[Derived Column Output].Columns[end]"
+                                  dataType="dbDate"
+                                  errorOrTruncationOperation="Computation"
+                                  errorRowDisposition="FailComponent"
+                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Derived Column.Outputs[Derived Column Output].Columns[end]"
+                                  name="end"
+                                  truncationRowDisposition="FailComponent">
+                                  <properties>
+                                    <property
+                                      containsID="true"
+                                      dataType="System.String"
+                                      description="Derived Column Expression"
+                                      name="Expression">NULL(DT_DBDATE)</property>
+                                    <property
+                                      containsID="true"
+                                      dataType="System.String"
+                                      description="Derived Column Friendly Expression"
+                                      expressionType="Notify"
+                                      name="FriendlyExpression">NULL(DT_DBDATE)</property>
+                                  </properties>
+                                </outputColumn>
+                                <outputColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Derived Column.Outputs[Derived Column Output].Columns[current]"
+                                  dataType="bool"
+                                  errorOrTruncationOperation="Computation"
+                                  errorRowDisposition="FailComponent"
+                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Derived Column.Outputs[Derived Column Output].Columns[current]"
+                                  name="current"
+                                  truncationRowDisposition="FailComponent">
+                                  <properties>
+                                    <property
+                                      containsID="true"
+                                      dataType="System.String"
+                                      description="Derived Column Expression"
+                                      name="Expression"> TRUE </property>
+                                    <property
+                                      containsID="true"
+                                      dataType="System.String"
+                                      description="Derived Column Friendly Expression"
+                                      expressionType="Notify"
+                                      name="FriendlyExpression"> TRUE </property>
+                                  </properties>
+                                </outputColumn>
+                              </outputColumns>
+                              <externalMetadataColumns />
+                            </output>
+                            <output
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Derived Column.Outputs[Derived Column Error Output]"
+                              description="Error Output of the Derived Column Transformation"
+                              exclusionGroup="1"
+                              isErrorOut="true"
+                              name="Derived Column Error Output"
+                              synchronousInputId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Derived Column.Inputs[Derived Column Input]">
+                              <outputColumns>
+                                <outputColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                                  dataType="i4"
+                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                                  name="ErrorCode"
+                                  specialFlags="1" />
+                                <outputColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                                  dataType="i4"
+                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                                  name="ErrorColumn"
+                                  specialFlags="2" />
+                              </outputColumns>
+                              <externalMetadataColumns />
+                            </output>
+                          </outputs>
+                        </component>
+                        <component
+                          refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Load new_client_emp"
+                          componentClassID="Microsoft.OLEDBSource"
+                          contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                          description="OLE DB Source"
+                          name="Load new_client_emp"
+                          usesDispositions="true"
+                          version="7">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                              name="CommandTimeout">0</property>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the name of the database object used to open a rowset."
+                              name="OpenRowset">[dbo].[new_client_emp]</property>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the variable that contains the name of the database object used to open a rowset."
+                              name="OpenRowsetVariable"></property>
+                            <property
+                              dataType="System.String"
+                              description="The SQL command to be executed."
+                              name="SqlCommand"
+                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                            <property
+                              dataType="System.String"
+                              description="The variable that contains the SQL command to be executed."
+                              name="SqlCommandVariable"></property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the column code page to use when code page information is unavailable from the data source."
+                              name="DefaultCodePage">1252</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Forces the use of the DefaultCodePage property value when describing character data."
+                              name="AlwaysUseDefaultCodePage">true</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the mode used to access the database."
+                              name="AccessMode"
+                              typeConverter="AccessMode">0</property>
+                            <property
+                              dataType="System.String"
+                              description="The mappings between the parameters in the SQL command and variables."
+                              name="ParameterMapping"></property>
+                          </properties>
+                          <connections>
+                            <connection
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Load new_client_emp.Connections[OleDbConnection]"
+                              connectionManagerID="Package.ConnectionManagers[server.temp]"
+                              connectionManagerRefId="Package.ConnectionManagers[server.temp]"
+                              description="The OLE DB runtime connection used to access the database."
+                              name="OleDbConnection" />
+                          </connections>
+                          <outputs>
+                            <output
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Load new_client_emp.Outputs[OLE DB Source Output]"
+                              name="OLE DB Source Output">
+                              <outputColumns>
+                                <outputColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Load new_client_emp.Outputs[OLE DB Source Output].Columns[emp_no]"
+                                  dataType="i4"
+                                  errorOrTruncationOperation="Conversion"
+                                  errorRowDisposition="FailComponent"
+                                  externalMetadataColumnId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Load new_client_emp.Outputs[OLE DB Source Output].ExternalColumns[emp_no]"
+                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Load new_client_emp.Outputs[OLE DB Source Output].Columns[emp_no]"
+                                  name="emp_no"
+                                  truncationRowDisposition="FailComponent" />
+                                <outputColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Load new_client_emp.Outputs[OLE DB Source Output].Columns[client]"
+                                  dataType="i4"
+                                  errorOrTruncationOperation="Conversion"
+                                  errorRowDisposition="FailComponent"
+                                  externalMetadataColumnId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Load new_client_emp.Outputs[OLE DB Source Output].ExternalColumns[client]"
+                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Load new_client_emp.Outputs[OLE DB Source Output].Columns[client]"
+                                  name="client"
+                                  truncationRowDisposition="FailComponent" />
+                              </outputColumns>
+                              <externalMetadataColumns
+                                isUsed="True">
+                                <externalMetadataColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Load new_client_emp.Outputs[OLE DB Source Output].ExternalColumns[emp_no]"
+                                  dataType="i4"
+                                  name="emp_no" />
+                                <externalMetadataColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Load new_client_emp.Outputs[OLE DB Source Output].ExternalColumns[client]"
+                                  dataType="i4"
+                                  name="client" />
+                              </externalMetadataColumns>
+                            </output>
+                            <output
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Load new_client_emp.Outputs[OLE DB Source Error Output]"
+                              isErrorOut="true"
+                              name="OLE DB Source Error Output">
+                              <outputColumns>
+                                <outputColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Load new_client_emp.Outputs[OLE DB Source Error Output].Columns[emp_no]"
+                                  dataType="i4"
+                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Load new_client_emp.Outputs[OLE DB Source Error Output].Columns[emp_no]"
+                                  name="emp_no" />
+                                <outputColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Load new_client_emp.Outputs[OLE DB Source Error Output].Columns[client]"
+                                  dataType="i4"
+                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Load new_client_emp.Outputs[OLE DB Source Error Output].Columns[client]"
+                                  name="client" />
+                                <outputColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Load new_client_emp.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                                  dataType="i4"
+                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Load new_client_emp.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                                  name="ErrorCode"
+                                  specialFlags="1" />
+                                <outputColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Load new_client_emp.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                                  dataType="i4"
+                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Load new_client_emp.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                                  name="ErrorColumn"
+                                  specialFlags="2" />
+                              </outputColumns>
+                              <externalMetadataColumns />
+                            </output>
+                          </outputs>
+                        </component>
+                        <component
+                          refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimClients"
+                          componentClassID="Microsoft.Lookup"
+                          contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                          description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                          name="Lookup new_client_emp by dimClients"
+                          usesDispositions="true"
+                          version="6">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the SQL statement that generates the lookup table."
+                              expressionType="Notify"
+                              name="SqlCommand"
+                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[dimClients]</property>
+                            <property
+                              dataType="System.String"
+                              description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                              expressionType="Notify"
+                              name="SqlCommandParam"
+                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[dimClients]) [refTable]
+where [refTable].[client_id] = ? and [refTable].[current] = ?</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the type of connection used to access the reference dataset."
+                              name="ConnectionType"
+                              typeConverter="LookupConnectionType">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the cache type of the lookup table."
+                              name="CacheType"
+                              typeConverter="CacheType">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                              name="NoMatchBehavior"
+                              typeConverter="LookupNoMatchBehavior">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                              name="NoMatchCachePercentage">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                              name="MaxMemoryUsage">25</property>
+                            <property
+                              dataType="System.Int64"
+                              description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                              name="MaxMemoryUsage64">25</property>
+                            <property
+                              dataType="System.String"
+                              description="Indicates whether to reference metadata in an XML format."
+                              name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="client_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="client" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1251"/&gt;&lt;referenceColumn name="category" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1251"/&gt;&lt;referenceColumn name="current" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                              name="ParameterMap">#{Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Load new_client_emp.Outputs[OLE DB Source Output].Columns[client]};#{Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Derived Column.Outputs[Derived Column Output].Columns[current]};</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the column code page to use when code page information is unavailable from the data source."
+                              name="DefaultCodePage">1252</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                              name="TreatDuplicateKeysAsError">false</property>
+                          </properties>
+                          <connections>
+                            <connection
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimClients.Connections[OleDbConnection]"
+                              connectionManagerID="Package.ConnectionManagers[server.warehouse]"
+                              connectionManagerRefId="Package.ConnectionManagers[server.warehouse]"
+                              description="Connection manager used to access lookup data."
+                              name="OleDbConnection" />
+                          </connections>
+                          <inputs>
+                            <input
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimClients.Inputs[Lookup Input]"
+                              name="Lookup Input">
+                              <inputColumns>
+                                <inputColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimClients.Inputs[Lookup Input].Columns[client]"
+                                  cachedDataType="i4"
+                                  cachedName="client"
+                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Load new_client_emp.Outputs[OLE DB Source Output].Columns[client]">
+                                  <properties>
+                                    <property
+                                      dataType="System.String"
+                                      description="Specifies the column in the reference table that a column joins."
+                                      name="JoinToReferenceColumn">client_id</property>
+                                    <property
+                                      dataType="System.Null"
+                                      description="Specifies the column in the reference table from which a column is copied."
+                                      name="CopyFromReferenceColumn" />
+                                  </properties>
+                                </inputColumn>
+                                <inputColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimClients.Inputs[Lookup Input].Columns[current]"
+                                  cachedDataType="bool"
+                                  cachedName="current"
+                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Derived Column.Outputs[Derived Column Output].Columns[current]">
+                                  <properties>
+                                    <property
+                                      dataType="System.String"
+                                      description="Specifies the column in the reference table that a column joins."
+                                      name="JoinToReferenceColumn">current</property>
+                                    <property
+                                      dataType="System.Null"
+                                      description="Specifies the column in the reference table from which a column is copied."
+                                      name="CopyFromReferenceColumn" />
+                                  </properties>
+                                </inputColumn>
+                              </inputColumns>
+                              <externalMetadataColumns />
+                            </input>
+                          </inputs>
+                          <outputs>
+                            <output
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimClients.Outputs[Lookup Match Output]"
+                              errorOrTruncationOperation="Lookup"
+                              errorRowDisposition="FailComponent"
+                              exclusionGroup="1"
+                              name="Lookup Match Output"
+                              synchronousInputId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimClients.Inputs[Lookup Input]">
+                              <outputColumns>
+                                <outputColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimClients.Outputs[Lookup Match Output].Columns[CID]"
+                                  dataType="i4"
+                                  errorOrTruncationOperation="Copy Column"
+                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimClients.Outputs[Lookup Match Output].Columns[CID]"
+                                  name="CID"
+                                  truncationRowDisposition="FailComponent">
+                                  <properties>
+                                    <property
+                                      dataType="System.String"
+                                      description="Specifies the column in the reference table from which a column is copied."
+                                      name="CopyFromReferenceColumn">CID</property>
+                                  </properties>
+                                </outputColumn>
+                              </outputColumns>
+                              <externalMetadataColumns />
+                            </output>
+                            <output
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimClients.Outputs[Lookup No Match Output]"
+                              description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                              exclusionGroup="1"
+                              name="Lookup No Match Output"
+                              synchronousInputId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimClients.Inputs[Lookup Input]">
+                              <externalMetadataColumns />
+                            </output>
+                            <output
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimClients.Outputs[Lookup Error Output]"
+                              exclusionGroup="1"
+                              isErrorOut="true"
+                              name="Lookup Error Output"
+                              synchronousInputId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimClients.Inputs[Lookup Input]">
+                              <outputColumns>
+                                <outputColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimClients.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                                  dataType="i4"
+                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimClients.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                                  name="ErrorCode"
+                                  specialFlags="1" />
+                                <outputColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimClients.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                                  dataType="i4"
+                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimClients.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                                  name="ErrorColumn"
+                                  specialFlags="2" />
+                              </outputColumns>
+                              <externalMetadataColumns />
+                            </output>
+                          </outputs>
+                        </component>
+                        <component
+                          refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimEmployee"
+                          componentClassID="Microsoft.Lookup"
+                          contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                          description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                          name="Lookup new_client_emp by dimEmployee"
+                          usesDispositions="true"
+                          version="6">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the SQL statement that generates the lookup table."
+                              expressionType="Notify"
+                              name="SqlCommand"
+                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[dimEmployee]</property>
+                            <property
+                              dataType="System.String"
+                              description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                              expressionType="Notify"
+                              name="SqlCommandParam"
+                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[dimEmployee]) [refTable]
+where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the type of connection used to access the reference dataset."
+                              name="ConnectionType"
+                              typeConverter="LookupConnectionType">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the cache type of the lookup table."
+                              name="CacheType"
+                              typeConverter="CacheType">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                              name="NoMatchBehavior"
+                              typeConverter="LookupNoMatchBehavior">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                              name="NoMatchCachePercentage">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                              name="MaxMemoryUsage">25</property>
+                            <property
+                              dataType="System.Int64"
+                              description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                              name="MaxMemoryUsage64">25</property>
+                            <property
+                              dataType="System.String"
+                              description="Indicates whether to reference metadata in an XML format."
+                              name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="EID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="emp_no" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="birth_date" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="first_name" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1251"/&gt;&lt;referenceColumn name="last_name" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1251"/&gt;&lt;referenceColumn name="gender" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1251"/&gt;&lt;referenceColumn name="marital_status" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1251"/&gt;&lt;referenceColumn name="no_of_children" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="hire_date" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="title_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="title" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1251"/&gt;&lt;referenceColumn name="current_city_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="base_city_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="dept_id" dataType="DT_STR" length="4" precision="0" scale="0" codePage="1251"/&gt;&lt;referenceColumn name="dept_name" dataType="DT_STR" length="40" precision="0" scale="0" codePage="1251"/&gt;&lt;referenceColumn name="start" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="end" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                              name="ParameterMap">#{Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Load new_client_emp.Outputs[OLE DB Source Output].Columns[emp_no]};#{Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Derived Column.Outputs[Derived Column Output].Columns[end]};</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the column code page to use when code page information is unavailable from the data source."
+                              name="DefaultCodePage">1252</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                              name="TreatDuplicateKeysAsError">false</property>
+                          </properties>
+                          <connections>
+                            <connection
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimEmployee.Connections[OleDbConnection]"
+                              connectionManagerID="Package.ConnectionManagers[server.warehouse]"
+                              connectionManagerRefId="Package.ConnectionManagers[server.warehouse]"
+                              description="Connection manager used to access lookup data."
+                              name="OleDbConnection" />
+                          </connections>
+                          <inputs>
+                            <input
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimEmployee.Inputs[Lookup Input]"
+                              name="Lookup Input">
+                              <inputColumns>
+                                <inputColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimEmployee.Inputs[Lookup Input].Columns[emp_no]"
+                                  cachedDataType="i4"
+                                  cachedName="emp_no"
+                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Load new_client_emp.Outputs[OLE DB Source Output].Columns[emp_no]">
+                                  <properties>
+                                    <property
+                                      dataType="System.String"
+                                      description="Specifies the column in the reference table that a column joins."
+                                      name="JoinToReferenceColumn">emp_no</property>
+                                    <property
+                                      dataType="System.Null"
+                                      description="Specifies the column in the reference table from which a column is copied."
+                                      name="CopyFromReferenceColumn" />
+                                  </properties>
+                                </inputColumn>
+                                <inputColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimEmployee.Inputs[Lookup Input].Columns[end]"
+                                  cachedDataType="dbDate"
+                                  cachedName="end"
+                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Derived Column.Outputs[Derived Column Output].Columns[end]">
+                                  <properties>
+                                    <property
+                                      dataType="System.String"
+                                      description="Specifies the column in the reference table that a column joins."
+                                      name="JoinToReferenceColumn">end</property>
+                                    <property
+                                      dataType="System.Null"
+                                      description="Specifies the column in the reference table from which a column is copied."
+                                      name="CopyFromReferenceColumn" />
+                                  </properties>
+                                </inputColumn>
+                              </inputColumns>
+                              <externalMetadataColumns />
+                            </input>
+                          </inputs>
+                          <outputs>
+                            <output
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimEmployee.Outputs[Lookup Match Output]"
+                              errorOrTruncationOperation="Lookup"
+                              errorRowDisposition="FailComponent"
+                              exclusionGroup="1"
+                              name="Lookup Match Output"
+                              synchronousInputId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimEmployee.Inputs[Lookup Input]">
+                              <outputColumns>
+                                <outputColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimEmployee.Outputs[Lookup Match Output].Columns[EID]"
+                                  dataType="i4"
+                                  errorOrTruncationOperation="Copy Column"
+                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimEmployee.Outputs[Lookup Match Output].Columns[EID]"
+                                  name="EID"
+                                  truncationRowDisposition="FailComponent">
+                                  <properties>
+                                    <property
+                                      dataType="System.String"
+                                      description="Specifies the column in the reference table from which a column is copied."
+                                      name="CopyFromReferenceColumn">EID</property>
+                                  </properties>
+                                </outputColumn>
+                              </outputColumns>
+                              <externalMetadataColumns />
+                            </output>
+                            <output
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimEmployee.Outputs[Lookup No Match Output]"
+                              description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                              exclusionGroup="1"
+                              name="Lookup No Match Output"
+                              synchronousInputId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimEmployee.Inputs[Lookup Input]">
+                              <externalMetadataColumns />
+                            </output>
+                            <output
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimEmployee.Outputs[Lookup Error Output]"
+                              exclusionGroup="1"
+                              isErrorOut="true"
+                              name="Lookup Error Output"
+                              synchronousInputId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimEmployee.Inputs[Lookup Input]">
+                              <outputColumns>
+                                <outputColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimEmployee.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                                  dataType="i4"
+                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimEmployee.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                                  name="ErrorCode"
+                                  specialFlags="1" />
+                                <outputColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimEmployee.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                                  dataType="i4"
+                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimEmployee.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                                  name="ErrorColumn"
+                                  specialFlags="2" />
+                              </outputColumns>
+                              <externalMetadataColumns />
+                            </output>
+                          </outputs>
+                        </component>
+                        <component
+                          refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Store into new_client_emp_surrogate"
+                          componentClassID="Microsoft.OLEDBDestination"
+                          contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                          description="OLE DB Destination"
+                          name="Store into new_client_emp_surrogate"
+                          usesDispositions="true"
+                          version="4">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                              name="CommandTimeout">0</property>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the name of the database object used to open a rowset."
+                              name="OpenRowset">[dbo].[new_client_emp_surrogate]</property>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the variable that contains the name of the database object used to open a rowset."
+                              name="OpenRowsetVariable"></property>
+                            <property
+                              dataType="System.String"
+                              description="The SQL command to be executed."
+                              name="SqlCommand"
+                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the column code page to use when code page information is unavailable from the data source."
+                              name="DefaultCodePage">1252</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Forces the use of the DefaultCodePage property value when describing character data."
+                              name="AlwaysUseDefaultCodePage">false</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the mode used to access the database."
+                              name="AccessMode"
+                              typeConverter="AccessMode">3</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                              name="FastLoadKeepIdentity">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                              name="FastLoadKeepNulls">false</property>
+                            <property
+                              dataType="System.String"
+                              description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                              name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                              name="FastLoadMaxInsertCommitSize">2147483647</property>
+                          </properties>
+                          <connections>
+                            <connection
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Store into new_client_emp_surrogate.Connections[OleDbConnection]"
+                              connectionManagerID="Package.ConnectionManagers[server.temp]"
+                              connectionManagerRefId="Package.ConnectionManagers[server.temp]"
+                              description="The OLE DB runtime connection used to access the database."
+                              name="OleDbConnection" />
+                          </connections>
+                          <inputs>
+                            <input
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Store into new_client_emp_surrogate.Inputs[OLE DB Destination Input]"
+                              errorOrTruncationOperation="Insert"
+                              errorRowDisposition="FailComponent"
+                              hasSideEffects="true"
+                              name="OLE DB Destination Input">
+                              <inputColumns>
+                                <inputColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Store into new_client_emp_surrogate.Inputs[OLE DB Destination Input].Columns[EID]"
+                                  cachedDataType="i4"
+                                  cachedName="EID"
+                                  externalMetadataColumnId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Store into new_client_emp_surrogate.Inputs[OLE DB Destination Input].ExternalColumns[EID]"
+                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimEmployee.Outputs[Lookup Match Output].Columns[EID]" />
+                                <inputColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Store into new_client_emp_surrogate.Inputs[OLE DB Destination Input].Columns[CID]"
+                                  cachedDataType="i4"
+                                  cachedName="CID"
+                                  externalMetadataColumnId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Store into new_client_emp_surrogate.Inputs[OLE DB Destination Input].ExternalColumns[CID]"
+                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimClients.Outputs[Lookup Match Output].Columns[CID]" />
+                              </inputColumns>
+                              <externalMetadataColumns
+                                isUsed="True">
+                                <externalMetadataColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Store into new_client_emp_surrogate.Inputs[OLE DB Destination Input].ExternalColumns[EID]"
+                                  dataType="i4"
+                                  name="EID" />
+                                <externalMetadataColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Store into new_client_emp_surrogate.Inputs[OLE DB Destination Input].ExternalColumns[CID]"
+                                  dataType="i4"
+                                  name="CID" />
+                              </externalMetadataColumns>
+                            </input>
+                          </inputs>
+                          <outputs>
+                            <output
+                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Store into new_client_emp_surrogate.Outputs[OLE DB Destination Error Output]"
+                              exclusionGroup="1"
+                              isErrorOut="true"
+                              name="OLE DB Destination Error Output"
+                              synchronousInputId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Store into new_client_emp_surrogate.Inputs[OLE DB Destination Input]">
+                              <outputColumns>
+                                <outputColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Store into new_client_emp_surrogate.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                                  dataType="i4"
+                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Store into new_client_emp_surrogate.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                                  name="ErrorCode"
+                                  specialFlags="1" />
+                                <outputColumn
+                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Store into new_client_emp_surrogate.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                                  dataType="i4"
+                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Store into new_client_emp_surrogate.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                                  name="ErrorColumn"
+                                  specialFlags="2" />
+                              </outputColumns>
+                              <externalMetadataColumns />
+                            </output>
+                          </outputs>
+                        </component>
+                      </components>
+                      <paths>
+                        <path
+                          refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate.Paths[Derived Column Output]"
+                          endId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimEmployee.Inputs[Lookup Input]"
+                          name="Derived Column Output"
+                          startId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Derived Column.Outputs[Derived Column Output]" />
+                        <path
+                          refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate.Paths[Lookup Match Output]"
+                          endId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimClients.Inputs[Lookup Input]"
+                          name="Lookup Match Output"
+                          startId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimEmployee.Outputs[Lookup Match Output]" />
+                        <path
+                          refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate.Paths[Lookup Match Output1]"
+                          endId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Store into new_client_emp_surrogate.Inputs[OLE DB Destination Input]"
+                          name="Lookup Match Output"
+                          startId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimClients.Outputs[Lookup Match Output]" />
+                        <path
+                          refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate.Paths[OLE DB Source Output]"
+                          endId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Derived Column.Inputs[Derived Column Input]"
+                          name="OLE DB Source Output"
+                          startId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Load new_client_emp.Outputs[OLE DB Source Output]" />
+                      </paths>
+                    </pipeline>
+                  </DTS:ObjectData>
+                </DTS:Executable>
+              </DTS:Executables>
+              <DTS:PrecedenceConstraints>
+                <DTS:PrecedenceConstraint
+                  DTS:refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee.PrecedenceConstraints[Constraint]"
+                  DTS:CreationName=""
+                  DTS:DTSID="{1D588D9B-E6FB-48B0-8FB2-F757FDC5F3BF}"
+                  DTS:From="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate"
+                  DTS:LogicalAnd="True"
+                  DTS:ObjectName="Constraint"
+                  DTS:To="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine bridge disappeared" />
+                <DTS:PrecedenceConstraint
+                  DTS:refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee.PrecedenceConstraints[Constraint 1]"
+                  DTS:CreationName=""
+                  DTS:DTSID="{6DCD0A5A-A638-4444-A1F8-C4E439591634}"
+                  DTS:From="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine bridge disappeared"
+                  DTS:LogicalAnd="True"
+                  DTS:ObjectName="Constraint 1"
+                  DTS:To="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task" />
+              </DTS:PrecedenceConstraints>
+            </DTS:Executable>
             <DTS:Executable
               DTS:refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimCity"
               DTS:CreationName="Microsoft.Pipeline"
@@ -5714,6 +6814,7 @@ where [refTable].[id] = ?</property>
               DTS:refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change factSalary"
               DTS:CreationName="Microsoft.Pipeline"
               DTS:Description="Data Flow Task"
+              DTS:Disabled="True"
               DTS:DTSID="{AEABF11E-BDE8-4D41-B3F4-A89C91FA12D5}"
               DTS:ExecutableType="Microsoft.Pipeline"
               DTS:LocaleID="-1"
@@ -6525,6 +7626,14 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 2"
               DTS:To="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change factSalary" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED.PrecedenceConstraints[Constraint 3]"
+              DTS:CreationName=""
+              DTS:DTSID="{6E46F99C-28E3-453F-8A97-9B10F97E9637}"
+              DTS:From="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change factSalary"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 3"
+              DTS:To="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee" />
           </DTS:PrecedenceConstraints>
         </DTS:Executable>
         <DTS:Executable
@@ -11766,7 +12875,7 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{E44BD960-AB80-4E91-8A4D-0D890BAF89AE}"
-              SQLTask:SqlStatementSource="use [temp]&#xA;&#xA;go&#xA;&#xA;delete from new_client_emp where not emp_no&lt;20000;&#xA;&#xA;delete from new_emp where not emp_no&lt;20000;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="use [temp]&#xA;&#xA;go&#xA;&#xA;delete from new_client_emp where not emp_no&lt;11000;&#xA;&#xA;delete from new_emp where not emp_no&lt;11000;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -11877,11 +12986,86 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
         <NodeLayout
           Size="136,44"
           Id="Package\For Loop Container\Delete snapshot tables"
-          TopLeft="270.528301886792,724.962264150943" />
+          TopLeft="321.528301886792,768.962264150943" />
         <NodeLayout
           Size="235,42"
           Id="Package\For Loop Container\Determine variable @snapDateId"
           TopLeft="507,191" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task"
+          TopLeft="91,162" />
+        <NodeLayout
+          Size="221,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine bridge disappeared"
+          TopLeft="74,94" />
+        <NodeLayout
+          Size="258,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate"
+          TopLeft="57,16" />
+        <EdgeLayout
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee.PrecedenceConstraints[Constraint]"
+          TopLeft="185.25,58">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee.PrecedenceConstraints[Constraint 1]"
+          TopLeft="184.5,136">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-18,26"
+              Start="0,0"
+              End="-18,18.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9"
+                    Point2="0,13"
+                    Point3="-4,13" />
+                  <mssgle:LineSegment
+                    End="-14,13" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-14,13"
+                    Point2="-18,13"
+                    Point3="-18,17" />
+                  <mssgle:LineSegment
+                    End="-18,18.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="356,292"
+          Size="356,335"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee"
+          TopLeft="293,27" />
         <NodeLayout
           Size="153,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimCity"
@@ -12000,13 +13184,47 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED.PrecedenceConstraints[Constraint 3]"
+          TopLeft="202,253">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="91,-58.5"
+              Start="0,0"
+              End="83.5,-58.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="41.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="41.5,0"
+                    Point2="45.5,0"
+                    Point3="45.5,-4" />
+                  <mssgle:LineSegment
+                    End="45.5,-54.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="45.5,-54.5"
+                    Point2="45.5,-58.5"
+                    Point3="49.5,-58.5" />
+                  <mssgle:LineSegment
+                    End="83.5,-58.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43.924528301886795"
           IsExpanded="True"
-          PanelSize="607,349"
-          Size="607,393"
+          PanelSize="698,417"
+          Size="698,461"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED"
-          TopLeft="58.490566037736,282.207547169811" />
+          TopLeft="27.490566037736,279.207547169811" />
         <NodeLayout
           Size="137,69"
           Id="Package\For Loop Container\Load snapshot nr @myvar"
@@ -12081,26 +13299,26 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-103.125786163522,36.094339622641"
+              EndConnector="-103.792452830189,33.0943396226411"
               Start="0,0"
-              End="-103.125786163522,28.594339622641">
+              End="-103.792452830189,25.5943396226411">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.5996688967562" />
+                    End="0,15.8111913006891" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,17.5996688967562"
-                    Point2="0,21.5996688967562"
-                    Point3="-4,21.5996688967562" />
+                    Point1="0,15.8111913006891"
+                    Point2="0,19.8111913006891"
+                    Point3="-4,19.8111913006891" />
                   <mssgle:LineSegment
-                    End="-99.1257861635224,21.5996688967562" />
+                    End="-99.792452830189,19.8111913006891" />
                   <mssgle:CubicBezierSegment
-                    Point1="-99.1257861635224,21.5996688967562"
-                    Point2="-103.125786163522,21.5996688967562"
-                    Point3="-103.125786163522,25.5996688967562" />
+                    Point1="-99.792452830189,19.8111913006891"
+                    Point2="-103.792452830189,19.8111913006891"
+                    Point3="-103.792452830189,23.8111913006891" />
                   <mssgle:LineSegment
-                    End="-103.125786163522,28.594339622641" />
+                    End="-103.792452830189,25.5943396226411" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12179,30 +13397,30 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container.PrecedenceConstraints[Constraint 5]"
-          TopLeft="361.990566037736,675.207547169811">
+          TopLeft="376.490566037736,740.207547169811">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-23.462264150944,49.754716981132"
+              EndConnector="13.037735849056,28.754716981132"
               Start="0,0"
-              End="-23.462264150944,42.254716981132">
+              End="13.037735849056,21.254716981132">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.877358490566" />
+                    End="0,10.377358490566" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.877358490566"
-                    Point2="0,24.877358490566"
-                    Point3="-4,24.877358490566" />
+                    Point1="0,10.377358490566"
+                    Point2="0,14.377358490566"
+                    Point3="4,14.377358490566" />
                   <mssgle:LineSegment
-                    End="-19.462264150944,24.877358490566" />
+                    End="9.03773584905599,14.377358490566" />
                   <mssgle:CubicBezierSegment
-                    Point1="-19.462264150944,24.877358490566"
-                    Point2="-23.462264150944,24.877358490566"
-                    Point3="-23.462264150944,28.877358490566" />
+                    Point1="9.03773584905599,14.377358490566"
+                    Point2="13.037735849056,14.377358490566"
+                    Point3="13.037735849056,18.377358490566" />
                   <mssgle:LineSegment
-                    End="-23.462264150944,42.254716981132" />
+                    End="13.037735849056,21.254716981132" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12217,26 +13435,26 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-162.676100628931,49.207547169811"
+              EndConnector="-133.009433962264,46.2075471698111"
               Start="0,0"
-              End="-162.676100628931,41.707547169811">
+              End="-133.009433962264,38.7075471698111">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.4469087729957" />
+                    End="0,23.6611217191493" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,25.4469087729957"
-                    Point2="0,29.4469087729957"
-                    Point3="-4,29.4469087729957" />
+                    Point1="0,23.6611217191493"
+                    Point2="0,27.6611217191493"
+                    Point3="-4,27.6611217191493" />
                   <mssgle:LineSegment
-                    End="-158.676100628931,29.4469087729957" />
+                    End="-129.009433962264,27.6611217191493" />
                   <mssgle:CubicBezierSegment
-                    Point1="-158.676100628931,29.4469087729957"
-                    Point2="-162.676100628931,29.4469087729957"
-                    Point3="-162.676100628931,33.4469087729957" />
+                    Point1="-129.009433962264,27.6611217191493"
+                    Point2="-133.009433962264,27.6611217191493"
+                    Point3="-133.009433962264,31.6611217191493" />
                   <mssgle:LineSegment
-                    End="-162.676100628931,41.707547169811" />
+                    End="-133.009433962264,38.7075471698111" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12248,8 +13466,8 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
         <ContainerLayout
           HeaderHeight="43.924528301886795"
           IsExpanded="True"
-          PanelSize="773,824"
-          Size="773,868"
+          PanelSize="773,868"
+          Size="773,912"
           Id="Package\For Loop Container"
           TopLeft="5.5,110.783018867925" />
         <NodeLayout
@@ -12293,6 +13511,279 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <TaskHost
+    design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="197,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Load bridge_disappeared"
+          TopLeft="297,77" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Derived Column"
+          TopLeft="328,196" />
+        <NodeLayout
+          Size="234,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Set end as snapDate for this RID"
+          TopLeft="317,293" />
+        <EdgeLayout
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="395.5,119">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9.5,77"
+              Start="0,0"
+              End="9.5,69.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.5"
+                    Point2="0,38.5"
+                    Point3="4,38.5" />
+                  <mssgle:LineSegment
+                    End="5.5,38.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5.5,38.5"
+                    Point2="9.5,38.5"
+                    Point3="9.5,42.5" />
+                  <mssgle:LineSegment
+                    End="9.5,69.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="405,238">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="29,55"
+              Start="0,0"
+              End="29,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.5"
+                    Point2="0,27.5"
+                    Point3="4,27.5" />
+                  <mssgle:LineSegment
+                    End="25,27.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="25,27.5"
+                    Point2="29,27.5"
+                    Point3="29,31.5" />
+                  <mssgle:LineSegment
+                    End="29,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Data Flow Task\Load bridge_disappeared">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="181,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Load new_client_emp"
+          TopLeft="131,19" />
+        <NodeLayout
+          Size="274,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimEmployee"
+          TopLeft="233,193" />
+        <NodeLayout
+          Size="255,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Store into new_client_emp_surrogate"
+          TopLeft="289,418" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Derived Column"
+          TopLeft="238,106" />
+        <NodeLayout
+          Size="259,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimClients"
+          TopLeft="250,304" />
+        <EdgeLayout
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate.Paths[OLE DB Source Output]"
+          TopLeft="221.5,61">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="93.5,45"
+              Start="0,0"
+              End="93.5,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5"
+                    Point2="0,22.5"
+                    Point3="4,22.5" />
+                  <mssgle:LineSegment
+                    End="89.5,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="89.5,22.5"
+                    Point2="93.5,22.5"
+                    Point3="93.5,26.5" />
+                  <mssgle:LineSegment
+                    End="93.5,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate.Paths[Lookup Match Output1]"
+          TopLeft="379.5,346">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="37,72"
+              Start="0,0"
+              End="37,64.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32"
+                    Point2="0,36"
+                    Point3="4,36" />
+                  <mssgle:LineSegment
+                    End="33,36" />
+                  <mssgle:CubicBezierSegment
+                    Point1="33,36"
+                    Point2="37,36"
+                    Point3="37,40" />
+                  <mssgle:LineSegment
+                    End="37,64.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-29.69138671875,41,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate.Paths[Lookup Match Output]"
+          TopLeft="370,235">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9.5,69"
+              Start="0,0"
+              End="9.5,61.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.5"
+                    Point2="0,34.5"
+                    Point3="4,34.5" />
+                  <mssgle:LineSegment
+                    End="5.5,34.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5.5,34.5"
+                    Point2="9.5,34.5"
+                    Point3="9.5,38.5" />
+                  <mssgle:LineSegment
+                    End="9.5,61.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-43.44138671875,39.5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate.Paths[Derived Column Output]"
+          TopLeft="315,148">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="55,45"
+              Start="0,0"
+              End="55,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5"
+                    Point2="0,22.5"
+                    Point3="4,22.5" />
+                  <mssgle:LineSegment
+                    End="51,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="51,22.5"
+                    Point2="55,22.5"
+                    Point3="55,26.5" />
+                  <mssgle:LineSegment
+                    End="55,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <TaskHost
     design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimCity">
     <LayoutInfo>
@@ -12614,16 +14105,36 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="160,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients\Load new_clients"
+          TopLeft="157.5,5.5" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients\Derived Column 1"
+          TopLeft="151,515.5" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients\Union All"
+          TopLeft="172,413.5" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients\Insert Destination"
+          TopLeft="151,617.5" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients\Derived Column"
+          TopLeft="17.5,209.5" />
+        <NodeLayout
           Size="209,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients\Slowly Changing Dimension"
           TopLeft="128,107.5" />
         <NodeLayout
-          Size="160,42"
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients\Load new_clients"
-          TopLeft="157.5,5.5" />
+          Size="166,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients\OLE DB Command"
+          TopLeft="5.50000000000003,311.5" />
         <EdgeLayout
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients.Paths[OLE DB Source Output]"
-          TopLeft="235,47.5">
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients.Paths[Derived Column Output1]"
+          TopLeft="232.5,557.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12640,53 +14151,11 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="154,42"
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients\Derived Column"
-          TopLeft="17.5,209.5" />
-        <EdgeLayout
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients.Paths[Historical Attribute Inserts Output]"
-          TopLeft="199,149.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-104.5,60"
-              Start="0,0"
-              End="-104.5,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.2735042735043" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.2735042735043"
-                    Point2="0,24.2735042735043"
-                    Point3="-4,24.2735042735043" />
-                  <mssgle:LineSegment
-                    End="-100.5,24.2735042735043" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-100.5,24.2735042735043"
-                    Point2="-104.5,24.2735042735043"
-                    Point3="-104.5,28.2735042735043" />
-                  <mssgle:LineSegment
-                    End="-104.5,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-127.30638671875,29.2735042735043,150.1127734375,11.609375"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="166,42"
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients\OLE DB Command"
-          TopLeft="5.50000000000003,311.5" />
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients.Paths[Derived Column Output]"
           TopLeft="91.5,251.5">
@@ -12706,13 +14175,95 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="121,42"
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients\Union All"
-          TopLeft="172,413.5" />
+        <EdgeLayout
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients.Paths[Union All Output 1]"
+          TopLeft="232.5,455.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients.Paths[OLE DB Source Output]"
+          TopLeft="235,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients.Paths[OLE DB Command Output]"
+          TopLeft="88.5,353.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="125.166666666667,60"
+              Start="0,0"
+              End="125.166666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5301794453507" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5301794453507"
+                    Point2="0,35.5301794453507"
+                    Point3="4,35.5301794453507" />
+                  <mssgle:LineSegment
+                    End="121.166666666667,35.5301794453507" />
+                  <mssgle:CubicBezierSegment
+                    Point1="121.166666666667,35.5301794453507"
+                    Point2="125.166666666667,35.5301794453507"
+                    Point3="125.166666666667,39.5301794453507" />
+                  <mssgle:LineSegment
+                    End="125.166666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients.Paths[New Output]"
           TopLeft="266,149.5">
@@ -12750,94 +14301,57 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients.Paths[OLE DB Command Output]"
-          TopLeft="88.5,353.5">
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients.Paths[Historical Attribute Inserts Output]"
+          TopLeft="199,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="125.166666666667,60"
+              EndConnector="-104.5,60"
               Start="0,0"
-              End="125.166666666667,52.5">
+              End="-104.5,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.5301794453507" />
+                    End="0,20.2735042735043" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.5301794453507"
-                    Point2="0,35.5301794453507"
-                    Point3="4,35.5301794453507" />
+                    Point1="0,20.2735042735043"
+                    Point2="0,24.2735042735043"
+                    Point3="-4,24.2735042735043" />
                   <mssgle:LineSegment
-                    End="121.166666666667,35.5301794453507" />
+                    End="-100.5,24.2735042735043" />
                   <mssgle:CubicBezierSegment
-                    Point1="121.166666666667,35.5301794453507"
-                    Point2="125.166666666667,35.5301794453507"
-                    Point3="125.166666666667,39.5301794453507" />
+                    Point1="-100.5,24.2735042735043"
+                    Point2="-104.5,24.2735042735043"
+                    Point3="-104.5,28.2735042735043" />
                   <mssgle:LineSegment
-                    End="125.166666666667,52.5" />
+                    End="-104.5,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients\Derived Column 1"
-          TopLeft="151,515.5" />
-        <EdgeLayout
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients.Paths[Union All Output 1]"
-          TopLeft="232.5,455.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients\Insert Destination"
-          TopLeft="151,617.5" />
-        <EdgeLayout
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients.Paths[Derived Column Output1]"
-          TopLeft="232.5,557.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-127.30638671875,29.2735042735043,150.1127734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients\Load new_clients">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients\Slowly Changing Dimension">
     <Properties>
@@ -12887,19 +14401,6 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
   &lt;DateVariable /&gt;
   &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
 &lt;/SCDWizardMetadata&gt;</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients\Load new_clients">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -13599,7 +15100,9 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13669,7 +15172,9 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
