@@ -11,8 +11,8 @@
   DTS:LocaleID="2060"
   DTS:ObjectName="initial"
   DTS:PackageType="5"
-  DTS:VersionBuild="127"
-  DTS:VersionGUID="{F7ED6AAC-CFBD-4E6F-A725-2E5981666EE2}">
+  DTS:VersionBuild="132"
+  DTS:VersionGUID="{C750BABD-B476-41CB-9988-3BBF5B5002CA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -38,7 +38,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 0"
-              DTS:DTSID="{33E5A8D2-ADFB-48AB-BBA1-C2F0612B4BD5}"
+              DTS:DTSID="{F63D4ED8-8E46-4917-B2F5-4739EF7F38E5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -47,7 +47,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 1"
-              DTS:DTSID="{401BBF1F-7DFB-45B9-8D1A-58F616B0B747}"
+              DTS:DTSID="{CFA74FB3-288E-473B-9E61-9EF4690F5F05}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -56,7 +56,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 2"
-              DTS:DTSID="{74DB8CC3-07B7-4BC1-A32D-63D5DBD156BA}"
+              DTS:DTSID="{219C3F0E-98AB-4ABD-A5A3-C6E04ADEBBEF}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -65,7 +65,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[clients]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{E112AB0E-0179-438E-AAE5-639D77613AD0}"
+      DTS:DTSID="{32FC523C-556A-4BAA-AF37-8FB138F847A3}"
       DTS:ObjectName="clients">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -75,7 +75,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="D:\assignment1\Project\initial-data\clients.txt">
+          DTS:ConnectionString="C:\DW\initial-data\clients.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -84,7 +84,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 0"
-              DTS:DTSID="{0DA20731-313C-4414-BDEC-975D11FCEC7B}"
+              DTS:DTSID="{36A386AD-3178-4858-B17F-801F2A98D537}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -93,16 +93,16 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 1"
-              DTS:DTSID="{FDCE05D8-7343-4BC0-B732-1354287A6283}"
+              DTS:DTSID="{67F0BBC7-18D1-4DC1-8CF9-BE69D54E381D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:ColumnDelimiter="_x000A_"
               DTS:MaximumWidth="50"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 2"
-              DTS:DTSID="{4F7850B9-A7B7-4E1D-82A4-A71090D6C61C}"
+              DTS:DTSID="{8B364D94-DB4D-4D8F-81FE-9A1A79B8DD1F}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -130,7 +130,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 0"
-              DTS:DTSID="{936A0AB8-5221-4D14-ADEA-EDB933BA5DFB}"
+              DTS:DTSID="{AB3BA845-AB03-4D10-8EA6-C2B655605C2E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -139,7 +139,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 1"
-              DTS:DTSID="{DD781480-5EF2-43B1-BACE-4EB7BC7B5898}"
+              DTS:DTSID="{92FE2948-F54F-4C9B-9EAB-79E06CB87A3E}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -148,7 +148,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[country]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{D9FB4B1A-A759-425F-B47E-601CB8AB97BC}"
+      DTS:DTSID="{290E9F3A-697E-4D05-81FB-97DB0F1B756C}"
       DTS:ObjectName="country">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -158,7 +158,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="D:\assignment1\Project\initial-data\country.txt">
+          DTS:ConnectionString="C:\DW\initial-data\country.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -167,16 +167,16 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 0"
-              DTS:DTSID="{7D55901F-DC0A-4D04-BE51-CFA942110E2B}"
+              DTS:DTSID="{69766BAC-33FF-4833-958C-2FEFD6654DFC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:ColumnDelimiter="_x000A_"
               DTS:MaximumWidth="50"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 1"
-              DTS:DTSID="{414AD538-C2B5-4AEC-B531-E8DEF7B85B26}"
+              DTS:DTSID="{8EFF65B7-A0FD-48CC-A3DA-DE084C649C4D}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -204,7 +204,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 0"
-              DTS:DTSID="{75FEAA43-0636-4A5B-9A17-1526AE20344A}"
+              DTS:DTSID="{6E213ED4-C998-4293-9AC9-2D5E707CE9E1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -213,7 +213,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 1"
-              DTS:DTSID="{2DD46774-4098-4FFF-B115-BA6C24B090AE}"
+              DTS:DTSID="{6E12FB5D-00C2-4325-B86E-3FE62E0EA3AB}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -241,7 +241,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 0"
-              DTS:DTSID="{85D31187-0AE9-4670-95C3-F25AF8F334D8}"
+              DTS:DTSID="{D3EC4F73-CCFE-4023-B56A-5AE00F938A97}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -250,7 +250,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 1"
-              DTS:DTSID="{2FCB703D-04BB-4390-B52A-62E0DC292878}"
+              DTS:DTSID="{1EC8931F-C2B6-487E-AC10-F4601381ECF0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -259,7 +259,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 2"
-              DTS:DTSID="{72A050A6-66F4-4CDF-9DE3-2E134D1D7904}"
+              DTS:DTSID="{935967CE-B211-49F3-9D0E-B544C9FD4593}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -268,7 +268,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 3"
-              DTS:DTSID="{6B55804A-416C-4560-8E22-4551DF11F56C}"
+              DTS:DTSID="{88519016-7687-4499-8A22-B3851F55C8F0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -277,7 +277,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 4"
-              DTS:DTSID="{4F007111-B308-43C9-9843-AC064291716B}"
+              DTS:DTSID="{C7E14790-AE90-4FC3-AD5E-D1317E5442B8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -286,7 +286,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 5"
-              DTS:DTSID="{CD293D7E-AB1C-4020-81C6-FD3E8387F5B0}"
+              DTS:DTSID="{B1773379-E7CF-4D3A-B010-45D45B24F8B5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -295,7 +295,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 6"
-              DTS:DTSID="{1BD7C22A-8769-43D7-AE03-903227701C17}"
+              DTS:DTSID="{C262706A-6706-4E24-8D50-28A1DC739679}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -304,7 +304,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 7"
-              DTS:DTSID="{7459AE0F-9336-4B03-8868-0291F447B3FF}"
+              DTS:DTSID="{8756D9D0-20E8-4BFC-BD6C-358D811DE2ED}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -313,7 +313,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 8"
-              DTS:DTSID="{323EBA2D-F705-4EF2-A838-0E89B6025F5D}"
+              DTS:DTSID="{6CFE1D7C-67AE-448A-A8CE-2D89669C388E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -322,7 +322,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 9"
-              DTS:DTSID="{96673DD2-6ADA-42CD-998D-C5387343F3D6}"
+              DTS:DTSID="{E3810A59-F633-454F-98BC-FA086F04C976}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -331,7 +331,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 10"
-              DTS:DTSID="{541FF05B-105F-42E4-8D2C-B67CB8906DAB}"
+              DTS:DTSID="{272F851E-4B42-4E56-ACDE-2AB82552CAE7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -340,7 +340,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 11"
-              DTS:DTSID="{21FCE9CC-F8AA-4D6E-9974-EFB5F7B5F5AE}"
+              DTS:DTSID="{840A298A-5906-4866-AC65-35925D90ED73}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -349,7 +349,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 12"
-              DTS:DTSID="{5D14FE78-5485-4F0C-B867-344022835740}"
+              DTS:DTSID="{73D22E8B-F151-42FD-9EF1-799FC8491336}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -1398,7 +1398,7 @@ where [refTable].[country_id] = ?</property>
                       name="client_id" />
                     <externalMetadataColumn
                       refId="Package\Convert city and clients\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[category]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="10"
                       name="category" />
@@ -1408,7 +1408,7 @@ where [refTable].[country_id] = ?</property>
                       name="current" />
                     <externalMetadataColumn
                       refId="Package\Convert city and clients\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[client]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="100"
                       name="client" />
@@ -9350,7 +9350,9 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9384,7 +9386,9 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9490,7 +9494,9 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9512,7 +9518,9 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9793,7 +9801,7 @@ where [refTable].[emp_no] = ?</property>
     design-time-name="Package\Load country, department, title, clients">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="165,42"
           Id="Package\Load country, department, title, clients\Data Conversion 3"
@@ -9861,9 +9869,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9885,9 +9891,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9921,9 +9925,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9957,9 +9959,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9981,9 +9981,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10017,9 +10015,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10053,9 +10049,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10077,9 +10071,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
