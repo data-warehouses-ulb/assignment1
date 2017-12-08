@@ -11,8 +11,8 @@
   DTS:LocaleID="2060"
   DTS:ObjectName="initial"
   DTS:PackageType="5"
-  DTS:VersionBuild="122"
-  DTS:VersionGUID="{6A951F67-3BA5-43EA-A6AD-53BA2740C915}">
+  DTS:VersionBuild="127"
+  DTS:VersionGUID="{F7ED6AAC-CFBD-4E6F-A725-2E5981666EE2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -460,6 +460,9 @@
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables />
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="2" />
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\Convert city and clients"
@@ -471,6 +474,8 @@
       DTS:ObjectName="Convert city and clients"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:ObjectData>
         <pipeline
           version="1">
@@ -660,7 +665,7 @@
                 <property
                   dataType="System.Boolean"
                   description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
+                  name="AlwaysUseDefaultCodePage">true</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
@@ -695,7 +700,7 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Convert city and clients\Load clients.Outputs[OLE DB Source Output].Columns[client]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -706,7 +711,7 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Convert city and clients\Load clients.Outputs[OLE DB Source Output].Columns[category]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -724,13 +729,13 @@
                       name="client_id" />
                     <externalMetadataColumn
                       refId="Package\Convert city and clients\Load clients.Outputs[OLE DB Source Output].ExternalColumns[client]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="100"
                       name="client" />
                     <externalMetadataColumn
                       refId="Package\Convert city and clients\Load clients.Outputs[OLE DB Source Output].ExternalColumns[category]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="10"
                       name="category" />
@@ -748,14 +753,14 @@
                       name="client_id" />
                     <outputColumn
                       refId="Package\Convert city and clients\Load clients.Outputs[OLE DB Source Error Output].Columns[client]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="100"
                       lineageId="Package\Convert city and clients\Load clients.Outputs[OLE DB Source Error Output].Columns[client]"
                       name="client" />
                     <outputColumn
                       refId="Package\Convert city and clients\Load clients.Outputs[OLE DB Source Error Output].Columns[category]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="10"
                       lineageId="Package\Convert city and clients\Load clients.Outputs[OLE DB Source Error Output].Columns[category]"
@@ -1319,7 +1324,7 @@ where [refTable].[country_id] = ?</property>
                 <property
                   dataType="System.Boolean"
                   description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
+                  name="AlwaysUseDefaultCodePage">true</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
@@ -1366,7 +1371,7 @@ where [refTable].[country_id] = ?</property>
                       lineageId="Package\Convert city and clients\Load clients.Outputs[OLE DB Source Output].Columns[client_id]" />
                     <inputColumn
                       refId="Package\Convert city and clients\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[category]"
-                      cachedCodepage="1251"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="10"
                       cachedName="category"
@@ -1374,7 +1379,7 @@ where [refTable].[country_id] = ?</property>
                       lineageId="Package\Convert city and clients\Load clients.Outputs[OLE DB Source Output].Columns[category]" />
                     <inputColumn
                       refId="Package\Convert city and clients\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[client]"
-                      cachedCodepage="1251"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="100"
                       cachedName="client"
@@ -1389,13 +1394,11 @@ where [refTable].[country_id] = ?</property>
                       name="CID" />
                     <externalMetadataColumn
                       refId="Package\Convert city and clients\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[client_id]"
-                      codePage="1252"
-                      dataType="str"
-                      length="100"
+                      dataType="i4"
                       name="client_id" />
                     <externalMetadataColumn
                       refId="Package\Convert city and clients\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[category]"
-                      codePage="1252"
+                      codePage="1251"
                       dataType="str"
                       length="10"
                       name="category" />
@@ -1405,7 +1408,7 @@ where [refTable].[country_id] = ?</property>
                       name="current" />
                     <externalMetadataColumn
                       refId="Package\Convert city and clients\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[client]"
-                      codePage="1252"
+                      codePage="1251"
                       dataType="str"
                       length="100"
                       name="client" />
@@ -1473,6 +1476,8 @@ where [refTable].[country_id] = ?</property>
       DTS:ObjectName="Convert employee"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:ObjectData>
         <pipeline
           version="1">
@@ -2933,6 +2938,48 @@ where [refTable].[Date] = ?</property>
       DTS:ObjectName="Convert factSalary and bridgeEmployee"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0">
+        <DTS:Property
+          DTS:DataType="8"
+          DTS:Name="EventFilter">2,19,OnExecStatusChanged,10,OnProgress</DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnExecStatusChanged"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnProgress"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+      </DTS:LoggingOptions>
       <DTS:ObjectData>
         <pipeline
           version="1">
@@ -3142,7 +3189,7 @@ where [refTable].[Date] = ?</property>
                 <property
                   dataType="System.Boolean"
                   description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
+                  name="AlwaysUseDefaultCodePage">true</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
@@ -3266,7 +3313,7 @@ where [refTable].[Date] = ?</property>
                 <property
                   dataType="System.Boolean"
                   description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
+                  name="AlwaysUseDefaultCodePage">true</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
@@ -3310,7 +3357,7 @@ where [refTable].[Date] = ?</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].Columns[first_name]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -3321,7 +3368,7 @@ where [refTable].[Date] = ?</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].Columns[last_name]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -3332,7 +3379,7 @@ where [refTable].[Date] = ?</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].Columns[gender]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -3370,7 +3417,7 @@ where [refTable].[Date] = ?</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].Columns[dept_no]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -3399,7 +3446,7 @@ where [refTable].[Date] = ?</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].Columns[marital_status]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -3430,19 +3477,19 @@ where [refTable].[Date] = ?</property>
                       name="birth_date" />
                     <externalMetadataColumn
                       refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[first_name]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="100"
                       name="first_name" />
                     <externalMetadataColumn
                       refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[last_name]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="100"
                       name="last_name" />
                     <externalMetadataColumn
                       refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[gender]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="10"
                       name="gender" />
@@ -3460,7 +3507,7 @@ where [refTable].[Date] = ?</property>
                       name="title_no" />
                     <externalMetadataColumn
                       refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[dept_no]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="4"
                       name="dept_no" />
@@ -3474,7 +3521,7 @@ where [refTable].[Date] = ?</property>
                       name="base_city" />
                     <externalMetadataColumn
                       refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Output].ExternalColumns[marital_status]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="10"
                       name="marital_status" />
@@ -3501,21 +3548,21 @@ where [refTable].[Date] = ?</property>
                       name="birth_date" />
                     <outputColumn
                       refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[first_name]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="100"
                       lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[first_name]"
                       name="first_name" />
                     <outputColumn
                       refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[last_name]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="100"
                       lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[last_name]"
                       name="last_name" />
                     <outputColumn
                       refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[gender]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="10"
                       lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[gender]"
@@ -3537,7 +3584,7 @@ where [refTable].[Date] = ?</property>
                       name="title_no" />
                     <outputColumn
                       refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[dept_no]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="4"
                       lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[dept_no]"
@@ -3554,7 +3601,7 @@ where [refTable].[Date] = ?</property>
                       name="base_city" />
                     <outputColumn
                       refId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[marital_status]"
-                      codePage="1251"
+                      codePage="1252"
                       dataType="str"
                       length="10"
                       lineageId="Package\Convert factSalary and bridgeEmployee\Load employee.Outputs[OLE DB Source Error Output].Columns[marital_status]"
@@ -3930,7 +3977,7 @@ where [refTable].[emp_no] = ?</property>
                 <property
                   dataType="System.Boolean"
                   description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
+                  name="AlwaysUseDefaultCodePage">true</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
@@ -4063,7 +4110,7 @@ where [refTable].[emp_no] = ?</property>
                 <property
                   dataType="System.Boolean"
                   description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
+                  name="AlwaysUseDefaultCodePage">true</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
@@ -4221,6 +4268,8 @@ where [refTable].[emp_no] = ?</property>
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{0FB70CB1-DB06-49B8-8BB7-D44D40FA575C}"
@@ -4239,6 +4288,8 @@ where [refTable].[emp_no] = ?</property>
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{0FB70CB1-DB06-49B8-8BB7-D44D40FA575C}"
@@ -4255,6 +4306,8 @@ where [refTable].[emp_no] = ?</property>
       DTS:ObjectName="Load city"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:ObjectData>
         <pipeline
           version="1">
@@ -4704,6 +4757,8 @@ where [refTable].[emp_no] = ?</property>
       DTS:ObjectName="Load client_emp"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:ObjectData>
         <pipeline
           version="1">
@@ -5082,6 +5137,8 @@ where [refTable].[emp_no] = ?</property>
       DTS:ObjectName="Load country, department, title, clients"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:ObjectData>
         <pipeline
           version="1">
@@ -6635,6 +6692,8 @@ where [refTable].[emp_no] = ?</property>
       DTS:ObjectName="Load employee"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:ObjectData>
         <pipeline
           version="1">
@@ -7759,6 +7818,8 @@ where [refTable].[emp_no] = ?</property>
       DTS:ObjectName="Load state"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:ObjectData>
         <pipeline
           version="1">
@@ -8754,9 +8815,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8778,16 +8837,14 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="No SCD operators here, because it's initial"
           ParentId="Package\Convert city and clients"
           FontInfo="{assembly:Null}"
-          Size="251,NaN"
+          Size="251,40"
           Id="0b3e2a95-f955-458d-b59b-0e9688e7ddd2"
           TopLeft="707,47" />
       </GraphLayout>
@@ -9027,7 +9084,9 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9097,7 +9156,9 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9227,6 +9288,18 @@ where [refTable].[emp_no] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="158,42"
+          Id="Package\Convert factSalary and bridgeEmployee\Derived factDate"
+          TopLeft="108,280" />
+        <NodeLayout
+          Size="314,42"
+          Id="Package\Convert factSalary and bridgeEmployee\Lookup initial-client_emp by warehouse-employee"
+          TopLeft="508,229" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Convert factSalary and bridgeEmployee\OLE DB Destination"
+          TopLeft="91,490" />
+        <NodeLayout
           Size="150,42"
           Id="Package\Convert factSalary and bridgeEmployee\Load employee"
           TopLeft="341,39" />
@@ -9239,21 +9312,13 @@ where [refTable].[emp_no] = ?</property>
           Id="Package\Convert factSalary and bridgeEmployee\Lookup initial-employee by warehouse-employee"
           TopLeft="33,377" />
         <NodeLayout
+          Size="154,42"
+          Id="Package\Convert factSalary and bridgeEmployee\Derived Column"
+          TopLeft="530,361" />
+        <NodeLayout
           Size="180,42"
           Id="Package\Convert factSalary and bridgeEmployee\OLE DB Destination 1"
           TopLeft="477,460" />
-        <NodeLayout
-          Size="158,42"
-          Id="Package\Convert factSalary and bridgeEmployee\Derived factDate"
-          TopLeft="108,280" />
-        <NodeLayout
-          Size="314,42"
-          Id="Package\Convert factSalary and bridgeEmployee\Lookup initial-client_emp by warehouse-employee"
-          TopLeft="508,229" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Convert factSalary and bridgeEmployee\OLE DB Destination"
-          TopLeft="91,490" />
         <EdgeLayout
           Id="Package\Convert factSalary and bridgeEmployee.Paths[OLE DB Source Output1]"
           TopLeft="604,152">
@@ -9323,68 +9388,6 @@ where [refTable].[emp_no] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Convert factSalary and bridgeEmployee.Paths[Lookup Match Output]"
-          TopLeft="187,419">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-10.5,71"
-              Start="0,0"
-              End="-10.5,63.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.5"
-                    Point2="0,35.5"
-                    Point3="-4,35.5" />
-                  <mssgle:LineSegment
-                    End="-6.5,35.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-6.5,35.5"
-                    Point2="-10.5,35.5"
-                    Point3="-10.5,39.5" />
-                  <mssgle:LineSegment
-                    End="-10.5,63.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-53.44138671875,40.5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Convert factSalary and bridgeEmployee.Paths[Derived Column Output]"
-          TopLeft="187,322">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,55"
-              Start="0,0"
-              End="0,47.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,47.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Convert factSalary and bridgeEmployee\Derived Column"
-          TopLeft="530,361" />
-        <EdgeLayout
           Id="Package\Convert factSalary and bridgeEmployee.Paths[Lookup Match Output1]"
           TopLeft="665,271">
           <EdgeLayout.Curve>
@@ -9417,6 +9420,42 @@ where [refTable].[emp_no] = ?</property>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-77.19138671875,50,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Convert factSalary and bridgeEmployee.Paths[Lookup Match Output]"
+          TopLeft="187,419">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-10.5,71"
+              Start="0,0"
+              End="-10.5,63.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5"
+                    Point2="0,35.5"
+                    Point3="-4,35.5" />
+                  <mssgle:LineSegment
+                    End="-6.5,35.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-6.5,35.5"
+                    Point2="-10.5,35.5"
+                    Point3="-10.5,39.5" />
+                  <mssgle:LineSegment
+                    End="-10.5,63.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-53.44138671875,40.5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -9454,9 +9493,67 @@ where [refTable].[emp_no] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Convert factSalary and bridgeEmployee.Paths[Derived Column Output]"
+          TopLeft="187,322">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55"
+              Start="0,0"
+              End="0,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Convert factSalary and bridgeEmployee\Lookup initial-client_emp by warehouse-employee">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[dimEmployee]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Convert factSalary and bridgeEmployee\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Convert factSalary and bridgeEmployee\Load employee">
     <Properties>
@@ -9508,42 +9605,6 @@ where [refTable].[emp_no] = ?</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Convert factSalary and bridgeEmployee\OLE DB Destination 1">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Convert factSalary and bridgeEmployee\Lookup initial-client_emp by warehouse-employee">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[dimEmployee]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Convert factSalary and bridgeEmployee\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -9732,7 +9793,7 @@ where [refTable].[emp_no] = ?</property>
     design-time-name="Package\Load country, department, title, clients">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="165,42"
           Id="Package\Load country, department, title, clients\Data Conversion 3"
@@ -9800,7 +9861,9 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9822,7 +9885,9 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9856,7 +9921,9 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9890,7 +9957,9 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9912,7 +9981,9 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9946,7 +10017,9 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9980,7 +10053,9 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10002,7 +10077,9 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
