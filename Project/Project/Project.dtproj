@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">IPHONE</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAsWbvObB0P0e2ob5tUpbKHAAAAAACAAAAAAAQZgAAAAEAACAAAADYMbxw2Gn0z4xtSQYXMYjamtyFGCR63EFxaJCgwqqENgAAAAAOgAAAAAIAACAAAAC4pODO3uczVUIMZ6EOPmEn3qOnHPvxEeJn4U/c0OnXXZAAAAAqtJ92XoG30YGmaSJh66sRb6YVAPnYIr8RpIRuUD3eu2hSYcRULlVH1x21itAWHfCDfqnG8dzA7rY90w/qwindVH4ie5AYoxJCfENyLx+/Zsm4lVxOt6wOwYp6PC+wkhAxeq8XAUEQT/Py+QWVtXLZiJEMQEw83CMfZ/QPm1MoWRS7X551XRWEe1m7ZBzKb1NAAAAAQ6yB0PW895p6vsKNSVssRIY/5D2YX4mCqE5YSOkMihfjw/WHOSLkorZ/a4vEuqQPnzE5e3444yoWVBG3dEFfhQ==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAsWbvObB0P0e2ob5tUpbKHAAAAAACAAAAAAAQZgAAAAEAACAAAABNfqBgjRD5UzGuntzZHF8zEXn+e+nhVs582EUGbTnmUQAAAAAOgAAAAAIAACAAAAAxF/mKbcQXOQeVJ+3p0dfCfe6ZZczP/eU6EfiB2nFFPpAAAACDI+MCZ4wmYX4/IIKCCpdagyi4ulZICk8VwvSwe6SgmrxSsUpwNu+zbtQkZh3v5PyZMvv2EL1S/5AvIAxmXyzgTzb7qFI5mR9GUJrkznmzGebeLNoMXv9JmOV1lMd9pJ1EAMEwnqJu8ddhiWayt+DNG7DfZ7KNzrJ6Wb8zedmMkEHZ051FTrpWYAj1L+y5nJNAAAAAiRGU8ThvE4iYKJQ5Kvrfai/gTTInVfRRMYfMjCBobripVJe2h5ugy097UO9C07du+oqHisNiA4slrH1LJyzZpQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -43,10 +43,10 @@
                 <SSIS:Property SSIS:Name="Name">snapshots</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">199</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">200</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{282E0E6A-5A75-4471-A32D-3AA6034C79E2}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{06F5AF99-314B-4252-B10D-C8CF0319EB96}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1740,10 +1740,10 @@
                 <SSIS:Property SSIS:Name="Name">initial</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">127</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">128</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{F7ED6AAC-CFBD-4E6F-A725-2E5981666EE2}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{D6D8790B-9C67-4B81-88A4-1D7AA1761600}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -2170,7 +2170,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">D:\assignment1\Project\initial-data\clients.txt</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\DW\initial-data\clients.txt</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -2352,7 +2352,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">D:\assignment1\Project\initial-data\country.txt</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\DW\initial-data\country.txt</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>

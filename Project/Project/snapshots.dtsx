@@ -11,8 +11,8 @@
   DTS:LocaleID="2060"
   DTS:ObjectName="snapshots"
   DTS:PackageType="5"
-  DTS:VersionBuild="199"
-  DTS:VersionGUID="{282E0E6A-5A75-4471-A32D-3AA6034C79E2}">
+  DTS:VersionBuild="200"
+  DTS:VersionGUID="{06F5AF99-314B-4252-B10D-C8CF0319EB96}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -609,7 +609,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Determine variable @snapDateId"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -7243,7 +7243,6 @@ where [refTable].[id] = ?</property>
               DTS:refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change factSalary"
               DTS:CreationName="Microsoft.Pipeline"
               DTS:Description="Data Flow Task"
-              DTS:Disabled="True"
               DTS:DTSID="{AEABF11E-BDE8-4D41-B3F4-A89C91FA12D5}"
               DTS:ExecutableType="Microsoft.Pipeline"
               DTS:LocaleID="-1"
@@ -13174,24 +13173,24 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
                   startId="Package\For Loop Container\Load snapshot nr @myvar\emp_data.Outputs[Data Conversion Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output8]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 4.Inputs[Data Conversion Input]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\departments_data.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\title.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\departments.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output7]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\clients_data.Inputs[Data Conversion Input]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 3.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\clients.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\state.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output6]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\client_emp_data.Inputs[Data Conversion Input]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 2.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\client_emp.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\country.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output5]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\emp_data.Inputs[Data Conversion Input]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 1.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\emp.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\city.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output4]"
                   endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion.Inputs[Data Conversion Input]"
@@ -13199,24 +13198,24 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
                   startId="Package\For Loop Container\Load snapshot nr @myvar\snapshotdate.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output3]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 1.Inputs[Data Conversion Input]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\emp_data.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\city.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\emp.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output2]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 2.Inputs[Data Conversion Input]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\client_emp_data.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\country.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\client_emp.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output1]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 3.Inputs[Data Conversion Input]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\clients_data.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\state.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\clients.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\departments_data.Inputs[Data Conversion Input]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 4.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\departments.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\title.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Union All Output 1]"
                   endId="Package\For Loop Container\Load snapshot nr @myvar\newState.Inputs[OLE DB Destination Input]"
@@ -13276,7 +13275,7 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Set variable @snapDate"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -13299,7 +13298,7 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="SIMPLIFY - ENABLE FOR REDUCED DATA"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -13421,17 +13420,25 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
           Id="Package\For Loop Container\Determine variable @snapDateId"
           TopLeft="507,191" />
         <NodeLayout
-          Size="273,42"
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations"
-          TopLeft="65,138" />
+          Size="181,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Append new relations"
+          TopLeft="116,284" />
         <NodeLayout
           Size="221,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine bridge disappeared"
           TopLeft="76,69" />
         <NodeLayout
+          Size="211,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine bridge_appeared"
+          TopLeft="94,210" />
+        <NodeLayout
           Size="258,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate"
           TopLeft="57,16" />
+        <NodeLayout
+          Size="273,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations"
+          TopLeft="65,138" />
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee.PrecedenceConstraints[Constraint]"
           TopLeft="57,37">
@@ -13500,10 +13507,6 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="211,42"
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine bridge_appeared"
-          TopLeft="94,210" />
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee.PrecedenceConstraints[Constraint 2]"
           TopLeft="200.5,180">
@@ -13526,10 +13529,6 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="181,42"
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Append new relations"
-          TopLeft="116,284" />
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee.PrecedenceConstraints[Constraint 3]"
           TopLeft="203,252">
@@ -13981,95 +13980,112 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations">
+    design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Append new relations">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="197,42"
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Load bridge_disappeared"
-          TopLeft="297,77" />
+          Size="199,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Append new relations\Store in bridge_employee"
+          TopLeft="273,308" />
         <NodeLayout
-          Size="154,42"
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Derived Column"
-          TopLeft="328,196" />
+          Size="181,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Append new relations\Derived start and end"
+          TopLeft="232,175" />
         <NodeLayout
-          Size="234,42"
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Set end as snapDate for this RID"
-          TopLeft="317,293" />
+          Size="184,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Append new relations\Load bridge_appeared"
+          TopLeft="212,64" />
         <EdgeLayout
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations.Paths[OLE DB Source Output]"
-          TopLeft="395.5,119">
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Append new relations.Paths[OLE DB Source Output]"
+          TopLeft="304,106">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="9.5,77"
+              EndConnector="18.5,69"
               Start="0,0"
-              End="9.5,69.5">
+              End="18.5,61.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.5" />
+                    End="0,30.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,34.5"
-                    Point2="0,38.5"
-                    Point3="4,38.5" />
+                    Point1="0,30.5"
+                    Point2="0,34.5"
+                    Point3="4,34.5" />
                   <mssgle:LineSegment
-                    End="5.5,38.5" />
+                    End="14.5,34.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="5.5,38.5"
-                    Point2="9.5,38.5"
-                    Point3="9.5,42.5" />
+                    Point1="14.5,34.5"
+                    Point2="18.5,34.5"
+                    Point3="18.5,38.5" />
                   <mssgle:LineSegment
-                    End="9.5,69.5" />
+                    End="18.5,61.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations.Paths[Derived Column Output]"
-          TopLeft="405,238">
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Append new relations.Paths[Derived Column Output]"
+          TopLeft="322.5,217">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="29,55"
+              EndConnector="50,91"
               Start="0,0"
-              End="29,47.5">
+              End="50,83.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.5" />
+                    End="0,41.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,23.5"
-                    Point2="0,27.5"
-                    Point3="4,27.5" />
+                    Point1="0,41.5"
+                    Point2="0,45.5"
+                    Point3="4,45.5" />
                   <mssgle:LineSegment
-                    End="25,27.5" />
+                    End="46,45.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="25,27.5"
-                    Point2="29,27.5"
-                    Point3="29,31.5" />
+                    Point1="46,45.5"
+                    Point2="50,45.5"
+                    Point3="50,49.5" />
                   <mssgle:LineSegment
-                    End="29,47.5" />
+                    End="50,83.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Load bridge_disappeared">
+    design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Append new relations\Store in bridge_employee">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Append new relations\Load bridge_appeared">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -14253,6 +14269,111 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <TaskHost
+    design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="197,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Load bridge_disappeared"
+          TopLeft="297,77" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Derived Column"
+          TopLeft="328,196" />
+        <NodeLayout
+          Size="234,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Set end as snapDate for this RID"
+          TopLeft="317,293" />
+        <EdgeLayout
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations.Paths[OLE DB Source Output]"
+          TopLeft="395.5,119">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9.5,77"
+              Start="0,0"
+              End="9.5,69.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.5"
+                    Point2="0,38.5"
+                    Point3="4,38.5" />
+                  <mssgle:LineSegment
+                    End="5.5,38.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5.5,38.5"
+                    Point2="9.5,38.5"
+                    Point3="9.5,42.5" />
+                  <mssgle:LineSegment
+                    End="9.5,69.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations.Paths[Derived Column Output]"
+          TopLeft="405,238">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="29,55"
+              Start="0,0"
+              End="29,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.5"
+                    Point2="0,27.5"
+                    Point3="4,27.5" />
+                  <mssgle:LineSegment
+                    End="25,27.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="25,27.5"
+                    Point2="29,27.5"
+                    Point3="29,31.5" />
+                  <mssgle:LineSegment
+                    End="29,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Load bridge_disappeared">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimCity">
     <LayoutInfo>
@@ -16101,18 +16222,22 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output8]"
-          TopLeft="799.235849056604,429.235849056604">
+          TopLeft="586.405660377358,55.4245283018868">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42.9056603773585"
+              EndConnector="0.150943396226467,49.9245283018868"
               Start="0,0"
-              End="0,35.4056603773585">
+              End="0.150943396226467,42.4245283018868">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.4056603773585" />
+                    End="0,24.9433962264151" />
+                  <mssgle:LineSegment
+                    End="0.150943396226467,24.9433962264151" />
+                  <mssgle:LineSegment
+                    End="0.150943396226467,42.4245283018868" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -16125,22 +16250,22 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output7]"
-          TopLeft="414.669811320755,59.4245283018868">
+          TopLeft="599.537735849057,434.216981132075">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0.15094339622641,47.9245283018868"
+              EndConnector="-1.01886792452831,39.9245283018868"
               Start="0,0"
-              End="0.15094339622641,40.4245283018868">
+              End="-1.01886792452831,32.4245283018868">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.9622641509434" />
+                    End="0,19.9622641509434" />
                   <mssgle:LineSegment
-                    End="0.15094339622641,23.9622641509434" />
+                    End="-1.01886792452831,19.9622641509434" />
                   <mssgle:LineSegment
-                    End="0.15094339622641,40.4245283018868" />
+                    End="-1.01886792452831,32.4245283018868" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -16153,22 +16278,18 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output6]"
-          TopLeft="247.915094339623,60.4433962264151">
+          TopLeft="346.933962264151,428.367924528302">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0.226415094339615,48.9056603773585"
+              EndConnector="0,47.8867924528302"
               Start="0,0"
-              End="0.226415094339615,41.4056603773585">
+              End="0,40.3867924528302">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.4528301886793" />
-                  <mssgle:LineSegment
-                    End="0.226415094339615,24.4528301886793" />
-                  <mssgle:LineSegment
-                    End="0.226415094339615,41.4056603773585" />
+                    End="0,40.3867924528302" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -16181,18 +16302,18 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output5]"
-          TopLeft="84.1084905660377,58.2924528301887">
+          TopLeft="86.3301886792453,427.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,49.0566037735853"
+              EndConnector="0,42.9056603773585"
               Start="0,0"
-              End="0,41.5566037735853">
+              End="0,35.4056603773585">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,41.5566037735853" />
+                    End="0,35.4056603773585" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -16233,18 +16354,18 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output3]"
-          TopLeft="86.3301886792453,427.5">
+          TopLeft="84.1084905660377,58.2924528301887">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42.9056603773585"
+              EndConnector="0,49.0566037735853"
               Start="0,0"
-              End="0,35.4056603773585">
+              End="0,41.5566037735853">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.4056603773585" />
+                    End="0,41.5566037735853" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -16257,18 +16378,22 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output2]"
-          TopLeft="346.933962264151,428.367924528302">
+          TopLeft="247.915094339623,60.4433962264151">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,47.8867924528302"
+              EndConnector="0.226415094339615,48.9056603773585"
               Start="0,0"
-              End="0,40.3867924528302">
+              End="0.226415094339615,41.4056603773585">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.3867924528302" />
+                    End="0,24.4528301886793" />
+                  <mssgle:LineSegment
+                    End="0.226415094339615,24.4528301886793" />
+                  <mssgle:LineSegment
+                    End="0.226415094339615,41.4056603773585" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -16281,22 +16406,22 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output1]"
-          TopLeft="599.537735849057,434.216981132075">
+          TopLeft="414.669811320755,59.4245283018868">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-1.01886792452831,39.9245283018868"
+              EndConnector="0.15094339622641,47.9245283018868"
               Start="0,0"
-              End="-1.01886792452831,32.4245283018868">
+              End="0.15094339622641,40.4245283018868">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.9622641509434" />
+                    End="0,23.9622641509434" />
                   <mssgle:LineSegment
-                    End="-1.01886792452831,19.9622641509434" />
+                    End="0.15094339622641,23.9622641509434" />
                   <mssgle:LineSegment
-                    End="-1.01886792452831,32.4245283018868" />
+                    End="0.15094339622641,40.4245283018868" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -16309,22 +16434,18 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output]"
-          TopLeft="586.405660377358,55.4245283018868">
+          TopLeft="799.235849056604,429.235849056604">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0.150943396226467,49.9245283018868"
+              EndConnector="0,42.9056603773585"
               Start="0,0"
-              End="0.150943396226467,42.4245283018868">
+              End="0,35.4056603773585">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.9433962264151" />
-                  <mssgle:LineSegment
-                    End="0.150943396226467,24.9433962264151" />
-                  <mssgle:LineSegment
-                    End="0.150943396226467,42.4245283018868" />
+                    End="0,35.4056603773585" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -16676,120 +16797,6 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\For Loop Container\Load snapshot nr @myvar\newCountry">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Append new relations">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="184,42"
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Append new relations\Load bridge_appeared"
-          TopLeft="212,64" />
-        <NodeLayout
-          Size="181,42"
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Append new relations\Derived start and end"
-          TopLeft="232,175" />
-        <EdgeLayout
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Append new relations.Paths[OLE DB Source Output]"
-          TopLeft="304,106">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="18.5,69"
-              Start="0,0"
-              End="18.5,61.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30.5"
-                    Point2="0,34.5"
-                    Point3="4,34.5" />
-                  <mssgle:LineSegment
-                    End="14.5,34.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="14.5,34.5"
-                    Point2="18.5,34.5"
-                    Point3="18.5,38.5" />
-                  <mssgle:LineSegment
-                    End="18.5,61.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="199,42"
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Append new relations\Store in bridge_employee"
-          TopLeft="273,308" />
-        <EdgeLayout
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Append new relations.Paths[Derived Column Output]"
-          TopLeft="322.5,217">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="50,91"
-              Start="0,0"
-              End="50,83.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,41.5"
-                    Point2="0,45.5"
-                    Point3="4,45.5" />
-                  <mssgle:LineSegment
-                    End="46,45.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="46,45.5"
-                    Point2="50,45.5"
-                    Point3="50,49.5" />
-                  <mssgle:LineSegment
-                    End="50,83.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Append new relations\Load bridge_appeared">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Append new relations\Store in bridge_employee">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
