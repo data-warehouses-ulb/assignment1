@@ -11,8 +11,8 @@
   DTS:LocaleID="2060"
   DTS:ObjectName="snapshots"
   DTS:PackageType="5"
-  DTS:VersionBuild="200"
-  DTS:VersionGUID="{06F5AF99-314B-4252-B10D-C8CF0319EB96}">
+  DTS:VersionBuild="207"
+  DTS:VersionGUID="{AE0B625A-4855-4A62-B4A1-A439B36B2D71}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -366,6 +366,17 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[log.txt]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{A542D128-F08B-4920-9C7F-AEB7C89A1583}"
+      DTS:ObjectName="log.txt">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="D:\assignment1\log.txt" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[server.temp]"
       DTS:CreationName="OLEDB"
       DTS:DTSID="{E44BD960-AB80-4E91-8A4D-0D890BAF89AE}"
@@ -512,6 +523,18 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="log.txt"
+      DTS:CreationName="Microsoft.LogProviderTextFile"
+      DTS:Description="Writes log entries for events to a CSV file"
+      DTS:DTSID="{4BF212F2-43FD-4D83-868A-679793F542A8}"
+      DTS:ObjectName="SSIS log provider for Text files">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
@@ -550,6 +573,14 @@
         DTS:DataType="3">0</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{4BF212F2-43FD-4D83-868A-679793F542A8}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\For Loop Container"
@@ -564,6 +595,8 @@
       DTS:MaxConcurrent="1"
       DTS:ObjectName="For Loop Container">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\For Loop Container\Create snapshot tables"
@@ -576,6 +609,35 @@
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0"
+            DTS:LoggingMode="1">
+            <DTS:Property
+              DTS:DataType="8"
+              DTS:Name="EventFilter">1,12,OnPreExecute</DTS:Property>
+            <DTS:Property
+              DTS:EventName="OnPreExecute"
+              DTS:Name="ColumnFilter">
+              <DTS:Property
+                DTS:Name="Computer">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="Operator">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="SourceName">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="SourceID">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="ExecutionID">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="MessageText">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="DataBytes">-1</DTS:Property>
+            </DTS:Property>
+            <DTS:SelectedLogProviders>
+              <DTS:SelectedLogProvider
+                DTS:InstanceID="{4BF212F2-43FD-4D83-868A-679793F542A8}" />
+            </DTS:SelectedLogProviders>
+          </DTS:LoggingOptions>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{E44BD960-AB80-4E91-8A4D-0D890BAF89AE}"
@@ -594,6 +656,35 @@
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0"
+            DTS:LoggingMode="1">
+            <DTS:Property
+              DTS:DataType="8"
+              DTS:Name="EventFilter">1,14,OnPostValidate</DTS:Property>
+            <DTS:Property
+              DTS:EventName="OnPostValidate"
+              DTS:Name="ColumnFilter">
+              <DTS:Property
+                DTS:Name="Computer">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="Operator">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="SourceName">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="SourceID">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="ExecutionID">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="MessageText">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="DataBytes">-1</DTS:Property>
+            </DTS:Property>
+            <DTS:SelectedLogProviders>
+              <DTS:SelectedLogProvider
+                DTS:InstanceID="{4BF212F2-43FD-4D83-868A-679793F542A8}" />
+            </DTS:SelectedLogProviders>
+          </DTS:LoggingOptions>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{E44BD960-AB80-4E91-8A4D-0D890BAF89AE}"
@@ -611,6 +702,8 @@
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{65A21896-2819-4187-AD99-95EBC88791ED}"
@@ -638,6 +731,8 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:Executables>
             <DTS:Executable
               DTS:refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee"
@@ -648,6 +743,8 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Change bridgeEmployee">
               <DTS:Variables />
+              <DTS:LoggingOptions
+                DTS:FilterKind="0" />
               <DTS:Executables>
                 <DTS:Executable
                   DTS:refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Append new relations"
@@ -659,6 +756,8 @@
                   DTS:ObjectName="Append new relations"
                   DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
                   <DTS:Variables />
+                  <DTS:LoggingOptions
+                    DTS:FilterKind="0" />
                   <DTS:ObjectData>
                     <pipeline
                       version="1">
@@ -1056,6 +1155,8 @@
                   DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
                   DTS:ThreadHint="0">
                   <DTS:Variables />
+                  <DTS:LoggingOptions
+                    DTS:FilterKind="0" />
                   <DTS:ObjectData>
                     <SQLTask:SqlTaskData
                       SQLTask:Connection="{E44BD960-AB80-4E91-8A4D-0D890BAF89AE}"
@@ -1073,6 +1174,8 @@
                   DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
                   DTS:ThreadHint="0">
                   <DTS:Variables />
+                  <DTS:LoggingOptions
+                    DTS:FilterKind="0" />
                   <DTS:ObjectData>
                     <SQLTask:SqlTaskData
                       SQLTask:Connection="{E44BD960-AB80-4E91-8A4D-0D890BAF89AE}"
@@ -1089,6 +1192,8 @@
                   DTS:ObjectName="Determine new_client_emp_surrogate"
                   DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
                   <DTS:Variables />
+                  <DTS:LoggingOptions
+                    DTS:FilterKind="0" />
                   <DTS:ObjectData>
                     <pipeline
                       version="1">
@@ -1810,326 +1915,29 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
                   </DTS:ObjectData>
                 </DTS:Executable>
                 <DTS:Executable
-                  DTS:refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations"
-                  DTS:CreationName="Microsoft.Pipeline"
-                  DTS:Description="Data Flow Task"
-                  DTS:DTSID="{86A9CF4B-5447-4DFC-87E2-A6089E34DFC1}"
-                  DTS:ExecutableType="Microsoft.Pipeline"
+                  DTS:refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Execute SQL Task"
+                  DTS:CreationName="Microsoft.ExecuteSQLTask"
+                  DTS:Description="Execute SQL Task"
+                  DTS:DTSID="{7FEB7EE5-E2C0-4D77-922F-286893563568}"
+                  DTS:ExecutableType="Microsoft.ExecuteSQLTask"
                   DTS:LocaleID="-1"
-                  DTS:ObjectName="Set end to snapDate for expired relations"
-                  DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                  DTS:ObjectName="Execute SQL Task"
+                  DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+                  DTS:ThreadHint="0">
                   <DTS:Variables />
+                  <DTS:LoggingOptions
+                    DTS:FilterKind="0" />
                   <DTS:ObjectData>
-                    <pipeline
-                      version="1">
-                      <components>
-                        <component
-                          refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Derived Column"
-                          componentClassID="Microsoft.DerivedColumn"
-                          contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-                          description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-                          name="Derived Column"
-                          usesDispositions="true">
-                          <inputs>
-                            <input
-                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Derived Column.Inputs[Derived Column Input]"
-                              description="Input to the Derived Column Transformation"
-                              name="Derived Column Input">
-                              <externalMetadataColumns />
-                            </input>
-                          </inputs>
-                          <outputs>
-                            <output
-                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Derived Column.Outputs[Derived Column Output]"
-                              description="Default Output of the Derived Column Transformation"
-                              exclusionGroup="1"
-                              name="Derived Column Output"
-                              synchronousInputId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Derived Column.Inputs[Derived Column Input]">
-                              <outputColumns>
-                                <outputColumn
-                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Derived Column.Outputs[Derived Column Output].Columns[end]"
-                                  dataType="date"
-                                  errorOrTruncationOperation="Computation"
-                                  errorRowDisposition="FailComponent"
-                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Derived Column.Outputs[Derived Column Output].Columns[end]"
-                                  name="end"
-                                  truncationRowDisposition="FailComponent">
-                                  <properties>
-                                    <property
-                                      containsID="true"
-                                      dataType="System.String"
-                                      description="Derived Column Expression"
-                                      name="Expression">@[User::snapDate]</property>
-                                    <property
-                                      containsID="true"
-                                      dataType="System.String"
-                                      description="Derived Column Friendly Expression"
-                                      expressionType="Notify"
-                                      name="FriendlyExpression">@[User::snapDate]</property>
-                                  </properties>
-                                </outputColumn>
-                              </outputColumns>
-                              <externalMetadataColumns />
-                            </output>
-                            <output
-                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Derived Column.Outputs[Derived Column Error Output]"
-                              description="Error Output of the Derived Column Transformation"
-                              exclusionGroup="1"
-                              isErrorOut="true"
-                              name="Derived Column Error Output"
-                              synchronousInputId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Derived Column.Inputs[Derived Column Input]">
-                              <outputColumns>
-                                <outputColumn
-                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                                  dataType="i4"
-                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                                  name="ErrorCode"
-                                  specialFlags="1" />
-                                <outputColumn
-                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                                  dataType="i4"
-                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                                  name="ErrorColumn"
-                                  specialFlags="2" />
-                              </outputColumns>
-                              <externalMetadataColumns />
-                            </output>
-                          </outputs>
-                        </component>
-                        <component
-                          refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Load bridge_disappeared"
-                          componentClassID="Microsoft.OLEDBSource"
-                          contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
-                          description="OLE DB Source"
-                          name="Load bridge_disappeared"
-                          usesDispositions="true"
-                          version="7">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                              name="CommandTimeout">0</property>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the name of the database object used to open a rowset."
-                              name="OpenRowset">[dbo].[bridge_disappeared]</property>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the variable that contains the name of the database object used to open a rowset."
-                              name="OpenRowsetVariable"></property>
-                            <property
-                              dataType="System.String"
-                              description="The SQL command to be executed."
-                              name="SqlCommand"
-                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                            <property
-                              dataType="System.String"
-                              description="The variable that contains the SQL command to be executed."
-                              name="SqlCommandVariable"></property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the column code page to use when code page information is unavailable from the data source."
-                              name="DefaultCodePage">1252</property>
-                            <property
-                              dataType="System.Boolean"
-                              description="Forces the use of the DefaultCodePage property value when describing character data."
-                              name="AlwaysUseDefaultCodePage">true</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the mode used to access the database."
-                              name="AccessMode"
-                              typeConverter="AccessMode">0</property>
-                            <property
-                              dataType="System.String"
-                              description="The mappings between the parameters in the SQL command and variables."
-                              name="ParameterMapping"></property>
-                          </properties>
-                          <connections>
-                            <connection
-                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Load bridge_disappeared.Connections[OleDbConnection]"
-                              connectionManagerID="Package.ConnectionManagers[server.temp]"
-                              connectionManagerRefId="Package.ConnectionManagers[server.temp]"
-                              description="The OLE DB runtime connection used to access the database."
-                              name="OleDbConnection" />
-                          </connections>
-                          <outputs>
-                            <output
-                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Load bridge_disappeared.Outputs[OLE DB Source Output]"
-                              name="OLE DB Source Output">
-                              <outputColumns>
-                                <outputColumn
-                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Load bridge_disappeared.Outputs[OLE DB Source Output].Columns[RID]"
-                                  dataType="i4"
-                                  errorOrTruncationOperation="Conversion"
-                                  errorRowDisposition="FailComponent"
-                                  externalMetadataColumnId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Load bridge_disappeared.Outputs[OLE DB Source Output].ExternalColumns[RID]"
-                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Load bridge_disappeared.Outputs[OLE DB Source Output].Columns[RID]"
-                                  name="RID"
-                                  truncationRowDisposition="FailComponent" />
-                              </outputColumns>
-                              <externalMetadataColumns
-                                isUsed="True">
-                                <externalMetadataColumn
-                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Load bridge_disappeared.Outputs[OLE DB Source Output].ExternalColumns[RID]"
-                                  dataType="i4"
-                                  name="RID" />
-                              </externalMetadataColumns>
-                            </output>
-                            <output
-                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Load bridge_disappeared.Outputs[OLE DB Source Error Output]"
-                              isErrorOut="true"
-                              name="OLE DB Source Error Output">
-                              <outputColumns>
-                                <outputColumn
-                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Load bridge_disappeared.Outputs[OLE DB Source Error Output].Columns[RID]"
-                                  dataType="i4"
-                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Load bridge_disappeared.Outputs[OLE DB Source Error Output].Columns[RID]"
-                                  name="RID" />
-                                <outputColumn
-                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Load bridge_disappeared.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                                  dataType="i4"
-                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Load bridge_disappeared.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                                  name="ErrorCode"
-                                  specialFlags="1" />
-                                <outputColumn
-                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Load bridge_disappeared.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                                  dataType="i4"
-                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Load bridge_disappeared.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                                  name="ErrorColumn"
-                                  specialFlags="2" />
-                              </outputColumns>
-                              <externalMetadataColumns />
-                            </output>
-                          </outputs>
-                        </component>
-                        <component
-                          refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Set end as snapDate for this RID"
-                          componentClassID="Microsoft.OLEDBCommand"
-                          contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
-                          description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
-                          name="Set end as snapDate for this RID"
-                          usesDispositions="true"
-                          version="2">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                              name="CommandTimeout">0</property>
-                            <property
-                              dataType="System.String"
-                              description="The SQL command to be executed."
-                              expressionType="Notify"
-                              name="SqlCommand"
-                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update [warehouse].[dbo].[bridgeEmployee]
-set [end] = convert(date, ?)
-where [RID] = ?</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the column code page to use when code page information is unavailable from the data source."
-                              name="DefaultCodePage">1252</property>
-                          </properties>
-                          <connections>
-                            <connection
-                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Set end as snapDate for this RID.Connections[OleDbConnection]"
-                              connectionManagerID="Package.ConnectionManagers[server.warehouse]"
-                              connectionManagerRefId="Package.ConnectionManagers[server.warehouse]"
-                              description="The OLE DB runtime connection used to access the database."
-                              name="OleDbConnection" />
-                          </connections>
-                          <inputs>
-                            <input
-                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Set end as snapDate for this RID.Inputs[OLE DB Command Input]"
-                              errorOrTruncationOperation="Command Execution"
-                              errorRowDisposition="FailComponent"
-                              hasSideEffects="true"
-                              name="OLE DB Command Input">
-                              <inputColumns>
-                                <inputColumn
-                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Set end as snapDate for this RID.Inputs[OLE DB Command Input].Columns[end]"
-                                  cachedDataType="date"
-                                  cachedName="end"
-                                  externalMetadataColumnId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Set end as snapDate for this RID.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Derived Column.Outputs[Derived Column Output].Columns[end]" />
-                                <inputColumn
-                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Set end as snapDate for this RID.Inputs[OLE DB Command Input].Columns[RID]"
-                                  cachedDataType="i4"
-                                  cachedName="RID"
-                                  externalMetadataColumnId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Set end as snapDate for this RID.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Load bridge_disappeared.Outputs[OLE DB Source Output].Columns[RID]" />
-                              </inputColumns>
-                              <externalMetadataColumns
-                                isUsed="True">
-                                <externalMetadataColumn
-                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Set end as snapDate for this RID.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                                  dataType="dbDate"
-                                  name="Param_0">
-                                  <properties>
-                                    <property
-                                      dataType="System.Int32"
-                                      description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                                      name="DBParamInfoFlags">65</property>
-                                  </properties>
-                                </externalMetadataColumn>
-                                <externalMetadataColumn
-                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Set end as snapDate for this RID.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                                  dataType="i4"
-                                  name="Param_1">
-                                  <properties>
-                                    <property
-                                      dataType="System.Int32"
-                                      description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                                      name="DBParamInfoFlags">81</property>
-                                  </properties>
-                                </externalMetadataColumn>
-                              </externalMetadataColumns>
-                            </input>
-                          </inputs>
-                          <outputs>
-                            <output
-                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Set end as snapDate for this RID.Outputs[OLE DB Command Output]"
-                              exclusionGroup="1"
-                              name="OLE DB Command Output"
-                              synchronousInputId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Set end as snapDate for this RID.Inputs[OLE DB Command Input]">
-                              <externalMetadataColumns />
-                            </output>
-                            <output
-                              refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Set end as snapDate for this RID.Outputs[OLE DB Command Error Output]"
-                              exclusionGroup="1"
-                              isErrorOut="true"
-                              name="OLE DB Command Error Output"
-                              synchronousInputId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Set end as snapDate for this RID.Inputs[OLE DB Command Input]">
-                              <outputColumns>
-                                <outputColumn
-                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Set end as snapDate for this RID.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                                  dataType="i4"
-                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Set end as snapDate for this RID.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                                  name="ErrorCode"
-                                  specialFlags="1" />
-                                <outputColumn
-                                  refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Set end as snapDate for this RID.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                                  dataType="i4"
-                                  lineageId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Set end as snapDate for this RID.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                                  name="ErrorColumn"
-                                  specialFlags="2" />
-                              </outputColumns>
-                              <externalMetadataColumns />
-                            </output>
-                          </outputs>
-                        </component>
-                      </components>
-                      <paths>
-                        <path
-                          refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations.Paths[Derived Column Output]"
-                          endId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Set end as snapDate for this RID.Inputs[OLE DB Command Input]"
-                          name="Derived Column Output"
-                          startId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Derived Column.Outputs[Derived Column Output]" />
-                        <path
-                          refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations.Paths[OLE DB Source Output]"
-                          endId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Derived Column.Inputs[Derived Column Input]"
-                          name="OLE DB Source Output"
-                          startId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Load bridge_disappeared.Outputs[OLE DB Source Output]" />
-                      </paths>
-                    </pipeline>
+                    <SQLTask:SqlTaskData
+                      SQLTask:Connection="{65A21896-2819-4187-AD99-95EBC88791ED}"
+                      SQLTask:SqlStatementSource="update [warehouse].[dbo].[bridgeEmployee]&#xA;set [end] = convert(date, ?)&#xA;where [RID] in&#xA;(&#xA;&#x9;select [RID]&#xA;&#x9;from [temp].[dbo].[bridge_disappeared]&#xA;)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                      <SQLTask:ParameterBinding
+                        SQLTask:ParameterName="0"
+                        SQLTask:DtsVariableName="User::snapDate"
+                        SQLTask:ParameterDirection="Input"
+                        SQLTask:DataType="7"
+                        SQLTask:ParameterSize="-1" />
+                    </SQLTask:SqlTaskData>
                   </DTS:ObjectData>
                 </DTS:Executable>
               </DTS:Executables>
@@ -2145,16 +1953,16 @@ where [RID] = ?</property>
                 <DTS:PrecedenceConstraint
                   DTS:refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee.PrecedenceConstraints[Constraint 1]"
                   DTS:CreationName=""
-                  DTS:DTSID="{6DCD0A5A-A638-4444-A1F8-C4E439591634}"
+                  DTS:DTSID="{7D57A178-8E8C-40C9-BD37-5249389FA27E}"
                   DTS:From="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine bridge disappeared"
                   DTS:LogicalAnd="True"
                   DTS:ObjectName="Constraint 1"
-                  DTS:To="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations" />
+                  DTS:To="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Execute SQL Task" />
                 <DTS:PrecedenceConstraint
                   DTS:refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee.PrecedenceConstraints[Constraint 2]"
                   DTS:CreationName=""
-                  DTS:DTSID="{8A190AA6-D4EF-4539-A2E2-75266F536B1C}"
-                  DTS:From="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations"
+                  DTS:DTSID="{F4D60C82-EA41-4E4D-B177-1C1EFC7E8205}"
+                  DTS:From="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Execute SQL Task"
                   DTS:LogicalAnd="True"
                   DTS:ObjectName="Constraint 2"
                   DTS:To="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine bridge_appeared" />
@@ -2178,6 +1986,8 @@ where [RID] = ?</property>
               DTS:ObjectName="Change dimCity"
               DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
               <DTS:Variables />
+              <DTS:LoggingOptions
+                DTS:FilterKind="0" />
               <DTS:ObjectData>
                 <pipeline
                   version="1">
@@ -3303,6 +3113,8 @@ where [refTable].[country_id] = ?</property>
               DTS:ObjectName="Change dimClients"
               DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
               <DTS:Variables />
+              <DTS:LoggingOptions
+                DTS:FilterKind="0" />
               <DTS:ObjectData>
                 <pipeline
                   version="1">
@@ -4253,6 +4065,8 @@ where [refTable].[country_id] = ?</property>
               DTS:ObjectName="Change dimEmployee"
               DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
               <DTS:Variables />
+              <DTS:LoggingOptions
+                DTS:FilterKind="0" />
               <DTS:ObjectData>
                 <pipeline
                   version="1">
@@ -7249,6 +7063,8 @@ where [refTable].[id] = ?</property>
               DTS:ObjectName="Change factSalary"
               DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
               <DTS:Variables />
+              <DTS:LoggingOptions
+                DTS:FilterKind="0" />
               <DTS:ObjectData>
                 <pipeline
                   version="1">
@@ -8075,6 +7891,8 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
           DTS:ObjectName="Load snapshot nr @myvar"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v10; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <pipeline
               BLOBTempStoragePath=""
@@ -13277,6 +13095,8 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{E44BD960-AB80-4E91-8A4D-0D890BAF89AE}"
@@ -13300,10 +13120,12 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{E44BD960-AB80-4E91-8A4D-0D890BAF89AE}"
-              SQLTask:SqlStatementSource="use [temp]&#xA;&#xA;go&#xA;&#xA;delete from new_client_emp where not emp_no&lt;11000;&#xA;&#xA;delete from new_emp where not emp_no&lt;11000;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="use [temp]&#xA;&#xA;go&#xA;&#xA;delete from new_client_emp where not emp_no&lt;20000;&#xA;&#xA;delete from new_emp where not emp_no&lt;20000;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -13378,6 +13200,8 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{E44BD960-AB80-4E91-8A4D-0D890BAF89AE}"
@@ -13436,9 +13260,9 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate"
           TopLeft="57,16" />
         <NodeLayout
-          Size="273,42"
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations"
-          TopLeft="65,138" />
+          Size="163,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Execute SQL Task"
+          TopLeft="85,135" />
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee.PrecedenceConstraints[Constraint]"
           TopLeft="57,37">
@@ -13479,26 +13303,26 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="15,27"
+              EndConnector="-20,24"
               Start="0,0"
-              End="15,19.5">
+              End="-20,16.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,9.5" />
+                    End="0,8" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,9.5"
-                    Point2="0,13.5"
-                    Point3="4,13.5" />
+                    Point1="0,8"
+                    Point2="0,12"
+                    Point3="-4,12" />
                   <mssgle:LineSegment
-                    End="11,13.5" />
+                    End="-16,12" />
                   <mssgle:CubicBezierSegment
-                    Point1="11,13.5"
-                    Point2="15,13.5"
-                    Point3="15,17.5" />
+                    Point1="-16,12"
+                    Point2="-20,12"
+                    Point3="-20,16" />
                   <mssgle:LineSegment
-                    End="15,19.5" />
+                    End="-20,16.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13509,18 +13333,30 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee.PrecedenceConstraints[Constraint 2]"
-          TopLeft="200.5,180">
+          TopLeft="166.5,177">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,30"
+              EndConnector="33,33"
               Start="0,0"
-              End="0,22.5">
+              End="33,25.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.5" />
+                    End="0,12.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.5"
+                    Point2="0,16.5"
+                    Point3="4,16.5" />
+                  <mssgle:LineSegment
+                    End="29,16.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="29,16.5"
+                    Point2="33,16.5"
+                    Point3="33,20.5" />
+                  <mssgle:LineSegment
+                    End="33,25.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13573,7 +13409,7 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
         <NodeLayout
           Size="164,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change factSalary"
-          TopLeft="38,232" />
+          TopLeft="40,237" />
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED.PrecedenceConstraints[Constraint]"
           TopLeft="95.5,61">
@@ -13648,26 +13484,26 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="20,37"
+              EndConnector="22,42"
               Start="0,0"
-              End="20,29.5">
+              End="22,34.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.5" />
+                    End="0,17" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,14.5"
-                    Point2="0,18.5"
-                    Point3="4,18.5" />
+                    Point1="0,17"
+                    Point2="0,21"
+                    Point3="4,21" />
                   <mssgle:LineSegment
-                    End="16,18.5" />
+                    End="18,21" />
                   <mssgle:CubicBezierSegment
-                    Point1="16,18.5"
-                    Point2="20,18.5"
-                    Point3="20,22.5" />
+                    Point1="18,21"
+                    Point2="22,21"
+                    Point3="22,25" />
                   <mssgle:LineSegment
-                    End="20,29.5" />
+                    End="22,34.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13678,18 +13514,18 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED.PrecedenceConstraints[Constraint 3]"
-          TopLeft="202,255.25">
+          TopLeft="204,257.75">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="93,0"
+              EndConnector="91,0"
               Start="0,0"
-              End="85.5,0">
+              End="83.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="85.5,0" />
+                    End="83.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13881,14 +13717,14 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,40.7547169811321"
+              EndConnector="0,40.754716981132"
               Start="0,0"
-              End="0,33.2547169811321">
+              End="0,33.254716981132">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.2547169811321" />
+                    End="0,33.254716981132" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14269,111 +14105,6 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <TaskHost
-    design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="197,42"
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Load bridge_disappeared"
-          TopLeft="297,77" />
-        <NodeLayout
-          Size="154,42"
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Derived Column"
-          TopLeft="328,196" />
-        <NodeLayout
-          Size="234,42"
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Set end as snapDate for this RID"
-          TopLeft="317,293" />
-        <EdgeLayout
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations.Paths[OLE DB Source Output]"
-          TopLeft="395.5,119">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="9.5,77"
-              Start="0,0"
-              End="9.5,69.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,34.5"
-                    Point2="0,38.5"
-                    Point3="4,38.5" />
-                  <mssgle:LineSegment
-                    End="5.5,38.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="5.5,38.5"
-                    Point2="9.5,38.5"
-                    Point3="9.5,42.5" />
-                  <mssgle:LineSegment
-                    End="9.5,69.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations.Paths[Derived Column Output]"
-          TopLeft="405,238">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="29,55"
-              Start="0,0"
-              End="29,47.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.5"
-                    Point2="0,27.5"
-                    Point3="4,27.5" />
-                  <mssgle:LineSegment
-                    End="25,27.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="25,27.5"
-                    Point2="29,27.5"
-                    Point3="29,31.5" />
-                  <mssgle:LineSegment
-                    End="29,47.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end to snapDate for expired relations\Load bridge_disappeared">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimCity">
     <LayoutInfo>
