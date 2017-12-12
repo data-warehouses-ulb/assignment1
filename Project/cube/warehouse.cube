@@ -1,4 +1,4 @@
-﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="0c90156b-1a3d-4763-adbd-743478de6073" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="548d609a-4ee8-4a9c-bba3-a3e60521fde7" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>warehouse</ID>
   <Name>warehouse</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -169,94 +169,112 @@
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
   <Dimensions>
-    <Dimension dwd:design-time-name="5bf88dbc-5efd-4947-b465-833402c8c00a">
+    <Dimension dwd:design-time-name="ab5953df-d02b-4924-9a3f-283b88a2fee4">
       <ID>Dim Employee</ID>
       <Name>Dim Employee</Name>
       <DimensionID>Dim Employee</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="e42b83a8-2009-43a9-89b9-14a9057d5344">
+        <Attribute dwd:design-time-name="85cc3e4a-175d-4193-b67d-5f5fac11a178">
           <AttributeID>EID</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="3b51575c-af3b-4fa9-ad55-ffdde49f327f">
+        <Attribute dwd:design-time-name="3efca510-eb57-438b-ad29-61b3a226f0d5">
           <AttributeID>Current City Id</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="eee9865f-83b1-41eb-ab40-4c01e2cb3ea4">
+        <Attribute dwd:design-time-name="cfd0d523-41c7-435a-948e-59ae02fc62f4">
           <AttributeID>Birth Date</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="44f3726c-ec2b-4cb8-8ae4-ade497967c67">
+        <Attribute dwd:design-time-name="c25410c2-7faf-4273-93d7-e993b1fe3624">
           <AttributeID>Hire Date</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="682dfc2f-e1fe-43ee-a2b6-1035bd17026b">
+        <Attribute dwd:design-time-name="8b08f0f5-3b21-4ca1-87a2-03dda39c75a3">
           <AttributeID>Base City Id</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
-    <Dimension dwd:design-time-name="95dafce2-af73-4157-8e07-6952afcea1a8">
+    <Dimension dwd:design-time-name="8a7a81ca-fbd3-45f3-b5fb-5b77b7ffea55">
       <ID>Fact Date</ID>
       <Name>Fact Date</Name>
       <DimensionID>Dim Date</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="8189fe69-efb3-4f20-84df-58b0ed7e7ad6">
+        <Attribute dwd:design-time-name="80784e04-ad17-4aa5-8eee-b1cefdec1c94">
           <AttributeID>Date Id</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="9ffe3987-d9f8-4e9a-8d22-0d07e24b0e82">
+        <Attribute dwd:design-time-name="423e4bcb-c37e-4148-a5bf-f8fb40505e62">
           <AttributeID>Date</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="f1a36ab6-d995-456b-b5cd-065aea8857dc">
+        <Attribute dwd:design-time-name="cdcc8ab2-79dc-4ed9-b176-761869405204">
+          <AttributeID>Day</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="1e1e5e35-349c-4f24-95e7-89b7e551aeb2">
           <AttributeID>Month</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="8496830e-b457-452d-bb07-459b49b48f23">
+          <AttributeID>Year</AttributeID>
         </Attribute>
       </Attributes>
       <Hierarchies>
-        <Hierarchy dwd:design-time-name="1b8810f4-f1b5-4e28-9046-5d3ae1f5df54">
+        <Hierarchy dwd:design-time-name="70e78387-d0e2-4ffa-995a-a83c1c551a3b">
           <HierarchyID>Hierarchy</HierarchyID>
         </Hierarchy>
       </Hierarchies>
     </Dimension>
-    <Dimension dwd:design-time-name="96120808-3a26-4475-90c9-bc6226424166">
+    <Dimension dwd:design-time-name="ef8bf8bd-f899-4470-a70e-3a7ff53ac1a6">
       <ID>Dim Employee - Birth Date</ID>
       <Name>Dim Employee - Birth Date</Name>
       <DimensionID>Dim Date</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="31ea0ecd-fad1-456a-832f-21507d3c812b">
+        <Attribute dwd:design-time-name="ac224736-ecf6-4cba-a45d-65117c7d0139">
           <AttributeID>Date Id</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="e33811a6-7cf0-4cd3-828b-bc933b12a8f3">
+        <Attribute dwd:design-time-name="d703bce0-9540-495f-91f2-6bd7b756a51b">
           <AttributeID>Date</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="fcf684ad-088c-4b95-a61b-8471477eea23">
+        <Attribute dwd:design-time-name="4e233ac6-2baf-47d8-8353-57cc18e8b840">
+          <AttributeID>Day</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="90291e5f-fe8a-4730-85c0-3063dc8de649">
           <AttributeID>Month</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="26d02b23-ce88-4980-97ee-916643e6205b">
+          <AttributeID>Year</AttributeID>
         </Attribute>
       </Attributes>
       <Hierarchies>
-        <Hierarchy dwd:design-time-name="e4303ff6-a2ca-4506-b921-948d7eae1843">
+        <Hierarchy dwd:design-time-name="2fef38f3-2b04-4aba-b56e-85aa26107c27">
           <HierarchyID>Hierarchy</HierarchyID>
         </Hierarchy>
       </Hierarchies>
     </Dimension>
-    <Dimension dwd:design-time-name="d2618691-f99a-4e03-92a6-f62da0ff83b2">
+    <Dimension dwd:design-time-name="18a5eef5-6743-41c4-8c92-eca921c6b195">
       <ID>Dim Employee - Hire Date</ID>
       <Name>Dim Employee - Hire Date</Name>
       <DimensionID>Dim Date</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="c30054a4-7c58-49ed-9cee-5a830d63cb3e">
+        <Attribute dwd:design-time-name="fceaa231-3fb0-4cc4-9407-cfb21eacadd3">
           <AttributeID>Date Id</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="83124edf-9d0a-4c0a-b469-7367adf5d921">
+        <Attribute dwd:design-time-name="fff3c8f0-2aa0-4222-b4c0-e516873b2704">
           <AttributeID>Date</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="9545638e-e37d-4752-93d7-9bc5524ad4d8">
+        <Attribute dwd:design-time-name="b111e2a1-31ea-4415-b341-7ac69383c004">
+          <AttributeID>Day</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="2ac8ad01-f0ec-4c69-a7e2-2b1b45be5614">
           <AttributeID>Month</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="6a3cec43-7123-4e7e-bfb4-4921e8d78095">
+          <AttributeID>Year</AttributeID>
         </Attribute>
       </Attributes>
       <Hierarchies>
-        <Hierarchy dwd:design-time-name="7a3eddab-b2f2-4eb7-b5a6-dac91ff9b61d">
+        <Hierarchy dwd:design-time-name="a47bb5ec-130a-4c24-a3d3-944cb7e2ce73">
           <HierarchyID>Hierarchy</HierarchyID>
         </Hierarchy>
       </Hierarchies>
     </Dimension>
   </Dimensions>
   <MeasureGroups>
-    <MeasureGroup dwd:design-time-name="2c56ff46-c291-48f5-8f8b-8a3be3b57366">
+    <MeasureGroup dwd:design-time-name="ad9c83c5-4499-4a6d-8661-42071c7468c8">
       <ID>Fact Salary</ID>
       <Name>Fact Salary</Name>
       <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -264,25 +282,25 @@
       <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
       <State>Unprocessed</State>
       <Measures>
-        <Measure dwd:design-time-name="96aa17bf-0c9f-4405-9e76-2bb2ffb04428">
+        <Measure dwd:design-time-name="107939fe-a281-4e98-9b58-053ada2c9a19">
           <ID>Salary</ID>
           <Name>Salary</Name>
-          <Source dwd:design-time-name="2750c88c-7245-42ad-95b9-10bba23df4b9">
+          <Source dwd:design-time-name="042ad06f-a2a3-4243-9547-7f3167d64ab8">
             <DataType>Integer</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="1283ade4-f875-40f6-9aab-1b3629179530">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="6fd427cd-97df-4702-85b5-9780d40d5e06">
               <TableID>dbo_factSalary</TableID>
               <ColumnID>salary</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="eaecc0f9-169a-4699-84d4-7395fdc30c82">
+        <Measure dwd:design-time-name="ceaf9d37-a924-43ba-a8bb-6aea0b88b4c0">
           <ID>Fact Salary Count</ID>
           <Name>Fact Salary Count</Name>
           <AggregateFunction>Count</AggregateFunction>
-          <Source dwd:design-time-name="c82fe475-67db-470e-be02-b260d9e8363e">
+          <Source dwd:design-time-name="9c14ef49-9667-4749-bbfb-56f77655be3f">
             <DataType>Integer</DataType>
             <DataSize>4</DataSize>
-            <Source xsi:type="RowBinding" dwd:design-time-name="b3df375e-261e-452d-ba05-46da3b5f6191">
+            <Source xsi:type="RowBinding" dwd:design-time-name="31c034da-0bb2-4741-9ccd-9ce73f6fa9a4">
               <TableID>dbo_factSalary</TableID>
             </Source>
           </Source>
@@ -291,15 +309,15 @@
       <StorageMode>Molap</StorageMode>
       <ProcessingMode>Regular</ProcessingMode>
       <Dimensions>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="8ee5e03f-c9cf-4fcd-8e12-ec041c290241">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="05b75b64-e0b3-4236-912e-50af7f66cb32">
           <CubeDimensionID>Dim Employee</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="fc27ffee-2b7e-4312-b02f-d2de448c2e8f">
+            <Attribute dwd:design-time-name="eabb1f0b-b862-4cd6-afaa-71e41b0fbc6f">
               <AttributeID>EID</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="786fc6c9-5fea-4733-93e0-7589d8aeb449">
+                <KeyColumn dwd:design-time-name="7a916c57-2966-4d5c-92c3-ba2eb660d1c6">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="c17fffe5-c802-49b4-882a-ab3b4a43d34b">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="b2a321e9-8aac-4c83-9108-6738c4a97187">
                     <TableID>dbo_factSalary</TableID>
                     <ColumnID>EID</ColumnID>
                   </Source>
@@ -309,15 +327,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="5af7a589-0284-454f-a501-f167b925032e">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="51f1beee-9669-4af8-860f-11d3cd466e85">
           <CubeDimensionID>Fact Date</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="63975812-bae8-4941-a5ac-b0098793751d">
+            <Attribute dwd:design-time-name="cbd9ad56-4999-458a-8c1b-b1a1ecba8ebe">
               <AttributeID>Date Id</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="c1c74b8a-b236-4e30-a0ca-f88070106a94">
+                <KeyColumn dwd:design-time-name="4d3d4051-9b6a-406a-bd8a-8ab91112ef41">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="4d7a1805-0426-4efc-9d11-0fa411679974">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="13d18b28-c977-46cd-8b82-26462010e9c8">
                     <TableID>dbo_factSalary</TableID>
                     <ColumnID>factDate</ColumnID>
                   </Source>
@@ -327,10 +345,10 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="1db7c26a-a210-4387-a912-ec4c4f0044f6">
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="2eb3ef4a-cad0-4809-874f-08fa5dae4c97">
           <CubeDimensionID>Dim Employee - Birth Date</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="74e8ad94-31b6-4082-9f35-9e5d875dc2fa">
+            <Attribute dwd:design-time-name="48334b8f-4457-4d5d-b384-135df07295be">
               <AttributeID>Date Id</AttributeID>
               <Type>Granularity</Type>
             </Attribute>
@@ -340,10 +358,10 @@
           <Materialization>Regular</Materialization>
           <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
         </Dimension>
-        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="f08b6371-3090-4f86-96fe-44660140bb90">
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="53bff892-bf0c-41b9-bd8b-2dedc5e023dc">
           <CubeDimensionID>Dim Employee - Hire Date</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="34c5ad48-dce7-45e1-9168-5c28b64b89a5">
+            <Attribute dwd:design-time-name="931e862d-9633-4dc9-8a75-f30ea68ad7e5">
               <AttributeID>Date Id</AttributeID>
               <Type>Granularity</Type>
             </Attribute>
@@ -357,7 +375,7 @@
       <Partitions />
     </MeasureGroup>
   </MeasureGroups>
-  <Source dwd:design-time-name="e66b6aa0-b19e-4245-885d-fcc45510122c">
+  <Source dwd:design-time-name="581e6c43-eac9-4a2a-86ce-8733b4f33fea">
     <DataSourceViewID>warehouse</DataSourceViewID>
   </Source>
 </Cube>
