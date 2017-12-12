@@ -11,8 +11,8 @@
   DTS:LocaleID="2060"
   DTS:ObjectName="snapshots"
   DTS:PackageType="5"
-  DTS:VersionBuild="208"
-  DTS:VersionGUID="{20B40847-F7C7-4656-82EE-0B2DC6E61D69}">
+  DTS:VersionBuild="219"
+  DTS:VersionGUID="{8897EA0F-7D0E-41DE-AA87-3101532013CF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -588,9 +588,9 @@
       DTS:CreationName="STOCK:FORLOOP"
       DTS:Description="For Loop Container"
       DTS:DTSID="{595571A4-02B7-4E36-A293-7CA4E17DE22A}"
-      DTS:EvalExpression="@myvar &lt;= 1"
+      DTS:EvalExpression="@myvar &lt;= 15"
       DTS:ExecutableType="STOCK:FORLOOP"
-      DTS:InitExpression="@myvar = 1"
+      DTS:InitExpression="@myvar = 15"
       DTS:LocaleID="-1"
       DTS:MaxConcurrent="1"
       DTS:ObjectName="For Loop Container">
@@ -700,7 +700,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Determine variable @snapDateId"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -13093,7 +13093,7 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Set variable @snapDate"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -13119,7 +13119,7 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="SIMPLIFY - ENABLE FOR REDUCED DATA"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -13820,7 +13820,7 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
     design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Append new relations">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="199,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Append new relations\Store in bridge_employee"
@@ -13864,7 +13864,9 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13898,7 +13900,9 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
