@@ -26,35 +26,35 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>DT/4Y9gez8SdZ/XW6K2khAEo5xA=08-Dec-17 9:50:23 PM08-Dec-17 9:50:23 PM</TimeStamp>
+        <TimeStamp>93LuFjQqK7DcZTzHx2IqqRxgeKI=12-Dec-17 10:27:00 PM08-Dec-17 9:50:23 PM</TimeStamp>
         <ID>
           <String>warehouse</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>fAho6d6fxHDdWvpP3YaqAs0TkoI=12-Dec-17 10:00:10 PM08-Dec-17 9:50:56 PM</TimeStamp>
-        <ID>
-          <String>Dim Date</String>
-        </ID>
-      </ObjectSnapshot>
-      <ObjectSnapshot>
-        <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>mFWpsTczxPtNmO3GxzZPRk0jBeQ=12-Dec-17 9:45:16 PM08-Dec-17 9:50:56 PM</TimeStamp>
+        <TimeStamp>bf+W575o3oa3BKfFahWldOgiXgM=12-Dec-17 11:13:17 PM12-Dec-17 11:13:16 PM</TimeStamp>
         <ID>
           <String>Dim Employee</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>wEYFAStz8pJGeTo6y3IfPMnRwkw=12-Dec-17 9:42:37 PM08-Dec-17 9:50:56 PM</TimeStamp>
+        <TimeStamp>dd++7jmT/OCwD8TUezO+wsvkkc0=12-Dec-17 11:15:38 PM12-Dec-17 10:52:10 PM</TimeStamp>
+        <ID>
+          <String>Dim Date</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>S48HQYPk0ad4ByvML9MpdriTe48=12-Dec-17 11:13:17 PM12-Dec-17 10:52:10 PM</TimeStamp>
         <ID>
           <String>Dim City</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>7BSn3KV3AC2HMrsAdJh5Ioqml3A=12-Dec-17 10:12:55 PM08-Dec-17 9:52:52 PM4uYBGL8ndtviFxLf2V6y9GzhMvU=08-Dec-17 9:52:52 PM08-Dec-17 9:52:52 PM</TimeStamp>
+        <TimeStamp>Gu95LBTRIKt0W1GmJqrNVPLQ2yU=12-Dec-17 11:15:38 PM12-Dec-17 11:13:16 PMK0pFWxknomL/Vhg1pBQ3g0qMqMA=12-Dec-17 11:13:17 PM12-Dec-17 11:13:16 PM</TimeStamp>
         <ID>
           <String>warehouse</String>
         </ID>
@@ -71,5 +71,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2017-12-12T21:12:57.593333Z</LastDeployed>
+  <LastDeployed>2017-12-12T22:15:40.353333Z</LastDeployed>
 </DeploymentSnapshot>
