@@ -2,18 +2,18 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>Project</Name>
-    <LastWriteTime>2017-12-01T01:43:08.0374857Z</LastWriteTime>
+    <LastWriteTime>2017-12-09T01:08:37.3157505Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>snapshots.dtsx</Name>
-      <LastWriteTime>2017-11-29T02:08:04.2085367Z</LastWriteTime>
+      <LastWriteTime>2017-12-11T01:48:55.1391834Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>initial.dtsx</Name>
-      <LastWriteTime>2017-12-01T03:02:50.9312794Z</LastWriteTime>
+      <LastWriteTime>2017-12-08T19:34:21.6354819Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

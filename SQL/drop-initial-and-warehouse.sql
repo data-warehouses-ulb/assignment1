@@ -17,5 +17,6 @@ go
 drop table [bridgeEmployee]
 drop table [factSalary]
 drop table [dimEmployee]
+drop table [dimDate]
 drop table [dimCity]
 drop table [dimClients]

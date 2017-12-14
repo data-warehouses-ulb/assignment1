@@ -12,3 +12,6 @@ drop TABLE [newCity];
 drop TABLE [newState];
 drop TABLE [newCountry];
 drop TABLE [new_clients];
+drop TABLE [new_client_emp_surrogate];
+drop TABLE [bridge_disappeared];
+drop TABLE [bridge_appeared];
