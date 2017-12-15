@@ -6,6 +6,32 @@
   <Annotations>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2983" scrolltop="-5636" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="9075" y="16272" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="dimEmployee" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3069" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000fd0b000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_dimEmployee" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
@@ -21,15 +47,15 @@
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
-      <Value>0</Value>
+      <Value>-2983</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
-      <Value>0</Value>
+      <Value>-5636</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
-      <Value>0</Value>
+      <Value>20</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
@@ -38,6 +64,31 @@
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
       <Value>100</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ARDiagramLayout</Name>
+      <Value>
+        <DiagramLayout ZoomPercent="100" ViewPortX="0" ViewPortY="0" xmlns="">
+          <Shapes NodeWidth="127">
+            <Shape Id="EID" Expanded="true">
+              <Attributes>
+                <Attribute Id="EID" />
+                <Attribute Id="Base City Id" />
+                <Attribute Id="Birth Date" />
+                <Attribute Id="Current City Id" />
+                <Attribute Id="Dept Name" />
+                <Attribute Id="Emp No" />
+                <Attribute Id="Gender" />
+                <Attribute Id="Hire Date" />
+                <Attribute Id="Marital Status" />
+                <Attribute Id="No Of Children" />
+                <Attribute Id="Title" />
+              </Attributes>
+              <Position x="20" y="20" />
+            </Shape>
+          </Shapes>
+        </DiagramLayout>
+      </Value>
     </Annotation>
   </Annotations>
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
@@ -66,10 +117,6 @@
         </KeyColumn>
       </KeyColumns>
       <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="cb33ba57-c6bd-4902-874a-28153b657d90">
-          <AttributeID>Current City Id</AttributeID>
-          <Name>Current City Id</Name>
-        </AttributeRelationship>
         <AttributeRelationship dwd:design-time-name="26628e7f-bd66-48dd-81c5-029666319dc8">
           <AttributeID>Birth Date</AttributeID>
           <Name>Birth Date</Name>
@@ -78,29 +125,40 @@
           <AttributeID>Hire Date</AttributeID>
           <Name>Hire Date</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="5cf6f699-b156-4056-9bfa-40072ec36272">
+        <AttributeRelationship dwd:design-time-name="1cf318b3-787a-4a62-9bf5-3fd1f19596e8">
+          <AttributeID>Emp No</AttributeID>
+          <Name>Emp No</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="844a1622-1fda-41ad-9a3a-3969e9560b16">
+          <AttributeID>Gender</AttributeID>
+          <Name>Gender</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="196603cf-80ad-4b7e-91a6-c0b130be172a">
+          <AttributeID>Marital Status</AttributeID>
+          <Name>Marital Status</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="851a0e24-cb55-40f3-96c7-01f6bf164fc9">
+          <AttributeID>No Of Children</AttributeID>
+          <Name>No Of Children</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="9d199d5d-77f1-4ab7-b1dd-3d6bfab8cd06">
+          <AttributeID>Dept Name</AttributeID>
+          <Name>Dept Name</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="1a31baf4-b3bd-4b1a-a038-e4d1df83f896">
+          <AttributeID>Title</AttributeID>
+          <Name>Title</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="21f89761-83de-4e40-b88d-937503b83b43">
+          <AttributeID>Current City Id</AttributeID>
+          <Name>Current City Id</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="55ff42e3-f750-4f88-93d3-527981ad15a3">
           <AttributeID>Base City Id</AttributeID>
           <Name>Base City Id</Name>
         </AttributeRelationship>
       </AttributeRelationships>
       <OrderBy>Key</OrderBy>
-      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-    </Attribute>
-    <Attribute dwd:design-time-name="58471b72-3443-4dd6-b90e-ae396969a654">
-      <ID>Current City Id</ID>
-      <Name>Current City Id</Name>
-      <KeyColumns>
-        <KeyColumn dwd:design-time-name="e993c4d6-4d40-44f5-a9e2-072bf6972dc7">
-          <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="6992e568-e878-4df1-b41a-7edcb26589e6">
-            <TableID>dbo_dimEmployee</TableID>
-            <ColumnID>current_city_id</ColumnID>
-          </Source>
-        </KeyColumn>
-      </KeyColumns>
-      <OrderBy>Key</OrderBy>
-      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
@@ -138,20 +196,127 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="81e514b7-990b-4c61-9a08-ba8ecfc70663">
+    <Attribute dwd:design-time-name="dcd339b8-0c7a-479c-96c1-1bf5f676a970">
+      <ID>Emp No</ID>
+      <Name>Emp No</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a7f25458-d460-4be4-8b70-9d8e80868af7">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="42ad79da-e4b4-497a-911e-758adabf371b">
+            <TableID>dbo_dimEmployee</TableID>
+            <ColumnID>emp_no</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="03219c5d-ae26-4ada-82b9-4435e202864d">
+      <ID>Gender</ID>
+      <Name>Gender</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d5525dec-34ad-419d-898e-04aad9171081">
+          <DataType>WChar</DataType>
+          <DataSize>10</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="80ba875a-7393-469c-9958-8d9d04c779df">
+            <TableID>dbo_dimEmployee</TableID>
+            <ColumnID>gender</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="0cbcffa1-9205-41ac-88d6-ccc38ec1953f">
+      <ID>Marital Status</ID>
+      <Name>Marital Status</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e9532e37-3b08-4d2a-8d82-5531a55efcb3">
+          <DataType>WChar</DataType>
+          <DataSize>10</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6617916f-074f-4dd7-aa15-e3197f731ef6">
+            <TableID>dbo_dimEmployee</TableID>
+            <ColumnID>marital_status</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9a4d905d-7123-43b0-8617-98bf0a5f6fd8">
+      <ID>No Of Children</ID>
+      <Name>No Of Children</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="5cf20f2c-fcca-414f-a155-971da14322d8">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1f3f0764-7d63-4189-94d9-7c0056c6d10e">
+            <TableID>dbo_dimEmployee</TableID>
+            <ColumnID>no_of_children</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9bc196af-6de3-4cee-a7f9-a39ca15918e9">
+      <ID>Dept Name</ID>
+      <Name>Dept Name</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="1b896093-bb39-4e4d-b76e-18634deea9c5">
+          <DataType>WChar</DataType>
+          <DataSize>40</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b2aaa862-a4d0-4cac-8d5c-84d042601a14">
+            <TableID>dbo_dimEmployee</TableID>
+            <ColumnID>dept_name</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="c584d1cf-0875-464f-a777-f73c9a8f0a10">
+      <ID>Title</ID>
+      <Name>Title</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c18bb697-3b58-4aad-a56a-094c2dd1a5e9">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a45c30f1-478f-4244-ad5d-de7833db85f6">
+            <TableID>dbo_dimEmployee</TableID>
+            <ColumnID>title</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="2433b53b-c4a0-4dd6-9b82-d14c369b2ab8">
+      <ID>Current City Id</ID>
+      <Name>Current City Id</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e098c0d5-0130-47b0-9ef7-b8468f5889d5">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e7eaea98-55e5-4d6e-aa7d-f37b743d42b7">
+            <TableID>dbo_dimEmployee</TableID>
+            <ColumnID>current_city_id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="39df75df-1038-48c3-9abf-1ff4fe378f3e">
       <ID>Base City Id</ID>
       <Name>Base City Id</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="49a73f7e-e578-4773-91aa-5a513a9720ec">
+        <KeyColumn dwd:design-time-name="8503e547-11a5-4788-a68d-4f86d0f5cb74">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="d76fea2f-ed56-4a8d-95cf-55f711ecf576">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="41437657-dac3-4ba9-9a23-1f8e99e20d84">
             <TableID>dbo_dimEmployee</TableID>
             <ColumnID>base_city_id</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <OrderBy>Key</OrderBy>
-      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>

@@ -20,6 +20,9 @@
       <Dimension>
         <ID>Dim City</ID>
       </Dimension>
+      <Dimension>
+        <ID>Dim Clients</ID>
+      </Dimension>
     </Dimensions>
     <Cubes>
       <Cube>
@@ -30,6 +33,14 @@
             <Partitions>
               <Partition>
                 <ID>Fact Salary</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Bridge Employee</ID>
+            <Partitions>
+              <Partition>
+                <ID>Bridge Employee</ID>
               </Partition>
             </Partitions>
           </MeasureGroup>

@@ -19,42 +19,49 @@
     <ObjectSnapshots>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
-        <TimeStamp>ySN3QmeU26yK50veHblpkG2VpXY=08-Dec-17 10:25:54 PM08-Dec-17 9:49:38 PM</TimeStamp>
+        <TimeStamp>ySN3QmeU26yK50veHblpkG2VpXY=14-Dec-17 5:31:37 PM14-Dec-17 5:31:37 PM</TimeStamp>
         <ID>
           <String>warehouse</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>93LuFjQqK7DcZTzHx2IqqRxgeKI=12-Dec-17 10:27:00 PM08-Dec-17 9:50:23 PM</TimeStamp>
+        <TimeStamp>93LuFjQqK7DcZTzHx2IqqRxgeKI=14-Dec-17 5:31:37 PM14-Dec-17 5:31:37 PM</TimeStamp>
         <ID>
           <String>warehouse</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>FfUFWfqNjLTvl1YgPYhY9/5IuYk=12-Dec-17 11:29:35 PM12-Dec-17 11:13:16 PM</TimeStamp>
+        <TimeStamp>kC5/hv3rQahYrxUGoCJXQMw2nJs=14-Dec-17 6:14:58 PM14-Dec-17 5:31:37 PM</TimeStamp>
         <ID>
           <String>Dim Employee</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>cJxHaAcgqwGSVJBvYCPxUi27LZY=12-Dec-17 11:33:29 PM12-Dec-17 11:29:35 PM</TimeStamp>
+        <TimeStamp>9FjNbGCsTDZumFD+gzsT8tHpNoM=14-Dec-17 5:50:07 PM14-Dec-17 5:31:37 PM</TimeStamp>
         <ID>
           <String>Dim Date</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>XWcF4HIsnZcNi/4HLWvAXHdbmEI=12-Dec-17 11:29:35 PM12-Dec-17 10:52:10 PM</TimeStamp>
+        <TimeStamp>/TOC86gRr37THR3urMplBeflouI=14-Dec-17 5:52:39 PM14-Dec-17 5:31:37 PM</TimeStamp>
         <ID>
           <String>Dim City</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>naDBzWV4Wc3uM+TTblxN6fAqHJM=14-Dec-17 7:29:54 PM14-Dec-17 7:29:54 PM</TimeStamp>
+        <ID>
+          <String>Dim Clients</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>8sXnJt7cCHl5kh+x1kzWwoZFWeo=12-Dec-17 11:33:29 PM12-Dec-17 11:13:16 PM+1FXJ69UwrrALO5NBRbKGg+ErRU=12-Dec-17 11:29:35 PM12-Dec-17 11:13:16 PM</TimeStamp>
+        <TimeStamp>2IeTmTv8R5c9k2sL7rNYlycGC9A=15-Dec-17 1:19:07 AM14-Dec-17 5:31:37 PMfW1q3oSshyiHYmXy7Yweu3fFP44=14-Dec-17 7:32:09 PM14-Dec-17 5:31:37 PM</TimeStamp>
         <ID>
           <String>warehouse</String>
         </ID>
@@ -62,7 +69,7 @@
     </ObjectSnapshots>
     <DatabaseSnapshot>
       <Type>Microsoft.AnalysisServices.Database</Type>
-      <TimeStamp>6BDn+fBxeoLGVJtY6xaO3n0Cwd4=08-Dec-17 9:48:27 PM08-Dec-17 9:48:27 PM</TimeStamp>
+      <TimeStamp>6BDn+fBxeoLGVJtY6xaO3n0Cwd4=14-Dec-17 5:31:37 PM14-Dec-17 5:31:37 PM</TimeStamp>
       <ID>
         <String>cube</String>
       </ID>
@@ -71,5 +78,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2017-12-12T22:33:31.323333Z</LastDeployed>
+  <LastDeployed>2017-12-15T00:19:32.28Z</LastDeployed>
 </DeploymentSnapshot>

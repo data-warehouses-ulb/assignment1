@@ -21,5 +21,25 @@
         </Partition>
       </Partitions>
     </MeasureGroup>
+    <MeasureGroup>
+      <ID>Bridge Employee</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="d828523d-ec90-467e-b4ac-8426ef7eb45f">
+          <ID>Bridge Employee</ID>
+          <Name>Bridge Employee</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="d6296ef7-57f6-49c4-bfc6-0987cda0d5bb">
+            <DataSourceViewID>warehouse</DataSourceViewID>
+            <TableID>dbo_bridgeEmployee</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
   </MeasureGroups>
 </Cube>
