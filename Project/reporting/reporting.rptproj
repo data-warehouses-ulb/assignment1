@@ -51,5 +51,12 @@
   <ItemGroup>
     <DataSource Include="cube-source.rds" />
   </ItemGroup>
+  <ItemGroup>
+    <Report Include="1-salary-title-dept.rdl" />
+    <Report Include="2-salary-gender.rdl" />
+    <Report Include="3-employee-geography.rdl" />
+    <Report Include="4-client-month-employees.rdl" />
+    <Report Include="5-title-salary.rdl" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>

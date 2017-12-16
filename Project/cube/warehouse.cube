@@ -8,7 +8,7 @@
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
       <Value>
         <dds xmlns="">
-          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="30" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-9922" scrolltop="-2637" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="28549" y="16272" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="30" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-9922" scrolltop="-3342" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="28549" y="16272" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
             <font>
               <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
             </font>
@@ -264,7 +264,7 @@
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
-      <Value>-2637</Value>
+      <Value>-3342</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
@@ -319,6 +319,12 @@
         </Attribute>
         <Attribute dwd:design-time-name="32bfc5ee-2dcb-41f2-bfb5-e10768c4121b">
           <AttributeID>Base City Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="3e6928de-647c-47e8-83c6-c32293c189a8">
+          <AttributeID>Start</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="bd1d543f-c9f8-4fc0-9ca3-5c1dd6c9051a">
+          <AttributeID>End</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
@@ -441,6 +447,12 @@
         <Attribute dwd:design-time-name="14804454-ae5d-4f12-b576-54cd3a9a0139">
           <AttributeID>Base City Id</AttributeID>
         </Attribute>
+        <Attribute dwd:design-time-name="311f3b66-db6b-4370-a68c-264acc9f823d">
+          <AttributeID>Start</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="53130059-9f36-4719-a564-704c548747c6">
+          <AttributeID>End</AttributeID>
+        </Attribute>
       </Attributes>
     </Dimension>
     <Dimension dwd:design-time-name="79f6b1a4-9799-4124-a2f6-d1384fa22a08">
@@ -480,6 +492,12 @@
         </Attribute>
         <Attribute dwd:design-time-name="f3c7ab81-370b-4158-b302-1e4322ce3ed6">
           <AttributeID>Base City Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9296ad75-d178-4942-ac80-e68f4dfbe6d9">
+          <AttributeID>Start</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="82e0cc02-25ee-49f7-8270-74300e620f85">
+          <AttributeID>End</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
@@ -521,6 +539,12 @@
         <Attribute dwd:design-time-name="7adb39b3-d27d-451e-aec1-b4692bc8eddc">
           <AttributeID>Base City Id</AttributeID>
         </Attribute>
+        <Attribute dwd:design-time-name="3656633f-3837-4d1a-b899-e3a721626e44">
+          <AttributeID>Start</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="652c1a36-d74f-4181-97cb-79b56f806a23">
+          <AttributeID>End</AttributeID>
+        </Attribute>
       </Attributes>
     </Dimension>
     <Dimension dwd:design-time-name="4724277c-46e0-4984-a332-889fa97a32a4">
@@ -561,6 +585,12 @@
         <Attribute dwd:design-time-name="a8f7d6e2-24e6-45ee-a8fb-f1d539591a3c">
           <AttributeID>Base City Id</AttributeID>
         </Attribute>
+        <Attribute dwd:design-time-name="a43d5ebe-4297-49d3-99f1-ce47fdefe698">
+          <AttributeID>Start</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0579b707-fa59-4fe8-be76-9a93bee4d8b7">
+          <AttributeID>End</AttributeID>
+        </Attribute>
       </Attributes>
     </Dimension>
     <Dimension dwd:design-time-name="c5699fba-c04d-4877-881a-50834312fad0">
@@ -600,6 +630,12 @@
         </Attribute>
         <Attribute dwd:design-time-name="391af82f-00f6-4481-ba1f-503055195fe0">
           <AttributeID>Base City Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="389735a2-8f3e-45d6-939c-de191ade5642">
+          <AttributeID>Start</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ae60767b-8805-4cf5-879e-98c8e6d92b26">
+          <AttributeID>End</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
@@ -853,6 +889,10 @@
           <IntermediateCubeDimensionID>Dim Employee</IntermediateCubeDimensionID>
           <IntermediateGranularityAttributeID>Hire Date</IntermediateGranularityAttributeID>
           <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+        </Dimension>
+        <Dimension xsi:type="ManyToManyMeasureGroupDimension" dwd:design-time-name="3f823e2c-e7c2-409b-961a-b5861bba2683">
+          <CubeDimensionID>Dim Clients</CubeDimensionID>
+          <MeasureGroupID>Bridge Employee</MeasureGroupID>
         </Dimension>
       </Dimensions>
       <Partitions />
