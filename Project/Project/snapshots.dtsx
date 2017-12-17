@@ -11,8 +11,8 @@
   DTS:LocaleID="2060"
   DTS:ObjectName="snapshots"
   DTS:PackageType="5"
-  DTS:VersionBuild="219"
-  DTS:VersionGUID="{8897EA0F-7D0E-41DE-AA87-3101532013CF}">
+  DTS:VersionBuild="221"
+  DTS:VersionGUID="{7EF00230-C8FC-41F3-8CFB-D68196735A5C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1915,13 +1915,13 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
                   </DTS:ObjectData>
                 </DTS:Executable>
                 <DTS:Executable
-                  DTS:refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Execute SQL Task"
+                  DTS:refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end date to the disappeared"
                   DTS:CreationName="Microsoft.ExecuteSQLTask"
                   DTS:Description="Execute SQL Task"
                   DTS:DTSID="{7FEB7EE5-E2C0-4D77-922F-286893563568}"
                   DTS:ExecutableType="Microsoft.ExecuteSQLTask"
                   DTS:LocaleID="-1"
-                  DTS:ObjectName="Execute SQL Task"
+                  DTS:ObjectName="Set end date to the disappeared"
                   DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
                   DTS:ThreadHint="0">
                   <DTS:Variables />
@@ -1957,12 +1957,12 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
                   DTS:From="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine bridge disappeared"
                   DTS:LogicalAnd="True"
                   DTS:ObjectName="Constraint 1"
-                  DTS:To="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Execute SQL Task" />
+                  DTS:To="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end date to the disappeared" />
                 <DTS:PrecedenceConstraint
                   DTS:refId="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee.PrecedenceConstraints[Constraint 2]"
                   DTS:CreationName=""
                   DTS:DTSID="{F4D60C82-EA41-4E4D-B177-1C1EFC7E8205}"
-                  DTS:From="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Execute SQL Task"
+                  DTS:From="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end date to the disappeared"
                   DTS:LogicalAnd="True"
                   DTS:ObjectName="Constraint 2"
                   DTS:To="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine bridge_appeared" />
@@ -12991,24 +12991,24 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
                   startId="Package\For Loop Container\Load snapshot nr @myvar\emp_data.Outputs[Data Conversion Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output8]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\departments_data.Inputs[Data Conversion Input]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 4.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\departments.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\title.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output7]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 3.Inputs[Data Conversion Input]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\clients_data.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\state.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\clients.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output6]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 2.Inputs[Data Conversion Input]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\client_emp_data.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\country.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\client_emp.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output5]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 1.Inputs[Data Conversion Input]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\emp_data.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\city.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\emp.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output4]"
                   endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion.Inputs[Data Conversion Input]"
@@ -13016,24 +13016,24 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
                   startId="Package\For Loop Container\Load snapshot nr @myvar\snapshotdate.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output3]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\emp_data.Inputs[Data Conversion Input]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 1.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\emp.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\city.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output2]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\client_emp_data.Inputs[Data Conversion Input]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 2.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\client_emp.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\country.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output1]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\clients_data.Inputs[Data Conversion Input]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 3.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\clients.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\state.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output]"
-                  endId="Package\For Loop Container\Load snapshot nr @myvar\Data Conversion 4.Inputs[Data Conversion Input]"
+                  endId="Package\For Loop Container\Load snapshot nr @myvar\departments_data.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
-                  startId="Package\For Loop Container\Load snapshot nr @myvar\title.Outputs[Flat File Source Output]" />
+                  startId="Package\For Loop Container\Load snapshot nr @myvar\departments.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\For Loop Container\Load snapshot nr @myvar.Paths[Union All Output 1]"
                   endId="Package\For Loop Container\Load snapshot nr @myvar\newState.Inputs[OLE DB Destination Input]"
@@ -13235,7 +13235,7 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
         <NodeLayout
           Size="136,44"
           Id="Package\For Loop Container\Create snapshot tables"
-          TopLeft="296.490566037736,16.4339622641509" />
+          TopLeft="295.490566037736,9.43396226415089" />
         <NodeLayout
           Size="136,44"
           Id="Package\For Loop Container\Delete snapshot tables"
@@ -13243,11 +13243,11 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
         <NodeLayout
           Size="235,42"
           Id="Package\For Loop Container\Determine variable @snapDateId"
-          TopLeft="507,191" />
+          TopLeft="502,167" />
         <NodeLayout
           Size="181,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Append new relations"
-          TopLeft="116,284" />
+          TopLeft="81,254" />
         <NodeLayout
           Size="221,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine bridge disappeared"
@@ -13255,15 +13255,15 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
         <NodeLayout
           Size="211,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine bridge_appeared"
-          TopLeft="94,210" />
+          TopLeft="69,195" />
         <NodeLayout
           Size="258,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate"
           TopLeft="57,16" />
         <NodeLayout
-          Size="163,42"
-          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Execute SQL Task"
-          TopLeft="85,135" />
+          Size="230,42"
+          Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Set end date to the disappeared"
+          TopLeft="70,135" />
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee.PrecedenceConstraints[Constraint]"
           TopLeft="57,37">
@@ -13300,30 +13300,18 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee.PrecedenceConstraints[Constraint 1]"
-          TopLeft="186.5,111">
+          TopLeft="185.75,111">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-20,24"
+              EndConnector="0,24"
               Start="0,0"
-              End="-20,16.5">
+              End="0,16.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,8" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,8"
-                    Point2="0,12"
-                    Point3="-4,12" />
-                  <mssgle:LineSegment
-                    End="-16,12" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-16,12"
-                    Point2="-20,12"
-                    Point3="-20,16" />
-                  <mssgle:LineSegment
-                    End="-20,16.5" />
+                    End="0,16.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13334,30 +13322,30 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee.PrecedenceConstraints[Constraint 2]"
-          TopLeft="166.5,177">
+          TopLeft="300,156">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="33,33"
+              EndConnector="-20,54.3333333333333"
               Start="0,0"
-              End="33,25.5">
+              End="-12.5,54.3333333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,12.5" />
+                    End="18.5,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,12.5"
-                    Point2="0,16.5"
-                    Point3="4,16.5" />
+                    Point1="18.5,0"
+                    Point2="22.5,0"
+                    Point3="22.5,4" />
                   <mssgle:LineSegment
-                    End="29,16.5" />
+                    End="22.5,50.3333333333333" />
                   <mssgle:CubicBezierSegment
-                    Point1="29,16.5"
-                    Point2="33,16.5"
-                    Point3="33,20.5" />
+                    Point1="22.5,50.3333333333333"
+                    Point2="22.5,54.3333333333333"
+                    Point3="18.5,54.3333333333333" />
                   <mssgle:LineSegment
-                    End="33,25.5" />
+                    End="-12.5,54.3333333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13368,18 +13356,30 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee.PrecedenceConstraints[Constraint 3]"
-          TopLeft="203,252">
+          TopLeft="280,216">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,32"
+              EndConnector="-18,59"
               Start="0,0"
-              End="0,24.5">
+              End="-10.5,59">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.5" />
+                    End="18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.5,0"
+                    Point2="22.5,0"
+                    Point3="22.5,4" />
+                  <mssgle:LineSegment
+                    End="22.5,55" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.5,55"
+                    Point2="22.5,59"
+                    Point3="18.5,59" />
+                  <mssgle:LineSegment
+                    End="-10.5,59" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13391,10 +13391,10 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="383,380"
-          Size="383,423"
+          PanelSize="383,351"
+          Size="383,394"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee"
-          TopLeft="295,46" />
+          TopLeft="272,10" />
         <NodeLayout
           Size="153,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimCity"
@@ -13515,18 +13515,30 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED.PrecedenceConstraints[Constraint 3]"
-          TopLeft="204,257.75">
+          TopLeft="204,258">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="91,0"
+              EndConnector="68,-51"
               Start="0,0"
-              End="83.5,0">
+              End="60.5,-51">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="83.5,0" />
+                    End="30,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="30,0"
+                    Point2="34,0"
+                    Point3="34,-4" />
+                  <mssgle:LineSegment
+                    End="34,-47" />
+                  <mssgle:CubicBezierSegment
+                    Point1="34,-47"
+                    Point2="34,-51"
+                    Point3="38,-51" />
+                  <mssgle:LineSegment
+                    End="60.5,-51" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13541,33 +13553,45 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
           PanelSize="698,524"
           Size="698,568"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED"
-          TopLeft="27.490566037736,279.207547169811" />
+          TopLeft="28.490566037736,239.207547169811" />
         <NodeLayout
           Size="137,69"
           Id="Package\For Loop Container\Load snapshot nr @myvar"
-          TopLeft="288.77358490566,99.641509433962" />
+          TopLeft="286.77358490566,68.641509433962" />
         <NodeLayout
           Size="191,42"
           Id="Package\For Loop Container\Set variable @snapDate"
-          TopLeft="508.641509433962,102.339622641509" />
+          TopLeft="509.641509433962,52.339622641509" />
         <NodeLayout
           Size="136,54"
           Id="Package\For Loop Container\SIMPLIFY - ENABLE FOR REDUCED DATA"
-          TopLeft="297.283018867925,192.11320754717" />
+          TopLeft="289.283018867925,157.11320754717" />
         <EdgeLayout
           Id="Package\For Loop Container.PrecedenceConstraints[Constraint]"
-          TopLeft="360.882075471698,60.4339622641509">
+          TopLeft="431.490566037736,31.4339622641509">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39.2075471698111"
+              EndConnector="-7.716981132076,61.5408805031444"
               Start="0,0"
-              End="0,31.7075471698111">
+              End="-0.216981132076,61.5408805031444">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.7075471698111" />
+                    End="18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.5,0"
+                    Point2="22.5,0"
+                    Point3="22.5,4" />
+                  <mssgle:LineSegment
+                    End="22.5,57.5408805031444" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.5,57.5408805031444"
+                    Point2="22.5,61.5408805031444"
+                    Point3="18.5,61.5408805031444" />
+                  <mssgle:LineSegment
+                    End="-0.216981132076,61.5408805031444" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13578,30 +13602,30 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container.PrecedenceConstraints[Constraint 1]"
-          TopLeft="335.77358490566,168.641509433962">
+          TopLeft="286.77358490566,103.141509433962">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="29.509433962265,23.471698113208"
+              EndConnector="2.50943396226501,80.971698113208"
               Start="0,0"
-              End="29.509433962265,15.971698113208">
+              End="-4.99056603773499,80.971698113208">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,5.55125377766904" />
+                    End="-18.5,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,5.55125377766904"
-                    Point2="0,9.55125377766904"
-                    Point3="4,9.55125377766904" />
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
                   <mssgle:LineSegment
-                    End="25.509433962265,9.55125377766904" />
+                    End="-22.5,76.971698113208" />
                   <mssgle:CubicBezierSegment
-                    Point1="25.509433962265,9.55125377766904"
-                    Point2="29.509433962265,9.55125377766904"
-                    Point3="29.509433962265,13.551253777669" />
+                    Point1="-22.5,76.971698113208"
+                    Point2="-22.5,80.971698113208"
+                    Point3="-18.5,80.971698113208" />
                   <mssgle:LineSegment
-                    End="29.509433962265,15.971698113208" />
+                    End="-4.99056603773499,80.971698113208" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13612,30 +13636,30 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container.PrecedenceConstraints[Constraint 2]"
-          TopLeft="365.283018867925,246.11320754717">
+          TopLeft="357.283018867925,211.11320754717">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-103.792452830189,33.0943396226411"
+              EndConnector="-94.792452830189,28.0943396226411"
               Start="0,0"
-              End="-103.792452830189,25.5943396226411">
+              End="-94.792452830189,20.5943396226411">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.8111913006891" />
+                    End="0,12.8180523641539" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,15.8111913006891"
-                    Point2="0,19.8111913006891"
-                    Point3="-4,19.8111913006891" />
+                    Point1="0,12.8180523641539"
+                    Point2="0,16.8180523641539"
+                    Point3="-4,16.8180523641539" />
                   <mssgle:LineSegment
-                    End="-99.792452830189,19.8111913006891" />
+                    End="-90.792452830189,16.8180523641539" />
                   <mssgle:CubicBezierSegment
-                    Point1="-99.792452830189,19.8111913006891"
-                    Point2="-103.792452830189,19.8111913006891"
-                    Point3="-103.792452830189,23.8111913006891" />
+                    Point1="-90.792452830189,16.8180523641539"
+                    Point2="-94.792452830189,16.8180523641539"
+                    Point3="-94.792452830189,20.8180523641539" />
                   <mssgle:LineSegment
-                    End="-103.792452830189,25.5943396226411" />
+                    End="-94.792452830189,20.5943396226411" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13646,30 +13670,30 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container.PrecedenceConstraints[Constraint 3]"
-          TopLeft="425.77358490566,134.141509433962">
+          TopLeft="423.77358490566,113.308176100629">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="82.867924528302,-10.801886792453"
+              EndConnector="85.867924528302,-39.9685534591197"
               Start="0,0"
-              End="75.367924528302,-10.801886792453">
+              End="78.367924528302,-39.9685534591197">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="37.433962264151,0" />
+                    End="31.514778983377,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="37.433962264151,0"
-                    Point2="41.433962264151,0"
-                    Point3="41.433962264151,-4" />
+                    Point1="31.514778983377,0"
+                    Point2="35.514778983377,0"
+                    Point3="35.514778983377,-4" />
                   <mssgle:LineSegment
-                    End="41.433962264151,-6.80188679245302" />
+                    End="35.514778983377,-35.9685534591197" />
                   <mssgle:CubicBezierSegment
-                    Point1="41.433962264151,-6.80188679245302"
-                    Point2="41.433962264151,-10.801886792453"
-                    Point3="45.433962264151,-10.801886792453" />
+                    Point1="35.514778983377,-35.9685534591197"
+                    Point2="35.514778983377,-39.9685534591197"
+                    Point3="39.514778983377,-39.9685534591197" />
                   <mssgle:LineSegment
-                    End="75.367924528302,-10.801886792453" />
+                    End="78.367924528302,-39.9685534591197" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13680,30 +13704,30 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container.PrecedenceConstraints[Constraint 4]"
-          TopLeft="604.141509433962,144.339622641509">
+          TopLeft="605.141509433962,94.339622641509">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="20.358490566038,46.660377358491"
+              EndConnector="14.358490566038,72.660377358491"
               Start="0,0"
-              End="20.358490566038,39.160377358491">
+              End="14.358490566038,65.160377358491">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.3301886792455" />
+                    End="0,32.3301886792455" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,19.3301886792455"
-                    Point2="0,23.3301886792455"
-                    Point3="4,23.3301886792455" />
+                    Point1="0,32.3301886792455"
+                    Point2="0,36.3301886792455"
+                    Point3="4,36.3301886792455" />
                   <mssgle:LineSegment
-                    End="16.358490566038,23.3301886792455" />
+                    End="10.358490566038,36.3301886792455" />
                   <mssgle:CubicBezierSegment
-                    Point1="16.358490566038,23.3301886792455"
-                    Point2="20.358490566038,23.3301886792455"
-                    Point3="20.358490566038,27.3301886792455" />
+                    Point1="10.358490566038,36.3301886792455"
+                    Point2="14.358490566038,36.3301886792455"
+                    Point3="14.358490566038,40.3301886792455" />
                   <mssgle:LineSegment
-                    End="20.358490566038,39.160377358491" />
+                    End="14.358490566038,65.160377358491" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13714,18 +13738,18 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container.PrecedenceConstraints[Constraint 5]"
-          TopLeft="373.509433962264,847.207547169811">
+          TopLeft="374.009433962264,807.207547169811">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,40.754716981132"
+              EndConnector="0,80.754716981132"
               Start="0,0"
-              End="0,33.254716981132">
+              End="0,73.254716981132">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.254716981132" />
+                    End="0,73.254716981132" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13736,30 +13760,30 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container.PrecedenceConstraints[Constraint 6]"
-          TopLeft="624.5,233">
+          TopLeft="619.5,209">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-133.009433962264,46.2075471698111"
+              EndConnector="-127.009433962264,30.2075471698111"
               Start="0,0"
-              End="-133.009433962264,38.7075471698111">
+              End="-127.009433962264,22.7075471698111">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.6611217191493" />
+                    End="0,14.0830771222368" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,23.6611217191493"
-                    Point2="0,27.6611217191493"
-                    Point3="-4,27.6611217191493" />
+                    Point1="0,14.0830771222368"
+                    Point2="0,18.0830771222368"
+                    Point3="-4,18.0830771222368" />
                   <mssgle:LineSegment
-                    End="-129.009433962264,27.6611217191493" />
+                    End="-123.009433962264,18.0830771222368" />
                   <mssgle:CubicBezierSegment
-                    Point1="-129.009433962264,27.6611217191493"
-                    Point2="-133.009433962264,27.6611217191493"
-                    Point3="-133.009433962264,31.6611217191493" />
+                    Point1="-123.009433962264,18.0830771222368"
+                    Point2="-127.009433962264,18.0830771222368"
+                    Point3="-127.009433962264,22.0830771222368" />
                   <mssgle:LineSegment
-                    End="-133.009433962264,38.7075471698111" />
+                    End="-127.009433962264,22.7075471698111" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13774,37 +13798,25 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
           PanelSize="773,987"
           Size="773,1031"
           Id="Package\For Loop Container"
-          TopLeft="5.5,110.783018867925" />
+          TopLeft="23.5,103.783018867925" />
         <NodeLayout
           Size="274,42"
           Id="Package\SIMPLIFY - ENABLE FOR REDUCED DATA"
-          TopLeft="319.990566037736,6.61111111111111" />
+          TopLeft="269.990566037736,19.6111111111111" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="456.990566037736,48.6111111111111">
+          TopLeft="408.495283018868,61.6111111111111">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-64.990566037736,62.1719077568139"
+              EndConnector="0,42.1719077568139"
               Start="0,0"
-              End="-64.990566037736,54.6719077568139">
+              End="0,34.6719077568139">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.0859538784069" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,27.0859538784069"
-                    Point2="0,31.0859538784069"
-                    Point3="-4,31.0859538784069" />
-                  <mssgle:LineSegment
-                    End="-60.990566037736,31.0859538784069" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-60.990566037736,31.0859538784069"
-                    Point2="-64.990566037736,31.0859538784069"
-                    Point3="-64.990566037736,35.0859538784069" />
-                  <mssgle:LineSegment
-                    End="-64.990566037736,54.6719077568139" />
+                    End="0,34.6719077568139" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13820,89 +13832,61 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
     design-time-name="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Append new relations">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="199,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Append new relations\Store in bridge_employee"
-          TopLeft="273,308" />
+          TopLeft="206,228" />
         <NodeLayout
           Size="181,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Append new relations\Derived start and end"
-          TopLeft="232,175" />
+          TopLeft="215,142" />
         <NodeLayout
           Size="184,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Append new relations\Load bridge_appeared"
           TopLeft="212,64" />
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Append new relations.Paths[OLE DB Source Output]"
-          TopLeft="304,106">
+          TopLeft="304.75,106">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="18.5,69"
+              EndConnector="0,36"
               Start="0,0"
-              End="18.5,61.5">
+              End="0,28.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30.5"
-                    Point2="0,34.5"
-                    Point3="4,34.5" />
-                  <mssgle:LineSegment
-                    End="14.5,34.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="14.5,34.5"
-                    Point2="18.5,34.5"
-                    Point3="18.5,38.5" />
-                  <mssgle:LineSegment
-                    End="18.5,61.5" />
+                    End="0,28.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Append new relations.Paths[Derived Column Output]"
-          TopLeft="322.5,217">
+          TopLeft="305.5,184">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="50,91"
+              EndConnector="0,44"
               Start="0,0"
-              End="50,83.5">
+              End="0,36.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,41.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,41.5"
-                    Point2="0,45.5"
-                    Point3="4,45.5" />
-                  <mssgle:LineSegment
-                    End="46,45.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="46,45.5"
-                    Point2="50,45.5"
-                    Point3="50,49.5" />
-                  <mssgle:LineSegment
-                    End="50,83.5" />
+                    End="0,36.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -13946,161 +13930,121 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
         <NodeLayout
           Size="274,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimEmployee"
-          TopLeft="233,193" />
+          TopLeft="81,154" />
         <NodeLayout
           Size="255,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Store into new_client_emp_surrogate"
-          TopLeft="289,418" />
+          TopLeft="95,302" />
         <NodeLayout
           Size="154,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Derived Column"
-          TopLeft="238,106" />
+          TopLeft="137,82" />
         <NodeLayout
           Size="259,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate\Lookup new_client_emp by dimClients"
-          TopLeft="250,304" />
+          TopLeft="92,223" />
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate.Paths[OLE DB Source Output]"
-          TopLeft="221.5,61">
+          TopLeft="312,40">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="93.5,45"
+              EndConnector="-21,63"
               Start="0,0"
-              End="93.5,37.5">
+              End="-13.5,63">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.5" />
+                    End="18.5,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,18.5"
-                    Point2="0,22.5"
-                    Point3="4,22.5" />
+                    Point1="18.5,0"
+                    Point2="22.5,0"
+                    Point3="22.5,4" />
                   <mssgle:LineSegment
-                    End="89.5,22.5" />
+                    End="22.5,59" />
                   <mssgle:CubicBezierSegment
-                    Point1="89.5,22.5"
-                    Point2="93.5,22.5"
-                    Point3="93.5,26.5" />
+                    Point1="22.5,59"
+                    Point2="22.5,63"
+                    Point3="18.5,63" />
                   <mssgle:LineSegment
-                    End="93.5,37.5" />
+                    End="-13.5,63" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate.Paths[Lookup Match Output1]"
-          TopLeft="379.5,346">
+          TopLeft="222,265">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="37,72"
+              EndConnector="0,37"
               Start="0,0"
-              End="37,64.5">
+              End="0,29.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,32"
-                    Point2="0,36"
-                    Point3="4,36" />
-                  <mssgle:LineSegment
-                    End="33,36" />
-                  <mssgle:CubicBezierSegment
-                    Point1="33,36"
-                    Point2="37,36"
-                    Point3="37,40" />
-                  <mssgle:LineSegment
-                    End="37,64.5" />
+                    End="0,29.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-29.69138671875,41,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,8.9453125,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate.Paths[Lookup Match Output]"
-          TopLeft="370,235">
+          TopLeft="219.75,196">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="9.5,69"
+              EndConnector="0,27"
               Start="0,0"
-              End="9.5,61.5">
+              End="0,19.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30.5"
-                    Point2="0,34.5"
-                    Point3="4,34.5" />
-                  <mssgle:LineSegment
-                    End="5.5,34.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="5.5,34.5"
-                    Point2="9.5,34.5"
-                    Point3="9.5,38.5" />
-                  <mssgle:LineSegment
-                    End="9.5,61.5" />
+                    End="0,19.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-43.44138671875,39.5,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,3.9453125,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change bridgeEmployee\Determine new_client_emp_surrogate.Paths[Derived Column Output]"
-          TopLeft="315,148">
+          TopLeft="216,124">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="55,45"
+              EndConnector="0,30"
               Start="0,0"
-              End="55,37.5">
+              End="0,22.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.5"
-                    Point2="0,22.5"
-                    Point3="4,22.5" />
-                  <mssgle:LineSegment
-                    End="51,22.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="51,22.5"
-                    Point2="55,22.5"
-                    Point3="55,26.5" />
-                  <mssgle:LineSegment
-                    End="55,37.5" />
+                    End="0,22.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -14154,9 +14098,7 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14429,232 +14371,234 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
         <NodeLayout
           Size="160,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients\Load new_clients"
-          TopLeft="157.5,5.5" />
+          TopLeft="177,5.5" />
         <NodeLayout
           Size="163,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients\Derived Column 1"
-          TopLeft="151,515.5" />
+          TopLeft="145.5,347.5" />
         <NodeLayout
           Size="121,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients\Union All"
-          TopLeft="172,413.5" />
+          TopLeft="164.5,280.5" />
         <NodeLayout
           Size="163,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients\Insert Destination"
-          TopLeft="151,617.5" />
+          TopLeft="143.5,419.5" />
         <NodeLayout
           Size="154,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients\Derived Column"
-          TopLeft="17.5,209.5" />
+          TopLeft="33,148.5" />
         <NodeLayout
           Size="209,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients\Slowly Changing Dimension"
-          TopLeft="128,107.5" />
+          TopLeft="147.5,70.5" />
         <NodeLayout
           Size="166,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients\OLE DB Command"
-          TopLeft="5.50000000000003,311.5" />
+          TopLeft="28,212.5" />
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients.Paths[Derived Column Output1]"
-          TopLeft="232.5,557.5">
+          TopLeft="226,389.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="0,30"
               Start="0,0"
-              End="0,52.5">
+              End="0,22.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,22.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients.Paths[Derived Column Output]"
-          TopLeft="91.5,251.5">
+          TopLeft="33,169.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="-4.99999999999997,64"
               Start="0,0"
-              End="0,52.5">
+              End="-12.5,64">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="-23.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-23.5,0"
+                    Point2="-27.5,0"
+                    Point3="-27.5,4" />
+                  <mssgle:LineSegment
+                    End="-27.5,60" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-27.5,60"
+                    Point2="-27.5,64"
+                    Point3="-23.5,64" />
+                  <mssgle:LineSegment
+                    End="-12.5,64" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients.Paths[Union All Output 1]"
-          TopLeft="232.5,455.5">
+          TopLeft="226,322.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="0,25"
               Start="0,0"
-              End="0,52.5">
+              End="0,17.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,17.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients.Paths[OLE DB Source Output]"
-          TopLeft="235,47.5">
+          TopLeft="254.5,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="0,23"
               Start="0,0"
-              End="0,52.5">
+              End="0,15.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,15.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients.Paths[OLE DB Command Output]"
-          TopLeft="88.5,353.5">
+          TopLeft="111,254.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="125.166666666667,60"
+              EndConnector="95.1666666666666,26"
               Start="0,0"
-              End="125.166666666667,52.5">
+              End="95.1666666666666,18.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.5301794453507" />
+                    End="0,11.3964110929853" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.5301794453507"
-                    Point2="0,35.5301794453507"
-                    Point3="4,35.5301794453507" />
+                    Point1="0,11.3964110929853"
+                    Point2="0,15.3964110929853"
+                    Point3="4,15.3964110929853" />
                   <mssgle:LineSegment
-                    End="121.166666666667,35.5301794453507" />
+                    End="91.1666666666666,15.3964110929853" />
                   <mssgle:CubicBezierSegment
-                    Point1="121.166666666667,35.5301794453507"
-                    Point2="125.166666666667,35.5301794453507"
-                    Point3="125.166666666667,39.5301794453507" />
+                    Point1="91.1666666666666,15.3964110929853"
+                    Point2="95.1666666666666,15.3964110929853"
+                    Point3="95.1666666666666,19.3964110929853" />
                   <mssgle:LineSegment
-                    End="125.166666666667,52.5" />
+                    End="95.1666666666666,18.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients.Paths[New Output]"
-          TopLeft="266,149.5">
+          TopLeft="285.5,112.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-14.6666666666666,264"
+              EndConnector="-41.6666666666667,168"
               Start="0,0"
-              End="-14.6666666666666,256.5">
+              End="-41.6666666666667,160.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,127.104705383637" />
+                    End="0,79.4302670623145" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,127.104705383637"
-                    Point2="0,131.104705383637"
-                    Point3="-4,131.104705383637" />
+                    Point1="0,79.4302670623145"
+                    Point2="0,83.4302670623145"
+                    Point3="-4,83.4302670623145" />
                   <mssgle:LineSegment
-                    End="-10.6666666666666,131.104705383637" />
+                    End="-37.6666666666667,83.4302670623145" />
                   <mssgle:CubicBezierSegment
-                    Point1="-10.6666666666666,131.104705383637"
-                    Point2="-14.6666666666666,131.104705383637"
-                    Point3="-14.6666666666666,135.104705383637" />
+                    Point1="-37.6666666666667,83.4302670623145"
+                    Point2="-41.6666666666667,83.4302670623145"
+                    Point3="-41.6666666666667,87.4302670623145" />
                   <mssgle:LineSegment
-                    End="-14.6666666666666,256.5" />
+                    End="-41.6666666666667,160.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-34.4247200520833,136.104705383637,54.1827734375,11.43359375"
+              BoundingBox="-47.9247200520833,88.4302670623145,54.1827734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimClients.Paths[Historical Attribute Inserts Output]"
-          TopLeft="199,149.5">
+          TopLeft="218.5,112.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-104.5,60"
+              EndConnector="-108.5,36"
               Start="0,0"
-              End="-104.5,52.5">
+              End="-108.5,28.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.2735042735043" />
+                    End="0,10.5641025641026" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.2735042735043"
-                    Point2="0,24.2735042735043"
-                    Point3="-4,24.2735042735043" />
+                    Point1="0,10.5641025641026"
+                    Point2="0,14.5641025641026"
+                    Point3="-4,14.5641025641026" />
                   <mssgle:LineSegment
-                    End="-100.5,24.2735042735043" />
+                    End="-104.5,14.5641025641026" />
                   <mssgle:CubicBezierSegment
-                    Point1="-100.5,24.2735042735043"
-                    Point2="-104.5,24.2735042735043"
-                    Point3="-104.5,28.2735042735043" />
+                    Point1="-104.5,14.5641025641026"
+                    Point2="-108.5,14.5641025641026"
+                    Point3="-108.5,18.5641025641026" />
                   <mssgle:LineSegment
-                    End="-104.5,52.5" />
+                    End="-108.5,28.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-127.30638671875,29.2735042735043,150.1127734375,11.609375"
+              BoundingBox="-129.30638671875,19.5641025641026,150.1127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -14734,412 +14678,424 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
         <NodeLayout
           Size="163,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimEmployee\Insert Destination"
-          TopLeft="151,1127.5" />
+          TopLeft="289.277777777778,498.611111111111" />
         <NodeLayout
           Size="175,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimEmployee\OLE DB Command 1"
-          TopLeft="294,719.5" />
+          TopLeft="507.833333333333,316.166666666667" />
         <NodeLayout
           Size="281,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimEmployee\Lookup temp_new-emp by temp_new_title"
-          TopLeft="92.0000000000001,413.5" />
+          TopLeft="42.5000000000001,146.833333333333" />
         <NodeLayout
           Size="318,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimEmployee\Lookup temp-new_emp by temp-newdeptartments"
-          TopLeft="73.5000000000001,515.5" />
+          TopLeft="470.666666666667,147.722222222222" />
         <NodeLayout
           Size="209,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimEmployee\Slowly Changing Dimension"
-          TopLeft="128,617.5" />
+          TopLeft="318.5,221.944444444444" />
         <NodeLayout
           Size="248,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimEmployee\hire_date and birth_date converting"
-          TopLeft="108.5,107.5" />
+          TopLeft="390.222222222222,7.83333333333333" />
         <NodeLayout
           Size="166,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimEmployee\OLE DB Command"
-          TopLeft="5.50000000000011,821.5" />
+          TopLeft="28.2222222222223,284.833333333333" />
         <NodeLayout
           Size="350,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimEmployee\Lookup temp-new_emp by warehouse-date on birth_date"
-          TopLeft="57.5000000000001,209.5" />
+          TopLeft="474.666666666667,77.2777777777778" />
         <NodeLayout
           Size="346,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimEmployee\Lookup temp-new_emp by warehouse-date on hire_date"
-          TopLeft="59.5000000000001,311.5" />
+          TopLeft="7.77777777777783,77.0555555555555" />
         <NodeLayout
           Size="163,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimEmployee\Derived Column 1"
-          TopLeft="151,1025.5" />
+          TopLeft="290.388888888889,427.722222222222" />
         <NodeLayout
           Size="137,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimEmployee\Load new_emp"
-          TopLeft="164,5.5" />
+          TopLeft="172.277777777778,5.5" />
         <NodeLayout
           Size="121,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimEmployee\Union All"
-          TopLeft="172,923.5" />
+          TopLeft="309.166666666667,355.722222222222" />
         <NodeLayout
           Size="154,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimEmployee\Derived Column"
-          TopLeft="17.5000000000001,719.5" />
+          TopLeft="28,222.833333333333" />
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimEmployee.Paths[Union All Output 1]"
-          TopLeft="232.5,965.5">
+          TopLeft="370.777777777778,397.722222222222">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="0,30.0000000000001"
               Start="0,0"
-              End="0,52.5">
+              End="0,22.5000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,22.5000000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimEmployee.Paths[OLE DB Source Output]"
-          TopLeft="232.5,47.5">
+          TopLeft="309.277777777778,27.6666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="80.9444444444444,0"
               Start="0,0"
-              End="0,52.5">
+              End="73.4444444444444,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="73.4444444444444,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimEmployee.Paths[OLE DB Command Output]"
-          TopLeft="88.5000000000001,863.5">
+          TopLeft="111.222222222222,326.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="125.166666666667,60"
+              EndConnector="239.611111111111,28.8888888888889"
               Start="0,0"
-              End="125.166666666667,52.5">
+              End="239.611111111111,21.3888888888889">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.5301794453507" />
+                    End="0,13.1071234366503" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.5301794453507"
-                    Point2="0,35.5301794453507"
-                    Point3="4,35.5301794453507" />
+                    Point1="0,13.1071234366503"
+                    Point2="0,17.1071234366503"
+                    Point3="4,17.1071234366503" />
                   <mssgle:LineSegment
-                    End="121.166666666667,35.5301794453507" />
+                    End="235.611111111111,17.1071234366503" />
                   <mssgle:CubicBezierSegment
-                    Point1="121.166666666667,35.5301794453507"
-                    Point2="125.166666666667,35.5301794453507"
-                    Point3="125.166666666667,39.5301794453507" />
+                    Point1="235.611111111111,17.1071234366503"
+                    Point2="239.611111111111,17.1071234366503"
+                    Point3="239.611111111111,21.1071234366503" />
                   <mssgle:LineSegment
-                    End="125.166666666667,52.5" />
+                    End="239.611111111111,21.3888888888889" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimEmployee.Paths[New Output]"
-          TopLeft="232.5,659.5">
+          TopLeft="389.5,263.944444444444">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="18.8333333333334,264"
+              EndConnector="-19.8333333333334,91.7777777777778"
               Start="0,0"
-              End="18.8333333333334,256.5">
+              End="-19.8333333333334,84.2777777777778">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,152.332789559543" />
+                    End="0,33.1294713516936" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,152.332789559543"
-                    Point2="0,156.332789559543"
-                    Point3="4,156.332789559543" />
+                    Point1="0,33.1294713516936"
+                    Point2="0,37.1294713516936"
+                    Point3="-4,37.1294713516936" />
                   <mssgle:LineSegment
-                    End="14.8333333333334,156.332789559543" />
+                    End="-15.8333333333334,37.1294713516936" />
                   <mssgle:CubicBezierSegment
-                    Point1="14.8333333333334,156.332789559543"
-                    Point2="18.8333333333334,156.332789559543"
-                    Point3="18.8333333333334,160.332789559543" />
+                    Point1="-15.8333333333334,37.1294713516936"
+                    Point2="-19.8333333333334,37.1294713516936"
+                    Point3="-19.8333333333334,41.1294713516936" />
                   <mssgle:LineSegment
-                    End="18.8333333333334,256.5" />
+                    End="-19.8333333333334,84.2777777777778" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-17.6747200520833,161.332789559543,54.1827734375,11.43359375"
+              BoundingBox="-37.0080533854167,42.1294713516936,54.1827734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimEmployee.Paths[Lookup Match Output3]"
-          TopLeft="232.5,557.5">
+          TopLeft="629.666666666667,189.722222222222">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="-206.666666666667,32.2222222222223"
               Start="0,0"
-              End="0,52.5">
+              End="-206.666666666667,24.7222222222223">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,12.1111111111111" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.1111111111111"
+                    Point2="0,16.1111111111111"
+                    Point3="-4,16.1111111111111" />
+                  <mssgle:LineSegment
+                    End="-202.666666666667,16.1111111111111" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-202.666666666667,16.1111111111111"
+                    Point2="-206.666666666667,16.1111111111111"
+                    Point3="-206.666666666667,20.1111111111111" />
+                  <mssgle:LineSegment
+                    End="-206.666666666667,24.7222222222223" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
+              BoundingBox="-151.524720052083,21.1111111111111,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimEmployee.Paths[Lookup Match Output2]"
-          TopLeft="232.5,455.5">
+          TopLeft="323.5,168.277777777778">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="147.166666666667,0"
               Start="0,0"
-              End="0,52.5">
+              End="139.666666666667,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="139.666666666667,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
+              BoundingBox="21.6419466145834,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimEmployee.Paths[Lookup Match Output1]"
-          TopLeft="232.5,353.5">
+          TopLeft="181.888888888889,119.055555555556">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="0,27.7777777777778"
               Start="0,0"
-              End="0,52.5">
+              End="0,20.2777777777778">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,20.2777777777778" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,4.33420138888889,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimEmployee.Paths[Lookup Match Output]"
-          TopLeft="232.5,251.5">
+          TopLeft="474.666666666667,98.1666666666666">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="-120.888888888889,0"
               Start="0,0"
-              End="0,52.5">
+              End="-113.388888888889,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="-113.388888888889,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
+              BoundingBox="-104.885831163194,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimEmployee.Paths[Historical Attribute Inserts Output]"
-          TopLeft="182.25,659.5">
+          TopLeft="318.5,243.388888888889">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-87.75,60"
+              EndConnector="-136.5,0"
               Start="0,0"
-              End="-87.75,52.5">
+              End="-129,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.503937007874" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.503937007874"
-                    Point2="0,20.503937007874"
-                    Point3="-4,20.503937007874" />
-                  <mssgle:LineSegment
-                    End="-83.75,20.503937007874" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-83.75,20.503937007874"
-                    Point2="-87.75,20.503937007874"
-                    Point3="-87.75,24.503937007874" />
-                  <mssgle:LineSegment
-                    End="-87.75,52.5" />
+                    End="-129,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-118.93138671875,25.503937007874,150.1127734375,11.609375"
+              BoundingBox="-139.55638671875,5,150.1127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimEmployee.Paths[Derived Column Output1]"
-          TopLeft="232.5,1067.5">
+          TopLeft="371.333333333333,469.722222222222">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="0,28.8888888888885"
               Start="0,0"
-              End="0,52.5">
+              End="0,21.3888888888885">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,21.3888888888885" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimEmployee.Paths[Derived Column Output]"
-          TopLeft="91.5000000000001,761.5">
+          TopLeft="28,243.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="0.222222222222271,62"
               Start="0,0"
-              End="0,52.5">
+              End="-7.27777777777773,62">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
+                  <mssgle:LineSegment
+                    End="-22.5,58" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,58"
+                    Point2="-22.5,62"
+                    Point3="-18.5,62" />
+                  <mssgle:LineSegment
+                    End="-7.27777777777773,62" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimEmployee.Paths[Data Conversion Output]"
-          TopLeft="232.5,149.5">
+          TopLeft="514.222222222222,49.8333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="135.444444444445,27.4444444444444"
               Start="0,0"
-              End="0,52.5">
+              End="135.444444444445,19.9444444444444">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,9.72222222222221" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.72222222222221"
+                    Point2="0,13.7222222222222"
+                    Point3="4,13.7222222222222" />
+                  <mssgle:LineSegment
+                    End="131.444444444445,13.7222222222222" />
+                  <mssgle:CubicBezierSegment
+                    Point1="131.444444444445,13.7222222222222"
+                    Point2="135.444444444445,13.7222222222222"
+                    Point3="135.444444444445,17.7222222222222" />
+                  <mssgle:LineSegment
+                    End="135.444444444445,19.9444444444444" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change dimEmployee.Paths[Changing Attribute Updates Output]"
-          TopLeft="282.75,659.5">
+          TopLeft="456.5,263.944444444444">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="98.75,60"
+              EndConnector="138.833333333333,52.2222222222222"
               Start="0,0"
-              End="98.75,52.5">
+              End="138.833333333333,44.7222222222222">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.503937007874" />
+                    End="0,17.1269389047167" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,16.503937007874"
-                    Point2="0,20.503937007874"
-                    Point3="4,20.503937007874" />
+                    Point1="0,17.1269389047167"
+                    Point2="0,21.1269389047167"
+                    Point3="4,21.1269389047167" />
                   <mssgle:LineSegment
-                    End="94.75,20.503937007874" />
+                    End="134.833333333333,21.1269389047167" />
                   <mssgle:CubicBezierSegment
-                    Point1="94.75,20.503937007874"
-                    Point2="98.75,20.503937007874"
-                    Point3="98.75,24.503937007874" />
+                    Point1="134.833333333333,21.1269389047167"
+                    Point2="138.833333333333,21.1269389047167"
+                    Point3="138.833333333333,25.1269389047167" />
                   <mssgle:LineSegment
-                    End="98.75,52.5" />
+                    End="138.833333333333,44.7222222222222" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-29.15890625,25.503937007874,157.0678125,11.6630859375"
+              BoundingBox="-9.11723958333334,26.1269389047167,157.0678125,11.6630859375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -15378,125 +15334,85 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
         <NodeLayout
           Size="171,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change factSalary\OLE DB Destination"
-          TopLeft="162,364" />
+          TopLeft="194,320" />
         <NodeLayout
           Size="423,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change factSalary\Lookup temp-new_emp by warehouse-dimEmployee by emp_no and end"
-          TopLeft="81,256" />
+          TopLeft="63,226" />
         <NodeLayout
           Size="333,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change factSalary\Derived end column filled by nulls and DateID column"
-          TopLeft="174,179" />
+          TopLeft="105,145" />
         <NodeLayout
           Size="151,42"
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change factSalary\Load new_emp"
           TopLeft="198,69" />
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change factSalary.Paths[OLE DB Source Output]"
-          TopLeft="273.5,111">
+          TopLeft="272.5,111">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="67,68"
+              EndConnector="0,34"
               Start="0,0"
-              End="67,60.5">
+              End="0,26.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30"
-                    Point2="0,34"
-                    Point3="4,34" />
-                  <mssgle:LineSegment
-                    End="63,34" />
-                  <mssgle:CubicBezierSegment
-                    Point1="63,34"
-                    Point2="67,34"
-                    Point3="67,38" />
-                  <mssgle:LineSegment
-                    End="67,60.5" />
+                    End="0,26.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change factSalary.Paths[Lookup Match Output]"
-          TopLeft="292.5,298">
+          TopLeft="277,268">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-45,66"
+              EndConnector="0,52"
               Start="0,0"
-              End="-45,58.5">
+              End="0,44.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29"
-                    Point2="0,33"
-                    Point3="-4,33" />
-                  <mssgle:LineSegment
-                    End="-41,33" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-41,33"
-                    Point2="-45,33"
-                    Point3="-45,37" />
-                  <mssgle:LineSegment
-                    End="-45,58.5" />
+                    End="0,44.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-70.69138671875,38,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,16.4453125,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\For Loop Container\HERE GOES YOUR SOLUTION - EXTENDING BOX WILL BE NEEDED\Change factSalary.Paths[Derived Column Output]"
-          TopLeft="340.5,221">
+          TopLeft="273,187">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-48,35"
+              EndConnector="0,39"
               Start="0,0"
-              End="-48,27.5">
+              End="0,31.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,13.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13.5"
-                    Point2="0,17.5"
-                    Point3="-4,17.5" />
-                  <mssgle:LineSegment
-                    End="-44,17.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-44,17.5"
-                    Point2="-48,17.5"
-                    Point3="-48,21.5" />
-                  <mssgle:LineSegment
-                    End="-48,27.5" />
+                    End="0,31.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -15953,7 +15869,7 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output8]"
+          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output]"
           TopLeft="586.405660377358,55.4245283018868">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -15981,7 +15897,7 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output7]"
+          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output1]"
           TopLeft="599.537735849057,434.216981132075">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -16009,7 +15925,7 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output6]"
+          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output2]"
           TopLeft="346.933962264151,428.367924528302">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -16033,7 +15949,7 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output5]"
+          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output3]"
           TopLeft="86.3301886792453,427.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -16085,7 +16001,7 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output3]"
+          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output5]"
           TopLeft="84.1084905660377,58.2924528301887">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -16109,7 +16025,7 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output2]"
+          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output6]"
           TopLeft="247.915094339623,60.4433962264151">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -16137,7 +16053,7 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output1]"
+          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output7]"
           TopLeft="414.669811320755,59.4245283018868">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -16165,7 +16081,7 @@ where [refTable].[emp_no] = ? and [refTable].[end] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output]"
+          Id="Package\For Loop Container\Load snapshot nr @myvar.Paths[Flat File Source Output8]"
           TopLeft="799.235849056604,429.235849056604">
           <EdgeLayout.Curve>
             <mssgle:Curve

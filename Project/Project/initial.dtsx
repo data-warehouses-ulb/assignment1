@@ -11,8 +11,8 @@
   DTS:LocaleID="2060"
   DTS:ObjectName="initial"
   DTS:PackageType="5"
-  DTS:VersionBuild="132"
-  DTS:VersionGUID="{C750BABD-B476-41CB-9988-3BBF5B5002CA}">
+  DTS:VersionBuild="133"
+  DTS:VersionGUID="{0A26E645-00C5-4051-830D-1F2DCCBD8C88}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -9084,9 +9084,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9156,9 +9154,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9290,19 +9286,19 @@ where [refTable].[emp_no] = ?</property>
         <NodeLayout
           Size="158,42"
           Id="Package\Convert factSalary and bridgeEmployee\Derived factDate"
-          TopLeft="108,280" />
+          TopLeft="183,210" />
         <NodeLayout
           Size="314,42"
           Id="Package\Convert factSalary and bridgeEmployee\Lookup initial-client_emp by warehouse-employee"
-          TopLeft="508,229" />
+          TopLeft="463,183" />
         <NodeLayout
           Size="171,42"
           Id="Package\Convert factSalary and bridgeEmployee\OLE DB Destination"
-          TopLeft="91,490" />
+          TopLeft="170,384" />
         <NodeLayout
           Size="150,42"
           Id="Package\Convert factSalary and bridgeEmployee\Load employee"
-          TopLeft="341,39" />
+          TopLeft="184,106" />
         <NodeLayout
           Size="156,42"
           Id="Package\Convert factSalary and bridgeEmployee\Load client_emp"
@@ -9310,217 +9306,185 @@ where [refTable].[emp_no] = ?</property>
         <NodeLayout
           Size="308,42"
           Id="Package\Convert factSalary and bridgeEmployee\Lookup initial-employee by warehouse-employee"
-          TopLeft="33,377" />
+          TopLeft="110,292" />
         <NodeLayout
           Size="154,42"
           Id="Package\Convert factSalary and bridgeEmployee\Derived Column"
-          TopLeft="530,361" />
+          TopLeft="537,269" />
         <NodeLayout
           Size="180,42"
           Id="Package\Convert factSalary and bridgeEmployee\OLE DB Destination 1"
-          TopLeft="477,460" />
+          TopLeft="513,389" />
         <EdgeLayout
           Id="Package\Convert factSalary and bridgeEmployee.Paths[OLE DB Source Output1]"
           TopLeft="604,152">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="61,77"
+              EndConnector="16,31"
               Start="0,0"
-              End="61,69.5">
+              End="16,23.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.5" />
+                    End="0,11.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,34.5"
-                    Point2="0,38.5"
-                    Point3="4,38.5" />
+                    Point1="0,11.5"
+                    Point2="0,15.5"
+                    Point3="4,15.5" />
                   <mssgle:LineSegment
-                    End="57,38.5" />
+                    End="12,15.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="57,38.5"
-                    Point2="61,38.5"
-                    Point3="61,42.5" />
+                    Point1="12,15.5"
+                    Point2="16,15.5"
+                    Point3="16,19.5" />
                   <mssgle:LineSegment
-                    End="61,69.5" />
+                    End="16,23.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Convert factSalary and bridgeEmployee.Paths[OLE DB Source Output]"
-          TopLeft="416,81">
+          TopLeft="260.5,148">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-229,199"
+              EndConnector="0,62"
               Start="0,0"
-              End="-229,191.5">
+              End="0,54.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,95.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,95.5"
-                    Point2="0,99.5"
-                    Point3="-4,99.5" />
-                  <mssgle:LineSegment
-                    End="-225,99.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-225,99.5"
-                    Point2="-229,99.5"
-                    Point3="-229,103.5" />
-                  <mssgle:LineSegment
-                    End="-229,191.5" />
+                    End="0,54.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Convert factSalary and bridgeEmployee.Paths[Lookup Match Output1]"
-          TopLeft="665,271">
+          TopLeft="617,225">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-58,90"
+              EndConnector="0,44"
               Start="0,0"
-              End="-58,82.5">
+              End="0,36.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,41" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,41"
-                    Point2="0,45"
-                    Point3="-4,45" />
-                  <mssgle:LineSegment
-                    End="-54,45" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-54,45"
-                    Point2="-58,45"
-                    Point3="-58,49" />
-                  <mssgle:LineSegment
-                    End="-58,82.5" />
+                    End="0,36.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-77.19138671875,50,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,12.4453125,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Convert factSalary and bridgeEmployee.Paths[Lookup Match Output]"
-          TopLeft="187,419">
+          TopLeft="264,334">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-10.5,71"
+              EndConnector="-8.5,50"
               Start="0,0"
-              End="-10.5,63.5">
+              End="-8.5,42.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.5" />
+                    End="0,21" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.5"
-                    Point2="0,35.5"
-                    Point3="-4,35.5" />
+                    Point1="0,21"
+                    Point2="0,25"
+                    Point3="-4,25" />
                   <mssgle:LineSegment
-                    End="-6.5,35.5" />
+                    End="-4.5,25" />
                   <mssgle:CubicBezierSegment
-                    Point1="-6.5,35.5"
-                    Point2="-10.5,35.5"
-                    Point3="-10.5,39.5" />
+                    Point1="-4.5,25"
+                    Point2="-8.5,25"
+                    Point3="-8.5,29" />
                   <mssgle:LineSegment
-                    End="-10.5,63.5" />
+                    End="-8.5,42.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-53.44138671875,40.5,96.3827734375,11.609375"
+              BoundingBox="-52.44138671875,30,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Convert factSalary and bridgeEmployee.Paths[Derived Column Output1]"
-          TopLeft="607,403">
+          TopLeft="614,311">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-40,57"
+              EndConnector="-11,78"
               Start="0,0"
-              End="-40,49.5">
+              End="-11,70.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.5" />
+                    End="0,35" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,24.5"
-                    Point2="0,28.5"
-                    Point3="-4,28.5" />
+                    Point1="0,35"
+                    Point2="0,39"
+                    Point3="-4,39" />
                   <mssgle:LineSegment
-                    End="-36,28.5" />
+                    End="-7,39" />
                   <mssgle:CubicBezierSegment
-                    Point1="-36,28.5"
-                    Point2="-40,28.5"
-                    Point3="-40,32.5" />
+                    Point1="-7,39"
+                    Point2="-11,39"
+                    Point3="-11,43" />
                   <mssgle:LineSegment
-                    End="-40,49.5" />
+                    End="-11,70.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Convert factSalary and bridgeEmployee.Paths[Derived Column Output]"
-          TopLeft="187,322">
+          TopLeft="263,252">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,55"
+              EndConnector="0,40"
               Start="0,0"
-              End="0,47.5">
+              End="0,32.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,47.5" />
+                    End="0,32.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9628,7 +9592,7 @@ where [refTable].[emp_no] = ?</property>
     design-time-name="Package\Load city">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="180,42"
           Id="Package\Load city\OLE DB Destination 2"
@@ -9672,9 +9636,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9708,9 +9670,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9720,7 +9680,7 @@ where [refTable].[emp_no] = ?</property>
     design-time-name="Package\Load client_emp">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="171,42"
           Id="Package\Load client_emp\OLE DB Destination"
@@ -9752,9 +9712,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9776,9 +9734,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10133,7 +10089,7 @@ where [refTable].[emp_no] = ?</property>
     design-time-name="Package\Load employee">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="124,42"
           Id="Package\Load employee\employee"
@@ -10165,9 +10121,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10189,9 +10143,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10214,7 +10166,7 @@ where [refTable].[emp_no] = ?</property>
     design-time-name="Package\Load state">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="180,42"
           Id="Package\Load state\OLE DB Destination 1"
@@ -10246,9 +10198,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10270,9 +10220,7 @@ where [refTable].[emp_no] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
